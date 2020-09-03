@@ -66,7 +66,8 @@ app.get('/nodes', (req, res) => {
     res.json(combined);
 });
 
-app.listen(81, console.log('HTTP:81: ONLINE'));
+// Heroku basic setup
+app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 /*market.on('ready', async () => {
     console.log("CENTRAL_MARKET: ONLINE");
