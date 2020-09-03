@@ -7,6 +7,7 @@ const moment = require('moment');
 const express = require('express');
 var cors = require('cors');
 const app = express();
+const PORT = process.env.PORT || 5100
 
 var allowedOrigins = ['http://localhost:80',
                       'https://morrolantv-dev.herokuapp.com'];
