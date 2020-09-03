@@ -9,7 +9,7 @@ var cors = require('cors');
 const app = express();
 
 var allowedOrigins = ['http://localhost:80',
-                      'https://morrolan.tv'];
+                      'https://morrolantv-dev.herokuapp.com'];
 app.use(cors({
   origin: function(origin, callback){
     // allow requests with no origin 
