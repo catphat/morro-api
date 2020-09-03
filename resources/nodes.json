@@ -1,0 +1,2167 @@
+[
+    {
+        "name": "Wolf Hills",
+        "materials": [
+            {
+                "id": 4601,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 400,
+        "averageYield": 9,
+        "distance": 340,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6c/Wolf_Hills.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126054050",
+        "region": "Balenos"
+    },
+    {
+        "name": "Loggia Farm",
+        "materials": [
+            {
+                "id": 7003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 535,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/7e/Loggia_farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123070556",
+        "region": "Balenos"
+    },
+    {
+        "name": "Bartali Farm",
+        "materials": [
+            {
+                "id": 7921,
+                "ratio": 1
+            },
+            {
+                "id": 9064,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 18,
+        "distance": 468,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e1/Bartali_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180823144150",
+        "region": "Balenos"
+    },
+    {
+        "name": "Bartali Farm",
+        "materials": [
+            {
+                "id": 7003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 505,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e1/Bartali_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180823144150",
+        "region": "Balenos"
+    },
+    {
+        "name": "Finto Farm",
+        "materials": [
+            {
+                "id": 7921,
+                "ratio": 1
+            },
+            {
+                "id": 9064,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 18,
+        "distance": 404,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d1/Finto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123072101",
+        "region": "Balenos"
+    },
+    {
+        "name": "Finto Farm",
+        "materials": [
+            {
+                "id": 7003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 445,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d1/Finto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123072101",
+        "region": "Balenos"
+    },
+    {
+        "name": "Imp Cave",
+        "materials": [
+            {
+                "id": 4003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 548,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ee/Imp_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181006062758",
+        "region": "Balenos"
+    },
+    {
+        "name": "Imp Cave",
+        "materials": [
+            {
+                "id": 4003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 549,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ee/Imp_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181006062758",
+        "region": "Balenos"
+    },
+    {
+        "name": "Forest of Seclusion",
+        "materials": [
+            {
+                "id": 4602,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 300,
+        "averageYield": 18,
+        "distance": 1080,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a0/Forest_of_Seclusion.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110133405",
+        "region": "Balenos"
+    },
+    {
+        "name": "Forest of Seclusion",
+        "materials": [
+            {
+                "id": 4003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 1076,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a0/Forest_of_Seclusion.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110133405",
+        "region": "Balenos"
+    },
+    {
+        "name": "Ancient Stone Chamber",
+        "materials": [
+            {
+                "id": 5954,
+                "ratio": 1
+            },
+            {
+                "id": 5955,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 2400,
+        "averageYield": 2,
+        "distance": 1171,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/4d/Ancient_Stone_Chamber.JPG/revision/latest/window-crop/width/320/x-offset/1025/y-offset/0/window-width/6145/window-height/4608?cb=20180322085835",
+        "region": "Balenos"
+    },
+    {
+        "name": "Toscani Farm",
+        "materials": [
+            {
+                "id": 7005,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 22,
+        "distance": 812,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/ce/Toscani_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123070228",
+        "region": "Balenos"
+    },
+    {
+        "name": "Toscani Farm",
+        "materials": [
+            {
+                "id": 7005,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 22,
+        "distance": 812,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/ce/Toscani_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123070228",
+        "region": "Balenos"
+    },
+    {
+        "name": "Balenos Forest",
+        "materials": [
+            {
+                "id": 5401,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 300,
+        "averageYield": 18,
+        "distance": 517,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/97/Balenos_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123065645",
+        "region": "Balenos"
+    },
+    {
+        "name": "Balenos Forest",
+        "materials": [
+            {
+                "id": 4601,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 522,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/97/Balenos_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123065645",
+        "region": "Balenos"
+    },
+    {
+        "name": "Forest of Plunder",
+        "materials": [
+            {
+                "id": 5408,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 300,
+        "averageYield": 16,
+        "distance": 407,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/ba/Forest_of_Plunder.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110133613",
+        "region": "Balenos"
+    },
+    {
+        "name": "Goblin Cave",
+        "materials": [
+            {
+                "id": 4601,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 682,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/40/Goblin_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180124060906",
+        "region": "Balenos"
+    },
+    {
+        "name": "Goblin Cave",
+        "materials": [
+            {
+                "id": 4003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 687,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/40/Goblin_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180124060906",
+        "region": "Balenos"
+    },
+    {
+        "name": "Ehwaz Hill",
+        "materials": [
+            {
+                "id": 4601,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 668,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/f8/Ehwaz_Hill.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110134410",
+        "region": "Balenos"
+    },
+    {
+        "name": "Ehwaz Hill",
+        "materials": [
+            {
+                "id": 5407,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 300,
+        "averageYield": 16,
+        "distance": 674,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/f8/Ehwaz_Hill.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110134410",
+        "region": "Balenos"
+    },
+    {
+        "name": "Cron Castle Site",
+        "materials": [
+            {
+                "id": 5401,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 888,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/72/Cron_Castle_Site2.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180124060032",
+        "region": "Balenos"
+    },
+    {
+        "name": "Coastal Cliff",
+        "materials": [
+            {
+                "id": 5407,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 300,
+        "averageYield": 16,
+        "distance": 877,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/3a/Coastal_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126060327",
+        "region": "Balenos"
+    },
+    {
+        "name": "Coastal Cliff",
+        "materials": [
+            {
+                "id": 4001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 874,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/3a/Coastal_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126060327",
+        "region": "Balenos"
+    },
+    {
+        "name": "Coastal Cave",
+        "materials": [
+            {
+                "id": 4003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 669,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/b4/Coastal_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123071020",
+        "region": "Balenos"
+    },
+    {
+        "name": "Coastal Cave",
+        "materials": [
+            {
+                "id": 4001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 674,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/b4/Coastal_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123071020",
+        "region": "Balenos"
+    },
+    {
+        "name": "Northern Heidel Quarry",
+        "materials": [
+            {
+                "id": 4001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 546,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/30/Northern_Heidel_Quarry.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190948",
+        "region": "Serendia"
+    },
+    {
+        "name": "Northern Heidel Quarry",
+        "materials": [
+            {
+                "id": 4003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 547,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/30/Northern_Heidel_Quarry.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190948",
+        "region": "Serendia"
+    },
+    {
+        "name": "Northern Plain of Serendia",
+        "materials": [
+            {
+                "id": 5402,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 1345,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/53/Northern_Plain_of_Serendia.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190936",
+        "region": "Serendia"
+    },
+    {
+        "name": "Northern Plain of Serendia",
+        "materials": [
+            {
+                "id": 4602,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 1334,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/53/Northern_Plain_of_Serendia.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190936",
+        "region": "Serendia"
+    },
+    {
+        "name": "Lynch Farm Ruins",
+        "materials": [
+            {
+                "id": 5402,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 786,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Lynch_Farm_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190938",
+        "region": "Serendia"
+    },
+    {
+        "name": "Lynch Farm Ruins",
+        "materials": [
+            {
+                "id": 5956,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 2400,
+        "averageYield": 2,
+        "distance": 777,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Lynch_Farm_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190938",
+        "region": "Serendia"
+    },
+    {
+        "name": "Lynch Ranch",
+        "materials": [
+            {
+                "id": 5804,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 1359,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/cf/Lynch_Ranch.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180226131712",
+        "region": "Serendia"
+    },
+    {
+        "name": "Alejandro Farm",
+        "materials": [
+            {
+                "id": 7702,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 652,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ef/Alejandro_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173540",
+        "region": "Serendia"
+    },
+    {
+        "name": "Alejandro Farm",
+        "materials": [
+            {
+                "id": 7306,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 400,
+        "averageYield": 22,
+        "distance": 653,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ef/Alejandro_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173540",
+        "region": "Serendia"
+    },
+    {
+        "name": "Costa Farm",
+        "materials": [
+            {
+                "id": 7001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 406,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/93/Costa_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173640",
+        "region": "Serendia"
+    },
+    {
+        "name": "Costa Farm",
+        "materials": [
+            {
+                "id": 7306,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 400,
+        "averageYield": 22,
+        "distance": 441,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/93/Costa_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173640",
+        "region": "Serendia"
+    },
+    {
+        "name": "Costa Farm",
+        "materials": [
+            {
+                "id": 5802,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 430,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/93/Costa_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173640",
+        "region": "Serendia"
+    },
+    {
+        "name": "Northern Cienaga",
+        "materials": [
+            {
+                "id": 5409,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 300,
+        "averageYield": 16,
+        "distance": 612,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/76/Northern_Cienaga.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180824104631",
+        "region": "Serendia"
+    },
+    {
+        "name": "Glish Swamp",
+        "materials": [
+            {
+                "id": 5410,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 300,
+        "averageYield": 16,
+        "distance": 427,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/77/Glish_Swamp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173712",
+        "region": "Serendia"
+    },
+    {
+        "name": "Glish Swamp",
+        "materials": [
+            {
+                "id": 4003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 400,
+        "averageYield": 16,
+        "distance": 431,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/77/Glish_Swamp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173712",
+        "region": "Serendia"
+    },
+    {
+        "name": "Glish Ruins",
+        "materials": [
+            {
+                "id": 5957,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 2100,
+        "averageYield": 2,
+        "distance": 799,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/23/Glish_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180226131457",
+        "region": "Serendia"
+    },
+    {
+        "name": "Southern Cienaga",
+        "materials": [
+            {
+                "id": 5410,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 300,
+        "averageYield": 16,
+        "distance": 513,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5a/Southern_Cienaga.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173842",
+        "region": "Serendia"
+    },
+    {
+        "name": "Southern Cienaga",
+        "materials": [
+            {
+                "id": 4001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 513,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5a/Southern_Cienaga.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173842",
+        "region": "Serendia"
+    },
+    {
+        "name": "Moretti Plantation",
+        "materials": [
+            {
+                "id": 7001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 686,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6b/Moretti_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180824104011",
+        "region": "Serendia"
+    },
+    {
+        "name": "Moretti Plantation",
+        "materials": [
+            {
+                "id": 5802,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 679,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6b/Moretti_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180824104011",
+        "region": "Serendia"
+    },
+    {
+        "name": "Serendia Shrine",
+        "materials": [
+            {
+                "id": 4603,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 5,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/53/Serendia_Shrine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180823025108",
+        "region": "Serendia"
+    },
+    {
+        "name": "Castle Ruins",
+        "materials": [
+            {
+                "id": 4602,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 1011,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/21/Castle_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173621",
+        "region": "Serendia"
+    },
+    {
+        "name": "Khuruto Cave",
+        "materials": [
+            {
+                "id": 4004,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 1000,
+        "averageYield": 20,
+        "distance": 1238,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5b/Khuruto_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214021052",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Old Dandelion",
+        "materials": [
+            {
+                "id": 4604,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 300,
+        "averageYield": 22,
+        "distance": 1219,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c2/Old_Dandelion.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180206175128",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Karanda Ridge",
+        "materials": [
+            {
+                "id": 5405,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 200,
+        "averageYield": 20,
+        "distance": 20,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/08/Karanda_Ridge.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214021004",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Bree Tree Ruins",
+        "materials": [
+            {
+                "id": 4604,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 300,
+        "averageYield": 22,
+        "distance": 1459,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/15/Bree_Tree_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020819",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Bree Tree Ruins",
+        "materials": [
+            {
+                "id": 5412,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 300,
+        "averageYield": 16,
+        "distance": 1458,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/15/Bree_Tree_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020819",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Bernianto Farm",
+        "materials": [
+            {
+                "id": 5960,
+                "ratio": 1
+            },
+            {
+                "id": 5958,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 1000,
+        "averageYield": 2,
+        "distance": 1462,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/4c/Bernianto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020745",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Northern Wheat Plantation",
+        "materials": [
+            {
+                "id": 7001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 400,
+        "averageYield": 26,
+        "distance": 742,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e6/Northern_Wheat_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180928185301",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Northern Wheat Plantation",
+        "materials": [
+            {
+                "id": 6807,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 400,
+        "averageYield": 24,
+        "distance": 900,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e6/Northern_Wheat_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180928185301",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Northern Wheat Plantation",
+        "materials": [
+            {
+                "id": 7312,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 400,
+        "averageYield": 22,
+        "distance": 818,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e6/Northern_Wheat_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180928185301",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Quint Hill",
+        "materials": [
+            {
+                "id": 4604,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 300,
+        "averageYield": 22,
+        "distance": 1028,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/33/Quint_Hill.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020605",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Quint Hill",
+        "materials": [
+            {
+                "id": 4003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 1031,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/33/Quint_Hill.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020605",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Mansha Forest",
+        "materials": [
+            {
+                "id": 4606,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 300,
+        "averageYield": 22,
+        "distance": 1326,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/77/Mansha_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180209204404",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Mansha Forest",
+        "materials": [
+            {
+                "id": 5952,
+                "ratio": 1
+            },
+            {
+                "id": 5961,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 1200,
+        "averageYield": 2.5,
+        "distance": 1326,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/77/Mansha_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180209204404",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Rhutum Outstation",
+        "materials": [
+            {
+                "id": 4004,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 1863,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c3/Rhutum_Outstation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020212",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Treant Forest",
+        "materials": [
+            {
+                "id": 4606,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 300,
+        "averageYield": 22,
+        "distance": 742,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/78/Treant_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180210003217",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Lumberjack's Rest Area",
+        "materials": [
+            {
+                "id": 4607,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 300,
+        "averageYield": 22,
+        "distance": 352,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/f6/Lumberjack%27s_Rest_Area.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180210232228",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Phoniel's Cabin",
+        "materials": [
+            {
+                "id": 4606,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 300,
+        "averageYield": 22,
+        "distance": 8,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ee/Phoniel%27s_Cabin.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015959",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Behr Riverhead",
+        "materials": [
+            {
+                "id": 4004,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 8,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/84/Behr_Riverhead.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020454",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Longleaf Tree Sentry Post",
+        "materials": [
+            {
+                "id": 5405,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 441,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5e/Longleaf_Tree_Sentry_Post.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180211234426",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Longleaf Tree Forest",
+        "materials": [
+            {
+                "id": 4607,
+                "ratio": 1
+            }
+        ],
+        "contribution": 6,
+        "workload": 300,
+        "averageYield": 22,
+        "distance": 1024,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e5/Longleaf_Tree_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180211235341",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Rhua Tree Stub",
+        "materials": [
+            {
+                "id": 5413,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 300,
+        "averageYield": 16,
+        "distance": 1679,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/90/Rhua_Tree_Stub.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015706",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Rhua Tree Stub",
+        "materials": [
+            {
+                "id": 5960,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 2400,
+        "averageYield": 2,
+        "distance": 1687,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/90/Rhua_Tree_Stub.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015706",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Marie Cave",
+        "materials": [
+            {
+                "id": 4603,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 152,
+        "averageYield": 18,
+        "distance": 10,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a2/Marie_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015458",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Marie Cave",
+        "materials": [
+            {
+                "id": 5414,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 152,
+        "averageYield": 16,
+        "distance": 2054,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a2/Marie_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015458",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Glutoni Cave",
+        "materials": [
+            {
+                "id": 4007,
+                "ratio": 1
+            }
+        ],
+        "contribution": 6,
+        "workload": 200,
+        "averageYield": 20,
+        "distance": 1172,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/cf/Glutoni_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180218155245",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Glutoni Cave",
+        "materials": [
+            {
+                "id": 5413,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 150,
+        "averageYield": 16,
+        "distance": 1333,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/cf/Glutoni_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180218155245",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Keplan Quarry",
+        "materials": [
+            {
+                "id": 4007,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 22,
+        "distance": 342,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/fc/Keplan_Quarry.png/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180224091620",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Oze Pass",
+        "materials": [
+            {
+                "id": 4607,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 300,
+        "averageYield": 22,
+        "distance": 942,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a0/Oze_Pass.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180928182658",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Hexe Stone Wall",
+        "materials": [
+            {
+                "id": 4001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 500,
+        "averageYield": 20,
+        "distance": 10,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c1/Hexe_Stone_Wall.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180218163550",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Primal Giant Post",
+        "materials": [
+            {
+                "id": 4003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 202,
+        "averageYield": 20,
+        "distance": 10,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/10/Primal_Giant_Post.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180218163246",
+        "region": "Calpheon"
+    },
+    {
+        "name": "Stonetail Wasteland",
+        "materials": [
+            {
+                "id": 4609,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 400,
+        "averageYield": 22,
+        "distance": 1765,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/3f/Stonetail_Wasteland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010705",
+        "region": "Mediah"
+    },
+    {
+        "name": "Mediah Shore",
+        "materials": [
+            {
+                "id": 4003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 1727,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/44/Mediah_Shore.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010555",
+        "region": "Mediah"
+    },
+    {
+        "name": "Mediah Northern Highlands",
+        "materials": [
+            {
+                "id": 4608,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 400,
+        "averageYield": 22,
+        "distance": 2502,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/56/Mediah_Northern_Highlands.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010706",
+        "region": "Mediah"
+    },
+    {
+        "name": "Mediah Northern Highlands",
+        "materials": [
+            {
+                "id": 4602,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 400,
+        "averageYield": 22,
+        "distance": 0,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/56/Mediah_Northern_Highlands.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010706",
+        "region": "Mediah"
+    },
+    {
+        "name": "Kamasylve Temple",
+        "materials": [
+            {
+                "id": 5412,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 300,
+        "averageYield": 16,
+        "distance": 1226,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c6/Kamasylve_Temple.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180824102830",
+        "region": "Mediah"
+    },
+    {
+        "name": "Kamasylve Temple",
+        "materials": [
+            {
+                "id": 5802,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 1215,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c6/Kamasylve_Temple.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180824102830",
+        "region": "Mediah"
+    },
+    {
+        "name": "Ancient Fissure",
+        "materials": [
+            {
+                "id": 4005,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 400,
+        "averageYield": 16,
+        "distance": 1857,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/43/Ancient_Fissure.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181108131844",
+        "region": "Mediah"
+    },
+    {
+        "name": "Ancient Fissure",
+        "materials": [
+            {
+                "id": 5405,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 200,
+        "averageYield": 20,
+        "distance": 20,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/43/Ancient_Fissure.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181108131844",
+        "region": "Mediah"
+    },
+    {
+        "name": "Elric Shrine",
+        "materials": [
+            {
+                "id": 5411,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 300,
+        "averageYield": 20,
+        "distance": 1862,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/88/Elric_Shrine_%282%29.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010555",
+        "region": "Mediah"
+    },
+    {
+        "name": "Elric Shrine",
+        "materials": [
+            {
+                "id": 4608,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 1000,
+        "averageYield": 20,
+        "distance": 1820,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/88/Elric_Shrine_%282%29.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010555",
+        "region": "Mediah"
+    },
+    {
+        "name": "Shuri Farm",
+        "materials": [
+            {
+                "id": 7004,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 400,
+        "averageYield": 21,
+        "distance": 1269,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/08/Shuri_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164830",
+        "region": "Mediah"
+    },
+    {
+        "name": "Ahto Farm",
+        "materials": [
+            {
+                "id": 5801,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 400,
+        "averageYield": 24,
+        "distance": 702,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/85/Ahto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164831",
+        "region": "Mediah"
+    },
+    {
+        "name": "Omar Lava Cave",
+        "materials": [
+            {
+                "id": 4005,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 1000,
+        "averageYield": 16,
+        "distance": 1011,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2a/Omar_Lava_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164832",
+        "region": "Mediah"
+    },
+    {
+        "name": "Omar Lava Cave",
+        "materials": [
+            {
+                "id": 4007,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 400,
+        "averageYield": 22,
+        "distance": 1042,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2a/Omar_Lava_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164832",
+        "region": "Mediah"
+    },
+    {
+        "name": "Kasula Farm",
+        "materials": [
+            {
+                "id": 5801,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 400,
+        "averageYield": 24,
+        "distance": 285,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8e/Kasula_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310132644",
+        "region": "Mediah"
+    },
+    {
+        "name": "Abandoned Iron Mine",
+        "materials": [
+            {
+                "id": 4005,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 1000,
+        "averageYield": 16,
+        "distance": 1113,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/22/Abandoned_Iron_Mine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164834",
+        "region": "Mediah"
+    },
+    {
+        "name": "Abandoned Iron Mine",
+        "materials": [
+            {
+                "id": 4001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 400,
+        "averageYield": 20,
+        "distance": 1113,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/22/Abandoned_Iron_Mine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164834",
+        "region": "Mediah"
+    },
+    {
+        "name": "Wale Farm",
+        "materials": [
+            {
+                "id": 7309,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 200,
+        "averageYield": 9,
+        "distance": 257,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/ca/Wale_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126061612",
+        "region": "Balenos"
+    },
+    {
+        "name": "Casta Farm",
+        "materials": [
+            {
+                "id": 7307,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 400,
+        "averageYield": 9,
+        "distance": 220,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2a/Casta_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181006062758",
+        "region": "Balenos"
+    },
+    {
+        "name": "Altas Farmland",
+        "materials": [
+            {
+                "id": 7022,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 200,
+        "averageYield": 40,
+        "distance": 382,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d5/Altas_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091200",
+        "region": "Valencia"
+    },
+    {
+        "name": "Altas Farmland",
+        "materials": [
+            {
+                "id": 7022,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 200,
+        "averageYield": 40,
+        "distance": 365,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d5/Altas_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091200",
+        "region": "Valencia"
+    },
+    {
+        "name": "Erdal Farm",
+        "materials": [
+            {
+                "id": 7016,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 200,
+        "averageYield": 40,
+        "distance": 636,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/ba/Erdal_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132631",
+        "region": "Valencia"
+    },
+    {
+        "name": "Erdal Farm",
+        "materials": [
+            {
+                "id": 5803,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 200,
+        "averageYield": 40,
+        "distance": 594,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/ba/Erdal_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132631",
+        "region": "Valencia"
+    },
+    {
+        "name": "Valencia Plantation",
+        "materials": [
+            {
+                "id": 7017,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 200,
+        "averageYield": 46,
+        "distance": 46,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Valencia_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212520",
+        "region": "Valencia"
+    },
+    {
+        "name": "Valencia Plantation",
+        "materials": [
+            {
+                "id": 7016,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 200,
+        "averageYield": 40,
+        "distance": 522,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Valencia_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212520",
+        "region": "Valencia"
+    },
+    {
+        "name": "Valencia Plantation",
+        "materials": [
+            {
+                "id": 7021,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 200,
+        "averageYield": 40,
+        "distance": 526,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Valencia_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212520",
+        "region": "Valencia"
+    },
+    {
+        "name": "Fohalam Farm",
+        "materials": [
+            {
+                "id": 7022,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 200,
+        "averageYield": 40,
+        "distance": 630,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d0/Fohalam_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212513",
+        "region": "Valencia"
+    },
+    {
+        "name": "Fohalam Farm",
+        "materials": [
+            {
+                "id": 7022,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 200,
+        "averageYield": 40,
+        "distance": 699,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d0/Fohalam_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212513",
+        "region": "Valencia"
+    },
+    {
+        "name": "Veteran's Canyon",
+        "materials": [
+            {
+                "id": 4611,
+                "ratio": 1
+            }
+        ],
+        "contribution": 6,
+        "workload": 200,
+        "averageYield": 38,
+        "distance": 12,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/4c/Veteran%27s_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102213",
+        "region": "Valencia"
+    },
+    {
+        "name": "Gorgo Rock Belt",
+        "materials": [
+            {
+                "id": 7017,
+                "ratio": 1
+            }
+        ],
+        "contribution": 1,
+        "workload": 200,
+        "averageYield": 46,
+        "distance": 46,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/19/Gorgo_Rock_Belt.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040706",
+        "region": "Valencia"
+    },
+    {
+        "name": "Gorgo Rock Belt",
+        "materials": [
+            {
+                "id": 4611,
+                "ratio": 1
+            }
+        ],
+        "contribution": 6,
+        "workload": 200,
+        "averageYield": 38,
+        "distance": 12,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/19/Gorgo_Rock_Belt.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040706",
+        "region": "Valencia"
+    },
+    {
+        "name": "Kmach Canyon",
+        "materials": [
+            {
+                "id": 4008,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 200,
+        "averageYield": 11,
+        "distance": 2858,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Kmach_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091204",
+        "region": "Valencia"
+    },
+    {
+        "name": "Kmach Canyon",
+        "materials": [
+            {
+                "id": 7019,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 150,
+        "averageYield": 40,
+        "distance": 2854,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Kmach_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091204",
+        "region": "Valencia"
+    },
+    {
+        "name": "Iris Canyon",
+        "materials": [
+            {
+                "id": 7020,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 150,
+        "averageYield": 40,
+        "distance": 2817,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8a/Iris_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091204",
+        "region": "Valencia"
+    },
+    {
+        "name": "Iris Canyon",
+        "materials": [
+            {
+                "id": 4611,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 200,
+        "averageYield": 38,
+        "distance": 2807,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8a/Iris_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091204",
+        "region": "Valencia"
+    },
+    {
+        "name": "Bambu Valley",
+        "materials": [
+            {
+                "id": 7021,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 150,
+        "averageYield": 40,
+        "distance": 2094,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/64/Bambu_Valley.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091202",
+        "region": "Valencia"
+    },
+    {
+        "name": "Shakatu Farmland",
+        "materials": [
+            {
+                "id": 7018,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 202,
+        "averageYield": 40,
+        "distance": 537,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/18/Shakatu_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040713",
+        "region": "Valencia"
+    },
+    {
+        "name": "Shakatu Farmland",
+        "materials": [
+            {
+                "id": 7018,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 202,
+        "averageYield": 40,
+        "distance": 591,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/18/Shakatu_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040713",
+        "region": "Valencia"
+    },
+    {
+        "name": "Shakatu Farmland",
+        "materials": [
+            {
+                "id": 7019,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 202,
+        "averageYield": 40,
+        "distance": 589,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/18/Shakatu_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040713",
+        "region": "Valencia"
+    },
+    {
+        "name": "Capotia",
+        "materials": [
+            {
+                "id": 7022,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 222,
+        "averageYield": 40,
+        "distance": 468,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6c/Capotia.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102210",
+        "region": "Valencia"
+    },
+    {
+        "name": "Capotia",
+        "materials": [
+            {
+                "id": 4003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 310,
+        "averageYield": 32,
+        "distance": 423,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6c/Capotia.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102210",
+        "region": "Valencia"
+    },
+    {
+        "name": "Pilgrim's Haven",
+        "materials": [
+            {
+                "id": 4001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 6,
+        "workload": 310,
+        "averageYield": 32,
+        "distance": 2502,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/84/Pilgrim%27s_Haven.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212515",
+        "region": "Valencia"
+    },
+    {
+        "name": "Bazaar Farmland",
+        "materials": [
+            {
+                "id": 7020,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 310,
+        "averageYield": 40,
+        "distance": 806,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/9e/Bazaar_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040705",
+        "region": "Valencia"
+    },
+    {
+        "name": "Bazaar Farmland",
+        "materials": [
+            {
+                "id": 7022,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 310,
+        "averageYield": 40,
+        "distance": 786,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/9e/Bazaar_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040705",
+        "region": "Valencia"
+    },
+    {
+        "name": "Crescent Mountains",
+        "materials": [
+            {
+                "id": 4001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 206,
+        "averageYield": 32,
+        "distance": 3814,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/b5/Crescent_Mountains.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132629",
+        "region": "Valencia"
+    },
+    {
+        "name": "Crescent Mountains",
+        "materials": [
+            {
+                "id": 4001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 206,
+        "averageYield": 32,
+        "distance": 32,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/b5/Crescent_Mountains.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132629",
+        "region": "Valencia"
+    },
+    {
+        "name": "Crescent Shrine",
+        "materials": [
+            {
+                "id": 7016,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 154,
+        "averageYield": 40,
+        "distance": 3875,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ea/Crescent_Shrine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132630",
+        "region": "Valencia"
+    },
+    {
+        "name": "Crescent Shrine",
+        "materials": [
+            {
+                "id": 4009,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 206,
+        "averageYield": 12,
+        "distance": 3807,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ea/Crescent_Shrine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132630",
+        "region": "Valencia"
+    },
+    {
+        "name": "Titium Valley",
+        "materials": [
+            {
+                "id": 7022,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 150,
+        "averageYield": 40,
+        "distance": 7025,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/41/Titium_Valley.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132632",
+        "region": "Valencia"
+    },
+    {
+        "name": "Titium Valley",
+        "materials": [
+            {
+                "id": 4610,
+                "ratio": 1
+            }
+        ],
+        "contribution": 9,
+        "workload": 150,
+        "averageYield": 38,
+        "distance": 6873,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/41/Titium_Valley.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132632",
+        "region": "Valencia"
+    },
+    {
+        "name": "Kunid's Vacation Spot",
+        "materials": [
+            {
+                "id": 6657,
+                "ratio": 1
+            }
+        ],
+        "contribution": 5,
+        "workload": 152,
+        "averageYield": 40,
+        "distance": 2200,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Kunid%27s_Shelter.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040707",
+        "region": "Valencia"
+    },
+    {
+        "name": "Leical Falls",
+        "materials": [
+            {
+                "id": 6657,
+                "ratio": 1
+            }
+        ],
+        "contribution": 8,
+        "workload": 152,
+        "averageYield": 40,
+        "distance": 2303,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/96/Leical_Falls.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040708",
+        "region": "Valencia"
+    },
+    {
+        "name": "Pujiya Canyon",
+        "materials": [
+            {
+                "id": 4003,
+                "ratio": 1
+            }
+        ],
+        "contribution": 7,
+        "workload": 204,
+        "averageYield": 32,
+        "distance": 14,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/71/Pujiya_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040709",
+        "region": "Valencia"
+    },
+    {
+        "name": "Bashim Base",
+        "materials": [
+            {
+                "id": 4001,
+                "ratio": 1
+            }
+        ],
+        "contribution": 7,
+        "workload": 204,
+        "averageYield": 32,
+        "distance": 14,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/69/Bashim_Base.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040704",
+        "region": "Valencia"
+    },
+    {
+        "name": "Areha Palm Forest",
+        "materials": [
+            {
+                "id": 4610,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 200,
+        "averageYield": 38,
+        "distance": 682,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Areha_Palm_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102209",
+        "region": "Valencia"
+    },
+    {
+        "name": "Areha Palm Forest",
+        "materials": [
+            {
+                "id": 4610,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 200,
+        "averageYield": 38,
+        "distance": 786,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Areha_Palm_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102209",
+        "region": "Valencia"
+    },
+    {
+        "name": "Gavinya Volcano Zone",
+        "materials": [
+            {
+                "id": 4008,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 200,
+        "averageYield": 11,
+        "distance": 4747,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/55/Gavinya_Volcano_Zone.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113148",
+        "region": "Valencia"
+    },
+    {
+        "name": "Gavinya Volcano Zone",
+        "materials": [
+            {
+                "id": 4009,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 200,
+        "averageYield": 11,
+        "distance": 4615,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/55/Gavinya_Volcano_Zone.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113148",
+        "region": "Valencia"
+    },
+    {
+        "name": "Gavinya Great Crater",
+        "materials": [
+            {
+                "id": 4009,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 200,
+        "averageYield": 11,
+        "distance": 15,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/08/Gavinya_Great_Crater.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113148",
+        "region": "Valencia"
+    },
+    {
+        "name": "Gavinya Coastal Cliff",
+        "materials": [
+            {
+                "id": 4008,
+                "ratio": 1
+            }
+        ],
+        "contribution": 3,
+        "workload": 200,
+        "averageYield": 11,
+        "distance": 5302,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8c/Gavinya_Coastal_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113147",
+        "region": "Valencia"
+    },
+    {
+        "name": "Gavinya Coastal Cliff",
+        "materials": [
+            {
+                "id": 5401,
+                "ratio": 1
+            }
+        ],
+        "contribution": 2,
+        "workload": 75,
+        "averageYield": 18,
+        "distance": 5168,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8c/Gavinya_Coastal_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113147",
+        "region": "Valencia"
+    },
+    {
+        "name": "Ivero Cliff",
+        "materials": [
+            {
+                "id": 5408,
+                "ratio": 1
+            }
+        ],
+        "contribution": 4,
+        "workload": 75,
+        "averageYield": 11,
+        "distance": 4957,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/51/Ivero_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113149",
+        "region": "Valencia"
+    },
+    {
+        "name": "Khalk Canyon",
+        "materials": [
+            {
+                "id": 4005,
+                "ratio": 1
+            }
+        ],
+        "contribution": 11,
+        "workload": 280,
+        "averageYield": 18,
+        "distance": 2309,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2f/Khalk_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181116132115",
+        "region": "Drieghan"
+    },
+    {
+        "name": "Fountain of Origin",
+        "materials": [
+            {
+                "id": 5957,
+                "ratio": 1
+            }
+        ],
+        "contribution": 10,
+        "workload": 1200,
+        "averageYield": 2,
+        "distance": 2278,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/65/Fountain_of_Origin.png/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180710214057",
+        "region": "Drieghan"
+    },
+    {
+        "name": "Dormann Lumber Camp",
+        "materials": [
+            {
+                "id": 4606,
+                "ratio": 1
+            }
+        ],
+        "contribution": 10,
+        "workload": 280,
+        "averageYield": 36,
+        "distance": 2071,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/34/Dormann_Lumber_Camp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181118134424",
+        "region": "Drieghan"
+    },
+    {
+        "name": "Khimut Lumber Camp",
+        "materials": [
+            {
+                "id": 4604,
+                "ratio": 1
+            }
+        ],
+        "contribution": 6,
+        "workload": 280,
+        "averageYield": 36,
+        "distance": 4051,
+        "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5d/Khimut_Lumber_Camp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181118132241",
+        "region": "Drieghan"
+    }
+]
