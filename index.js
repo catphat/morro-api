@@ -1,11 +1,3 @@
-const credentials = require("./credentials.json");
-
-const MARKET = require("./custom_modules/marketplace");
-//Param is anti captcha key
-const market = new MARKET.Market();
-
-const { Item } = require("calpheonjs");
-
 const fs = require("fs");
 const moment = require("moment");
 
@@ -38,6 +30,16 @@ app.use(
   })
 );
 //End CORS Setup
+
+const credentials = require("./credentials.json");
+
+const MARKET = require("./custom_modules/marketplace");
+const market = new MARKET.Market();
+
+const { Item } = require("./custom_modules/calpheonjs/dist");
+
+const CACHE_LIFETIME_MIN = 60;
+const MARKETPLACE_REQUEST_DELAY_MS = 50;
 
 //Import static json data
 const groups = require("./resources/recipes/groups.json");
@@ -87,10 +89,14 @@ app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
 //Start writing to cache
 async function dataToCache() {
-  whitelist.forEach((x, i) => setTimeout(() => addToCache(x), i * 50));
+  //Check cach for each item on load once
+  whitelist.forEach((x, i) => setTimeout(() => addToCache(x), i * MARKETPLACE_REQUEST_DELAY_MS));
+  console.log('Finished initial cache setup');
+  //After set time, check state of cache for each item again
+  //Time is cache expire plus 3 seconds spare
   setInterval(() => {
-    whitelist.forEach((x, i) => setTimeout(() => addToCache(x), i * 50));
-  }, 1000 * 60 * 5);
+    whitelist.forEach((x, i) => setTimeout(() => addToCache(x), i * MARKETPLACE_REQUEST_DELAY_MS));
+  }, CACHE_LIFETIME_MIN * 60000 + 3000);
 }
 
 function getFromCache(id) {
@@ -103,14 +109,20 @@ async function addToCache(id) {
   const index = cache.findIndex((x) => x.id == id);
 
   if (index == -1) {
+    //Item is not in cache
     const codexInfo = await getItemFromCodex(id);
     const marketPrice = await market.fetchItemById(id).then((x) => x[0]);
     cache.push({ id, marketPrice, codexInfo, updated: new Date() });
-  } else if (after(1, cache[index].updated)) {
+  } else if (after(CACHE_LIFETIME_MIN, cache[index].updated)) {
+    //Item is in cache, but updated longer than an hour ago
     cache[index].updated = new Date();
-    const codexInfo = await getItemFromCodex(id);
+    //Codex info needs no refreshing if still in cache
+    let codex = cache[index].codexInfo;
+    if(!codex) {
+      codex =  await getItemFromCodex(id);
+    }
     const marketPrice = await market.fetchItemById(id).then((x) => x[0]);
-    cache[index] = { id, marketPrice, codexInfo, updated: new Date() };
+    cache[index] = { id, marketPrice, codex, updated: new Date() };
   }
 
   fs.writeFileSync("./resources/cache.json", JSON.stringify(cache), "utf8");
@@ -132,8 +144,8 @@ function getGroup(id) {
   return groups[index];
 }
 
-function after(hours, date) {
-  return moment(date).isBefore(moment().subtract(hours, "hours"));
+function after(minutes, date) {
+  return moment(date).isBefore(moment().subtract(minutes, "minutes"));
 }
 
 dataToCache();
