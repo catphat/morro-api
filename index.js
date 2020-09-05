@@ -107,11 +107,24 @@ function getFromCache(id) {
 
 async function addToCache(id) {
   const index = cache.findIndex((x) => x.id == id);
+  let error = false;
+  let codexInfo;
+  let marketPrice;
 
   if (index == -1) {
     //Item is not in cache
-    const codexInfo = await getItemFromCodex(id);
-    const marketPrice = await market.fetchItemById(id).then((x) => x[0]);
+    try {
+      codexInfo = await getItemFromCodex(id);  
+    } catch (error) {
+      console.log(error);
+      error = true;
+    }
+    try {
+      marketPrice = await market.fetchItemById(id).then((x) => x[0]);  
+    } catch (error) {
+      console.log(error);
+      error = true;
+    }
     cache.push({ id, marketPrice, codexInfo, updated: new Date() });
   } else if (after(CACHE_LIFETIME_MIN, cache[index].updated)) {
     //Item is in cache, but updated longer than an hour ago
@@ -121,11 +134,16 @@ async function addToCache(id) {
     if(!codex) {
       codex =  await getItemFromCodex(id);
     }
-    const marketPrice = await market.fetchItemById(id).then((x) => x[0]);
-    cache[index] = { id, marketPrice, codex, updated: new Date() };
+    try {
+      const marketPrice = await market.fetchItemById(id).then((x) => x[0]);
+      cache[index] = { id, marketPrice, codex, updated: new Date() };
+    } catch (error) {
+      error = true;
+      console.log(error);
+    }
+    
   }
-
-  fs.writeFileSync("./resources/cache.json", JSON.stringify(cache), "utf8");
+  if(!error) fs.writeFileSync("./resources/cache.json", JSON.stringify(cache), "utf8");
 }
 
 async function getItemFromCodex(id) {
