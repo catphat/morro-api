@@ -1,7 +1,7 @@
 const fs = require("fs");
 const moment = require("moment");
-
 const express = require("express");
+const { createLogger, format, transports } = require('winston');
 var cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 5100;
@@ -10,8 +10,9 @@ const PORT = process.env.PORT || 5100;
 //Start CORS Setup
 //--------------------------------------------- 
 var allowedOrigins = [
-  "http://localhost:80",
+  "http://localhost:3000",
   "https://morrolantv-dev.herokuapp.com",
+  "https://eloquent-keller-9336f4.netlify.app"
 ];
 app.use(
   cors({
@@ -30,8 +31,48 @@ app.use(
   })
 );
 //End CORS Setup
+//--------------------------------------------- 
 
-const credentials = require("./credentials.json");
+
+
+//--------------------------------------------- 
+//Start LOG Setup
+//--------------------------------------------- 
+const logger = createLogger({
+  level: 'info',
+  format: format.combine(
+    format.timestamp({
+      format: 'YYYY-MM-DD HH:mm:ss'
+    }),
+    format.errors({ stack: true }),
+    format.splat(),
+    format.json()
+  ),
+  defaultMeta: { service: 'morro-api' },
+  transports: [
+    //
+    // - Write to all logs with level `info` and below to `quick-start-combined.log`.
+    // - Write all logs error (and below) to `quick-start-error.log`.
+    //
+    new transports.File({ filename: './log/api-error.log', level: 'error' }),
+    new transports.File({ filename: './log/api-info.log' })
+  ]
+});
+
+//
+// If we're not in production then **ALSO** log to the `console`
+// with the colorized simple format.
+//
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new transports.Console({
+    format: format.combine(
+      format.colorize(),
+      format.simple()
+    )
+  }));
+}
+//End LOG Setup
+//--------------------------------------------- 
 
 const MARKET = require("./custom_modules/marketplace");
 const market = new MARKET.Market();
@@ -55,10 +96,12 @@ const cache = require("./resources/cache.json");
 app.get("/combinations", (req, res) => {});
 
 app.get("/recipes", (req, res) => {
+  logger.log('info', 'Accessed %s - at %s', 'recepies', new Date());
   const combined = recipes.map((recipe) => {
     const materials = recipe.materials.map((material) => {
-      if (!material.group)
+      if (!material.group){
         return { quantity: material.quantity, ...getFromCache(material.id) };
+      }
       const rawGroup = getGroup(material.id);
       const group = rawGroup.items.map((item) => getFromCache(item.id));
       return { ...material, group, name: rawGroup.name };
@@ -74,6 +117,7 @@ app.get("/recipes", (req, res) => {
 });
 
 app.get("/nodes", (req, res) => {
+  logger.log('info', 'Accessed %s - at %s', 'nodes', new Date());
   const combined = nodes.map((node) => {
     const materials = node.materials.map((material) =>
       getFromCache(material.id)
@@ -91,7 +135,6 @@ app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 async function dataToCache() {
   //Check cach for each item on load once
   whitelist.forEach((x, i) => setTimeout(() => addToCache(x), i * MARKETPLACE_REQUEST_DELAY_MS));
-  console.log('Finished initial cache setup');
   //After set time, check state of cache for each item again
   //Time is cache expire plus 3 seconds spare
   setInterval(() => {
@@ -114,15 +157,17 @@ async function addToCache(id) {
   if (index == -1) {
     //Item is not in cache
     try {
+      logger.log('info', 'Get for empty cache %s - at %s', 'Codex',  new Date());
       codexInfo = await getItemFromCodex(id);  
     } catch (error) {
-      console.log(error);
+      logger.log('error', new Error('Could not get item from codex'));
       error = true;
     }
     try {
+      logger.log('info', 'Get for empty cache %s - at %s', 'Marketplace',  new Date());
       marketPrice = await market.fetchItemById(id).then((x) => x[0]);  
     } catch (error) {
-      console.log(error);
+      logger.log('error', new Error('Could not get item from marketplace'));
       error = true;
     }
     cache.push({ id, marketPrice, codexInfo, updated: new Date() });
@@ -132,14 +177,16 @@ async function addToCache(id) {
     //Codex info needs no refreshing if still in cache
     let codex = cache[index].codexInfo;
     if(!codex) {
+      logger.log('info', 'Get for existing cache %s - at %s', 'Missing Codex',  new Date());
       codex =  await getItemFromCodex(id);
     }
     try {
+      logger.log('info', 'Get for existing cache %s - at %s', 'Marketplace',  new Date());
       const marketPrice = await market.fetchItemById(id).then((x) => x[0]);
       cache[index] = { id, marketPrice, codex, updated: new Date() };
     } catch (error) {
       error = true;
-      console.log(error);
+      logger.log('error', new Error('Could not get item from marketplace for refreshing cache'));
     }
     
   }
