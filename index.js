@@ -157,14 +157,12 @@ async function addToCache(id) {
   if (index == -1) {
     //Item is not in cache
     try {
-      logger.log('info', 'Get for empty cache %s - at %s', 'Codex',  new Date());
       codexInfo = await getItemFromCodex(id);  
     } catch (error) {
       logger.log('error', new Error('Could not get item from codex'));
       error = true;
     }
     try {
-      logger.log('info', 'Get for empty cache %s - at %s', 'Marketplace',  new Date());
       marketPrice = await market.fetchItemById(id).then((x) => x[0]);  
     } catch (error) {
       logger.log('error', new Error('Could not get item from marketplace'));
