@@ -77,7 +77,7 @@ if (process.env.NODE_ENV !== 'production') {
 const MARKET = require("./custom_modules/marketplace");
 const market = new MARKET.Market();
 
-const { Item } = require("./custom_modules/calpheonjs/dist");
+const { Item } = require('bdo-scraper');
 
 const CACHE_LIFETIME_MIN = 60;
 const MARKETPLACE_REQUEST_DELAY_MS = 50;

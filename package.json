@@ -9,14 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.20.0",
+    "bdo-scraper": "^2.2.4",
+    "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
+    "events": "^3.2.0",
     "express": "^4.17.1",
     "moment": "^2.27.0",
-    "winston": "^3.3.3",
-    "axios": "^0.20.0",
-    "events": "^3.2.0",
     "qs": "^6.9.4",
-    "cheerio": "^1.0.0-rc.3"
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",
