@@ -55,7 +55,7 @@ const logger = createLogger({
     // - Write all logs error (and below) to `quick-start-error.log`.
     //
     new transports.File({ filename: './log/api-error.log', level: 'error' }),
-    new transports.File({ filename: './log/api-info.log' })
+    new transports.File({ filename: './log/api-info.log', options: { flags: 'w' } })
   ]
 });
 
