@@ -40,10 +40,8 @@ app.use(
 //--------------------------------------------- 
 
 var tp = []
-if (process.env.NODE_ENV !== 'production') {
-  tp.push(new transports.File({ filename: './log/api-error.log', level: 'error' }))
-  tp.push(new transports.File({ filename: './log/api-info.log', options: { flags: 'w' } }))
-}
+tp.push(new transports.File({ filename: './log/api-error.log', level: 'error' }))
+tp.push(new transports.File({ filename: './log/api-info.log', options: { flags: 'w' } }))
   
 
 
