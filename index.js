@@ -38,6 +38,15 @@ app.use(
 //--------------------------------------------- 
 //Start LOG Setup
 //--------------------------------------------- 
+
+var tp = []
+if (process.env.NODE_ENV !== 'production') {
+  tp.push(new transports.File({ filename: './log/api-error.log', level: 'error' }))
+  tp.push(new transports.File({ filename: './log/api-info.log', options: { flags: 'w' } }))
+}
+  
+
+
 const logger = createLogger({
   level: 'info',
   format: format.combine(
@@ -49,14 +58,7 @@ const logger = createLogger({
     format.json()
   ),
   defaultMeta: { service: 'morro-api' },
-  transports: [
-    //
-    // - Write to all logs with level `info` and below to `quick-start-combined.log`.
-    // - Write all logs error (and below) to `quick-start-error.log`.
-    //
-    new transports.File({ filename: './log/api-error.log', level: 'error' }),
-    new transports.File({ filename: './log/api-info.log', options: { flags: 'w' } })
-  ]
+  transports: tp
 });
 
 //
@@ -134,17 +136,25 @@ app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 //Start writing to cache
 async function dataToCache() {
   //Check cach for each item on load once
-  whitelist.forEach((x, i) => setTimeout(() => addToCache(x), i * MARKETPLACE_REQUEST_DELAY_MS));
-  //After set time, check state of cache for each item again
-  //Time is cache expire plus 3 seconds spare
-  setInterval(() => {
-    whitelist.forEach((x, i) => setTimeout(() => addToCache(x), i * MARKETPLACE_REQUEST_DELAY_MS));
-  }, CACHE_LIFETIME_MIN * 60000 + 3000);
+  var promises = []
+  whitelist.forEach((x, i) => {
+    promises.push(new Promise((resolve, reject) => {
+      setTimeout(async () => {
+        const done = await addToCache(x)
+        resolve(done)
+      }, i * MARKETPLACE_REQUEST_DELAY_MS);
+    }))
+  });
+  Promise.all(promises).then(() => {
+    logger.log('info', 'Initial cache done');
+  });
 }
 
-function getFromCache(id) {
+async function getFromCache(id) {
   const index = cache.findIndex((x) => x.id == id);
-  if (index == -1) return addToCache(id);
+  if (index == -1 || after(CACHE_LIFETIME_MIN, cache[index].updated)){
+    const done = await addToCache(id)
+  } 
   return cache[index];
 }
 
@@ -159,13 +169,13 @@ async function addToCache(id) {
     try {
       codexInfo = await getItemFromCodex(id);  
     } catch (error) {
-      logger.log('error', new Error('Could not get item from codex'));
+      logger.log('error', new Error('Could not get item %s from codex', id));
       error = true;
     }
     try {
       marketPrice = await market.fetchItemById(id).then((x) => x[0]);  
     } catch (error) {
-      logger.log('error', new Error('Could not get item from marketplace'));
+      logger.log('error', new Error('Could not get item %s from marketplace', id));
       error = true;
     }
     cache.push({ id, marketPrice, codexInfo, updated: new Date() });
@@ -175,11 +185,9 @@ async function addToCache(id) {
     //Codex info needs no refreshing if still in cache
     let codex = cache[index].codexInfo;
     if(!codex) {
-      logger.log('info', 'Get for existing cache %s - at %s', 'Missing Codex',  new Date());
       codex =  await getItemFromCodex(id);
     }
     try {
-      logger.log('info', 'Get for existing cache %s - at %s', 'Marketplace',  new Date());
       const marketPrice = await market.fetchItemById(id).then((x) => x[0]);
       cache[index] = { id, marketPrice, codex, updated: new Date() };
     } catch (error) {
@@ -189,14 +197,15 @@ async function addToCache(id) {
     
   }
   if(!error) fs.writeFileSync("./resources/cache.json", JSON.stringify(cache), "utf8");
+  return true;
 }
 
 async function getItemFromCodex(id) {
   const codexItem = await Item(id);
   const codex = {
-    name: codexItem.data.name,
-    icon: codexItem.data.icon,
-    prices: codexItem.data.prices,
+    name: codexItem.name,
+    icon: codexItem.icon,
+    prices: codexItem.prices
   };
   return codex;
 }
