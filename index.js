@@ -151,6 +151,12 @@ async function dataToCache() {
   });  
 }
 
+function refreshData() {
+  setInterval(() => {
+    whitelist.forEach((x, i) => setTimeout(() => addToCache(x), i * MARKETPLACE_REQUEST_DELAY_MS));
+  }, CACHE_LIFETIME_MIN * 60000 + 3000);
+}
+
 function getFromCache(id) {
   const index = cache.findIndex((x) => x.id == id);
   if (index == -1) return addToCache(id);
@@ -219,4 +225,9 @@ function after(minutes, date) {
   return moment(date).isBefore(moment().subtract(minutes, "minutes"));
 }
 
-dataToCache();
+if(process.env.NODE_ENV != "production") {
+  dataToCache();
+} else {
+  //refreshData();
+}
+
