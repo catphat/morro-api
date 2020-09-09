@@ -33,6 +33,49 @@ app.use(
 //End CORS Setup
 //--------------------------------------------- 
 
+
+
+//--------------------------------------------- 
+//Start LOG Setup
+//--------------------------------------------- 
+
+var tp = []
+if (process.env.NODE_ENV !== 'production') {
+  tp.push(new transports.File({ filename: './log/api-error.log', level: 'error' }))
+  tp.push(new transports.File({ filename: './log/api-info.log', options: { flags: 'w' } }))
+}
+  
+
+
+const logger = createLogger({
+  level: 'info',
+  format: format.combine(
+    format.timestamp({
+      format: 'YYYY-MM-DD HH:mm:ss'
+    }),
+    format.errors({ stack: true }),
+    format.splat(),
+    format.json()
+  ),
+  defaultMeta: { service: 'morro-api' },
+  transports: tp
+});
+
+//
+// If we're not in production then **ALSO** log to the `console`
+// with the colorized simple format.
+//
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new transports.Console({
+    format: format.combine(
+      format.colorize(),
+      format.simple()
+    )
+  }));
+}
+//End LOG Setup
+//--------------------------------------------- 
+
 const MARKET = require("./custom_modules/marketplace");
 const market = new MARKET.Market();
 
@@ -55,6 +98,7 @@ const cache = require("./resources/cache.json");
 app.get("/combinations", (req, res) => {});
 
 app.get("/recipes", (req, res) => {
+  logger.log('info', 'Accessed %s - at %s', 'recepies', new Date());
   const combined = recipes.map((recipe) => {
     const materials = recipe.materials.map((material) => {
       if (!material.group){
@@ -75,6 +119,7 @@ app.get("/recipes", (req, res) => {
 });
 
 app.get("/nodes", (req, res) => {
+  logger.log('info', 'Accessed %s - at %s', 'nodes', new Date());
   const combined = nodes.map((node) => {
     const materials = node.materials.map((material) =>
       getFromCache(material.id)
@@ -101,6 +146,7 @@ async function dataToCache() {
     }))
   });
   Promise.all(promises).then(() => {
+    logger.log('info', 'Initial cache done');
     setInterval(() => {
       whitelist.forEach((x, i) => setTimeout(() => addToCache(x), i * MARKETPLACE_REQUEST_DELAY_MS));
     }, CACHE_LIFETIME_MIN * 60000 + 3000);
@@ -124,13 +170,13 @@ async function addToCache(id) {
     try {
       codexInfo = await getItemFromCodex(id);  
     } catch (error) {
-  
+      logger.log('error', new Error('Could not get item %s from codex', id));
       error = true;
     }
     try {
       marketPrice = await market.fetchItemById(id).then((x) => x[0]);  
     } catch (error) {
-  
+      logger.log('error', new Error('Could not get item %s from marketplace', id));
       error = true;
     }
     cache.push({ id, marketPrice, codexInfo, updated: new Date() });
@@ -147,7 +193,7 @@ async function addToCache(id) {
       cache[index] = { id, marketPrice, codex, updated: new Date() };
     } catch (error) {
       error = true;
-    
+      logger.log('error', new Error('Could not get item from marketplace for refreshing cache'));
     }
     
   }
