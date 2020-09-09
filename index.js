@@ -147,14 +147,15 @@ async function dataToCache() {
   });
   Promise.all(promises).then(() => {
     logger.log('info', 'Initial cache done');
-  });
+    setInterval(() => {
+      whitelist.forEach((x, i) => setTimeout(() => addToCache(x), i * MARKETPLACE_REQUEST_DELAY_MS));
+    }, CACHE_LIFETIME_MIN * 60000 + 3000);
+  });  
 }
 
-async function getFromCache(id) {
+function getFromCache(id) {
   const index = cache.findIndex((x) => x.id == id);
-  if (index == -1 || after(CACHE_LIFETIME_MIN, cache[index].updated)){
-    const done = await addToCache(id)
-  } 
+  if (index == -1) return addToCache(id);
   return cache[index];
 }
 
