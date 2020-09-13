@@ -1,5 +1,6 @@
 [
     {
+        "id": 0,
         "name": "Wolf Hills",
         "materials": [
             {
@@ -15,6 +16,7 @@
         "region": "Balenos"
     },
     {
+        "id": 1,
         "name": "Loggia Farm",
         "materials": [
             {
@@ -30,6 +32,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Bartali Farm",
         "materials": [
             {
@@ -49,6 +52,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Bartali Farm",
         "materials": [
             {
@@ -64,6 +68,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Finto Farm",
         "materials": [
             {
@@ -83,6 +88,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Finto Farm",
         "materials": [
             {
@@ -98,6 +104,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Imp Cave",
         "materials": [
             {
@@ -113,6 +120,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Imp Cave",
         "materials": [
             {
@@ -128,6 +136,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Forest of Seclusion",
         "materials": [
             {
@@ -143,6 +152,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Forest of Seclusion",
         "materials": [
             {
@@ -158,6 +168,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Ancient Stone Chamber",
         "materials": [
             {
@@ -177,6 +188,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Toscani Farm",
         "materials": [
             {
@@ -192,6 +204,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Toscani Farm",
         "materials": [
             {
@@ -207,6 +220,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Balenos Forest",
         "materials": [
             {
@@ -222,6 +236,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Balenos Forest",
         "materials": [
             {
@@ -237,6 +252,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Forest of Plunder",
         "materials": [
             {
@@ -252,6 +268,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Goblin Cave",
         "materials": [
             {
@@ -267,6 +284,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Goblin Cave",
         "materials": [
             {
@@ -282,6 +300,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Ehwaz Hill",
         "materials": [
             {
@@ -297,6 +316,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Ehwaz Hill",
         "materials": [
             {
@@ -312,6 +332,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Cron Castle Site",
         "materials": [
             {
@@ -327,6 +348,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Coastal Cliff",
         "materials": [
             {
@@ -342,6 +364,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Coastal Cliff",
         "materials": [
             {
@@ -357,6 +380,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Coastal Cave",
         "materials": [
             {
@@ -372,6 +396,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Coastal Cave",
         "materials": [
             {
@@ -387,6 +412,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Northern Heidel Quarry",
         "materials": [
             {
@@ -402,6 +428,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Northern Heidel Quarry",
         "materials": [
             {
@@ -417,6 +444,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Northern Plain of Serendia",
         "materials": [
             {
@@ -432,6 +460,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Northern Plain of Serendia",
         "materials": [
             {
@@ -447,6 +476,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Lynch Farm Ruins",
         "materials": [
             {
@@ -462,6 +492,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Lynch Farm Ruins",
         "materials": [
             {
@@ -477,6 +508,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Lynch Ranch",
         "materials": [
             {
@@ -492,6 +524,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Alejandro Farm",
         "materials": [
             {
@@ -507,6 +540,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Alejandro Farm",
         "materials": [
             {
@@ -522,6 +556,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Costa Farm",
         "materials": [
             {
@@ -537,6 +572,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Costa Farm",
         "materials": [
             {
@@ -552,6 +588,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Costa Farm",
         "materials": [
             {
@@ -567,6 +604,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Northern Cienaga",
         "materials": [
             {
@@ -582,6 +620,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Glish Swamp",
         "materials": [
             {
@@ -597,6 +636,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Glish Swamp",
         "materials": [
             {
@@ -612,6 +652,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Glish Ruins",
         "materials": [
             {
@@ -627,6 +668,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Southern Cienaga",
         "materials": [
             {
@@ -642,6 +684,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Southern Cienaga",
         "materials": [
             {
@@ -657,6 +700,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Moretti Plantation",
         "materials": [
             {
@@ -672,6 +716,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Moretti Plantation",
         "materials": [
             {
@@ -687,6 +732,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Serendia Shrine",
         "materials": [
             {
@@ -702,6 +748,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Castle Ruins",
         "materials": [
             {
@@ -717,6 +764,7 @@
         "region": "Serendia"
     },
     {
+        "id": 2,
         "name": "Khuruto Cave",
         "materials": [
             {
@@ -732,6 +780,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Old Dandelion",
         "materials": [
             {
@@ -747,6 +796,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Karanda Ridge",
         "materials": [
             {
@@ -762,6 +812,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Bree Tree Ruins",
         "materials": [
             {
@@ -777,6 +828,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Bree Tree Ruins",
         "materials": [
             {
@@ -792,6 +844,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Bernianto Farm",
         "materials": [
             {
@@ -811,6 +864,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Northern Wheat Plantation",
         "materials": [
             {
@@ -826,6 +880,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Northern Wheat Plantation",
         "materials": [
             {
@@ -841,6 +896,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Northern Wheat Plantation",
         "materials": [
             {
@@ -856,6 +912,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Quint Hill",
         "materials": [
             {
@@ -871,6 +928,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Quint Hill",
         "materials": [
             {
@@ -886,6 +944,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Mansha Forest",
         "materials": [
             {
@@ -901,6 +960,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Mansha Forest",
         "materials": [
             {
@@ -920,6 +980,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Rhutum Outstation",
         "materials": [
             {
@@ -935,6 +996,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Treant Forest",
         "materials": [
             {
@@ -950,6 +1012,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Lumberjack's Rest Area",
         "materials": [
             {
@@ -965,6 +1028,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Phoniel's Cabin",
         "materials": [
             {
@@ -980,6 +1044,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Behr Riverhead",
         "materials": [
             {
@@ -995,6 +1060,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Longleaf Tree Sentry Post",
         "materials": [
             {
@@ -1010,6 +1076,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Longleaf Tree Forest",
         "materials": [
             {
@@ -1025,6 +1092,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Rhua Tree Stub",
         "materials": [
             {
@@ -1040,6 +1108,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Rhua Tree Stub",
         "materials": [
             {
@@ -1055,6 +1124,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Marie Cave",
         "materials": [
             {
@@ -1070,6 +1140,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Marie Cave",
         "materials": [
             {
@@ -1085,6 +1156,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Glutoni Cave",
         "materials": [
             {
@@ -1100,6 +1172,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Glutoni Cave",
         "materials": [
             {
@@ -1115,6 +1188,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Keplan Quarry",
         "materials": [
             {
@@ -1130,6 +1204,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Oze Pass",
         "materials": [
             {
@@ -1145,6 +1220,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Hexe Stone Wall",
         "materials": [
             {
@@ -1160,6 +1236,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Primal Giant Post",
         "materials": [
             {
@@ -1175,6 +1252,7 @@
         "region": "Calpheon"
     },
     {
+        "id": 2,
         "name": "Stonetail Wasteland",
         "materials": [
             {
@@ -1190,6 +1268,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Mediah Shore",
         "materials": [
             {
@@ -1205,6 +1284,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Mediah Northern Highlands",
         "materials": [
             {
@@ -1220,6 +1300,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Mediah Northern Highlands",
         "materials": [
             {
@@ -1235,6 +1316,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Kamasylve Temple",
         "materials": [
             {
@@ -1250,6 +1332,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Kamasylve Temple",
         "materials": [
             {
@@ -1265,6 +1348,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Ancient Fissure",
         "materials": [
             {
@@ -1280,6 +1364,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Ancient Fissure",
         "materials": [
             {
@@ -1295,6 +1380,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Elric Shrine",
         "materials": [
             {
@@ -1310,6 +1396,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Elric Shrine",
         "materials": [
             {
@@ -1325,6 +1412,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Shuri Farm",
         "materials": [
             {
@@ -1340,6 +1428,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Ahto Farm",
         "materials": [
             {
@@ -1355,6 +1444,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Omar Lava Cave",
         "materials": [
             {
@@ -1370,6 +1460,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Omar Lava Cave",
         "materials": [
             {
@@ -1385,6 +1476,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Kasula Farm",
         "materials": [
             {
@@ -1400,6 +1492,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Abandoned Iron Mine",
         "materials": [
             {
@@ -1415,6 +1508,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Abandoned Iron Mine",
         "materials": [
             {
@@ -1430,6 +1524,7 @@
         "region": "Mediah"
     },
     {
+        "id": 2,
         "name": "Wale Farm",
         "materials": [
             {
@@ -1445,6 +1540,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Casta Farm",
         "materials": [
             {
@@ -1460,6 +1556,7 @@
         "region": "Balenos"
     },
     {
+        "id": 2,
         "name": "Altas Farmland",
         "materials": [
             {
@@ -1475,6 +1572,7 @@
         "region": "Valencia"
     },
     {
+        "id": 2,
         "name": "Altas Farmland",
         "materials": [
             {
@@ -1490,6 +1588,7 @@
         "region": "Valencia"
     },
     {
+        "id": 2,
         "name": "Erdal Farm",
         "materials": [
             {
@@ -1505,6 +1604,7 @@
         "region": "Valencia"
     },
     {
+        "id": 2,
         "name": "Erdal Farm",
         "materials": [
             {
@@ -1520,6 +1620,7 @@
         "region": "Valencia"
     },
     {
+        "id": 2,
         "name": "Valencia Plantation",
         "materials": [
             {
@@ -1535,6 +1636,7 @@
         "region": "Valencia"
     },
     {
+        "id": 2,
         "name": "Valencia Plantation",
         "materials": [
             {
@@ -1550,6 +1652,7 @@
         "region": "Valencia"
     },
     {
+        "id": 2,
         "name": "Valencia Plantation",
         "materials": [
             {
@@ -1565,6 +1668,7 @@
         "region": "Valencia"
     },
     {
+        "id": 2,
         "name": "Fohalam Farm",
         "materials": [
             {
@@ -1580,6 +1684,7 @@
         "region": "Valencia"
     },
     {
+        "id": 2,
         "name": "Fohalam Farm",
         "materials": [
             {
@@ -1595,6 +1700,7 @@
         "region": "Valencia"
     },
     {
+        "id": 2,
         "name": "Veteran's Canyon",
         "materials": [
             {

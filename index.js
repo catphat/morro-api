@@ -11,7 +11,6 @@ const PORT = process.env.PORT || 5100;
 //--------------------------------------------- 
 var allowedOrigins = [
   "http://localhost:3000",
-  "https://morrolantv-dev.herokuapp.com",
   "https://eloquent-keller-9336f4.netlify.app"
 ];
 app.use(
@@ -38,10 +37,9 @@ app.use(
 //--------------------------------------------- 
 //Start LOG Setup
 //--------------------------------------------- 
-
 var tp = []
 tp.push(new transports.File({ filename: './log/api-error.log', level: 'error' }))
-tp.push(new transports.File({ filename: './log/api-info.log', options: { flags: 'w' } }))
+//tp.push(new transports.File({ filename: './log/api-info.log', options: { flags: 'w' } }))
   
 
 
@@ -128,6 +126,11 @@ app.get("/nodes", (req, res) => {
   res.json(combined);
 });
 
+app.get('/', (req, res) => {
+  res.send('Hello, Dokku!');
+});
+
+
 // Heroku basic setup
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
 
@@ -174,13 +177,13 @@ async function addToCache(id) {
     try {
       codexInfo = await getItemFromCodex(id);  
     } catch (error) {
-      logger.log('error', new Error('Could not get item %s from codex', id));
+      //logger.log('error', new Error('Could not get item %s from codex', id));
       error = true;
     }
     try {
       marketPrice = await market.fetchItemById(id).then((x) => x[0]);  
     } catch (error) {
-      logger.log('error', new Error('Could not get item %s from marketplace', id));
+      //logger.log('error', new Error('Could not get item %s from marketplace', id));
       error = true;
     }
     cache.push({ id, marketPrice, codexInfo, updated: new Date() });
@@ -197,7 +200,7 @@ async function addToCache(id) {
       cache[index] = { id, marketPrice, codex, updated: new Date() };
     } catch (error) {
       error = true;
-      logger.log('error', new Error('Could not get item from marketplace for refreshing cache'));
+      //logger.log('error', new Error('Could not get item from marketplace for refreshing cache'));
     }
     
   }
