@@ -1,0 +1,77 @@
+[
+  {
+    "id": "9019",
+    "name": "Ancient Cron Spice",
+    "price": 50000
+  },
+  {
+    "id": "9018",
+    "name": "Base Sauce",
+    "price": 40
+  },
+  {
+    "id": "9007",
+    "name": "Cooking Oil",
+    "price": 20
+  },
+  {
+    "id": "9017",
+    "name": "Cooking Wine",
+    "price": 40
+  },
+  {
+    "id": "42353",
+    "name": "Dark Beer",
+    "price": 1000
+  },
+  {
+    "id": "9016",
+    "name": "Deep Frying Oil",
+    "price": 40
+  },
+  {
+    "id": "42354",
+    "name": "High-Quality Wine",
+    "price": 200000
+  },
+  {
+    "id": "9005",
+    "name": "Leavening Agent",
+    "price": 20
+  },
+  {
+    "id": "9059",
+    "name": "Mineral Water",
+    "price": 30
+  },
+  {
+    "id": "9015",
+    "name": "Olive Oil",
+    "price": 40
+  },
+  {
+    "id": "9009",
+    "name": "Raw Sugar",
+    "price": 200
+  },
+  {
+    "id": "42352",
+    "name": "Rum",
+    "price": 100
+  },
+  {
+    "id": "9001",
+    "name": "Salt",
+    "price": 20
+  },
+  {
+    "id": "9002",
+    "name": "Sugar",
+    "price": 20
+  },
+  {
+    "id": "9008",
+    "name": "Sun-Dried Salt",
+    "price": 200
+  }
+]

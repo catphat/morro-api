@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Wolf Hills",
+    "materials": [
+      {
+        "id": 4601,
+        "ratio": 1
+      }
+    ],
+    "contribution": 1,
+    "workload": 400,
+    "averageYield": 9,
+    "distance": 340,
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6c/Wolf_Hills.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126054050",
+    "region": "Balenos"
+  },
+  {
+    "name": "Bartali Farm",
+    "materials": [
+      {
+        "id": 7921,
+        "ratio": 1
+      },
+      {
+        "id": 9064,
+        "ratio": 1
+      }
+    ],
+    "contribution": 2,
+    "workload": 400,
+    "averageYield": 18,
+    "distance": 468,
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e1/Bartali_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180823144150",
+    "region": "Balenos"
+  },
+  {
+    "name": "Bartali Farm",
+    "materials": [
+      {
+        "id": 7003,
+        "ratio": 1
+      }
+    ],
+    "contribution": 2,
+    "workload": 400,
+    "averageYield": 20,
+    "distance": 505,
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e1/Bartali_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180823144150",
+    "region": "Balenos"
+  },
+  {
+    "name": "Khimut Lumber Camp",
+    "materials": [
+      {
+        "id": 4604,
+        "ratio": 1
+      }
+    ],
+    "contribution": 6,
+    "workload": 280,
+    "averageYield": 36,
+    "distance": 4051,
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5d/Khimut_Lumber_Camp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181118132241",
+    "region": "Drieghan"
+  }
+]

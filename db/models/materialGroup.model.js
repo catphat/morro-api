@@ -3,7 +3,7 @@ const { DataTypes } = require("sequelize");
 // We export a function that defines the model.
 // This function will automatically receive as parameter the Sequelize connection object.
 module.exports = (sequelize) => {
-  sequelize.define("Node", {
+  sequelize.define("MaterialGroup", {
     // The following specification of the 'id' attribute could be omitted
     // since it is the default.
     id: {
@@ -14,24 +14,6 @@ module.exports = (sequelize) => {
     },
     name: {
       allowNull: false,
-      type: DataTypes.STRING,
-    },
-    image: {
-      type: DataTypes.STRING,
-    },
-    contribution: {
-      type: DataTypes.INTEGER,
-    },
-    workload: {
-      type: DataTypes.INTEGER,
-    },
-    averageYield: {
-      type: DataTypes.INTEGER,
-    },
-    distance: {
-      type: DataTypes.INTEGER,
-    },
-    region: {
       type: DataTypes.STRING,
     },
   });

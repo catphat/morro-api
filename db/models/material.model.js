@@ -8,17 +8,42 @@ module.exports = (sequelize) => {
     // since it is the default.
     id: {
       allowNull: false,
-      autoIncrement: true,
+      autoIncrement: false,
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    type: {
+    name: {
       allowNull: false,
       type: DataTypes.STRING,
     },
-    purchaseDate: {
+    icon: {
+      type: DataTypes.STRING,
+    },
+    priceNA: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-      type: DataTypes.DATE,
+    },
+    priceEU: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    totalTradeCountNA: {
+      type: DataTypes.BIGINT,
+    },
+    totalTradeCountEU: {
+      type: DataTypes.BIGINT,
+    },
+    countNA: {
+      type: DataTypes.INTEGER,
+    },
+    countEU: {
+      type: DataTypes.INTEGER,
+    },
+    codexBuyPrice: {
+      type: DataTypes.INTEGER,
+    },
+    codexSellPrice: {
+      type: DataTypes.INTEGER,
     },
   });
 };

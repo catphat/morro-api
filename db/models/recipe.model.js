@@ -12,13 +12,18 @@ module.exports = (sequelize) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    type: {
+    name: {
       allowNull: false,
       type: DataTypes.STRING,
     },
-    purchaseDate: {
-      allowNull: false,
-      type: DataTypes.DATE,
+    image: {
+      type: DataTypes.STRING,
+    },
+    level: {
+      type: DataTypes.STRING,
+    },
+    exp: {
+      type: DataTypes.INTEGER,
     },
   });
 };
