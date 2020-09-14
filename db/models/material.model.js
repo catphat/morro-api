@@ -21,11 +21,9 @@ module.exports = (sequelize) => {
     },
     priceNA: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
     priceEU: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
     totalTradeCountNA: {
       type: DataTypes.BIGINT,

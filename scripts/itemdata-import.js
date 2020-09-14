@@ -15,22 +15,13 @@ const whitelist = require("./itemFetchWhitelist.json");
 
 async function updateMaterials() {
   var t0 = new Date().getTime();
-
-  await Promise.all(
-    whitelist.map(async (id, index) => {
-      //Needed to prevent market from crashing
-      await marketCallDelay(index * 50);
-      await createOrUpdateMaterial(id);
-    })
-  );
-
+  await Material.sync({ force: true });
+  for (const id of whitelist) {
+    await createOrUpdateMaterial(id);
+  }
   await sequelize.close();
   var t1 = new Date().getTime();
-  console.log(`Done! It took ${t1 - t0}`);
-}
-
-function marketCallDelay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+  console.log(`Done! It took ${(t1 - t0) / 1000 / 60} minutes`);
 }
 
 async function createOrUpdateMaterial(id) {
@@ -44,13 +35,13 @@ async function createOrUpdateMaterial(id) {
         id: id,
         name: codex.name,
         icon: codex.icon,
-        priceNA: market.pricePerOne,
-        priceEU: market.pricePerOne,
-        totalTradeCountNA: market.totalTradeCount,
-        totalTradeCountEU: market.totalTradeCount,
-        countNA: market.count,
-        countEU: market.count,
-        odexBuyPrice: codex.prices.buy
+        priceNA: market ? market.pricePerOne : null,
+        priceEU: market ? market.pricePerOne : null,
+        totalTradeCountNA: market ? market.totalTradeCount : null,
+        totalTradeCountEU: market ? market.totalTradeCount : null,
+        countNA: market ? market.count : null,
+        countEU: market ? market.count : null,
+        codexBuyPrice: codex.prices.buy
           ? parseInt(codex.prices.buy.replace(/,/g, ""))
           : 0,
         codexSellPrice: codex.prices.sell
@@ -77,7 +68,7 @@ async function fetchMarketInfo(id) {
     const marketPrice = await market.fetchItemById(id).then((x) => x[0]);
     return marketPrice;
   } catch (error) {
-    throw new Error(error);
+    console.log(error);
   }
 }
 
@@ -91,7 +82,7 @@ async function getItemFromCodex(id) {
     };
     return codex;
   } catch (error) {
-    throw new Error(error);
+    console.log(error);
   }
 }
 
