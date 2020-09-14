@@ -8,7 +8,6 @@ module.exports = (sequelize) => {
     // since it is the default.
     id: {
       allowNull: false,
-      autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
@@ -23,7 +22,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
     exp: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
   });
 };

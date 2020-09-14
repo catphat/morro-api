@@ -1,7 +1,8 @@
 function createAssociations(sequelize) {
-  const { Node, Material } = sequelize.models;
-  Node.belongsToMany(Material, { through: "NodeMaterials" });
-  Material.belongsToMany(Node, { through: "NodeMaterials" });
+  const { User, UserNode, Node } = sequelize.models;
+  UserNode.belongsTo(User);
+  UserNode.hasOne(Node);
+  User.hasMany(UserNode);
 }
 
 module.exports = { createAssociations };

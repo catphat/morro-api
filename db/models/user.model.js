@@ -12,13 +12,9 @@ module.exports = (sequelize) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    type: {
+    username: {
       allowNull: false,
       type: DataTypes.STRING,
-    },
-    purchaseDate: {
-      allowNull: false,
-      type: DataTypes.DATE,
     },
   });
 };

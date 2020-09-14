@@ -6,7 +6,7 @@ const { Item } = require("bdo-scraper");
 const MARKET = require("../custom_modules/marketplace");
 const market = new MARKET.Market();
 //Items to get scrape and market data for
-const whitelist = require("./itemFetchWhitelist.json");
+const whitelist = require("./data/itemFetchWhitelist.json");
 
 //TODO: Turn into cron job for 30min, only update marketPrices
 //This script is fetching item data from both codex and marketplace.
@@ -15,13 +15,15 @@ const whitelist = require("./itemFetchWhitelist.json");
 
 async function updateMaterials() {
   var t0 = new Date().getTime();
-  await Material.sync({ force: true });
+  await Material.sync({ force: true, match: /-dev$/ });
   for (const id of whitelist) {
     await createOrUpdateMaterial(id);
   }
   await sequelize.close();
   var t1 = new Date().getTime();
-  console.log(`Done! It took ${(t1 - t0) / 1000 / 60} minutes`);
+  console.log(
+    `Refresh item data done! It took ${(t1 - t0) / 1000 / 60} minutes`
+  );
 }
 
 async function createOrUpdateMaterial(id) {
