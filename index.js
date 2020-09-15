@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const favicon = require("serve-favicon");
 const cors = require("cors");
 
 const config = require("./config");
@@ -8,6 +9,7 @@ const config = require("./config");
 const isProduction = config.ENV === "production";
 
 const app = express();
+app.use(favicon(__dirname + "/public/images/favicon.ico"));
 
 //---------------------------------------------
 //Start CORS Setup
