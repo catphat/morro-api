@@ -4,7 +4,7 @@ router.get("/", (req, res) => {
   res.send("Hello, from morrolan.tv api. Have a good day!");
 });
 
-app.get("/favicon.ico", function (req, res) {
+router.get("/favicon.ico", (req, res) => {
   res.sendStatus(204);
 });
 
