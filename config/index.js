@@ -8,6 +8,7 @@ const config = {
   MARKETPLACE_REQUEST_DELAY_MS: 50,
   allowedOrigins: [
     "http://localhost:3000",
+    "http://localhost:8888",
     "https://eloquent-keller-9336f4.netlify.app",
   ],
 };

@@ -7,37 +7,29 @@ const { Node, User, UserNode } = sequelize.models;
 //After this the materials table will be set
 //Run this script before importing other game data, to set associations!
 
-async function createUser(node, index) {
+async function createUser() {
   try {
     await User.sync({ force: true });
     await User.create({
-      id: index,
-      name: node.name,
-      image: node.image,
-      contribution: node.contribution,
-      workload: node.workload,
-      averageYield: node.averageYield,
-      distance: node.distance,
-      region: node.region,
+      username: "testuser",
     });
   } catch (error) {
     console.log(error);
   }
 }
 
-async function createUserNode(node, index) {
+async function createUserNode() {
   try {
+    const user = await User.findOne({ where: { username: "testuser" } });
     await UserNode.sync({ force: true });
-    await UserNode.create({
-      id: index,
-      name: node.name,
-      image: node.image,
-      contribution: node.contribution,
-      workload: node.workload,
-      averageYield: node.averageYield,
-      distance: node.distance,
-      region: node.region,
+    const usernode = await UserNode.create({
+      contribution: 2,
+      workload: 50,
+      averageYield: 100,
+      workspeed: 0,
+      NodeId: 1,
     });
+    await user.addUserNode(usernode);
   } catch (error) {
     console.log(error);
   }

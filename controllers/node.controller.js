@@ -1,17 +1,13 @@
-const { models } = require("../db");
+const sequelize = require("../db");
+const { Node, Material } = sequelize.models;
 
 async function getAll(req, res) {
-  res.status(200).json({ nodes: "Hello from nodes" });
-}
-
-/*const combined = nodes.map((node) => {
-    const materials = node.materials.map((material) =>
-      getFromCache(material.id)
-    );
-    return { ...node, materials };
+  const nodes = await Node.findAll({
+    where: { id: 1 },
+    include: [{ model: Material, through: { attributes: [] } }],
   });
-
-  res.json(combined);*/
+  res.status(200).json(nodes);
+}
 
 module.exports = {
   getAll,
