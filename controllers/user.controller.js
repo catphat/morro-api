@@ -1,3 +1,4 @@
+const { use } = require("passport");
 const sequelize = require("../db");
 const { Node, Material, UserNode, User } = sequelize.models;
 
@@ -10,21 +11,31 @@ async function getInfo(req, res) {
 }
 
 async function getNodesForUser(req, res) {
-  const userId = req.user["https://api.morrolan.tv/email"];
-  const nodes = await UserNode.findAll({
-    where: { UserId: userId },
-    include: [
-      {
-        model: Node,
-        through: { attributes: [] },
-        include: [{ model: Material, through: { attributes: [] } }],
-      },
-    ],
-  });
-  if (!nodes) {
+  if (req.user) {
+    const userId = req.user["https://api.morrolan.tv/email"];
+    //const userId = req.user["https://api.morrolan.tv/email"];
+    const nodes = await Node.findAll({
+      include: [{ model: Material, through: { attributes: [] } }],
+    });
+    for (const index of nodes.keys()) {
+      const usernode = await UserNode.findOne({
+        where: { UserUsername: userId, nodeId: nodes[index].id },
+        attributes: ["contribution", "workload", "averageYield", "workspeed"],
+      });
+      if (usernode) {
+        nodes[index].contribution = usernode.contribution;
+        nodes[index].workload = usernode.workload;
+        nodes[index].averageYield = usernode.averageYield;
+        nodes[index].workspeed = usernode.workspeed;
+      }
+    }
+    if (!nodes) {
+      return res.sendStatus(404);
+    }
+    res.status(200).json(nodes);
+  } else {
     return res.sendStatus(401);
   }
-  res.status(200).json(nodes);
 }
 
 async function saveUserNodes(req, res) {

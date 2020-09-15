@@ -1,7 +1,7 @@
 var router = require("express").Router();
 
 router.get("/", (req, res) => {
-  res.send("Hello, Dokku!");
+  res.send("Hello, from morrolan.tv api. Have a good day!");
 });
 
 router.use("/nodes", require("./nodes.route"));

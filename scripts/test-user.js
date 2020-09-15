@@ -26,11 +26,11 @@ async function createUserNode() {
     });
     await UserNode.sync({ force: true });
     const usernode = await UserNode.create({
-      contribution: 2,
-      workload: 50,
-      averageYield: 100,
-      workspeed: 0,
-      NodeId: 1,
+      contribution: 50,
+      workload: 60,
+      averageYield: 70,
+      workspeed: 80,
+      nodeId: 1,
     });
     await user.addUserNode(usernode);
   } catch (error) {

@@ -9,25 +9,17 @@ const isProduction = config.ENV === "production";
 
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-//---------------------------------------------
-//Setup all routes
-//---------------------------------------------
-app.use(require("./routes"));
-//---------------------------------------------
-
 //---------------------------------------------
 //Start CORS Setup
 //---------------------------------------------
+var allowedOrigins = ["http://localhost:3000", "https://sirfilior-dev.com"];
 app.use(
   cors({
     origin: function (origin, callback) {
       // allow requests with no origin
       // (like mobile apps or curl requests)
       if (!origin) return callback(null, true);
-      if (config.allowedOrigins.indexOf(origin) === -1) {
+      if (allowedOrigins.indexOf(origin) === -1) {
         var msg =
           "The CORS policy for this site does not " +
           "allow access from the specified Origin.";
@@ -38,6 +30,15 @@ app.use(
   })
 );
 //End CORS Setup
+//---------------------------------------------
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//---------------------------------------------
+//Setup all routes
+//---------------------------------------------
+app.use(require("./routes"));
 //---------------------------------------------
 
 // development error handler
