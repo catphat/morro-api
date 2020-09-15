@@ -11,7 +11,8 @@ async function createUser() {
   try {
     await User.sync({ force: true });
     await User.create({
-      username: "testuser",
+      username: "testuser@gmail.com",
+      name: "Test User",
     });
   } catch (error) {
     console.log(error);
@@ -20,7 +21,9 @@ async function createUser() {
 
 async function createUserNode() {
   try {
-    const user = await User.findOne({ where: { username: "testuser" } });
+    const user = await User.findOne({
+      where: { username: "testuser@gmail.com" },
+    });
     await UserNode.sync({ force: true });
     const usernode = await UserNode.create({
       contribution: 2,
