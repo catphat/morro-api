@@ -1,8 +1,12 @@
 const sequelize = require("../db");
-const { Node, Material, UserNode } = sequelize.models;
+const { Node, Material, UserNode, User } = sequelize.models;
 
 async function getInfo(req, res) {
-  res.status(200).json({ message: "Hello User" });
+  const userId = req.user["https://api.morrolan.tv/email"];
+  if (!userId) {
+    return res.sendStatus(401);
+  }
+  res.status(200).json({ message: `Hello User ${userId}` });
 }
 
 async function getNodesForUser(req, res) {
@@ -17,14 +21,15 @@ async function getNodesForUser(req, res) {
       },
     ],
   });
+  if (!nodes) {
+    return res.sendStatus(401);
+  }
   res.status(200).json(nodes);
 }
 
 async function saveUserNodes(req, res) {
   const payload = req.body;
-  console.log(payload);
   const userId = req.user["https://api.morrolan.tv/email"];
-  console.log(userId);
 
   res.status(201).send(payload);
 }
