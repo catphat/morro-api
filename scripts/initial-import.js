@@ -40,6 +40,7 @@ async function createNode(node, index) {
       workload: node.workload,
       averageYield: node.averageYield,
       workspeed: 0,
+      movespeed: 0,
       distance: node.distance,
       region: node.region,
     });

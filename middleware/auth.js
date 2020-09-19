@@ -1,5 +1,6 @@
 const jwt = require("express-jwt");
 const jwks = require("jwks-rsa");
+const config = require("../config");
 
 const jwtCheck = jwt({
   secret: jwks.expressJwtSecret({
@@ -8,7 +9,7 @@ const jwtCheck = jwt({
     jwksRequestsPerMinute: 5,
     jwksUri: "https://dev-83h5hy98.us.auth0.com/.well-known/jwks.json",
   }),
-  audience: "https://api.morrolan.tv",
+  audience: config.AUTH_AUDIENCE,
   issuer: "https://dev-83h5hy98.us.auth0.com/",
   algorithms: ["RS256"],
 });

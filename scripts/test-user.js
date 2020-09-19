@@ -11,7 +11,7 @@ async function createUser() {
   try {
     await User.sync({ force: true });
     await User.create({
-      username: "testuser@gmail.com",
+      username: "iluwathar@gmail.com",
       name: "Test User",
     });
   } catch (error) {
@@ -22,13 +22,12 @@ async function createUser() {
 async function createUserNode() {
   try {
     const user = await User.findOne({
-      where: { username: "testuser@gmail.com" },
+      where: { username: "iluwathar@gmail.com" },
     });
     await UserNode.sync({ force: true });
     const usernode = await UserNode.create({
       contribution: 50,
-      workload: 60,
-      averageYield: 70,
+      movespeed: 60,
       workspeed: 80,
       nodeId: 1,
     });

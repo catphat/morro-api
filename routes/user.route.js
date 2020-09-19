@@ -5,7 +5,7 @@ const jwtCheck = require("../middleware/auth");
 
 router.get("/", jwtCheck, userController.getInfo);
 
-router.get("/userNodes", userController.getNodesForUser);
+router.get("/userNodes", jwtCheck, userController.getNodesForUser);
 
 router.post("/userNodes", jwtCheck, userController.saveUserNodes);
 

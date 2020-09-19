@@ -15,10 +15,7 @@ module.exports = (sequelize) => {
     contribution: {
       type: DataTypes.INTEGER,
     },
-    workload: {
-      type: DataTypes.FLOAT,
-    },
-    averageYield: {
+    movespeed: {
       type: DataTypes.FLOAT,
     },
     workspeed: {
