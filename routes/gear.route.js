@@ -3,10 +3,10 @@ const router = express.Router();
 const gearController = require("../controllers/gear.controller");
 const jwtCheck = require("../middleware/auth");
 
-router.get("/gear/text", jwtCheck, gearController.getGear);
+router.get("/text", gearController.getGear);
 
-router.post("/gear/text", jwtCheck, gearController.saveText);
+router.post("/text", jwtCheck, gearController.saveText);
 
-router.post("/gear/images", jwtCheck, gearController.saveImages);
+router.post("/images", jwtCheck, gearController.saveImages);
 
 module.exports = router;

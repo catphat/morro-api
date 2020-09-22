@@ -6,10 +6,8 @@ const config = {
   ENV: process.env.NODE_ENV || "development",
   CACHE_LIFETIME_MIN: 60,
   MARKETPLACE_REQUEST_DELAY_MS: 50,
-  AUTH_AUDIENCE:
-    process.env.NODE_ENV == "development"
-      ? "http://localhost:5100"
-      : "https://api.morrolan.tv",
+  GEAR_EMAIL: process.env.GEAR_EMAIL || "iluwathar@gmail.com",
+  AUTH_AUDIENCE: "https://api.morrolan.tv",
   SE_TOKEN: process.env.SE_TOKEN || "",
 };
 
