@@ -17,6 +17,7 @@ const modelDefiners = [
   require("./models/user.model"),
   require("./models/usernode.model"),
   require("./models/gear.model"),
+  require("./models/token.model"),
 ];
 
 // We define all models according to their files.

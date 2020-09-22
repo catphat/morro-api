@@ -1,9 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const favicon = require("serve-favicon");
 const cors = require("cors");
-const fs = require("fs");
-const multer = require("multer");
 
 const config = require("./config");
 //const logger = require("./log");

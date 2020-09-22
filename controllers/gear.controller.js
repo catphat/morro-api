@@ -17,15 +17,22 @@ async function saveText(req, res) {
   for (const item of collection) {
     Gear.create(item);
   }
-  res.status(200).json(collection);
+  res.status(200).end();
 }
 
-async function saveImages(req, res) {
+async function saveImages(req, res, next) {
   const userId = req.user["https://api.morrolan.tv/email"];
   if (!userId || userId != GEAR_EMAIL) {
     return res.sendStatus(401);
   }
-  res.status(200).json(nodes);
+  const files = req.files;
+  if (!files) {
+    const error = new Error("Please choose files");
+    error.httpStatusCode = 400;
+    return next(error);
+  }
+
+  res.status(200).end();
 }
 
 module.exports = {

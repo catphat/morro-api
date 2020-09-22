@@ -7,32 +7,34 @@ const {
   TWITCH_CLIENT_SECRET,
   TWITCH_USER_ID,
 } = require("../config");
+var apiClient;
 
-const token = await Token.findOne({
-  where: { id: 1 },
-});
-
-const authProvider = new RefreshableAuthProvider(
-  new StaticAuthProvider(TWITCH_CLIENT_ID, token.access),
-  {
-    TWITCH_CLIENT_SECRET,
-    refreshToken: token.refreshToken,
-    expiry:
-      token.expiryTimestamp === null
-        ? null
-        : new Date(tokenData.expiryTimestamp),
-    onRefresh: async ({ accessToken, refreshToken, expiryDate }) => {
-      const newTokenData = {
-        accessToken,
-        refreshToken,
-        expiryTimestamp: expiryDate === null ? null : expiryDate.getTime(),
-      };
-      await Token.sync({ force: true });
-      Token.create(newTokenData);
-    },
-  }
-);
-const apiClient = new ApiClient({ authProvider });
+(async function () {
+  const token = await Token.findOne({
+    where: { id: 1 },
+  });
+  const authProvider = new RefreshableAuthProvider(
+    new StaticAuthProvider(TWITCH_CLIENT_ID, token.access),
+    {
+      TWITCH_CLIENT_SECRET,
+      refreshToken: token.refreshToken,
+      expiry:
+        token.expiryTimestamp === null
+          ? null
+          : new Date(tokenData.expiryTimestamp),
+      onRefresh: async ({ accessToken, refreshToken, expiryDate }) => {
+        const newTokenData = {
+          accessToken,
+          refreshToken,
+          expiryTimestamp: expiryDate === null ? null : expiryDate.getTime(),
+        };
+        await Token.sync({ force: true });
+        await Token.create(newTokenData);
+      },
+    }
+  );
+  apiClient = new ApiClient({ authProvider });
+})();
 
 async function isLive(req, res) {
   try {
@@ -47,10 +49,10 @@ async function isLive(req, res) {
 
 async function getBits(req, res) {
   try {
-    const leaderboard = await client.helix.bits.getLeaderboard({
+    const leaderboard = await apiClient.helix.bits.getLeaderboard({
       period: "all",
     });
-    res.status(200).json({ leaderboard: leaderboard });
+    res.status(200).json({ leaderboard: leaderboard.entries });
   } catch {
     res.status(404).send();
   }
