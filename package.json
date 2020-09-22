@@ -26,6 +26,7 @@
     "qs": "^6.9.4",
     "sequelize": "^6.3.5",
     "serve-favicon": "^2.5.0",
+    "twitch": "^4.2.4",
     "winston": "^3.3.3"
   },
   "devDependencies": {}
