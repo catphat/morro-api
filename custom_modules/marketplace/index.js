@@ -1,28 +1,33 @@
 const axios = require("axios");
 const qs = require("qs");
 
-const baseUrl = 'https://marketweb-eu.blackdesertonline.com/Home';
+const baseUrl = "https://marketweb-eu.blackdesertonline.com/Home";
+const baseUrlNA = "https://marketweb-eu.blackdesertonline.com/Home";
 
 const CONFIG = {
-  headers: { 
-    'Accept': '*/*', 
-    'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25', 
-    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8', 
-    'DNT': '1', 
-    'Cookie': '__RequestVerificationToken=rMV9y4rrtmc2uAsQZCzAbkX2khHfhRiOctKmMEVYElUT-B8wzaXL68R9SLpmW0iZoYKpsuCmHSh9Zpa-G9awSNWB4eCPmIydrbRBaPjZlI01'
-  }
+  headers: {
+    Accept: "*/*",
+    "User-Agent":
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25",
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    DNT: "1",
+    Cookie:
+      "__RequestVerificationToken=rMV9y4rrtmc2uAsQZCzAbkX2khHfhRiOctKmMEVYElUT-B8wzaXL68R9SLpmW0iZoYKpsuCmHSh9Zpa-G9awSNWB4eCPmIydrbRBaPjZlI01",
+  },
 };
 
 class Market {
   constructor() {}
-  
+
   /**
    * Fetch data with axios
-   * @param {String} endpoint 
-   * @param {*} data 
+   * @param {String} endpoint
+   * @param {*} data
    */
-  fetchData(endpoint, data) {
-    return axios.post(baseUrl + endpoint, data, CONFIG).then(x => x.data);
+  fetchData(endpoint, data, region) {
+    var url = baseUrl;
+    if (region == "NA") url = baseUrlNA;
+    return axios.post(url + endpoint, data, CONFIG).then((x) => x.data);
   }
 
   /**
@@ -33,13 +38,13 @@ class Market {
   searchItem(name) {
     const endpoint = "/GetWorldMarketSearchList";
 
-      var formData = qs.stringify({
-        __RequestVerificationToken:
-          "wf0wqhOwpK4ZlGVBQS7ZAVa9oHBiru4Uq1jf4utTePHRaXMb-Cn0HhVHT8FOCR-JpQ-tuE4aLBtvFSeHs6N1Wlj9J8Xy3o3VpiLFTidlKdw1",
-        searchText: name,
-      });
+    var formData = qs.stringify({
+      __RequestVerificationToken:
+        "wf0wqhOwpK4ZlGVBQS7ZAVa9oHBiru4Uq1jf4utTePHRaXMb-Cn0HhVHT8FOCR-JpQ-tuE4aLBtvFSeHs6N1Wlj9J8Xy3o3VpiLFTidlKdw1",
+      searchText: name,
+    });
 
-      return this.fetchData(endpoint, formData).then(x => JSON.stringify(x));
+    return this.fetchData(endpoint, formData).then((x) => JSON.stringify(x));
   }
 
   /**
@@ -47,17 +52,17 @@ class Market {
    * the item on BDOCodex, and copying the last digits in the URL.
    * @param {Number|String} id - The BDOCodex ID of the item.
    */
-  fetchItemById(id) {
+  fetchItemById(id, region) {
     const endpoint = "/GetWorldMarketSubList";
 
     var formData = qs.stringify({
       __RequestVerificationToken:
         "wf0wqhOwpK4ZlGVBQS7ZAVa9oHBiru4Uq1jf4utTePHRaXMb-Cn0HhVHT8FOCR-JpQ-tuE4aLBtvFSeHs6N1Wlj9J8Xy3o3VpiLFTidlKdw1",
       mainKey: id,
-      usingCleint: 0,
+      usingClient: 0,
     });
-    
-    return this.fetchData(endpoint, formData).then(x => x.detailList);
+
+    return this.fetchData(endpoint, formData, region).then((x) => x.detailList);
   }
 }
 

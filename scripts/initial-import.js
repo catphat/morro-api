@@ -1,5 +1,6 @@
 "use strict";
 
+require("dotenv").config();
 const sequelize = require("../db");
 const {
   Node,
@@ -36,19 +37,24 @@ async function createNode(node, index) {
       id: index,
       name: node.name,
       image: node.image,
-      contribution: node.contribution,
+      contribution: node.cp,
+      contribution: node.cpAdd,
       workload: node.workload,
-      averageYield: node.averageYield,
       workspeed: 0,
       movespeed: 0,
       distance: node.distance,
       region: node.region,
     });
-    for (const material of node.materials) {
-      await NodeMaterial.create({
-        NodeId: index,
-        MaterialId: material.id,
-      });
+    for (const material of node.material) {
+      try {
+        await NodeMaterial.create({
+          NodeId: index,
+          MaterialId: material.id,
+          yield: material.yield,
+        });
+      } catch {
+        console.log(`Missing material ${id}`);
+      }
     }
   } catch (error) {
     console.log(error);

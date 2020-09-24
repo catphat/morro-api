@@ -8,6 +8,6 @@ router.use("/nodes", require("./nodes.route"));
 router.use("/recipes", require("./recipes.route"));
 router.use("/user", require("./user.route"));
 router.use("/gear", require("./gear.route"));
-//router.use("/twitch", require("./twitch.route"));
+router.use("/twitch", require("./twitch.route"));
 
 module.exports = router;

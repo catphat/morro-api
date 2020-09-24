@@ -8,6 +8,9 @@ module.exports = (sequelize) => {
       primaryKey: true,
       autoIncrement: true,
     },
+    yield: {
+      type: DataTypes.FLOAT,
+    },
   });
   Node.belongsToMany(Material, { through: NodeMaterial });
   Material.belongsToMany(Node, { through: NodeMaterial });

@@ -20,7 +20,10 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
     contribution: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.FLOAT,
+    },
+    cpAdd: {
+      type: DataTypes.FLOAT,
     },
     workload: {
       type: DataTypes.FLOAT,
@@ -29,9 +32,6 @@ module.exports = (sequelize) => {
       type: DataTypes.FLOAT,
     },
     movespeed: {
-      type: DataTypes.FLOAT,
-    },
-    averageYield: {
       type: DataTypes.FLOAT,
     },
     distance: {
