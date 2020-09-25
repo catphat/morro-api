@@ -93,4 +93,5 @@ async function getItemFromCodex(id) {
   }
 }
 
-setInterval(updateMaterials, 1000 * 60 * config.CACHE_LIFETIME_MIN);
+updateMaterials();
+//setInterval(updateMaterials, 1000 * 60 * config.CACHE_LIFETIME_MIN);

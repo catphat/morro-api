@@ -38,7 +38,7 @@ async function createNode(node, index) {
       name: node.name,
       image: node.image,
       contribution: node.cp,
-      contribution: node.cpAdd,
+      cpAdd: node.cpAdd,
       workload: node.workload,
       workspeed: 0,
       movespeed: 0,
@@ -53,10 +53,11 @@ async function createNode(node, index) {
           yield: material.yield,
         });
       } catch {
-        console.log(`Missing material ${id}`);
+        console.log(`Missing material ${material.id}`);
       }
     }
   } catch (error) {
+    console.log(node);
     console.log(error);
   }
 }

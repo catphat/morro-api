@@ -5,7 +5,7 @@ async function getAll(req, res) {
   //Enable for cache testing
   //console.log("GET NODES FROM API");
   const nodes = await Node.findAll({
-    include: [{ model: Material, through: { attributes: [] } }],
+    include: { model: Material, through: { attributes: ["yield"] } },
   });
   res.status(200).json(nodes);
 }

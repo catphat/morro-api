@@ -720,8 +720,8 @@
         "yield": 20.8
       },
       {
-        "name": "Bunch of Silver Azalea",
-        "id": "",
+        "name": "Bunch of Silver Azaleas",
+        "id": "5422",
         "yield": 0.32
       }
     ],
@@ -741,8 +741,8 @@
         "yield": 0.85
       },
       {
-        "name": "Trace of Hunting ",
-        "id": "",
+        "name": "Trace of Hunting",
+        "id": "5959",
         "yield": 1.28
       }
     ],
@@ -1635,7 +1635,7 @@
       },
       {
         "name": "Rough Black Crytal",
-        "id": "",
+        "id": "4410",
         "yield": 2.2
       }
     ],
@@ -3138,7 +3138,7 @@
     "workload": 280,
     "cp": 4,
     "cpAdd": 1,
-    "region": "Kamysylvia",
+    "region": "Kamasylvia",
     "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/64/Holo_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180925184516"
   },
   {
@@ -3159,7 +3159,7 @@
     "workload": 281,
     "cp": 5,
     "cpAdd": 0,
-    "region": "Kamysylvia",
+    "region": "Kamasylvia",
     "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c5/Lake_Flondor.JPG/revision/latest/scale-to-width-down/320?cb=20180823055037"
   },
   {
@@ -3180,7 +3180,7 @@
     "workload": 281,
     "cp": 3,
     "cpAdd": 3,
-    "region": "Kamysylvia",
+    "region": "Kamasylvia",
     "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6f/Looney_Cabin.png/revision/latest/scale-to-width-down/320?cb=20180815010732"
   },
   {
@@ -3206,7 +3206,7 @@
     "workload": 280,
     "cp": 4,
     "cpAdd": 4,
-    "region": "Kamysylvia",
+    "region": "Kamasylvia",
     "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/fe/Loopy_Tree_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180925185035"
   },
   {
@@ -3227,7 +3227,7 @@
     "workload": 280,
     "cp": 4,
     "cpAdd": 0,
-    "region": "Kamysylvia",
+    "region": "Kamasylvia",
     "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a0/Polly%27s_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180620081315"
   },
   {
@@ -3253,7 +3253,7 @@
     "workload": 281,
     "cp": 4,
     "cpAdd": 0,
-    "region": "Kamysylvia",
+    "region": "Kamasylvia",
     "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/7d/Shady_Tree_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180925183744"
   },
   {
@@ -3274,7 +3274,7 @@
     "workload": 280,
     "cp": 4,
     "cpAdd": 0,
-    "region": "Kamysylvia",
+    "region": "Kamasylvia",
     "image": ""
   },
   {
@@ -3292,7 +3292,7 @@
       },
       {
         "name": "Dull Bone Fragment",
-        "id": "",
+        "id": "44255",
         "yield": 29.28
       }
     ],
@@ -3300,7 +3300,7 @@
     "workload": 601,
     "cp": 5,
     "cpAdd": 1,
-    "region": "Kamysylvia",
+    "region": "Kamasylvia",
     "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/29/Tooth_Fairy_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180823061104"
   },
   {
@@ -3321,20 +3321,20 @@
     "workload": 280,
     "cp": 3,
     "cpAdd": 2,
-    "region": "Kamysylvia",
+    "region": "Kamasylvia",
     "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/91/Viv_Foretta%27s_Hamlet.PNG/revision/latest/scale-to-width-down/320?cb=20180910184949"
   },
   {
     "name": "Weenie Cabin",
     "material": [
       {
-        "name": "Volcanic Umbrella",
-        "id": "",
+        "name": "White Umbrella Mushroom",
+        "id": "5519",
         "yield": 1.54
       },
       {
-        "name": "Green Pendulous Mushroom",
-        "id": "5520",
+        "name": "White Flower Mushroom",
+        "id": "5521",
         "yield": 25.38
       }
     ],
@@ -3342,7 +3342,7 @@
     "workload": 281,
     "cp": 3,
     "cpAdd": 2,
-    "region": "Kamysylvia",
+    "region": "Kamasylvia",
     "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/30/Weenie_Cabin.png/revision/latest/scale-to-width-down/320?cb=20180815010048"
   },
   {
@@ -3422,8 +3422,8 @@
         "yield": 36
       },
       {
-        "name": "`Fir Plank",
-        "id": "",
+        "name": "Fir Plank",
+        "id": "4663",
         "yield": 2.6
       },
       {
@@ -3481,7 +3481,7 @@
       },
       {
         "name": "Magic Stone Fragment",
-        "id": "",
+        "id": "44357",
         "yield": 13.65
       }
     ],
@@ -3660,7 +3660,7 @@
       },
       {
         "name": "Dry Rock Fragment",
-        "id": "",
+        "id": "44356",
         "yield": 13.65
       }
     ],
@@ -3718,7 +3718,7 @@
       },
       {
         "name": "Mass of Pure Magic",
-        "id": "",
+        "id": "752023",
         "yield": 0.5
       }
     ],
@@ -3726,7 +3726,7 @@
     "workload": 10231,
     "cp": 4,
     "cpAdd": 15,
-    "region": "Special",
+    "region": "Calpheon",
     "image": ""
   }
 ]
