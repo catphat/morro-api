@@ -43,8 +43,5 @@ module.exports = (sequelize) => {
     codexSellPrice: {
       type: DataTypes.INTEGER,
     },
-    groupId: {
-      type: DataTypes.INTEGER,
-    },
   });
 };

@@ -8,7 +8,7 @@ const {
   Group,
   Recipe,
   Material,
-  RecipeMaterial,
+  RecipeIngredient,
   RecipeProduct,
 } = sequelize.models;
 const nodeList = require("./data/nodeList.json");
@@ -82,7 +82,7 @@ async function createGroup(group) {
     for (const i of group.items) {
       const material = await Material.findOne({ where: { id: i.id } });
       if (material) {
-        material.groupId = parseInt(group.id);
+        material.GroupId = parseInt(group.id);
         await material.save();
       }
     }
@@ -94,7 +94,7 @@ async function createGroup(group) {
 async function setRecipes() {
   //Use this script only in dev!
   await Recipe.sync({ force: true });
-  await RecipeMaterial.sync({ force: true });
+  await RecipeIngredient.sync({ force: true });
   await RecipeProduct.sync({ force: true });
   await Promise.all(
     recipeList.map(async (recipe) => {
@@ -114,7 +114,7 @@ async function createRecipe(recipe) {
       exp: recipe.exp,
     });
     for (const material of recipe.materials) {
-      await RecipeMaterial.create({
+      await RecipeIngredient.create({
         RecipeId: parseInt(recipe.id),
         MaterialId: material.group ? null : parseInt(material.id),
         GroupId: material.group ? parseInt(material.id) : null,

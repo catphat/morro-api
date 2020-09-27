@@ -4,7 +4,7 @@ const { Sequelize } = require("sequelize");
 const config = require("../config");
 
 const sequelize = new Sequelize(config.DB_URL, {
-  logging: config.ENV != "development",
+  logging: false,
 });
 
 const { createAssociations } = require("./associations/assocs");
@@ -27,7 +27,7 @@ for (const modelDefiner of modelDefiners) {
 
 // Create complex assocs with assoc models
 const assocDefiners = [
-  require("./associations/recipeMaterial.model"),
+  require("./associations/recipeIngredient.model"),
   require("./associations/recipeProduct.model"),
   require("./associations/nodeMaterial.model"),
 ];

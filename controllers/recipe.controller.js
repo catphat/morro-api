@@ -1,11 +1,31 @@
 const sequelize = require("../db");
-const { Recipe, RecipeMaterial } = sequelize.models;
+const { Recipe, Group, RecipeIngredient, Material } = sequelize.models;
 
 async function getAll(req, res) {
-  const recipes = Recipe.findAll({
-    include: { model: RecipeMaterial },
+  const dbdata = await Recipe.findAll({
+    include: [
+      {
+        model: RecipeIngredient,
+        attributes: ["quantity"],
+        include: [
+          {
+            model: Material,
+          },
+          {
+            model: Group,
+            attributes: ["name"],
+            include: { model: Material },
+          },
+        ],
+      },
+      {
+        model: Material,
+        as: "products",
+      },
+    ],
   });
-  res.status(200).json(recipes);
+
+  res.status(200).json(dbdata);
 }
 
 module.exports = {

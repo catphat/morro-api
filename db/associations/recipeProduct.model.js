@@ -19,7 +19,6 @@ module.exports = (sequelize) => {
       timestamps: false,
     }
   );
-  Recipe.hasMany(RecipeProduct);
-  RecipeProduct.belongsTo(Recipe);
-  RecipeProduct.belongsTo(Material);
+  Recipe.belongsToMany(Material, { through: RecipeProduct, as: "products" });
+  Material.belongsToMany(Recipe, { through: RecipeProduct, as: "matproducts" });
 };

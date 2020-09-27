@@ -17,7 +17,7 @@ const whitelist = require("./data/itemFetchWhitelist.json");
 
 async function updateMaterials() {
   var t0 = new Date().getTime();
-  //await Material.sync({ force: true, match: /-dev$/ });
+  await Material.sync({ force: true });
   for (const id of whitelist) {
     await createOrUpdateMaterial(id);
   }
