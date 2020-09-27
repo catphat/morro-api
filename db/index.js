@@ -28,6 +28,7 @@ for (const modelDefiner of modelDefiners) {
 // Create complex assocs with assoc models
 const assocDefiners = [
   require("./associations/recipeMaterial.model"),
+  require("./associations/recipeProduct.model"),
   require("./associations/nodeMaterial.model"),
 ];
 for (const assocDefiner of assocDefiners) {

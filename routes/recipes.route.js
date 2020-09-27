@@ -3,6 +3,6 @@ const router = express.Router();
 const recipeController = require("../controllers/recipe.controller");
 const flatCacheMiddleware = require("../middleware/cache");
 
-router.get("/", flatCacheMiddleware, recipeController.getAll);
+router.get("/", recipeController.getAll);
 
 module.exports = router;

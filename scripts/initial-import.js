@@ -9,6 +9,7 @@ const {
   Recipe,
   Material,
   RecipeMaterial,
+  RecipeProduct,
 } = sequelize.models;
 const nodeList = require("./data/nodeList.json");
 const groupList = require("./data/itemGroups.json");
@@ -94,6 +95,7 @@ async function setRecipes() {
   //Use this script only in dev!
   await Recipe.sync({ force: true });
   await RecipeMaterial.sync({ force: true });
+  await RecipeProduct.sync({ force: true });
   await Promise.all(
     recipeList.map(async (recipe) => {
       //Index + 1, database cant have 0 as PK
@@ -113,19 +115,16 @@ async function createRecipe(recipe) {
     });
     for (const material of recipe.materials) {
       await RecipeMaterial.create({
-        recipeId: parseInt(recipe.id),
-        materialId: material.group ? null : parseInt(material.id),
-        groupId: material.group ? parseInt(material.id) : null,
+        RecipeId: parseInt(recipe.id),
+        MaterialId: material.group ? null : parseInt(material.id),
+        GroupId: material.group ? parseInt(material.id) : null,
         quantity: material.quantity,
-        group: material.group,
-        isProduct: false,
       });
     }
     for (const product of recipe.products) {
-      await RecipeMaterial.create({
-        recipeId: parseInt(recipe.id),
-        materialId: parseInt(product.id),
-        isProduct: true,
+      await RecipeProduct.create({
+        RecipeId: parseInt(recipe.id),
+        MaterialId: parseInt(product.id),
       });
     }
   } catch (error) {

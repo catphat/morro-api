@@ -1,5 +1,11 @@
+const sequelize = require("../db");
+const { Recipe, RecipeMaterial } = sequelize.models;
+
 async function getAll(req, res) {
-  res.status(200).json({ recipes: "Hello from recipes" });
+  const recipes = Recipe.findAll({
+    include: { model: RecipeMaterial },
+  });
+  res.status(200).json(recipes);
 }
 
 module.exports = {

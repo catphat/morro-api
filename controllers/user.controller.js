@@ -1,5 +1,5 @@
 const sequelize = require("../db");
-const { Node, Material, UserNode, User } = sequelize.models;
+const { Node, Material, UserNode } = sequelize.models;
 
 async function getInfo(req, res) {
   const userId = req.user["https://api.morrolan.tv/email"];

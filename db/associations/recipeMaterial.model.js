@@ -1,29 +1,24 @@
-const { DataTypes } = require("sequelize");
-
 module.exports = (sequelize) => {
-  const RecipeMaterial = sequelize.define("RecipeMaterial", {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
+  const { DataTypes } = require("sequelize");
+  const { Recipe, Material, Group } = sequelize.models;
+  const RecipeMaterial = sequelize.define(
+    "RecipeMaterial",
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      quantity: {
+        type: DataTypes.INTEGER,
+      },
     },
-    quantity: {
-      type: DataTypes.INTEGER,
-    },
-    group: {
-      type: DataTypes.BOOLEAN,
-    },
-    isProduct: {
-      type: DataTypes.BOOLEAN,
-    },
-    recipeId: {
-      type: DataTypes.INTEGER,
-    },
-    materialId: {
-      type: DataTypes.INTEGER,
-    },
-    groupId: {
-      type: DataTypes.INTEGER,
-    },
-  });
+    {
+      timestamps: false,
+    }
+  );
+  Recipe.hasMany(RecipeMaterial);
+  RecipeMaterial.belongsTo(Recipe);
+  RecipeMaterial.belongsTo(Group);
+  RecipeMaterial.belongsTo(Material);
 };

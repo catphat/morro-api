@@ -8,6 +8,7 @@ const {
   TWITCH_CLIENT_ID,
   TWITCH_CLIENT_SECRET,
   TWITCH_USER_ID,
+  TWITCH_TOKEN_SCOPES,
   SE_TOKEN,
   SE_BASEURL,
   SE_CHANNEL_ID,
@@ -20,13 +21,20 @@ var apiClient;
     where: { id: 2 },
   });
   const authProvider = new RefreshableAuthProvider(
-    new StaticAuthProvider(TWITCH_CLIENT_ID, token.accessToken),
+    new StaticAuthProvider(
+      TWITCH_CLIENT_ID,
+      token.accessToken,
+      TWITCH_TOKEN_SCOPES
+    ),
     {
       clientSecret: TWITCH_CLIENT_SECRET,
       refreshToken: token.refreshToken,
       expiry:
-        token.expiryTimestamp === null ? null : new Date(token.expiryTimestamp),
+        token.expiryTimestamp === null
+          ? null
+          : new Date(parseInt(token.expiryTimestamp)),
       onRefresh: async ({ accessToken, refreshToken, expiryDate }) => {
+        console.log("Refresh");
         token.accessToken = accessToken;
         token.refreshToken = refreshToken;
         token.expiryTimestamp =

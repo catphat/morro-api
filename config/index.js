@@ -12,6 +12,7 @@ const config = {
   TWITCH_CLIENT_ID: process.env.TWITCH_CLIENT_ID,
   TWITCH_CLIENT_SECRET: process.env.TWITCH_CLIENT_SECRET,
   TWITCH_USER_ID: process.env.TWITCH_USER_ID,
+  TWITCH_TOKEN_SCOPES: "chat:read+bits:read+channel:read:subscriptions",
 };
 
 module.exports = config;

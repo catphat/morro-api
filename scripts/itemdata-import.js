@@ -89,6 +89,7 @@ async function getItemFromCodex(id) {
     };
     return codex;
   } catch (error) {
+    console.log(id);
     console.log(error);
   }
 }
