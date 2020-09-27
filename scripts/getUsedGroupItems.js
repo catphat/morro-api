@@ -3,12 +3,12 @@
 require("dotenv").config();
 const { Op } = require("sequelize");
 const sequelize = require("../db");
-const { Material } = sequelize.models;
+const { RecipeIngredient } = sequelize.models;
 const groupList = require("./data/itemGroups.json");
 
 async function getUsedGroups() {
   try {
-    const groups = await Material.findAll({
+    const groups = await RecipeIngredient.findAll({
       where: {
         GroupId: { [Op.gt]: 0 },
       },
@@ -29,7 +29,9 @@ async function main() {
   });
   groupList.forEach((grp) => {
     if (test.includes(parseInt(grp.id))) {
-      console.log(grp.items);
+      grp.items.forEach((x) => {
+        console.log(x.id);
+      });
     }
   });
   await sequelize.close();
