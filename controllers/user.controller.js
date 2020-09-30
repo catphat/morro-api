@@ -23,7 +23,7 @@ async function getNodesForUser(req, res) {
         attributes: ["contribution", "movespeed", "workspeed"],
       });
       if (usernode) {
-        nodes[index].contribution = usernode.contribution;
+        nodes[index].cpAdd = usernode.contribution;
         nodes[index].movespeed = usernode.movespeed;
         nodes[index].workspeed = usernode.workspeed;
       }
