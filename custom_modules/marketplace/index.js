@@ -1,10 +1,15 @@
 const axios = require("axios");
 const qs = require("qs");
 
-const baseUrl = "https://marketweb-eu.blackdesertonline.com/Home";
-const baseUrlNA = "https://marketweb-eu.blackdesertonline.com/Home";
+const baseUrlEU = "https://marketweb-eu.blackdesertonline.com/Home";
+const baseUrlNA = "https://marketweb-na.blackdesertonline.com/Home";
 
-const CONFIG = {
+const tokenEU =
+  "wf0wqhOwpK4ZlGVBQS7ZAVa9oHBiru4Uq1jf4utTePHRaXMb-Cn0HhVHT8FOCR-JpQ-tuE4aLBtvFSeHs6N1Wlj9J8Xy3o3VpiLFTidlKdw1";
+const tokenNA =
+  "PZ_v0iKRMKfWONdgKsvb90d5aOoXWA6ePvQnTUroylgn4cjN1S9eKAO-IrjcxOMTmhrEeHn3fQ4Ga37hrL6SvsMrvuNTD4-i8IN-dDxbYxU1";
+
+const CONFIG_EU = {
   headers: {
     Accept: "*/*",
     "User-Agent":
@@ -13,6 +18,18 @@ const CONFIG = {
     DNT: "1",
     Cookie:
       "__RequestVerificationToken=rMV9y4rrtmc2uAsQZCzAbkX2khHfhRiOctKmMEVYElUT-B8wzaXL68R9SLpmW0iZoYKpsuCmHSh9Zpa-G9awSNWB4eCPmIydrbRBaPjZlI01",
+  },
+};
+
+const CONFIG_NA = {
+  headers: {
+    Accept: "*/*",
+    "User-Agent":
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25",
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    DNT: "1",
+    Cookie:
+      "__RequestVerificationToken=tx_pjeJL_9XXqyenPm1JoodjXHRZJpwiaaXYams_Ic8vnjis5sMcaEiuximGcFYuqRFsJ30GykpCNhysa6Tik3ZG8Lv380kTVCEnSEhQSuE1",
   },
 };
 
@@ -25,9 +42,15 @@ class Market {
    * @param {*} data
    */
   fetchData(endpoint, data, region) {
-    var url = baseUrl;
-    if (region == "NA") url = baseUrlNA;
-    return axios.post(url + endpoint, data, CONFIG).then((x) => x.data);
+    if (region == "NA") {
+      return axios
+        .post(baseUrlNA + endpoint, data, CONFIG_NA)
+        .then((x) => x.data);
+    } else {
+      return axios
+        .post(baseUrlEU + endpoint, data, CONFIG_EU)
+        .then((x) => x.data);
+    }
   }
 
   /**
@@ -35,12 +58,11 @@ class Market {
    * @param {String} name - The name of the item you'd like to search.
    * @returns {Promise<Array>} - Returns an array of possible items.
    */
-  searchItem(name) {
+  searchItem(name, region) {
     const endpoint = "/GetWorldMarketSearchList";
 
     var formData = qs.stringify({
-      __RequestVerificationToken:
-        "wf0wqhOwpK4ZlGVBQS7ZAVa9oHBiru4Uq1jf4utTePHRaXMb-Cn0HhVHT8FOCR-JpQ-tuE4aLBtvFSeHs6N1Wlj9J8Xy3o3VpiLFTidlKdw1",
+      __RequestVerificationToken: region == "NA" ? tokenNA : tokenEU,
       searchText: name,
     });
 
@@ -56,8 +78,7 @@ class Market {
     const endpoint = "/GetWorldMarketSubList";
 
     var formData = qs.stringify({
-      __RequestVerificationToken:
-        "wf0wqhOwpK4ZlGVBQS7ZAVa9oHBiru4Uq1jf4utTePHRaXMb-Cn0HhVHT8FOCR-JpQ-tuE4aLBtvFSeHs6N1Wlj9J8Xy3o3VpiLFTidlKdw1",
+      __RequestVerificationToken: region == "NA" ? tokenNA : tokenEU,
       mainKey: id,
       usingClient: 0,
     });

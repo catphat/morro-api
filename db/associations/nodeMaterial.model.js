@@ -13,6 +13,9 @@ module.exports = (sequelize) => {
       yield: {
         type: DataTypes.FLOAT,
       },
+      luck: {
+        type: DataTypes.FLOAT,
+      },
     },
     {
       timestamps: false,

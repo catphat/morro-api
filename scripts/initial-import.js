@@ -52,8 +52,11 @@ async function createNode(node, index) {
           NodeId: index,
           MaterialId: material.id,
           yield: material.yield,
+          luck: material.luck,
         });
-      } catch {
+      } catch (e) {
+        console.log(e);
+        console.log(node);
         console.log(`Missing material ${material.id}`);
       }
     }
