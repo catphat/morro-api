@@ -13,7 +13,9 @@ async function getNodesForUser(req, res) {
   if (req.user) {
     const userId = req.user["https://api.morrolan.tv/email"];
     const nodes = await Node.findAll({
-      include: [{ model: Material, through: { attributes: [] } }],
+      include: [
+        { model: Material, through: { attributes: ["yield", "luck"] } },
+      ],
     });
     for (const index of nodes.keys()) {
       const usernode = await UserNode.findOne({
