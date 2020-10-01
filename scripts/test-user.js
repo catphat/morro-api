@@ -1,7 +1,8 @@
 "use strict";
 
+require("dotenv").config();
 const sequelize = require("../db");
-const { Node, User, UserNode } = sequelize.models;
+const { User, UserNode } = sequelize.models;
 //TODO: Turn into cron job for 30min, only update marketPrices
 //This script is fetching item data from both codex and marketplace.
 //After this the materials table will be set
@@ -11,6 +12,7 @@ async function createUser() {
   try {
     await User.sync({ force: true });
     await User.create({
+      sub: "google-oauth2|117323980375187460896",
       username: "iluwathar@gmail.com",
       name: "Test User",
     });
@@ -22,7 +24,7 @@ async function createUser() {
 async function createUserNode() {
   try {
     const user = await User.findOne({
-      where: { username: "iluwathar@gmail.com" },
+      where: { sub: "google-oauth2|117323980375187460896" },
     });
     await UserNode.sync({ force: true });
     const usernode = await UserNode.create({

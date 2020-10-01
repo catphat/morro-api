@@ -13,7 +13,7 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
     },
     contribution: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.FLOAT,
     },
     movespeed: {
       type: DataTypes.FLOAT,

@@ -6,13 +6,17 @@ module.exports = (sequelize) => {
   sequelize.define("User", {
     // The following specification of the 'id' attribute could be omitted
     // since it is the default.
-    username: {
+    sub: {
       allowNull: false,
       primaryKey: true,
       type: DataTypes.STRING,
     },
-    name: {
+    username: {
       allowNull: false,
+      type: DataTypes.STRING,
+    },
+    name: {
+      allowNull: true,
       type: DataTypes.STRING,
     },
   });

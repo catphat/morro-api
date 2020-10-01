@@ -1,17 +1,35 @@
 const sequelize = require("../db");
-const { Node, Material, UserNode } = sequelize.models;
+const { Node, Material, UserNode, User } = sequelize.models;
 
 async function getInfo(req, res) {
-  const userId = req.user["https://api.morrolan.tv/email"];
-  if (!userId) {
+  if (req.user) {
+    const userId = req.user.sub;
+    if (!userId) {
+      return res.sendStatus(401);
+    }
+    let user = await User.findOne({
+      where: { sub: userId },
+    });
+    if (!user) {
+      user = await User.create({
+        sub: req.user.sub,
+        username: req.user["https://api.morrolan.tv/email"],
+      });
+    } else {
+      user.changed("updatedAt", true);
+      await user.update({
+        updatedAt: new Date(),
+      });
+    }
+    res.status(200).json({ username: `Hello User ${user.username}` });
+  } else {
     return res.sendStatus(401);
   }
-  res.status(200).json({ message: `Hello User ${userId}` });
 }
 
 async function getNodesForUser(req, res) {
   if (req.user) {
-    const userId = req.user["https://api.morrolan.tv/email"];
+    const userId = req.user.sub;
     const nodes = await Node.findAll({
       include: [
         { model: Material, through: { attributes: ["yield", "luck"] } },
@@ -19,7 +37,7 @@ async function getNodesForUser(req, res) {
     });
     for (const index of nodes.keys()) {
       const usernode = await UserNode.findOne({
-        where: { UserUsername: userId, nodeId: nodes[index].id },
+        where: { UserSub: userId, nodeId: nodes[index].id },
         attributes: ["contribution", "movespeed", "workspeed"],
       });
       if (usernode) {
@@ -39,10 +57,10 @@ async function getNodesForUser(req, res) {
 
 async function saveUserNodes(req, res) {
   const nodes = new Map(JSON.parse(req.body.nodes));
-  const userId = req.user["https://api.morrolan.tv/email"];
+  const userId = req.user.sub;
   for (const [key, value] of nodes.entries()) {
     const userNode = await UserNode.findOne({
-      where: { nodeId: key, UserUsername: userId },
+      where: { nodeId: key, UserSub: userId },
     });
     if (!userNode) {
       await UserNode.create({
@@ -50,7 +68,7 @@ async function saveUserNodes(req, res) {
         movespeed: value.movespeed,
         workspeed: value.workspeed,
         nodeId: key,
-        UserUsername: userId,
+        UserSub: userId,
       });
     } else {
       await userNode.update({

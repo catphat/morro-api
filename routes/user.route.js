@@ -3,7 +3,7 @@ const router = express.Router();
 const userController = require("../controllers/user.controller");
 const jwtCheck = require("../middleware/auth");
 
-router.get("/", jwtCheck, userController.getInfo);
+router.get("/info", jwtCheck, userController.getInfo);
 
 router.get("/userNodes", jwtCheck, userController.getNodesForUser);
 
