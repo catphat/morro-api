@@ -15,6 +15,7 @@ module.exports = (sequelize) => {
       },
       luck: {
         type: DataTypes.FLOAT,
+        defaultValue: 0,
       },
     },
     {

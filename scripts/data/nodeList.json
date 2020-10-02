@@ -1,6 +1,7 @@
 [
   {
     "name": "Aakman",
+    "subname": "Aakman - Gathering",
     "cp": 3,
     "cpAdd": 5,
     "workload": 150,
@@ -12,12 +13,18 @@
         "yield": 42
       }
     ],
-    "distance": 4507,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/eb/Aakman.JPG/revision/latest/scale-to-width-down/320?cb=20180607132628"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/eb/Aakman.JPG/revision/latest/scale-to-width-down/320?cb=20180607132628",
+    "lodging": "Bazaar",
+    "distance": {
+      "Bazaar": 4507,
+      "Ancado": 7415,
+      "Valencia": 5664
+    }
   },
   {
     "name": "Abandoned Iron Mine",
+    "subname": "Abandoned Iron Mine - Mining",
     "cp": 3,
     "cpAdd": 2,
     "workload": 1000,
@@ -41,12 +48,17 @@
         "yield": 1.8
       }
     ],
-    "distance": 1113,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/22/Abandoned_Iron_Mine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164834"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/22/Abandoned_Iron_Mine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164834",
+    "lodging": "Altinova",
+    "distance": {
+      "Tarif": 2063,
+      "Altinova": 1113
+    }
   },
   {
     "name": "Abandoned Iron Mine",
+    "subname": "Abandoned Iron Mine - Mining",
     "cp": 3,
     "cpAdd": 2,
     "workload": 400,
@@ -70,12 +82,17 @@
         "yield": 1.8
       }
     ],
-    "distance": 1113,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/22/Abandoned_Iron_Mine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164834"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/22/Abandoned_Iron_Mine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164834",
+    "lodging": "Altinova",
+    "distance": {
+      "Tarif": 2032,
+      "Altinova": 1113
+    }
   },
   {
     "name": "Ahto Farm",
+    "subname": "Ahto Farm - Cotton Farming",
     "cp": 2,
     "cpAdd": 2,
     "workload": 400,
@@ -93,12 +110,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 702,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/85/Ahto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164831"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/85/Ahto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164831",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 2000,
+      "Tarif": 702,
+      "Altinova": 2325
+    }
   },
   {
     "name": "Ahto Farm",
+    "subname": "Ahto Farm - Aloe Farming",
     "cp": 2,
     "cpAdd": 2,
     "workload": 400,
@@ -110,12 +133,18 @@
         "yield": 24
       }
     ],
-    "distance": 702,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/85/Ahto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164831"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/85/Ahto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164831",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 2000,
+      "Tarif": 750,
+      "Altinova": 2325
+    }
   },
   {
     "name": "Akum Rocky Mountain",
+    "subname": "Akum Rocky Mountain",
     "cp": 5,
     "cpAdd": 1,
     "workload": 280,
@@ -133,11 +162,18 @@
         "yield": 0.8
       }
     ],
-    "distance": 2585,
-    "region": "Drieghan"
+    "region": "Drieghan",
+    "lodging": "Old Wisdom Tree",
+    "distance": {
+      "Trent": 4807,
+      "Grana": 3916,
+      "Old Wisdom Tree": 1826,
+      "Duvencrune": 2585
+    }
   },
   {
     "name": "Akum Rocky Mountain",
+    "subname": "Akum Rocky Mountain",
     "cp": 5,
     "cpAdd": 1,
     "workload": 280,
@@ -155,11 +191,18 @@
         "yield": 0.8
       }
     ],
-    "distance": 2585,
-    "region": "Drieghan"
+    "region": "Drieghan",
+    "lodging": "Old Wisdom Tree",
+    "distance": {
+      "Trent": 4825,
+      "Grana": 3934,
+      "Old Wisdom Tree": 1844,
+      "Duvencrune": 2338
+    }
   },
   {
     "name": "Alejandro Farm",
+    "subname": "Alejandro Farm - Pumpkin Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 396,
@@ -171,12 +214,18 @@
         "yield": 18
       }
     ],
-    "distance": 652,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ef/Alejandro_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173540"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ef/Alejandro_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173540",
+    "lodging": "Heidel",
+    "distance": {
+      "Velia": 1711,
+      "Heidel": 652,
+      "Glish": 1792
+    }
   },
   {
     "name": "Alejandro Farm",
+    "subname": "Alejandro Farm - Honey Production",
     "cp": 1,
     "cpAdd": 2,
     "workload": 396,
@@ -188,12 +237,18 @@
         "yield": 18
       }
     ],
-    "distance": 652,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ef/Alejandro_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173540"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ef/Alejandro_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173540",
+    "lodging": "Heidel",
+    "distance": {
+      "Velia": 1712,
+      "Heidel": 653,
+      "Glish": 1793
+    }
   },
   {
     "name": "Altas Farmland",
+    "subname": "Altas Farmland - Teff",
     "cp": 3,
     "cpAdd": 2,
     "workload": 200,
@@ -205,12 +260,18 @@
         "yield": 42
       }
     ],
-    "distance": 382,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d5/Altas_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091200"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d5/Altas_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091200",
+    "lodging": "Ancado",
+    "distance": {
+      "Ancado": 382,
+      "Valencia": 1915,
+      "Arehaza": 5394
+    }
   },
   {
     "name": "Altas Farmland",
+    "subname": "Altas Farmland - Teff",
     "cp": 3,
     "cpAdd": 2,
     "workload": 200,
@@ -222,12 +283,18 @@
         "yield": 42
       }
     ],
-    "distance": 382,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d5/Altas_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091200"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d5/Altas_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091200",
+    "lodging": "Ancado",
+    "distance": {
+      "Ancado": 365,
+      "Valencia": 1898,
+      "Arehaza": 5376
+    }
   },
   {
     "name": "Ancient Fissure",
+    "subname": "Ancient Fissure - Mining",
     "cp": 3,
     "cpAdd": 2,
     "workload": 400,
@@ -251,12 +318,18 @@
         "yield": 1.8
       }
     ],
-    "distance": 1857,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/43/Ancient_Fissure.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181108131844"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/43/Ancient_Fissure.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181108131844",
+    "lodging": "Heidel",
+    "distance": {
+      "Heidel": 1857,
+      "Tarif": 1879,
+      "Altinova": 3634
+    }
   },
   {
     "name": "Ancient Fissure",
+    "subname": "Ancient Fissure - Gathering",
     "cp": 3,
     "cpAdd": 2,
     "workload": 300,
@@ -274,12 +347,18 @@
         "yield": 1.4
       }
     ],
-    "distance": 1857,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/43/Ancient_Fissure.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181108131844"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/43/Ancient_Fissure.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181108131844",
+    "lodging": "Heidel",
+    "distance": {
+      "Heidel": 1887,
+      "Tarif": 1909,
+      "Altinova": 3664
+    }
   },
   {
     "name": "Ancient Ruins Excavation Site",
+    "subname": "Ancient Ruins Excavation Site - Excavation",
     "cp": 3,
     "cpAdd": 1,
     "workload": 1200,
@@ -309,12 +388,18 @@
         "yield": 1.6
       }
     ],
-    "distance": 1688,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/39/Ancient_Ruins_Excavation_Site.JPG/revision/latest/scale-to-width-down/320?cb=20180314011052"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/39/Ancient_Ruins_Excavation_Site.JPG/revision/latest/scale-to-width-down/320?cb=20180314011052",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 2951,
+      "Tarif": 1688,
+      "Altinova": 3341
+    }
   },
   {
     "name": "Ancient Stone Chamber",
+    "subname": "Ancient Stone Chamber - Excavation",
     "cp": 1,
     "cpAdd": 1,
     "workload": 1200,
@@ -344,12 +429,19 @@
         "yield": 1.6
       }
     ],
-    "distance": 1171,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/4d/Ancient_Stone_Chamber.JPG/revision/latest/window-crop/width/320/x-offset/1025/y-offset/0/window-width/6145/window-height/4608?cb=20180322085835"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/4d/Ancient_Stone_Chamber.JPG/revision/latest/window-crop/width/320/x-offset/1025/y-offset/0/window-width/6145/window-height/4608?cb=20180322085835",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1907,
+      "Velia": 1171,
+      "Heidel": 2357,
+      "Glish": 2375
+    }
   },
   {
     "name": "Areha Palm Forest",
+    "subname": "Areha Palm Forest - Palm Tree",
     "cp": 3,
     "cpAdd": 1,
     "workload": 208,
@@ -373,12 +465,18 @@
         "yield": 2.4
       }
     ],
-    "distance": 682,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Areha_Palm_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102209"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Areha_Palm_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102209",
+    "lodging": "Arehaza",
+    "distance": {
+      "Ancado": 4980,
+      "Valencia": 2947,
+      "Arehaza": 682
+    }
   },
   {
     "name": "Areha Palm Forest",
+    "subname": "Areha Palm Forest - Palm Tree",
     "cp": 3,
     "cpAdd": 1,
     "workload": 208,
@@ -402,12 +500,18 @@
         "yield": 2.4
       }
     ],
-    "distance": 682,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Areha_Palm_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102209"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Areha_Palm_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102209",
+    "lodging": "Arehaza",
+    "distance": {
+      "Ancado": 4781,
+      "Valencia": 2748,
+      "Arehaza": 786
+    }
   },
   {
     "name": "Balenos Forest",
+    "subname": "Balenos Forest - Lumbering",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -425,12 +529,18 @@
         "yield": 1.1
       }
     ],
-    "distance": 517,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/97/Balenos_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123065645"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/97/Balenos_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123065645",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2525,
+      "Velia": 517,
+      "Heidel": 1379
+    }
   },
   {
     "name": "Balenos Forest",
+    "subname": "Balenos Forest - Gathering",
     "cp": 1,
     "cpAdd": 2,
     "workload": 300,
@@ -448,12 +558,18 @@
         "yield": 1.1
       }
     ],
-    "distance": 517,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/97/Balenos_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123065645"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/97/Balenos_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123065645",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2530,
+      "Velia": 522,
+      "Heidel": 1385
+    }
   },
   {
     "name": "Bambu Valley",
+    "subname": "Bambu Valley - Gathering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 150,
@@ -465,12 +581,17 @@
         "yield": 42
       }
     ],
-    "distance": 2094,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/64/Bambu_Valley.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091202"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/64/Bambu_Valley.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091202",
+    "lodging": "Shakatu",
+    "distance": {
+      "Shakatu": 2094,
+      "Valencia": 5876
+    }
   },
   {
     "name": "Bartali Farm",
+    "subname": "Bartali Farm - Potato Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -482,12 +603,18 @@
         "yield": 16.5
       }
     ],
-    "distance": 468,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e1/Bartali_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180823144150"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e1/Bartali_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180823144150",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2279,
+      "Velia": 468,
+      "Heidel": 1464
+    }
   },
   {
     "name": "Bartali Farm",
+    "subname": "Bartali Farm - Chicken Meat Production",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -505,12 +632,18 @@
         "yield": 5.5
       }
     ],
-    "distance": 468,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e1/Bartali_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180823144150"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e1/Bartali_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180823144150",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2316,
+      "Velia": 505,
+      "Heidel": 1555
+    }
   },
   {
     "name": "Bashim Base",
+    "subname": "Bashim Habitat - Mining",
     "cp": 3,
     "cpAdd": 1,
     "workload": 202,
@@ -534,12 +667,17 @@
         "yield": 2.52
       }
     ],
-    "distance": 2326,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/69/Bashim_Base.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040704"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/69/Bashim_Base.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040704",
+    "lodging": "Altinova",
+    "distance": {
+      "Altinova": 2326,
+      "Bazaar": 2340
+    }
   },
   {
     "name": "Bazaar Farmland",
+    "subname": "Bazaar Farmland - Nutmeg",
     "cp": 3,
     "cpAdd": 2,
     "workload": 200,
@@ -551,12 +689,18 @@
         "yield": 42
       }
     ],
-    "distance": 806,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/9e/Bazaar_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040705"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/9e/Bazaar_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040705",
+    "lodging": "Bazaar",
+    "distance": {
+      "Altinova": 3684,
+      "Bazaar": 806,
+      "Shakatu": 5078
+    }
   },
   {
     "name": "Bazaar Farmland",
+    "subname": "Bazaar Farmland - Teff",
     "cp": 3,
     "cpAdd": 2,
     "workload": 200,
@@ -568,12 +712,18 @@
         "yield": 42
       }
     ],
-    "distance": 806,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/9e/Bazaar_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040705"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/9e/Bazaar_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040705",
+    "lodging": "Bazaar",
+    "distance": {
+      "Altinova": 3663,
+      "Bazaar": 786,
+      "Shakatu": 5058
+    }
   },
   {
     "name": "Behr Riverhead",
+    "subname": "Behr Riverhead - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 396,
@@ -591,12 +741,18 @@
         "yield": 1.4
       }
     ],
-    "distance": 1965,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/84/Behr_Riverhead.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020454"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/84/Behr_Riverhead.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020454",
+    "lodging": "Calpheon",
+    "distance": {
+      "Keplan": 2059,
+      "Calpheon": 1785,
+      "Trent": 1965
+    }
   },
   {
     "name": "Bernianto Farm",
+    "subname": "Bernianto Farm - Excavation",
     "cp": 1,
     "cpAdd": 2,
     "workload": 1200,
@@ -632,12 +788,19 @@
         "yield": 1.6
       }
     ],
-    "distance": 1462,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/4c/Bernianto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020745"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/4c/Bernianto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020745",
+    "lodging": "Calpheon",
+    "distance": {
+      "Olvia": 2341,
+      "Keplan": 2548,
+      "Calpheon": 1462,
+      "Epheria": 2230
+    }
   },
   {
     "name": "Bree Tree Ruins",
+    "subname": "Bree Tree Ruins - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -655,12 +818,19 @@
         "yield": 2.1
       }
     ],
-    "distance": 1459,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/15/Bree_Tree_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020819"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/15/Bree_Tree_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020819",
+    "lodging": "Calpheon",
+    "distance": {
+      "Olvia": 2338,
+      "Keplan": 2546,
+      "Calpheon": 1459,
+      "Epheria": 2227
+    }
   },
   {
     "name": "Bree Tree Ruins",
+    "subname": "Bree Tree Ruins - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -678,12 +848,19 @@
         "yield": 1.12
       }
     ],
-    "distance": 1459,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/15/Bree_Tree_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020819"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/15/Bree_Tree_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020819",
+    "lodging": "Calpheon",
+    "distance": {
+      "Olvia": 2338,
+      "Keplan": 2546,
+      "Calpheon": 1459,
+      "Epheria": 2227
+    }
   },
   {
     "name": "Capotia",
+    "subname": "Capotia - Gathering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 153,
@@ -695,12 +872,18 @@
         "yield": 42
       }
     ],
-    "distance": 468,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6c/Capotia.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102210"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6c/Capotia.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102210",
+    "lodging": "Bazaar",
+    "distance": {
+      "Altinova": 2663,
+      "Bazaar": 468,
+      "Shakatu": 4057
+    }
   },
   {
     "name": "Capotia",
+    "subname": "Capotia - Mining",
     "cp": 3,
     "cpAdd": 1,
     "workload": 204,
@@ -724,12 +907,18 @@
         "yield": 2.52
       }
     ],
-    "distance": 468,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6c/Capotia.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102210"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6c/Capotia.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102210",
+    "lodging": "Bazaar",
+    "distance": {
+      "Altinova": 2694,
+      "Bazaar": 423,
+      "Shakatu": 4089
+    }
   },
   {
     "name": "Casta Farm",
+    "subname": "Casta Farm - Grapes",
     "cp": 1,
     "cpAdd": 1,
     "workload": 400,
@@ -741,12 +930,17 @@
         "yield": 9
       }
     ],
-    "distance": 220,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2a/Casta_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181006062758"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2a/Casta_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181006062758",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 220,
+      "Velia": 2070
+    }
   },
   {
     "name": "Castle Ruins",
+    "subname": "Castle Ruins - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 297,
@@ -764,12 +958,17 @@
         "yield": 1.8
       }
     ],
-    "distance": 1011,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/21/Castle_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173621"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/21/Castle_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173621",
+    "lodging": "Heidel",
+    "distance": {
+      "Heidel": 1011,
+      "Glish": 1639
+    }
   },
   {
     "name": "Coastal Cave",
+    "subname": "Coastal Cave - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -787,12 +986,18 @@
         "yield": 1.65
       }
     ],
-    "distance": 1835,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/b4/Coastal_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123071020"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/b4/Coastal_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123071020",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1835,
+      "Velia": 669,
+      "Heidel": 2201
+    }
   },
   {
     "name": "Coastal Cave",
+    "subname": "Coastal Cave - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -810,12 +1015,18 @@
         "yield": 1.1
       }
     ],
-    "distance": 1835,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/b4/Coastal_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123071020"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/b4/Coastal_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123071020",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1840,
+      "Velia": 674,
+      "Heidel": 2196
+    }
   },
   {
     "name": "Coastal Cliff",
+    "subname": "Coastal Cliff - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -833,12 +1044,18 @@
         "yield": 0.88
       }
     ],
-    "distance": 1453,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/3a/Coastal_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126060327"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/3a/Coastal_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126060327",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1453,
+      "Velia": 877,
+      "Heidel": 2434
+    }
   },
   {
     "name": "Coastal Cliff",
+    "subname": "Coastal Cliff - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -856,12 +1073,18 @@
         "yield": 1.65
       }
     ],
-    "distance": 1453,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/3a/Coastal_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126060327"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/3a/Coastal_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126060327",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1451,
+      "Velia": 874,
+      "Heidel": 2431
+    }
   },
   {
     "name": "Costa Farm",
+    "subname": "Costa Farm - Wheat Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 396,
@@ -873,12 +1096,17 @@
         "yield": 18
       }
     ],
-    "distance": 406,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/93/Costa_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173640"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/93/Costa_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173640",
+    "lodging": "Heidel",
+    "distance": {
+      "Heidel": 406,
+      "Glish": 1169
+    }
   },
   {
     "name": "Costa Farm",
+    "subname": "Costa Farm - Pumpkin Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 396,
@@ -890,12 +1118,17 @@
         "yield": 18
       }
     ],
-    "distance": 406,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/93/Costa_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173640"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/93/Costa_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173640",
+    "lodging": "Heidel",
+    "distance": {
+      "Heidel": 441,
+      "Glish": 1204
+    }
   },
   {
     "name": "Costa Farm",
+    "subname": "Costa Farm - Flax Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 396,
@@ -913,12 +1146,17 @@
         "yield": 1.2
       }
     ],
-    "distance": 406,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/93/Costa_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173640"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/93/Costa_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173640",
+    "lodging": "Heidel",
+    "distance": {
+      "Heidel": 430,
+      "Glish": 1239
+    }
   },
   {
     "name": "Crescent Mountains",
+    "subname": "Crescent Mountains - Mining",
     "cp": 3,
     "cpAdd": 3,
     "workload": 202,
@@ -942,12 +1180,18 @@
         "yield": 2.52
       }
     ],
-    "distance": 3814,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/b5/Crescent_Mountains.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132629"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/b5/Crescent_Mountains.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132629",
+    "lodging": "Bazaar",
+    "distance": {
+      "Altinova": 6846,
+      "Bazaar": 3814,
+      "Valencia": 6680
+    }
   },
   {
     "name": "Crescent Mountains",
+    "subname": "Crescent Mountains - Mining",
     "cp": 3,
     "cpAdd": 3,
     "workload": 202,
@@ -971,12 +1215,18 @@
         "yield": 2.52
       }
     ],
-    "distance": 3814,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/b5/Crescent_Mountains.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132629"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/b5/Crescent_Mountains.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132629",
+    "lodging": "Bazaar",
+    "distance": {
+      "Altinova": 6843,
+      "Bazaar": 3812,
+      "Valencia": 6678
+    }
   },
   {
     "name": "Crescent Shrine",
+    "subname": "Crescent Shrine - Gathering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 151.5,
@@ -988,12 +1238,18 @@
         "yield": 42
       }
     ],
-    "distance": 3875,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ea/Crescent_Shrine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132630"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ea/Crescent_Shrine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132630",
+    "lodging": "Bazaar",
+    "distance": {
+      "Altinova": 6906,
+      "Bazaar": 3875,
+      "Valencia": 7223
+    }
   },
   {
     "name": "Crescent Shrine",
+    "subname": "Crescent Shrine - Mining",
     "cp": 3,
     "cpAdd": 1,
     "workload": 202,
@@ -1017,12 +1273,18 @@
         "yield": 1.08
       }
     ],
-    "distance": 3875,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ea/Crescent_Shrine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132630"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ea/Crescent_Shrine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132630",
+    "lodging": "Bazaar",
+    "distance": {
+      "Altinova": 6838,
+      "Bazaar": 3807,
+      "Valencia": 7154
+    }
   },
   {
     "name": "Cron Castle Site",
+    "subname": "Cron Castle Site - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -1040,12 +1302,18 @@
         "yield": 1.1
       }
     ],
-    "distance": 888,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/72/Cron_Castle_Site2.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180124060032"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/72/Cron_Castle_Site2.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180124060032",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2897,
+      "Velia": 888,
+      "Heidel": 2199
+    }
   },
   {
     "name": "Dormann Lumber Camp",
+    "subname": "Dormann Lumber Camp",
     "cp": 5,
     "cpAdd": 2,
     "workload": 281,
@@ -1069,12 +1337,20 @@
         "yield": 2.3
       }
     ],
-    "distance": 4380,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/34/Dormann_Lumber_Camp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181118134424"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/34/Dormann_Lumber_Camp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181118134424",
+    "lodging": "Keplan",
+    "distance": {
+      "Heidel": 3825,
+      "Glish": 2634,
+      "Keplan": 2118,
+      "Trent": 4510,
+      "Duvencrune": 4380
+    }
   },
   {
     "name": "Dormann Lumber Camp",
+    "subname": "Dormann Lumber Camp",
     "cp": 5,
     "cpAdd": 2,
     "workload": 281,
@@ -1098,12 +1374,20 @@
         "yield": 2.3
       }
     ],
-    "distance": 4380,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/34/Dormann_Lumber_Camp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181118134424"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/34/Dormann_Lumber_Camp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181118134424",
+    "lodging": "Keplan",
+    "distance": {
+      "Heidel": 3778,
+      "Glish": 2587,
+      "Keplan": 2071,
+      "Trent": 4463,
+      "Duvencrune": 4333
+    }
   },
   {
     "name": "Duvencrune Farmland",
+    "subname": "Duvencrune Farmland",
     "cp": 3,
     "cpAdd": 1,
     "workload": 282,
@@ -1115,12 +1399,18 @@
         "yield": 18
       }
     ],
-    "distance": 476,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/23/Duvencrune_Farmland.JPG/revision/latest/scale-to-width-down/320?cb=20181118124901"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/23/Duvencrune_Farmland.JPG/revision/latest/scale-to-width-down/320?cb=20181118124901",
+    "lodging": "Duvencrune",
+    "distance": {
+      "Grana": 6006,
+      "Old Wisdom Tree": 3916,
+      "Duvencrune": 476
+    }
   },
   {
     "name": "Duvencrune Farmland",
+    "subname": "Duvencrune Farmland",
     "cp": 3,
     "cpAdd": 1,
     "workload": 282,
@@ -1132,12 +1422,18 @@
         "yield": 18
       }
     ],
-    "distance": 476,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/23/Duvencrune_Farmland.JPG/revision/latest/scale-to-width-down/320?cb=20181118124901"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/23/Duvencrune_Farmland.JPG/revision/latest/scale-to-width-down/320?cb=20181118124901",
+    "lodging": "Duvencrune",
+    "distance": {
+      "Grana": 6102,
+      "Old Wisdom Tree": 4011,
+      "Duvencrune": 536
+    }
   },
   {
     "name": "Ehwaz Hill",
+    "subname": "Ehwaz Hill - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -1155,12 +1451,18 @@
         "yield": 0.88
       }
     ],
-    "distance": 1791,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/f8/Ehwaz_Hill.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110134410"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/f8/Ehwaz_Hill.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110134410",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2678,
+      "Velia": 668,
+      "Heidel": 1791
+    }
   },
   {
     "name": "Ehwaz Hill",
+    "subname": "Ehwaz Hill - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -1178,12 +1480,18 @@
         "yield": 1.65
       }
     ],
-    "distance": 1791,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/f8/Ehwaz_Hill.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110134410"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/f8/Ehwaz_Hill.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110134410",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2684,
+      "Velia": 674,
+      "Heidel": 1798
+    }
   },
   {
     "name": "Elric Shrine",
+    "subname": "Elric Shrine - Gathering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 300,
@@ -1201,12 +1509,18 @@
         "yield": 1.12
       }
     ],
-    "distance": 1862,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/88/Elric_Shrine_%282%29.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010555"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/88/Elric_Shrine_%282%29.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010555",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 3125,
+      "Tarif": 1862,
+      "Altinova": 3391
+    }
   },
   {
     "name": "Elric Shrine",
+    "subname": "Elric Shrine - Lumbering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 1000,
@@ -1230,12 +1544,18 @@
         "yield": 1.8
       }
     ],
-    "distance": 1862,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/88/Elric_Shrine_%282%29.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010555"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/88/Elric_Shrine_%282%29.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010555",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 3083,
+      "Tarif": 1820,
+      "Altinova": 3349
+    }
   },
   {
     "name": "Erdal Farm",
+    "subname": "Erdal Farm - Pistachio",
     "cp": 3,
     "cpAdd": 2,
     "workload": 202,
@@ -1247,12 +1567,18 @@
         "yield": 42
       }
     ],
-    "distance": 636,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/ba/Erdal_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132631"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/ba/Erdal_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132631",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 1841,
+      "Valencia": 636,
+      "Arehaza": 4051
+    }
   },
   {
     "name": "Erdal Farm",
+    "subname": "Erdal Farm - Date Palm",
     "cp": 3,
     "cpAdd": 2,
     "workload": 202,
@@ -1264,12 +1590,18 @@
         "yield": 42
       }
     ],
-    "distance": 636,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/ba/Erdal_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132631"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/ba/Erdal_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132631",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 1788,
+      "Valencia": 583,
+      "Arehaza": 4062
+    }
   },
   {
     "name": "Erdal Farm",
+    "subname": "Erdal - Silk Culture",
     "cp": 3,
     "cpAdd": 2,
     "workload": 202,
@@ -1287,12 +1619,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 636,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/ba/Erdal_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132631"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/ba/Erdal_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132631",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 1798,
+      "Valencia": 594,
+      "Arehaza": 4073
+    }
   },
   {
     "name": "Finto Farm",
+    "subname": "Finto Farm - Potato Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -1304,12 +1642,18 @@
         "yield": 16.5
       }
     ],
-    "distance": 404,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d1/Finto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123072101"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d1/Finto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123072101",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2414,
+      "Velia": 404,
+      "Heidel": 1621
+    }
   },
   {
     "name": "Finto Farm",
+    "subname": "Finto Farm - Chicken Meat Production",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -1327,12 +1671,18 @@
         "yield": 5.5
       }
     ],
-    "distance": 404,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d1/Finto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123072101"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d1/Finto_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123072101",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2454,
+      "Velia": 445,
+      "Heidel": 1606
+    }
   },
   {
     "name": "Fohalam Farm",
+    "subname": "Fohalam Farm - Teff",
     "cp": 3,
     "cpAdd": 2,
     "workload": 202,
@@ -1344,12 +1694,18 @@
         "yield": 42
       }
     ],
-    "distance": 630,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d0/Fohalam_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212513"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d0/Fohalam_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212513",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 2463,
+      "Valencia": 630,
+      "Arehaza": 4028
+    }
   },
   {
     "name": "Fohalam Farm",
+    "subname": "Fohalam Farm - Teff",
     "cp": 3,
     "cpAdd": 2,
     "workload": 202,
@@ -1361,12 +1717,18 @@
         "yield": 42
       }
     ],
-    "distance": 630,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d0/Fohalam_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212513"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/d/d0/Fohalam_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212513",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 2532,
+      "Valencia": 699,
+      "Arehaza": 4098
+    }
   },
   {
     "name": "Forest of Plunder",
+    "subname": "Forest of Plunder - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -1384,12 +1746,18 @@
         "yield": 0.88
       }
     ],
-    "distance": 407,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/ba/Forest_of_Plunder.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110133613"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/b/ba/Forest_of_Plunder.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110133613",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2554,
+      "Velia": 407,
+      "Heidel": 1423
+    }
   },
   {
     "name": "Forest of Seclusion",
+    "subname": "Forest of Seclusion - Lumbering",
     "cp": 1,
     "cpAdd": 2,
     "workload": 300,
@@ -1407,12 +1775,18 @@
         "yield": 1.1
       }
     ],
-    "distance": 2421,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a0/Forest_of_Seclusion.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110133405"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a0/Forest_of_Seclusion.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110133405",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1672,
+      "Velia": 1080,
+      "Heidel": 2421
+    }
   },
   {
     "name": "Forest of Seclusion",
+    "subname": "Forest of Seclusion - Mining",
     "cp": 1,
     "cpAdd": 2,
     "workload": 300,
@@ -1430,12 +1804,18 @@
         "yield": 1.65
       }
     ],
-    "distance": 2421,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a0/Forest_of_Seclusion.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110133405"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a0/Forest_of_Seclusion.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181110133405",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1668,
+      "Velia": 1076,
+      "Heidel": 2416
+    }
   },
   {
     "name": "Fountain of Origin",
+    "subname": "Fountain of Origin",
     "cp": 3,
     "cpAdd": 2,
     "workload": 602,
@@ -1453,12 +1833,19 @@
         "yield": 13.65
       }
     ],
-    "distance": 3862,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/65/Fountain_of_Origin.png/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180710214057"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/65/Fountain_of_Origin.png/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180710214057",
+    "lodging": "Duvencrune",
+    "distance": {
+      "Trent": 6843,
+      "Grana": 5952,
+      "Old Wisdom Tree": 3862,
+      "Duvencrune": 2278
+    }
   },
   {
     "name": "Gavinya Coastal Cliff",
+    "subname": "Gavinya Coastal Cliff - Sunrise Herb",
     "cp": 2,
     "cpAdd": 1,
     "workload": 150,
@@ -1476,12 +1863,18 @@
         "yield": 1.1
       }
     ],
-    "distance": 5302,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8c/Gavinya_Coastal_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113147"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8c/Gavinya_Coastal_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113147",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 5594,
+      "Valencia": 5302,
+      "Arehaza": 8781
+    }
   },
   {
     "name": "Gavinya Coastal Cliff",
+    "subname": "Gavinya Coastal Cliff - Vanadium",
     "cp": 2,
     "cpAdd": 1,
     "workload": 200,
@@ -1505,12 +1898,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 5302,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8c/Gavinya_Coastal_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113147"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8c/Gavinya_Coastal_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113147",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 5459,
+      "Valencia": 5168,
+      "Arehaza": 8647
+    }
   },
   {
-    "name": "Gavinya Great Crater",
+    "name": "Gavinya Great Crator",
+    "subname": "Gavinya Great Crater - Titanium",
     "cp": 2,
     "cpAdd": 2,
     "workload": 200,
@@ -1534,12 +1933,18 @@
         "yield": 1.08
       }
     ],
-    "distance": 4427,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/08/Gavinya_Great_Crater.JPG/revision/latest/scale-to-width-down/320?cb=20180605113148"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/08/Gavinya_Great_Crater.JPG/revision/latest/scale-to-width-down/320?cb=20180605113148",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 4718,
+      "Valencia": 4427,
+      "Arehaza": 7906
+    }
   },
   {
     "name": "Gavinya Volcano Zone",
+    "subname": "Gavinya Volcano Zone - Vanadium",
     "cp": 2,
     "cpAdd": 3,
     "workload": 200,
@@ -1563,12 +1968,18 @@
         "yield": 1.08
       }
     ],
-    "distance": 4747,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/55/Gavinya_Volcano_Zone.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113148"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/55/Gavinya_Volcano_Zone.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113148",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 5038,
+      "Valencia": 4747,
+      "Arehaza": 8225
+    }
   },
   {
     "name": "Gavinya Volcano Zone",
+    "subname": "Gavinya Volcano Zone - Titanium",
     "cp": 2,
     "cpAdd": 3,
     "workload": 200,
@@ -1592,12 +2003,18 @@
         "yield": 1.08
       }
     ],
-    "distance": 4747,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/55/Gavinya_Volcano_Zone.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113148"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/55/Gavinya_Volcano_Zone.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113148",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 4906,
+      "Valencia": 4615,
+      "Arehaza": 8093
+    }
   },
   {
     "name": "Gervish Mountains",
+    "subname": "Gervish Mountains",
     "cp": 2,
     "cpAdd": 1,
     "workload": 280,
@@ -1609,12 +2026,19 @@
         "yield": 6
       }
     ],
-    "distance": 3405,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/06/Gervish_Mountains.JPG/revision/latest/scale-to-width-down/320?cb=20181118012833"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/06/Gervish_Mountains.JPG/revision/latest/scale-to-width-down/320?cb=20181118012833",
+    "lodging": "Keplan",
+    "distance": {
+      "Heidel": 4883,
+      "Glish": 3692,
+      "Keplan": 3176,
+      "Duvencrune": 3405
+    }
   },
   {
     "name": "Gervish Mountains",
+    "subname": "Gervish Mountains",
     "cp": 2,
     "cpAdd": 1,
     "workload": 280,
@@ -1626,12 +2050,19 @@
         "yield": 3.3
       }
     ],
-    "distance": 3405,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/06/Gervish_Mountains.JPG/revision/latest/scale-to-width-down/320?cb=20181118012833"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/06/Gervish_Mountains.JPG/revision/latest/scale-to-width-down/320?cb=20181118012833",
+    "lodging": "Keplan",
+    "distance": {
+      "Heidel": 4985,
+      "Glish": 3794,
+      "Keplan": 3279,
+      "Duvencrune": 3507
+    }
   },
   {
     "name": "Glish Ruins",
+    "subname": "Glish Ruins - Excavation",
     "cp": 1,
     "cpAdd": 1,
     "workload": 1188,
@@ -1667,12 +2098,17 @@
         "yield": 1.6
       }
     ],
-    "distance": 799,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/23/Glish_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180226131457"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/23/Glish_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180226131457",
+    "lodging": "Glish",
+    "distance": {
+      "Heidel": 1071,
+      "Glish": 799
+    }
   },
   {
     "name": "Glish Swamp",
+    "subname": "Glish Swamp - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 297,
@@ -1690,12 +2126,18 @@
         "yield": 0.96
       }
     ],
-    "distance": 427,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/77/Glish_Swamp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173712"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/77/Glish_Swamp.JPG/revision/latest/scale-to-width-down/320?cb=20180225173712",
+    "lodging": "Glish",
+    "distance": {
+      "Velia": 1826,
+      "Heidel": 1416,
+      "Glish": 431
+    }
   },
   {
     "name": "Glish Swamp",
+    "subname": "Glish Swamp - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 396,
@@ -1713,12 +2155,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 427,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/77/Glish_Swamp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173712"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/77/Glish_Swamp.JPG/revision/latest/scale-to-width-down/320?cb=20180225173712",
+    "lodging": "Glish",
+    "distance": {
+      "Velia": 1823,
+      "Heidel": 1413,
+      "Glish": 427
+    }
   },
   {
     "name": "Glutoni Cave",
+    "subname": "Glutoni Cave - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -1736,12 +2184,19 @@
         "yield": 1.12
       }
     ],
-    "distance": 1172,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/cf/Glutoni_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180218155245"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/cf/Glutoni_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180218155245",
+    "lodging": "Keplan",
+    "distance": {
+      "Glish": 2943,
+      "Keplan": 1172,
+      "Calpheon": 1334,
+      "Trent": 3069
+    }
   },
   {
     "name": "Glutoni Cave",
+    "subname": "Glutoni Cave - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 400,
@@ -1759,12 +2214,19 @@
         "yield": 1.4
       }
     ],
-    "distance": 1172,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/cf/Glutoni_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180218155245"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/cf/Glutoni_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180218155245",
+    "lodging": "Keplan",
+    "distance": {
+      "Glish": 3104,
+      "Keplan": 1333,
+      "Calpheon": 1494,
+      "Trent": 3229
+    }
   },
   {
     "name": "Goblin Cave",
+    "subname": "Goblin Cave - Mining",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -1782,12 +2244,18 @@
         "yield": 1.1
       }
     ],
-    "distance": 682,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/40/Goblin_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180124060906"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/40/Goblin_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180124060906",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2744,
+      "Velia": 682,
+      "Heidel": 1189
+    }
   },
   {
     "name": "Goblin Cave",
+    "subname": "Goblin Cave - Lumbering",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -1805,12 +2273,18 @@
         "yield": 1.1
       }
     ],
-    "distance": 682,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/40/Goblin_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180124060906"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/40/Goblin_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180124060906",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2748,
+      "Velia": 687,
+      "Heidel": 1194
+    }
   },
   {
     "name": "Gorgo Rock Belt",
+    "subname": "Gorgo Rock Belt - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 150,
@@ -1822,12 +2296,19 @@
         "yield": 42
       }
     ],
-    "distance": 1550,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/19/Gorgo_Rock_Belt.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040706"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/19/Gorgo_Rock_Belt.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040706",
+    "lodging": "Altinova",
+    "distance": {
+      "Tarif": 3410,
+      "Altinova": 1550,
+      "Bazaar": 2682,
+      "Shakatu": 3658
+    }
   },
   {
     "name": "Gorgo Rock Belt",
+    "subname": "Gorgo Rock Belt - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 200,
@@ -1851,12 +2332,19 @@
         "yield": 2.4
       }
     ],
-    "distance": 1550,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/19/Gorgo_Rock_Belt.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040706"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/19/Gorgo_Rock_Belt.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040706",
+    "lodging": "Altinova",
+    "distance": {
+      "Tarif": 3604,
+      "Altinova": 1744,
+      "Bazaar": 2721,
+      "Shakatu": 3604
+    }
   },
   {
     "name": "Hexe Stone Wall",
+    "subname": "Hexe Stone Wall - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 510,
@@ -1874,12 +2362,19 @@
         "yield": 1.4
       }
     ],
-    "distance": 1419,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c1/Hexe_Stone_Wall.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180218163550"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c1/Hexe_Stone_Wall.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180218163550",
+    "lodging": "Keplan",
+    "distance": {
+      "Glish": 3190,
+      "Keplan": 1419,
+      "Calpheon": 2783,
+      "Trent": 2984
+    }
   },
   {
     "name": "Holo Forest",
+    "subname": "Mining",
     "cp": 2,
     "cpAdd": 2,
     "workload": 280,
@@ -1897,12 +2392,18 @@
         "yield": 3
       }
     ],
-    "distance": 1956,
     "region": "Kamasylvia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/64/Holo_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180925184516"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/64/Holo_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180925184516",
+    "lodging": "Grana",
+    "distance": {
+      "Trent": 4242,
+      "Grana": 1956,
+      "Old Wisdom Tree": 1998
+    }
   },
   {
     "name": "Imp Cave",
+    "subname": "Imp Cave - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 400,
@@ -1920,12 +2421,18 @@
         "yield": 1.1
       }
     ],
-    "distance": 548,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ee/Imp_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181006062758"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ee/Imp_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181006062758",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1700,
+      "Velia": 548,
+      "Heidel": 2064
+    }
   },
   {
     "name": "Imp Cave",
+    "subname": "Imp Cave - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 400,
@@ -1943,12 +2450,18 @@
         "yield": 2.2
       }
     ],
-    "distance": 548,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ee/Imp_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181006062758"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ee/Imp_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181006062758",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1701,
+      "Velia": 549,
+      "Heidel": 2065
+    }
   },
   {
     "name": "Iris Canyon",
+    "subname": "Iris - Gathering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 150,
@@ -1960,12 +2473,18 @@
         "yield": 42
       }
     ],
-    "distance": 2817,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8a/Iris_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091204"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8a/Iris_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091204",
+    "lodging": "Shakatu",
+    "distance": {
+      "Shakatu": 2817,
+      "Ancado": 6883,
+      "Valencia": 5418
+    }
   },
   {
     "name": "Iris Canyon",
+    "subname": "Iris - Lumbering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 200,
@@ -1989,12 +2508,18 @@
         "yield": 2.4
       }
     ],
-    "distance": 2817,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8a/Iris_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091204"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8a/Iris_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091204",
+    "lodging": "Shakatu",
+    "distance": {
+      "Shakatu": 2807,
+      "Ancado": 6872,
+      "Valencia": 5408
+    }
   },
   {
     "name": "Ivero Cliff",
+    "subname": "Ivero Cliff - Arrow Mushroom",
     "cp": 2,
     "cpAdd": 1,
     "workload": 150,
@@ -2018,12 +2543,18 @@
         "yield": 0.275
       }
     ],
-    "distance": 4957,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/51/Ivero_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113149"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/51/Ivero_Cliff.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605113149",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 5249,
+      "Valencia": 4957,
+      "Arehaza": 8436
+    }
   },
   {
     "name": "Kamasilve Temple",
+    "subname": "Kamasylve Temple - Gathering",
     "cp": 2,
     "cpAdd": 2,
     "workload": 300,
@@ -2041,12 +2572,17 @@
         "yield": 1.12
       }
     ],
-    "distance": 1447,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c6/Kamasylve_Temple.JPG/revision/latest/scale-to-width-down/320?cb=20180824102830"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c6/Kamasylve_Temple.JPG/revision/latest/scale-to-width-down/320?cb=20180824102830",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 1447,
+      "Tarif": 1226
+    }
   },
   {
     "name": "Kamasilve Temple",
+    "subname": "Kamasylve Temple - Flax Farming",
     "cp": 2,
     "cpAdd": 2,
     "workload": 400,
@@ -2064,12 +2600,17 @@
         "yield": 1.2
       }
     ],
-    "distance": 1447,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c6/Kamasylve_Temple.JPG/revision/latest/scale-to-width-down/320?cb=20180824102830"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c6/Kamasylve_Temple.JPG/revision/latest/scale-to-width-down/320?cb=20180824102830",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 1436,
+      "Tarif": 1215
+    }
   },
   {
     "name": "Karanda Ridge",
+    "subname": "Karanda Ridge - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -2087,12 +2628,20 @@
         "yield": 1.4
       }
     ],
-    "distance": 2194,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/08/Karanda_Ridge.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214021004"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/08/Karanda_Ridge.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214021004",
+    "lodging": "Calpheon",
+    "distance": {
+      "Olvia": 3415,
+      "Velia": 3996,
+      "Heidel": 3540,
+      "Keplan": 2952,
+      "Calpheon": 2194
+    }
   },
   {
     "name": "Kasula Farm",
+    "subname": "Kasula Farm - Cotton Farming",
     "cp": 2,
     "cpAdd": 2,
     "workload": 400,
@@ -2110,12 +2659,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 285,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8e/Kasula_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310132644"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8e/Kasula_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310132644",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 2703,
+      "Tarif": 285,
+      "Altinova": 1801
+    }
   },
   {
     "name": "Kasula Farm",
+    "subname": "Kasula Farm - Cinnamon Farming",
     "cp": 2,
     "cpAdd": 2,
     "workload": 400,
@@ -2127,12 +2682,18 @@
         "yield": 24
       }
     ],
-    "distance": 285,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8e/Kasula_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310132644"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/8e/Kasula_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310132644",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 2703,
+      "Tarif": 292,
+      "Altinova": 1801
+    }
   },
   {
     "name": "Keplan Quarry",
+    "subname": "Keplan Quarry - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 400,
@@ -2150,12 +2711,19 @@
         "yield": 1.4
       }
     ],
-    "distance": 342,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/fc/Keplan_Quarry.png/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180224091620"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/fc/Keplan_Quarry.png/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180224091620",
+    "lodging": "Keplan",
+    "distance": {
+      "Glish": 1939,
+      "Keplan": 342,
+      "Calpheon": 1337,
+      "Trent": 3267
+    }
   },
   {
     "name": "Khalk Canyon",
+    "subname": "Khalk Canyon",
     "cp": 5,
     "cpAdd": 1,
     "workload": 280,
@@ -2173,12 +2741,19 @@
         "yield": 0.02
       }
     ],
-    "distance": 2309,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2f/Khalk_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181116132115"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2f/Khalk_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181116132115",
+    "lodging": "Old Wisdom Tree",
+    "distance": {
+      "Trent": 5290,
+      "Grana": 4399,
+      "Old Wisdom Tree": 2309,
+      "Duvencrune": 2400
+    }
   },
   {
     "name": "Khalk Canyon",
+    "subname": "Khalk Canyon",
     "cp": 5,
     "cpAdd": 1,
     "workload": 280,
@@ -2196,12 +2771,19 @@
         "yield": 0.02
       }
     ],
-    "distance": 2309,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2f/Khalk_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181116132115"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2f/Khalk_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181116132115",
+    "lodging": "Old Wisdom Tree",
+    "distance": {
+      "Trent": 5172,
+      "Grana": 4281,
+      "Old Wisdom Tree": 2191,
+      "Duvencrune": 2282
+    }
   },
   {
     "name": "Khimut Lumber Camp",
+    "subname": "Khimut Lumber Camp",
     "cp": 5,
     "cpAdd": 2,
     "workload": 280,
@@ -2225,12 +2807,20 @@
         "yield": 2.3
       }
     ],
-    "distance": 3824,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5d/Khimut_Lumber_Camp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181118132241"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5d/Khimut_Lumber_Camp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181118132241",
+    "lodging": "Duvencrune",
+    "distance": {
+      "Heidel": 4382,
+      "Glish": 4567,
+      "Keplan": 4051,
+      "Tarif": 4081,
+      "Duvencrune": 3824
+    }
   },
   {
     "name": "Khimut Lumber Camp",
+    "subname": "Khimut Lumber Camp",
     "cp": 5,
     "cpAdd": 2,
     "workload": 280,
@@ -2254,12 +2844,20 @@
         "yield": 2.3
       }
     ],
-    "distance": 3824,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5d/Khimut_Lumber_Camp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181118132241"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5d/Khimut_Lumber_Camp.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20181118132241",
+    "lodging": "Duvencrune",
+    "distance": {
+      "Heidel": 4344,
+      "Glish": 4505,
+      "Keplan": 3990,
+      "Tarif": 4043,
+      "Duvencrune": 3763
+    }
   },
   {
     "name": "Khuruto Cave",
+    "subname": "Khuruto Cave - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 1000,
@@ -2277,12 +2875,18 @@
         "yield": 1.4
       }
     ],
-    "distance": 1238,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5b/Khuruto_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214021052"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5b/Khuruto_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214021052",
+    "lodging": "Calpheon",
+    "distance": {
+      "Olvia": 2458,
+      "Keplan": 2032,
+      "Calpheon": 1238
+    }
   },
   {
     "name": "Kmach Canyon",
+    "subname": "Kmach Canyon - Gathering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 150,
@@ -2294,12 +2898,18 @@
         "yield": 42
       }
     ],
-    "distance": 2858,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Kmach_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091204"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Kmach_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091204",
+    "lodging": "Shakatu",
+    "distance": {
+      "Shakatu": 2858,
+      "Ancado": 6595,
+      "Valencia": 5130
+    }
   },
   {
     "name": "Kmach Canyon",
+    "subname": "Kmach Canyon - Mining",
     "cp": 3,
     "cpAdd": 1,
     "workload": 200,
@@ -2323,12 +2933,18 @@
         "yield": 1.08
       }
     ],
-    "distance": 2858,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Kmach_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091204"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Kmach_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180428091204",
+    "lodging": "Shakatu",
+    "distance": {
+      "Shakatu": 2854,
+      "Ancado": 6591,
+      "Valencia": 5127
+    }
   },
   {
     "name": "Kunid's Vacation Spot",
+    "subname": "Kunid's Shelter - Gathering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 150,
@@ -2346,12 +2962,18 @@
         "yield": 2.4
       }
     ],
-    "distance": 2200,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Kunid%27s_Shelter.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040707"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Kunid%27s_Shelter.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040707",
+    "lodging": "Altinova",
+    "distance": {
+      "Altinova": 2200,
+      "Bazaar": 3014,
+      "Shakatu": 3714
+    }
   },
   {
     "name": "Lake Flondor",
+    "subname": "Mining",
     "cp": 2,
     "cpAdd": 3,
     "workload": 282.8,
@@ -2369,12 +2991,18 @@
         "yield": 3
       }
     ],
-    "distance": 1298,
     "region": "Kamasylvia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c5/Lake_Flondor.JPG/revision/latest/scale-to-width-down/320?cb=20180823055037"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c5/Lake_Flondor.JPG/revision/latest/scale-to-width-down/320?cb=20180823055037",
+    "lodging": "Grana",
+    "distance": {
+      "Trent": 4960,
+      "Grana": 1298,
+      "Old Wisdom Tree": 1980
+    }
   },
   {
     "name": "Leical Falls",
+    "subname": "Leical Falls - Gathering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 150,
@@ -2392,12 +3020,18 @@
         "yield": 3.6
       }
     ],
-    "distance": 2303,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/96/Leical_Falls.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040708"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/96/Leical_Falls.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040708",
+    "lodging": "Altinova",
+    "distance": {
+      "Altinova": 2303,
+      "Bazaar": 3117,
+      "Shakatu": 3043
+    }
   },
   {
     "name": "Loggia Farm",
+    "subname": "Loggia Farm - Potato Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -2409,12 +3043,18 @@
         "yield": 16.5
       }
     ],
-    "distance": 535,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/7e/Loggia_farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123070556"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/7e/Loggia_farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123070556",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1934,
+      "Velia": 535,
+      "Heidel": 2066
+    }
   },
   {
     "name": "Longleaf Tree Forest",
+    "subname": "Longleaf Tree Forest - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 297,
@@ -2432,12 +3072,18 @@
         "yield": 2.1
       }
     ],
-    "distance": 1024,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e5/Longleaf_Tree_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180211235341"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e5/Longleaf_Tree_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180211235341",
+    "lodging": "Trent",
+    "distance": {
+      "Keplan": 2571,
+      "Calpheon": 2747,
+      "Trent": 1024
+    }
   },
   {
     "name": "Longleaf Tree Sentry",
+    "subname": "Longleaf Tree Sentry Post - Gathering",
     "cp": 1,
     "cpAdd": 2,
     "workload": 297,
@@ -2455,12 +3101,18 @@
         "yield": 1.4
       }
     ],
-    "distance": 441,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5e/Longleaf_Tree_Sentry_Post.JPG/revision/latest/scale-to-width-down/320?cb=20180211234426"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5e/Longleaf_Tree_Sentry_Post.JPG/revision/latest/scale-to-width-down/320?cb=20180211234426",
+    "lodging": "Trent",
+    "distance": {
+      "Keplan": 2605,
+      "Calpheon": 2781,
+      "Trent": 441
+    }
   },
   {
     "name": "Looney Cabin",
+    "subname": "Grow Mushroom",
     "cp": 2,
     "cpAdd": 1,
     "workload": 282.8,
@@ -2478,12 +3130,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 1671,
     "region": "Kamasylvia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6f/Looney_Cabin.png/revision/latest/scale-to-width-down/320?cb=20180815010732"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6f/Looney_Cabin.png/revision/latest/scale-to-width-down/320?cb=20180815010732",
+    "lodging": "Grana",
+    "distance": {
+      "Trent": 6560,
+      "Grana": 1671,
+      "Old Wisdom Tree": 2945
+    }
   },
   {
     "name": "Loopy Tree Forest",
+    "subname": "Lumbering",
     "cp": 2,
     "cpAdd": 2,
     "workload": 282.8,
@@ -2507,12 +3165,18 @@
         "yield": 2.4
       }
     ],
-    "distance": 3620,
     "region": "Kamasylvia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/fe/Loopy_Tree_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180925185035"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/fe/Loopy_Tree_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180925185035",
+    "lodging": "Grana",
+    "distance": {
+      "Trent": 4528,
+      "Grana": 3620,
+      "Old Wisdom Tree": 4525
+    }
   },
   {
     "name": "Lumberjacks Rest",
+    "subname": "Lumberjack's Rest Area - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 297,
@@ -2530,12 +3194,18 @@
         "yield": 1.4
       }
     ],
-    "distance": 352,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/f6/Lumberjack%27s_Rest_Area.JPG/revision/latest/scale-to-width-down/320?cb=20180210232228"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/f/f6/Lumberjack%27s_Rest_Area.JPG/revision/latest/scale-to-width-down/320?cb=20180210232228",
+    "lodging": "Trent",
+    "distance": {
+      "Keplan": 3360,
+      "Calpheon": 3171,
+      "Trent": 352
+    }
   },
   {
     "name": "Lynch Farm Ruins",
+    "subname": "Lynch Farm Ruins - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 297,
@@ -2553,12 +3223,19 @@
         "yield": 1.2
       }
     ],
-    "distance": 786,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Lynch_Farm_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190938"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Lynch_Farm_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190938",
+    "lodging": "Heidel",
+    "distance": {
+      "Olvia": 3103,
+      "Velia": 2317,
+      "Heidel": 786,
+      "Glish": 1215
+    }
   },
   {
     "name": "Lynch Farm Ruins",
+    "subname": "Lynch Farm Ruins - Excavation",
     "cp": 1,
     "cpAdd": 1,
     "workload": 1188,
@@ -2594,12 +3271,19 @@
         "yield": 1.6
       }
     ],
-    "distance": 786,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Lynch_Farm_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190938"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2c/Lynch_Farm_Ruins.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190938",
+    "lodging": "Heidel",
+    "distance": {
+      "Olvia": 3095,
+      "Velia": 2309,
+      "Heidel": 777,
+      "Glish": 1207
+    }
   },
   {
     "name": "Lynch Ranch",
+    "subname": "Lynch Ranch - Fleece Production",
     "cp": 1,
     "cpAdd": 2,
     "workload": 396,
@@ -2617,12 +3301,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 1359,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/cf/Lynch_Ranch.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180226131712"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/cf/Lynch_Ranch.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180226131712",
+    "lodging": "Heidel",
+    "distance": {
+      "Velia": 2428,
+      "Heidel": 1359,
+      "Glish": 1960
+    }
   },
   {
     "name": "Mansha Forest",
+    "subname": "Mansha Forest - Lumbering",
     "cp": 1,
     "cpAdd": 2,
     "workload": 297,
@@ -2640,12 +3330,19 @@
         "yield": 2.1
       }
     ],
-    "distance": 1326,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/77/Mansha_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180209204404"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/77/Mansha_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180209204404",
+    "lodging": "Trent",
+    "distance": {
+      "Keplan": 3431,
+      "Calpheon": 2117,
+      "Epheria": 3074,
+      "Trent": 1326
+    }
   },
   {
     "name": "Mansha Forest",
+    "subname": "Mansha Forest - Excavation",
     "cp": 1,
     "cpAdd": 2,
     "workload": 1188,
@@ -2681,12 +3378,19 @@
         "yield": 1.6
       }
     ],
-    "distance": 1326,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/77/Mansha_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180209204404"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/77/Mansha_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180209204404",
+    "lodging": "Trent",
+    "distance": {
+      "Keplan": 3524,
+      "Calpheon": 2210,
+      "Epheria": 3167,
+      "Trent": 1265
+    }
   },
   {
     "name": "Marak Farm",
+    "subname": "Marak Farm",
     "cp": 3,
     "cpAdd": 2,
     "workload": 280,
@@ -2698,12 +3402,18 @@
         "yield": 18
       }
     ],
-    "distance": 1183,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/7e/Marak_Farm.JPG/revision/latest/scale-to-width-down/320?cb=20181117182612"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/7e/Marak_Farm.JPG/revision/latest/scale-to-width-down/320?cb=20181117182612",
+    "lodging": "Duvencrune",
+    "distance": {
+      "Keplan": 5627,
+      "Old Wisdom Tree": 5304,
+      "Duvencrune": 1183
+    }
   },
   {
     "name": "Marak Farm",
+    "subname": "Marak Farm",
     "cp": 3,
     "cpAdd": 2,
     "workload": 280,
@@ -2715,12 +3425,18 @@
         "yield": 18
       }
     ],
-    "distance": 1183,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/7e/Marak_Farm.JPG/revision/latest/scale-to-width-down/320?cb=20181117182612"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/7e/Marak_Farm.JPG/revision/latest/scale-to-width-down/320?cb=20181117182612",
+    "lodging": "Duvencrune",
+    "distance": {
+      "Keplan": 5608,
+      "Old Wisdom Tree": 5445,
+      "Duvencrune": 1324
+    }
   },
   {
     "name": "Marie Cave",
+    "subname": "Marie Cave - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 153,
@@ -2738,12 +3454,18 @@
         "yield": 2.1
       }
     ],
-    "distance": 1926,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a2/Marie_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015458"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a2/Marie_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015458",
+    "lodging": "Keplan",
+    "distance": {
+      "Keplan": 1926,
+      "Calpheon": 3177,
+      "Trent": 2826
+    }
   },
   {
     "name": "Marie Cave",
+    "subname": "Marie Cave - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 153,
@@ -2761,12 +3483,18 @@
         "yield": 1.12
       }
     ],
-    "distance": 1926,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a2/Marie_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015458"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a2/Marie_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015458",
+    "lodging": "Keplan",
+    "distance": {
+      "Keplan": 2054,
+      "Calpheon": 3306,
+      "Trent": 2954
+    }
   },
   {
     "name": "Marni's Second Lab",
+    "subname": "Marni's 2nd Lab - Gathering",
     "cp": 2,
     "cpAdd": 2,
     "workload": 300,
@@ -2784,12 +3512,17 @@
         "yield": 1.4
       }
     ],
-    "distance": 1104,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/19/Marni%27s_2nd_lab.JPG/revision/latest/scale-to-width-down/320?cb=20180310132645"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/19/Marni%27s_2nd_lab.JPG/revision/latest/scale-to-width-down/320?cb=20180310132645",
+    "lodging": "Altinova",
+    "distance": {
+      "Tarif": 2583,
+      "Altinova": 1104
+    }
   },
   {
     "name": "Mediah Northern Highlands",
+    "subname": "Mediah Northern Highlands - Lumbering",
     "cp": 3,
     "cpAdd": 2,
     "workload": 210,
@@ -2813,12 +3546,19 @@
         "yield": 1.44
       }
     ],
-    "distance": 2502,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/56/Mediah_Northern_Highlands.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010706"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/56/Mediah_Northern_Highlands.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010706",
+    "lodging": "Tarif",
+    "distance": {
+      "Velia": 2734,
+      "Heidel": 2916,
+      "Tarif": 2502,
+      "Altinova": 4032
+    }
   },
   {
     "name": "Mediah Northern Highlands",
+    "subname": "Mediah Northern Highlands - Lumbering",
     "cp": 3,
     "cpAdd": 2,
     "workload": 210,
@@ -2842,12 +3582,18 @@
         "yield": 1.8
       }
     ],
-    "distance": 2502,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/56/Mediah_Northern_Highlands.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010706"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/56/Mediah_Northern_Highlands.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010706",
+    "lodging": "Heidel",
+    "distance": {
+      "Heidel": 2418,
+      "Tarif": 2502,
+      "Altinova": 3888
+    }
   },
   {
     "name": "Mediah Shore",
+    "subname": "Mediah Shore - Mining",
     "cp": 3,
     "cpAdd": 1,
     "workload": 300,
@@ -2871,12 +3617,18 @@
         "yield": 1.8
       }
     ],
-    "distance": 2429,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/44/Mediah_Shore.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010555"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/44/Mediah_Shore.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010555",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 3329,
+      "Tarif": 1727,
+      "Altinova": 2429
+    }
   },
   {
     "name": "Moretti Plantation",
+    "subname": "Moretti Plantation - Wheat Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 396,
@@ -2888,12 +3640,17 @@
         "yield": 18
       }
     ],
-    "distance": 679,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6b/Moretti_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180824104011"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6b/Moretti_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180824104011",
+    "lodging": "Heidel",
+    "distance": {
+      "Heidel": 679,
+      "Glish": 1374
+    }
   },
   {
     "name": "Moretti Plantation",
+    "subname": "Moretti Plantation - Flax Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 396,
@@ -2911,12 +3668,17 @@
         "yield": 1.2
       }
     ],
-    "distance": 679,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6b/Moretti_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180824104011"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6b/Moretti_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180824104011",
+    "lodging": "Heidel",
+    "distance": {
+      "Heidel": 686,
+      "Glish": 1381
+    }
   },
   {
     "name": "Northern Cienaga",
+    "subname": "Northern Cienaga - Gathering",
     "cp": 1,
     "cpAdd": 2,
     "workload": 297,
@@ -2934,12 +3696,18 @@
         "yield": 0.96
       }
     ],
-    "distance": 612,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/76/Northern_Cienaga.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180824104631"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/76/Northern_Cienaga.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180824104631",
+    "lodging": "Heidel",
+    "distance": {
+      "Velia": 2235,
+      "Heidel": 612,
+      "Glish": 1006
+    }
   },
   {
     "name": "Northern Heidel Quarry",
+    "subname": "Northern Heidel Quarry - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 396,
@@ -2957,12 +3725,17 @@
         "yield": 1.2
       }
     ],
-    "distance": 546,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/30/Northern_Heidel_Quarry.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190948"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/30/Northern_Heidel_Quarry.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190948",
+    "lodging": "Heidel",
+    "distance": {
+      "Velia": 1535,
+      "Heidel": 546
+    }
   },
   {
     "name": "Northern Heidel Quarry",
+    "subname": "Northern Heidel Quarry - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 297,
@@ -2980,12 +3753,17 @@
         "yield": 1.2
       }
     ],
-    "distance": 546,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/30/Northern_Heidel_Quarry.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190948"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/30/Northern_Heidel_Quarry.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190948",
+    "lodging": "Heidel",
+    "distance": {
+      "Velia": 1536,
+      "Heidel": 547
+    }
   },
   {
     "name": "Northern Plain of Serendia",
+    "subname": "Northern Plain of Serendia - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 297,
@@ -3003,12 +3781,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 1345,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/53/Northern_Plain_of_Serendia.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190936"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/53/Northern_Plain_of_Serendia.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190936",
+    "lodging": "Heidel",
+    "distance": {
+      "Velia": 2363,
+      "Heidel": 1345,
+      "Glish": 1530
+    }
   },
   {
     "name": "Northern Plain of Serendia",
+    "subname": "Northern Plain of Serendia - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 396,
@@ -3026,12 +3810,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 1345,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/53/Northern_Plain_of_Serendia.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190936"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/53/Northern_Plain_of_Serendia.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180920190936",
+    "lodging": "Heidel",
+    "distance": {
+      "Velia": 2352,
+      "Heidel": 1334,
+      "Glish": 1519
+    }
   },
   {
     "name": "Northern Sand Dune",
+    "subname": "Northern Sand Dune - Cactus",
     "cp": 2,
     "cpAdd": 1,
     "workload": 200,
@@ -3055,12 +3845,18 @@
         "yield": 2.4
       }
     ],
-    "distance": 2128,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/3b/Northern_Sand_Dune.JPG/revision/latest/scale-to-width-down/320?cb=20180605102211"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/3b/Northern_Sand_Dune.JPG/revision/latest/scale-to-width-down/320?cb=20180605102211",
+    "lodging": "Arehaza",
+    "distance": {
+      "Ancado": 6258,
+      "Valencia": 4226,
+      "Arehaza": 2128
+    }
   },
   {
     "name": "Northern Wheat Plantation",
+    "subname": "Northern Wheat Plantation - Wheat Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -3072,12 +3868,19 @@
         "yield": 21
       }
     ],
-    "distance": 742,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e6/Northern_Wheat_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180928185301"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e6/Northern_Wheat_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180928185301",
+    "lodging": "Calpheon",
+    "distance": {
+      "Olvia": 2515,
+      "Keplan": 1697,
+      "Calpheon": 742,
+      "Epheria": 1921
+    }
   },
   {
     "name": "Northern Wheat Plantation",
+    "subname": "Northern Wheat Plantation - Barley Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -3089,12 +3892,19 @@
         "yield": 21
       }
     ],
-    "distance": 742,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e6/Northern_Wheat_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180928185301"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e6/Northern_Wheat_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180928185301",
+    "lodging": "Calpheon",
+    "distance": {
+      "Olvia": 2358,
+      "Keplan": 1897,
+      "Calpheon": 900,
+      "Epheria": 1980
+    }
   },
   {
     "name": "Northern Wheat Plantation",
+    "subname": "Northern Wheat Plantation - Paprika Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -3106,12 +3916,19 @@
         "yield": 21
       }
     ],
-    "distance": 742,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e6/Northern_Wheat_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180928185301"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/e6/Northern_Wheat_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180928185301",
+    "lodging": "Calpheon",
+    "distance": {
+      "Olvia": 2374,
+      "Keplan": 1760,
+      "Calpheon": 818,
+      "Epheria": 2061
+    }
   },
   {
     "name": "Old Dandelion",
+    "subname": "Old Dandelion - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -3129,12 +3946,17 @@
         "yield": 1.4
       }
     ],
-    "distance": 1219,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c2/Old_Dandelion.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180206175128"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c2/Old_Dandelion.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180206175128",
+    "lodging": "Calpheon",
+    "distance": {
+      "Keplan": 1974,
+      "Calpheon": 1219
+    }
   },
   {
     "name": "Omar Lava Cave",
+    "subname": "Omar Lava Cave - Mining",
     "cp": 3,
     "cpAdd": 2,
     "workload": 1000,
@@ -3158,12 +3980,18 @@
         "yield": 1.8
       }
     ],
-    "distance": 2320,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2a/Omar_Lava_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164832"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2a/Omar_Lava_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164832",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 2613,
+      "Tarif": 1011,
+      "Altinova": 2320
+    }
   },
   {
     "name": "Omar Lava Cave",
+    "subname": "Omar Lava Cave - Mining",
     "cp": 3,
     "cpAdd": 2,
     "workload": 400,
@@ -3187,12 +4015,18 @@
         "yield": 1.8
       }
     ],
-    "distance": 2320,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2a/Omar_Lava_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164832"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/2a/Omar_Lava_Cave.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164832",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 2644,
+      "Tarif": 1042,
+      "Altinova": 2351
+    }
   },
   {
     "name": "Oze Pass",
+    "subname": "Oze Pass - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -3210,12 +4044,19 @@
         "yield": 1.4
       }
     ],
-    "distance": 942,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a0/Oze_Pass.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180928182658"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a0/Oze_Pass.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180928182658",
+    "lodging": "Keplan",
+    "distance": {
+      "Heidel": 2789,
+      "Glish": 2178,
+      "Keplan": 942,
+      "Calpheon": 1599
+    }
   },
   {
     "name": "Phoniel's Cabin",
+    "subname": "Phoniel’s Cabin - Lumbering",
     "cp": 1,
     "cpAdd": 2,
     "workload": 297,
@@ -3233,12 +4074,18 @@
         "yield": 2.1
       }
     ],
-    "distance": 1655,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ee/Phoniel%27s_Cabin.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015959"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/e/ee/Phoniel%27s_Cabin.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015959",
+    "lodging": "Calpheon",
+    "distance": {
+      "Keplan": 2178,
+      "Calpheon": 1655,
+      "Trent": 2345
+    }
   },
   {
     "name": "Pilgrim's Haven",
+    "subname": "Martyr's Haven - Lumbering",
     "cp": 3,
     "cpAdd": 3,
     "workload": 200,
@@ -3262,12 +4109,18 @@
         "yield": 2.4
       }
     ],
-    "distance": 2496,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/84/Pilgrim%27s_Haven.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212515"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/84/Pilgrim%27s_Haven.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212515",
+    "lodging": "Bazaar",
+    "distance": {
+      "Altinova": 5284,
+      "Bazaar": 2496,
+      "Valencia": 3817
+    }
   },
   {
     "name": "Pilgrim's Haven",
+    "subname": "Martyr's Haven - Mining",
     "cp": 3,
     "cpAdd": 3,
     "workload": 200,
@@ -3291,12 +4144,18 @@
         "yield": 2.52
       }
     ],
-    "distance": 2496,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/84/Pilgrim%27s_Haven.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212515"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/8/84/Pilgrim%27s_Haven.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212515",
+    "lodging": "Bazaar",
+    "distance": {
+      "Altinova": 5290,
+      "Bazaar": 2502,
+      "Valencia": 3822
+    }
   },
   {
     "name": "Pilgrims Sanctum Humility",
+    "subname": "Pilgrim's Sanctum - Humility - Excavation",
     "cp": 1,
     "cpAdd": 3,
     "workload": 600,
@@ -3326,12 +4185,19 @@
         "yield": 0.8
       }
     ],
-    "distance": 5406,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/99/Pilgrim%27s_Sanctum_Humility.JPG/revision/latest/scale-to-width-down/320?cb=20180508212517"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/99/Pilgrim%27s_Sanctum_Humility.JPG/revision/latest/scale-to-width-down/320?cb=20180508212517",
+    "lodging": "Valencia",
+    "distance": {
+      "Bazaar": 5406,
+      "Ancado": 6857,
+      "Valencia": 5107,
+      "Arehaza": 7693
+    }
   },
   {
     "name": "Polly's Forest",
+    "subname": "Gathering",
     "cp": 2,
     "cpAdd": 2,
     "workload": 282.8,
@@ -3349,12 +4215,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 1698,
     "region": "Kamasylvia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a0/Polly%27s_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180620081315"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a0/Polly%27s_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180620081315",
+    "lodging": "Grana",
+    "distance": {
+      "Trent": 6587,
+      "Grana": 1698,
+      "Old Wisdom Tree": 2972
+    }
   },
   {
     "name": "Primal Giant Post",
+    "subname": "Primal Giant Post - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 202,
@@ -3372,12 +4244,18 @@
         "yield": 1.4
       }
     ],
-    "distance": 696,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/10/Primal_Giant_Post.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180218163246"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/10/Primal_Giant_Post.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180218163246",
+    "lodging": "Keplan",
+    "distance": {
+      "Keplan": 696,
+      "Calpheon": 2060,
+      "Trent": 3088
+    }
   },
   {
     "name": "Pujiya Canyon",
+    "subname": "Pujiya Canyon - Mining",
     "cp": 3,
     "cpAdd": 3,
     "workload": 202,
@@ -3401,12 +4279,17 @@
         "yield": 2.52
       }
     ],
-    "distance": 1905,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/71/Pujiya_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040709"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/71/Pujiya_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040709",
+    "lodging": "Bazaar",
+    "distance": {
+      "Altinova": 1905,
+      "Bazaar": 1674
+    }
   },
   {
     "name": "Quint Hill",
+    "subname": "Quint Hill - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 300,
@@ -3424,12 +4307,17 @@
         "yield": 1.4
       }
     ],
-    "distance": 1345,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/33/Quint_Hill.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020605"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/33/Quint_Hill.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020605",
+    "lodging": "Epheria",
+    "distance": {
+      "Calpheon": 1345,
+      "Epheria": 1028
+    }
   },
   {
     "name": "Quint Hill",
+    "subname": "Quint Hill - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 400,
@@ -3447,12 +4335,17 @@
         "yield": 1.4
       }
     ],
-    "distance": 1345,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/33/Quint_Hill.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020605"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/33/Quint_Hill.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020605",
+    "lodging": "Epheria",
+    "distance": {
+      "Calpheon": 1348,
+      "Epheria": 1031
+    }
   },
   {
     "name": "Rhua Tree Stub",
+    "subname": "Rhua Tree Stub - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 153,
@@ -3470,12 +4363,18 @@
         "yield": 1.12
       }
     ],
-    "distance": 1679,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/90/Rhua_Tree_Stub.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015706"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/90/Rhua_Tree_Stub.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015706",
+    "lodging": "Trent",
+    "distance": {
+      "Keplan": 1803,
+      "Calpheon": 2012,
+      "Trent": 1679
+    }
   },
   {
     "name": "Rhua Tree Stub",
+    "subname": "Rhua Tree Stub - Excavation",
     "cp": 1,
     "cpAdd": 1,
     "workload": 612,
@@ -3511,12 +4410,18 @@
         "yield": 1.6
       }
     ],
-    "distance": 1679,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/90/Rhua_Tree_Stub.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015706"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/90/Rhua_Tree_Stub.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214015706",
+    "lodging": "Trent",
+    "distance": {
+      "Keplan": 1811,
+      "Calpheon": 2020,
+      "Trent": 1687
+    }
   },
   {
     "name": "Rhutum Outstation",
+    "subname": "Rhutum Outstation - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 396,
@@ -3534,12 +4439,19 @@
         "yield": 1.4
       }
     ],
-    "distance": 1863,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c3/Rhutum_Outstation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020212"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c3/Rhutum_Outstation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180214020212",
+    "lodging": "Calpheon",
+    "distance": {
+      "Keplan": 3177,
+      "Calpheon": 1863,
+      "Epheria": 2894,
+      "Trent": 1941
+    }
   },
   {
     "name": "Roud Sulfur Works",
+    "subname": "Roud Sulfur Works - Excavation",
     "cp": 5,
     "cpAdd": 2,
     "workload": 1200,
@@ -3563,12 +4475,18 @@
         "yield": 0.2
       }
     ],
-    "distance": 3058,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a8/Roud_Sulfur_Works.JPG/revision/latest/scale-to-width-down/320?cb=20180605113150"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/a/a8/Roud_Sulfur_Works.JPG/revision/latest/scale-to-width-down/320?cb=20180605113150",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 3350,
+      "Valencia": 3058,
+      "Arehaza": 6537
+    }
   },
   {
     "name": "Serendia Shrine",
+    "subname": "Serendia Shrine - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 282,
@@ -3586,12 +4504,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 1747,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/53/Serendia_Shrine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180823025108"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/53/Serendia_Shrine.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180823025108",
+    "lodging": "Glish",
+    "distance": {
+      "Heidel": 1747,
+      "Glish": 1124,
+      "Keplan": 2346
+    }
   },
   {
     "name": "Shady Tree Forest",
+    "subname": "Lumbering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 282.8,
@@ -3615,13 +4539,19 @@
         "yield": 2.4
       }
     ],
-    "distance": 600,
     "region": "Kamasylvia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/7d/Shady_Tree_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180925183744"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/7d/Shady_Tree_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180925183744",
+    "lodging": "Old Wisdom Tree",
+    "distance": {
+      "Trent": 4256,
+      "Grana": 1780,
+      "Old Wisdom Tree": 600
+    }
   },
   {
     "name": "Shakatu Farmland",
-    "cp": 2,
+    "subname": "Shakatu Farmland - Fig",
+    "cp": 3,
     "cpAdd": 2,
     "workload": 200,
     "material": [
@@ -3632,13 +4562,18 @@
         "yield": 42
       }
     ],
-    "distance": 537,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/18/Shakatu_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040713"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/18/Shakatu_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040713",
+    "lodging": "Shakatu",
+    "distance": {
+      "Bazaar": 4674,
+      "Shakatu": 537
+    }
   },
   {
     "name": "Shakatu Farmland",
-    "cp": 2,
+    "subname": "Shakatu Farmland - Fig",
+    "cp": 3,
     "cpAdd": 2,
     "workload": 200,
     "material": [
@@ -3649,12 +4584,17 @@
         "yield": 42
       }
     ],
-    "distance": 537,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/18/Shakatu_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040713"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/18/Shakatu_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040713",
+    "lodging": "Shakatu",
+    "distance": {
+      "Bazaar": 4728,
+      "Shakatu": 591
+    }
   },
   {
     "name": "Shakatu Farmland",
+    "subname": "Shakatu Farmland - Star Anise",
     "cp": 2,
     "cpAdd": 2,
     "workload": 200,
@@ -3666,12 +4606,17 @@
         "yield": 42
       }
     ],
-    "distance": 537,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/18/Shakatu_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040713"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/1/18/Shakatu_Farmland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180328040713",
+    "lodging": "Shakatu",
+    "distance": {
+      "Bazaar": 4725,
+      "Shakatu": 589
+    }
   },
   {
     "name": "Sherekhan Necropolis",
+    "subname": "Sherekhan Necropolis",
     "cp": 3,
     "cpAdd": 3,
     "workload": 600,
@@ -3689,12 +4634,19 @@
         "yield": 13.65
       }
     ],
-    "distance": 2942,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c4/Sherekhan%27s_Grave.png/revision/latest/scale-to-width-down/320?cb=20180710215144"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c4/Sherekhan%27s_Grave.png/revision/latest/scale-to-width-down/320?cb=20180710215144",
+    "lodging": "Duvencrune",
+    "distance": {
+      "Trent": 5923,
+      "Grana": 5032,
+      "Old Wisdom Tree": 2942,
+      "Duvencrune": 1965
+    }
   },
   {
     "name": "Shuri Farm",
+    "subname": "Shuri Farm - Sweet Potato Farming",
     "cp": 2,
     "cpAdd": 2,
     "workload": 400,
@@ -3718,12 +4670,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 1269,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/08/Shuri_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164830"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/08/Shuri_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180310164830",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 2533,
+      "Tarif": 1269,
+      "Altinova": 2923
+    }
   },
   {
     "name": "Southern Cienaga",
+    "subname": "Southern Cienaga - Gathering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 297,
@@ -3741,12 +4699,18 @@
         "yield": 0.96
       }
     ],
-    "distance": 513,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5a/Southern_Cienaga.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173842"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5a/Southern_Cienaga.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173842",
+    "lodging": "Glish",
+    "distance": {
+      "Heidel": 1376,
+      "Glish": 513,
+      "Keplan": 2167
+    }
   },
   {
     "name": "Southern Cienaga",
+    "subname": "Southern Cienaga - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 297,
@@ -3764,12 +4728,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 513,
     "region": "Serendia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5a/Southern_Cienaga.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173842"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/5/5a/Southern_Cienaga.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180225173842",
+    "lodging": "Glish",
+    "distance": {
+      "Heidel": 1376,
+      "Glish": 513,
+      "Keplan": 2166
+    }
   },
   {
     "name": "Southern Kamasylvia",
+    "subname": "Mining",
     "cp": 2,
     "cpAdd": 2,
     "workload": 280,
@@ -3787,11 +4757,17 @@
         "yield": 3
       }
     ],
-    "distance": 1024,
-    "region": "Kamasylvia"
+    "region": "Kamasylvia",
+    "lodging": "Grana",
+    "distance": {
+      "Trent": 5580,
+      "Grana": 1024,
+      "Old Wisdom Tree": 1924
+    }
   },
   {
     "name": "Star's End",
+    "subname": "Star's End Digging",
     "cp": 1,
     "cpAdd": 3,
     "workload": 10200,
@@ -3815,11 +4791,18 @@
         "yield": 0.5
       }
     ],
-    "distance": 4391,
-    "region": "Calpheon"
+    "region": "Special",
+    "lodging": "Calpheon",
+    "distance": {
+      "Calpheon": 4391,
+      "Valencia": 20814,
+      "Grana": 5250,
+      "Old Wisdom Tree": 6111
+    }
   },
   {
     "name": "Stonetail Wasteland",
+    "subname": "Stonetail Wasteland - Lumbering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 300,
@@ -3843,12 +4826,18 @@
         "yield": 1.44
       }
     ],
-    "distance": 1765,
     "region": "Mediah",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/3f/Stonetail_Wasteland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010705"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/3f/Stonetail_Wasteland.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180314010705",
+    "lodging": "Tarif",
+    "distance": {
+      "Heidel": 3029,
+      "Tarif": 1765,
+      "Altinova": 3295
+    }
   },
   {
     "name": "Terrmian Cliff",
+    "subname": "Thermian Cliff - Mining",
     "cp": 1,
     "cpAdd": 1,
     "workload": 202,
@@ -3860,12 +4849,18 @@
         "yield": 9
       }
     ],
-    "distance": 603,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6b/Terrmian_Cliff.JPG/revision/latest/scale-to-width-down/320?cb=20180126063756"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6b/Terrmian_Cliff.JPG/revision/latest/scale-to-width-down/320?cb=20180126063756",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 603,
+      "Velia": 2727,
+      "Heidel": 3258
+    }
   },
   {
     "name": "Titium Valley",
+    "subname": "Titium Valley - Gathering",
     "cp": 3,
     "cpAdd": 3,
     "workload": 151.5,
@@ -3877,12 +4872,18 @@
         "yield": 42
       }
     ],
-    "distance": 6943,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/41/Titium_Valley.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132632"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/41/Titium_Valley.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132632",
+    "lodging": "Valencia",
+    "distance": {
+      "Bazaar": 7188,
+      "Valencia": 6943,
+      "Arehaza": 7921
+    }
   },
   {
     "name": "Titium Valley",
+    "subname": "Titium Valley - Gathering",
     "cp": 3,
     "cpAdd": 3,
     "workload": 151.5,
@@ -3894,12 +4895,18 @@
         "yield": 42
       }
     ],
-    "distance": 6943,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/41/Titium_Valley.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132632"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/41/Titium_Valley.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132632",
+    "lodging": "Valencia",
+    "distance": {
+      "Bazaar": 7271,
+      "Valencia": 7025,
+      "Arehaza": 8004
+    }
   },
   {
     "name": "Titium Valley",
+    "subname": "Titium Valley - Lumbering",
     "cp": 3,
     "cpAdd": 3,
     "workload": 202,
@@ -3923,12 +4930,18 @@
         "yield": 2.4
       }
     ],
-    "distance": 6943,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/41/Titium_Valley.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132632"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/41/Titium_Valley.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180607132632",
+    "lodging": "Valencia",
+    "distance": {
+      "Bazaar": 7119,
+      "Valencia": 6873,
+      "Arehaza": 7852
+    }
   },
   {
     "name": "Tooth Fairy Forest",
+    "subname": "Excavation",
     "cp": 2,
     "cpAdd": 3,
     "workload": 606,
@@ -3952,12 +4965,18 @@
         "yield": 0.2
       }
     ],
-    "distance": 2171,
     "region": "Kamasylvia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/29/Tooth_Fairy_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180823061104"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/2/29/Tooth_Fairy_Forest.JPG/revision/latest/scale-to-width-down/320?cb=20180823061104",
+    "lodging": "Grana",
+    "distance": {
+      "Trent": 4338,
+      "Grana": 2171,
+      "Old Wisdom Tree": 3260
+    }
   },
   {
     "name": "Toscani Farm",
+    "subname": "Toscani Farm - Corn Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -3969,12 +4988,18 @@
         "yield": 16.5
       }
     ],
-    "distance": 812,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/ce/Toscani_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123070228"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/ce/Toscani_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123070228",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1839,
+      "Velia": 812,
+      "Heidel": 2174
+    }
   },
   {
     "name": "Toscani Farm",
+    "subname": "Toscani Farm - Corn Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 400,
@@ -3986,12 +5011,18 @@
         "yield": 16.5
       }
     ],
-    "distance": 812,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/ce/Toscani_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123070228"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/ce/Toscani_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180123070228",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1840,
+      "Velia": 812,
+      "Heidel": 2175
+    }
   },
   {
     "name": "Treant Forest",
+    "subname": "Treant Forest - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 297,
@@ -4009,12 +5040,17 @@
         "yield": 1.4
       }
     ],
-    "distance": 742,
     "region": "Calpheon",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/78/Treant_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180210003217"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/7/78/Treant_Forest.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180210003217",
+    "lodging": "Trent",
+    "distance": {
+      "Calpheon": 2979,
+      "Trent": 742
+    }
   },
   {
     "name": "Tshira Ruins",
+    "subname": "Tshira Ruins",
     "cp": 2,
     "cpAdd": 2,
     "workload": 280,
@@ -4026,12 +5062,20 @@
         "yield": 3.3
       }
     ],
-    "distance": 2996,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c5/Tshira_Ruins.png/revision/latest/scale-to-width-down/320?cb=20180711071423"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c5/Tshira_Ruins.png/revision/latest/scale-to-width-down/320?cb=20180711071423",
+    "lodging": "Duvencrune",
+    "distance": {
+      "Heidel": 4980,
+      "Glish": 4367,
+      "Keplan": 3851,
+      "Tarif": 4679,
+      "Duvencrune": 2996
+    }
   },
   {
     "name": "Tshira Ruins",
+    "subname": "Tshira Ruins",
     "cp": 2,
     "cpAdd": 2,
     "workload": 280,
@@ -4043,12 +5087,20 @@
         "yield": 6
       }
     ],
-    "distance": 2996,
     "region": "Drieghan",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c5/Tshira_Ruins.png/revision/latest/scale-to-width-down/320?cb=20180711071423"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/c5/Tshira_Ruins.png/revision/latest/scale-to-width-down/320?cb=20180711071423",
+    "lodging": "Duvencrune",
+    "distance": {
+      "Heidel": 5061,
+      "Glish": 4307,
+      "Keplan": 3792,
+      "Tarif": 4760,
+      "Duvencrune": 2956
+    }
   },
   {
     "name": "Valencia Plantation",
+    "subname": "Valencia Plantation - Pistachio",
     "cp": 3,
     "cpAdd": 2,
     "workload": 202,
@@ -4060,12 +5112,18 @@
         "yield": 42
       }
     ],
-    "distance": 530,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Valencia_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212520"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Valencia_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212520",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 2097,
+      "Valencia": 530,
+      "Arehaza": 3928
+    }
   },
   {
     "name": "Valencia Plantation",
+    "subname": "Valencia Plantation - Date Palm",
     "cp": 3,
     "cpAdd": 2,
     "workload": 202,
@@ -4077,12 +5135,18 @@
         "yield": 42
       }
     ],
-    "distance": 530,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Valencia_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212520"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Valencia_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212520",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 2089,
+      "Valencia": 522,
+      "Arehaza": 3920
+    }
   },
   {
     "name": "Valencia Plantation",
+    "subname": "Valencia Plantation - Freekeh",
     "cp": 3,
     "cpAdd": 2,
     "workload": 202,
@@ -4094,12 +5158,18 @@
         "yield": 42
       }
     ],
-    "distance": 530,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Valencia_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212520"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/0/0f/Valencia_Plantation.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180508212520",
+    "lodging": "Valencia",
+    "distance": {
+      "Ancado": 2094,
+      "Valencia": 526,
+      "Arehaza": 3925
+    }
   },
   {
     "name": "Veteran's Canyon",
+    "subname": "Veteran's Canyon - Lumbering",
     "cp": 3,
     "cpAdd": 1,
     "workload": 200,
@@ -4122,12 +5192,18 @@
         "yield": 2.4
       }
     ],
-    "distance": 1961,
     "region": "Valencia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/4c/Veteran%27s_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102213"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/4/4c/Veteran%27s_Canyon.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180605102213",
+    "lodging": "Altinova",
+    "distance": {
+      "Altinova": 1961,
+      "Bazaar": 2353,
+      "Shakatu": 3382
+    }
   },
   {
     "name": "Viv Foretta's Cabin",
+    "subname": "Farming",
     "cp": 1,
     "cpAdd": 2,
     "workload": 282.8,
@@ -4145,12 +5221,18 @@
         "yield": 0.6
       }
     ],
-    "distance": 3555,
     "region": "Kamasylvia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/91/Viv_Foretta%27s_Hamlet.PNG/revision/latest/scale-to-width-down/320?cb=20180910184949"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/9/91/Viv_Foretta%27s_Hamlet.PNG/revision/latest/scale-to-width-down/320?cb=20180910184949",
+    "lodging": "Old Wisdom Tree",
+    "distance": {
+      "Trent": 3000,
+      "Grana": 3555,
+      "Old Wisdom Tree": 1943
+    }
   },
   {
     "name": "Wale Farm",
+    "subname": "Wale Farm - Olives",
     "cp": 1,
     "cpAdd": 1,
     "workload": 400,
@@ -4162,12 +5244,18 @@
         "yield": 9
       }
     ],
-    "distance": 257,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/ca/Wale_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126061612"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/c/ca/Wale_Farm.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126061612",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 257,
+      "Velia": 2483,
+      "Heidel": 3088
+    }
   },
   {
     "name": "Weenie Cabin",
+    "subname": "Grow Mushroom",
     "cp": 2,
     "cpAdd": 1,
     "workload": 282.8,
@@ -4185,12 +5273,18 @@
         "yield": 1.2
       }
     ],
-    "distance": 1608,
     "region": "Kamasylvia",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/30/Weenie_Cabin.png/revision/latest/scale-to-width-down/320?cb=20180815010048"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/3/30/Weenie_Cabin.png/revision/latest/scale-to-width-down/320?cb=20180815010048",
+    "lodging": "Grana",
+    "distance": {
+      "Trent": 6005,
+      "Grana": 1608,
+      "Old Wisdom Tree": 3025
+    }
   },
   {
     "name": "Wolf Hills",
+    "subname": "Wolf Hills - Lumbering",
     "cp": 1,
     "cpAdd": 1,
     "workload": 232,
@@ -4202,8 +5296,1739 @@
         "yield": 9
       }
     ],
-    "distance": 340,
     "region": "Balenos",
-    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6c/Wolf_Hills.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126054050"
+    "image": "https://vignette.wikia.nocookie.net/blackdesert/images/6/6c/Wolf_Hills.JPG/revision/latest/window-crop/width/320/x-offset/181/y-offset/0/window-width/1441/window-height/1080?cb=20180126054050",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 340,
+      "Velia": 1902
+    }
+  },
+  {
+    "name": "Albresser Island",
+    "subname": "Fish Drying Yard",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8536,
+        "name": "Dried Mullet",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8531,
+        "name": "Dried Ray",
+        "luck": 4.2,
+        "yield": 4.2
+      },
+      {
+        "id": 8578,
+        "name": "Dried Pintado",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8512,
+        "name": "Dried Octopus",
+        "luck": 1.4,
+        "yield": 1.4
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 3264,
+      "Calpheon": 4000,
+      "Epheria": 4626
+    }
+  },
+  {
+    "name": "Angie Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8534,
+        "name": "Dried Filefish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8530,
+        "name": "Dried Skipjack",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8573,
+        "name": "Dried Bluefish",
+        "luck": 3,
+        "yield": 3
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 1293,
+      "Velia": 2620,
+      "Epheria": 3706
+    }
+  },
+  {
+    "name": "Angie Island",
+    "subname": "Angie Island - Fish Trap 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8567,
+        "name": "Dried Dolphinfish",
+        "luck": 6.6,
+        "yield": 6.6
+      },
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 6.6,
+        "yield": 6.6
+      },
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 5.6,
+        "yield": 5.6
+      },
+      {
+        "id": 8572,
+        "name": "Dried Siganid",
+        "luck": 1.2,
+        "yield": 1.2
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 0
+    }
+  },
+  {
+    "name": "Angie Island",
+    "subname": "Fish Drying Yard 3",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8567,
+        "name": "Dried Dolphinfish",
+        "luck": 6.8,
+        "yield": 6.8
+      },
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 6.8,
+        "yield": 6.8
+      },
+      {
+        "id": 8573,
+        "name": "Dried Bluefish",
+        "luck": 3.2,
+        "yield": 3.2
+      },
+      {
+        "id": 8602,
+        "name": "Dried Clownfish",
+        "luck": 3,
+        "yield": 3
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 1797,
+      "Velia": 2888,
+      "Heidel": 4377,
+      "Epheria": 4370
+    }
+  },
+  {
+    "name": "Baeza Island",
+    "subname": "Fish Drying Yard",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8536,
+        "name": "Dried Mullet",
+        "luck": 8.2,
+        "yield": 8.2
+      },
+      {
+        "id": 8509,
+        "name": "Dried Saurel",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8512,
+        "name": "Dried Octopus",
+        "luck": 1.8,
+        "yield": 1.8
+      },
+      {
+        "id": 8571,
+        "name": "Dried Nibbler",
+        "luck": 0.18,
+        "yield": 0.18
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Epheria",
+    "distance": {
+      "Calpheon": 3294,
+      "Epheria": 1462
+    }
+  },
+  {
+    "name": "Barater Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 6.4,
+        "yield": 6.4
+      },
+      {
+        "id": 8536,
+        "name": "Dried Mullet",
+        "luck": 6.4,
+        "yield": 6.4
+      },
+      {
+        "id": 8531,
+        "name": "Dried Ray",
+        "luck": 3.4,
+        "yield": 3.4
+      },
+      {
+        "id": 8578,
+        "name": "Dried Pintado",
+        "luck": 3,
+        "yield": 3
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Epheria",
+    "distance": {
+      "Olvia": 3534,
+      "Calpheon": 3496,
+      "Epheria": 1660
+    }
+  },
+  {
+    "name": "Barater Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8536,
+        "name": "Dried Mullet",
+        "luck": 6.4,
+        "yield": 6.4
+      },
+      {
+        "id": 8509,
+        "name": "Dried Saurel",
+        "luck": 6.4,
+        "yield": 6.4
+      },
+      {
+        "id": 8529,
+        "name": "Dried Flying Fish",
+        "luck": 3.4,
+        "yield": 3.4
+      },
+      {
+        "id": 8585,
+        "name": "Dried Bigeye",
+        "luck": 3,
+        "yield": 3
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Epheria",
+    "distance": {
+      "Olvia": 3136,
+      "Calpheon": 3734,
+      "Epheria": 1901
+    }
+  },
+  {
+    "name": "Beiruwa Island",
+    "subname": "Fish Drying Yard",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8560,
+        "name": "Dried Flatfish",
+        "luck": 5.8,
+        "yield": 5.8
+      },
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 5.8,
+        "yield": 5.8
+      },
+      {
+        "id": 8566,
+        "name": "Dried Whiting",
+        "luck": 5.8,
+        "yield": 5.8
+      },
+      {
+        "id": 8603,
+        "name": "Dried Blue Tang",
+        "luck": 2.6,
+        "yield": 2.6
+      }
+    ],
+    "region": "Mediah",
+    "lodging": "Iliya",
+    "distance": {
+      "Olvia": 4403,
+      "Velia": 4354,
+      "Iliya": 2265
+    }
+  },
+  {
+    "name": "Daton Island",
+    "subname": "Fish Drying Yard",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8509,
+        "name": "Dried Saurel",
+        "luck": 8.2,
+        "yield": 8.2
+      },
+      {
+        "id": 8529,
+        "name": "Dried Flying Fish",
+        "luck": 4.6,
+        "yield": 4.6
+      },
+      {
+        "id": 8585,
+        "name": "Dried Bigeye",
+        "luck": 4.2,
+        "yield": 4.2
+      },
+      {
+        "id": 8525,
+        "name": "Dried Sea Bass",
+        "luck": 0.18,
+        "yield": 0.18
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Epheria",
+    "distance": {
+      "Olvia": 6376,
+      "Calpheon": 4746,
+      "Epheria": 2913
+    }
+  },
+  {
+    "name": "Delinghart Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8560,
+        "name": "Dried Flatfish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8566,
+        "name": "Dried Whiting",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8603,
+        "name": "Dried Blue Tang",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8508,
+        "name": "Dried Swellfish",
+        "luck": 1.4,
+        "yield": 1.4
+      }
+    ],
+    "region": "Mediah",
+    "lodging": "Iliya",
+    "distance": {
+      "Velia": 4952,
+      "Tarif": 4340,
+      "Altinova": 4084,
+      "Iliya": 1398
+    }
+  },
+  {
+    "name": "Delinghart Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8564,
+        "name": "Dried Round Herring",
+        "luck": 7.52,
+        "yield": 7.52
+      },
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 6.44,
+        "yield": 6.44
+      },
+      {
+        "id": 8603,
+        "name": "Dried Blue Tang",
+        "luck": 3.12,
+        "yield": 3.12
+      },
+      {
+        "id": 8510,
+        "name": "Dried Rockfish",
+        "luck": 2.92,
+        "yield": 2.92
+      }
+    ],
+    "region": "Mediah",
+    "lodging": "Iliya",
+    "distance": {
+      "Velia": 5346,
+      "Tarif": 4220,
+      "Altinova": 3964,
+      "Iliya": 1775
+    }
+  },
+  {
+    "name": "Ephde Rune Island",
+    "subname": "Fish Drying Yard",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8567,
+        "name": "Dried Dolphinfish",
+        "luck": 6.2,
+        "yield": 6.2
+      },
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 5.6,
+        "yield": 5.6
+      },
+      {
+        "id": 8534,
+        "name": "Dried Filefish",
+        "luck": 5.4,
+        "yield": 5.4
+      },
+      {
+        "id": 8530,
+        "name": "Dried Skipjack",
+        "luck": 2.8,
+        "yield": 2.8
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2818,
+      "Velia": 2258,
+      "Heidel": 3748,
+      "Iliya": 4049
+    }
+  },
+  {
+    "name": "Invernen Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 6.8,
+        "yield": 6.8
+      },
+      {
+        "id": 8509,
+        "name": "Dried Saurel",
+        "luck": 6,
+        "yield": 6
+      },
+      {
+        "id": 8567,
+        "name": "Dried Dolphinfish",
+        "luck": 5.8,
+        "yield": 5.8
+      },
+      {
+        "id": 8526,
+        "name": "Dried Angler",
+        "luck": 1.4,
+        "yield": 1.4
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 2421,
+      "Velia": 3522,
+      "Iliya": 4049
+    }
+  },
+  {
+    "name": "Invernen Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8509,
+        "name": "Dried Saurel",
+        "luck": 6.4,
+        "yield": 6.4
+      },
+      {
+        "id": 8567,
+        "name": "Dried Dolphinfish",
+        "luck": 5.6,
+        "yield": 5.6
+      },
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 5.3,
+        "yield": 5.3
+      },
+      {
+        "id": 8530,
+        "name": "Dried Skipjack",
+        "luck": 2.7,
+        "yield": 2.7
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 2771,
+      "Velia": 3635,
+      "Iliya": 3877
+    }
+  },
+  {
+    "name": "Lema Island",
+    "subname": "Lema Island - Fish Trap",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8534,
+        "name": "Dried Filefish",
+        "luck": 7.4,
+        "yield": 7.4
+      },
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 6,
+        "yield": 6
+      },
+      {
+        "id": 8573,
+        "name": "Dried Bluefish",
+        "luck": 3.4,
+        "yield": 3.4
+      },
+      {
+        "id": 8602,
+        "name": "Dried Clownfish",
+        "luck": 3,
+        "yield": 3
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 0
+    }
+  },
+  {
+    "name": "Lisz Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8573,
+        "name": "Dried Bluefish",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8604,
+        "name": "Dried Checkerboard Wrasse",
+        "luck": 2.4,
+        "yield": 2.4
+      },
+      {
+        "id": 8502,
+        "name": "Dried Tuna",
+        "luck": 0.18,
+        "yield": 0.18
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 2559,
+      "Velia": 3960,
+      "Epheria": 3054
+    }
+  },
+  {
+    "name": "Lisz Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8567,
+        "name": "Dried Dolphinfish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8534,
+        "name": "Dried Filefish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8530,
+        "name": "Dried Skipjack",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8598,
+        "name": "Dried Tapertail Anchovy",
+        "luck": 1.4,
+        "yield": 1.4
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 2868,
+      "Velia": 4195,
+      "Epheria": 3363
+    }
+  },
+  {
+    "name": "Louruve Island",
+    "subname": "Fish Drying Yard",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8602,
+        "name": "Dried Clownfish",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8604,
+        "name": "Dried Checkerboard Wrasse",
+        "luck": 2.4,
+        "yield": 2.4
+      },
+      {
+        "id": 8502,
+        "name": "Dried Tuna",
+        "luck": 0.18,
+        "yield": 0.18
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 1809,
+      "Velia": 3210,
+      "Epheria": 3190
+    }
+  },
+  {
+    "name": "Luivano Island",
+    "subname": "Fish Drying Yard",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8567,
+        "name": "Dried Dolphinfish",
+        "luck": 6,
+        "yield": 6
+      },
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 6,
+        "yield": 6
+      },
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 5.2,
+        "yield": 5.2
+      },
+      {
+        "id": 8530,
+        "name": "Dried Skipjack",
+        "luck": 2.6,
+        "yield": 2.6
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 1686,
+      "Velia": 1618,
+      "Heidel": 3107,
+      "Iliya": 3648
+    }
+  },
+  {
+    "name": "Mariveno Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 7.4,
+        "yield": 7.4
+      },
+      {
+        "id": 8573,
+        "name": "Dried Bluefish",
+        "luck": 3.6,
+        "yield": 3.6
+      },
+      {
+        "id": 8602,
+        "name": "Dried Clownfish",
+        "luck": 3.6,
+        "yield": 3.6
+      },
+      {
+        "id": 8572,
+        "name": "Dried Siganid",
+        "luck": 1.58,
+        "yield": 1.58
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Iliya",
+    "distance": {
+      "Olvia": 2526,
+      "Velia": 2403,
+      "Iliya": 2330
+    }
+  },
+  {
+    "name": "Mariveno Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8534,
+        "name": "Dried Filefish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8530,
+        "name": "Dried Skipjack",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8572,
+        "name": "Dried Siganid",
+        "luck": 1.4,
+        "yield": 1.4
+      }
+    ],
+    "region": "Balenos",
+    "lodging": "Velia",
+    "distance": {
+      "Olvia": 2375,
+      "Velia": 2165,
+      "Iliya": 2779
+    }
+  },
+  {
+    "name": "Modric Island",
+    "subname": "Fish Drying Yard",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8509,
+        "name": "Dried Saurel",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8585,
+        "name": "Dried Bigeye",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8556,
+        "name": "Dried Cero",
+        "luck": 1.8,
+        "yield": 1.8
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Epheria",
+    "distance": {
+      "Calpheon": 3582,
+      "Epheria": 1750
+    }
+  },
+  {
+    "name": "Nada Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 2,
+    "cpAdd": 3,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8529,
+        "name": "Dried Flying Fish",
+        "luck": 4.2,
+        "yield": 4.2
+      },
+      {
+        "id": 8527,
+        "name": "Dried Swordfish",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8583,
+        "name": "Dried Rosefish",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 6515,
+        "name": "Oyster",
+        "luck": 1.6,
+        "yield": 1.6
+      },
+      {
+        "id": 8525,
+        "name": "Dried Sea Bass",
+        "luck": 0.18,
+        "yield": 0.18
+      }
+    ],
+    "region": "Margoria",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 21497,
+      "Velia": 22371,
+      "Epheria": 23804,
+      "Iliya": 22312
+    }
+  },
+  {
+    "name": "Nada Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 2,
+    "cpAdd": 3,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8529,
+        "name": "Dried Flying Fish",
+        "luck": 4.2,
+        "yield": 4.2
+      },
+      {
+        "id": 8527,
+        "name": "Dried Swordfish",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8583,
+        "name": "Dried Rosefish",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 6516,
+        "name": "Shrimp",
+        "luck": 1.6,
+        "yield": 1.6
+      },
+      {
+        "id": 8525,
+        "name": "Dried Sea Bass",
+        "luck": 0.18,
+        "yield": 0.18
+      }
+    ],
+    "region": "Margoria",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 21453,
+      "Velia": 22327,
+      "Epheria": 23760,
+      "Iliya": 22269
+    }
+  },
+  {
+    "name": "Oben Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 8.2,
+        "yield": 8.2
+      },
+      {
+        "id": 8536,
+        "name": "Dried Mullet",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8578,
+        "name": "Dried Pintado",
+        "luck": 3.2,
+        "yield": 3.2
+      },
+      {
+        "id": 8508,
+        "name": "Dried Swellfish",
+        "luck": 1.4,
+        "yield": 1.4
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Epheria",
+    "distance": {
+      "Olvia": 4129,
+      "Calpheon": 4869,
+      "Epheria": 3036
+    }
+  },
+  {
+    "name": "Oben Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8509,
+        "name": "Dried Saurel",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8585,
+        "name": "Dried Bigeye",
+        "luck": 3.6,
+        "yield": 3.6
+      },
+      {
+        "id": 8529,
+        "name": "Dried Flying Fish",
+        "luck": 3.2,
+        "yield": 3.2
+      },
+      {
+        "id": 8508,
+        "name": "Dried Swellfish",
+        "luck": 1.8,
+        "yield": 1.8
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Epheria",
+    "distance": {
+      "Olvia": 3713,
+      "Calpheon": 4499,
+      "Epheria": 2666
+    }
+  },
+  {
+    "name": "Orffs Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8509,
+        "name": "Dried Saurel",
+        "luck": 6.8,
+        "yield": 6.8
+      },
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 6.6,
+        "yield": 6.6
+      },
+      {
+        "id": 8567,
+        "name": "Dried Dolphinfish",
+        "luck": 6.4,
+        "yield": 6.4
+      },
+      {
+        "id": 8561,
+        "name": "Dried Grunt",
+        "luck": 0.2,
+        "yield": 0.2
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 2283,
+      "Velia": 2926,
+      "Iliya": 3068
+    }
+  },
+  {
+    "name": "Orffs Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8534,
+        "name": "Dried Filefish",
+        "luck": 7.7,
+        "yield": 7.7
+      },
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 7.3,
+        "yield": 7.3
+      },
+      {
+        "id": 8602,
+        "name": "Dried Clownfish",
+        "luck": 4.8,
+        "yield": 4.8
+      },
+      {
+        "id": 8561,
+        "name": "Dried Grunt",
+        "luck": 0.2,
+        "yield": 0.2
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 2935,
+      "Velia": 3086,
+      "Iliya": 3068
+    }
+  },
+  {
+    "name": "Paratama Island",
+    "subname": "Fish Drying Yard",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 7.4,
+        "yield": 7.4
+      },
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 7.2,
+        "yield": 7.2
+      },
+      {
+        "id": 8508,
+        "name": "Dried Swellfish",
+        "luck": 1.9,
+        "yield": 1.9
+      },
+      {
+        "id": 8571,
+        "name": "Dried Nibbler",
+        "luck": 0.18,
+        "yield": 0.18
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Iliya",
+    "distance": {
+      "Olvia": 4252,
+      "Velia": 4203,
+      "Iliya": 1742
+    }
+  },
+  {
+    "name": "Pilava Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8566,
+        "name": "Dried Whiting",
+        "luck": 8.2,
+        "yield": 8.2
+      },
+      {
+        "id": 8560,
+        "name": "Dried Flatfish",
+        "luck": 7.4,
+        "yield": 7.4
+      },
+      {
+        "id": 8603,
+        "name": "Dried Blue Tang",
+        "luck": 3.8,
+        "yield": 3.8
+      },
+      {
+        "id": 8561,
+        "name": "Dried Grunt",
+        "luck": 0.18,
+        "yield": 0.18
+      }
+    ],
+    "region": "Mediah",
+    "lodging": "Iliya",
+    "distance": {
+      "Tarif": 3743,
+      "Altinova": 3487,
+      "Iliya": 2351
+    }
+  },
+  {
+    "name": "Pilava Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8564,
+        "name": "Dried Round Herring",
+        "luck": 7.8,
+        "yield": 7.8
+      },
+      {
+        "id": 8510,
+        "name": "Dried Rockfish",
+        "luck": 3.8,
+        "yield": 3.8
+      },
+      {
+        "id": 8603,
+        "name": "Dried Blue Tang",
+        "luck": 3.2,
+        "yield": 3.2
+      },
+      {
+        "id": 8584,
+        "name": "Dried Grouper",
+        "luck": 1.4,
+        "yield": 1.4
+      }
+    ],
+    "region": "Mediah",
+    "lodging": "Iliya",
+    "distance": {
+      "Tarif": 3535,
+      "Altinova": 3279,
+      "Iliya": 2523
+    }
+  },
+  {
+    "name": "Pujara Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8534,
+        "name": "Dried Filefish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8530,
+        "name": "Dried Skipjack",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8602,
+        "name": "Dried Clownfish",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8527,
+        "name": "Dried Swordfish",
+        "luck": 2.2,
+        "yield": 2.2
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Iliya",
+    "distance": {
+      "Tarif": 5150,
+      "Altinova": 4894,
+      "Iliya": 3029
+    }
+  },
+  {
+    "name": "Pujara Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 6.4,
+        "yield": 6.4
+      },
+      {
+        "id": 8567,
+        "name": "Dried Dolphinfish",
+        "luck": 6.2,
+        "yield": 6.2
+      },
+      {
+        "id": 8530,
+        "name": "Dried Skipjack",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8570,
+        "name": "Dried Golden-Thread",
+        "luck": 1.4,
+        "yield": 1.4
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Iliya",
+    "distance": {
+      "Tarif": 4314,
+      "Altinova": 4058,
+      "Iliya": 2545
+    }
+  },
+  {
+    "name": "Randis Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8509,
+        "name": "Dried Saurel",
+        "luck": 6.8,
+        "yield": 6.8
+      },
+      {
+        "id": 8585,
+        "name": "Dried Bigeye",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8577,
+        "name": "Dried Maomao",
+        "luck": 1.8,
+        "yield": 1.8
+      },
+      {
+        "id": 8512,
+        "name": "Dried Octopus",
+        "luck": 1.6,
+        "yield": 1.6
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Epheria",
+    "distance": {
+      "Olvia": 4319,
+      "Calpheon": 3312,
+      "Epheria": 1479
+    }
+  },
+  {
+    "name": "Randis Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8535,
+        "name": "Dried Scorpion Fish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8585,
+        "name": "Dried Bigeye",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8578,
+        "name": "Dried Pintado",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8581,
+        "name": "Dried John Dory",
+        "luck": 1.8,
+        "yield": 1.8
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Epheria",
+    "distance": {
+      "Olvia": 4053,
+      "Calpheon": 3326,
+      "Epheria": 1493
+    }
+  },
+  {
+    "name": "Serca Island",
+    "subname": "Fish Drying Yard",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8536,
+        "name": "Dried Mullet",
+        "luck": 7.8,
+        "yield": 7.8
+      },
+      {
+        "id": 8535,
+        "name": "Dried Scorpion Fish",
+        "luck": 7.74,
+        "yield": 7.74
+      },
+      {
+        "id": 8529,
+        "name": "Dried Flying Fish",
+        "luck": 3.9,
+        "yield": 3.9
+      },
+      {
+        "id": 8507,
+        "name": "Dried Porgy",
+        "luck": 0.18,
+        "yield": 0.18
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Epheria",
+    "distance": {
+      "Olvia": 4101,
+      "Calpheon": 2734,
+      "Epheria": 901
+    }
+  },
+  {
+    "name": "Staren Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8568,
+        "name": "Dried Striped Catfish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8535,
+        "name": "Dried Scorpion Fish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8604,
+        "name": "Dried Checkerboard Wrasse",
+        "luck": 2.2,
+        "yield": 2.2
+      },
+      {
+        "id": 8502,
+        "name": "Dried Tuna",
+        "luck": 0.1,
+        "yield": 0.1
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 2469,
+      "Velia": 3831,
+      "Epheria": 2646
+    }
+  },
+  {
+    "name": "Staren Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8567,
+        "name": "Dried Dolphinfish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8534,
+        "name": "Dried Filefish",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8510,
+        "name": "Dried Rockfish",
+        "luck": 3,
+        "yield": 3
+      },
+      {
+        "id": 8598,
+        "name": "Dried Tapertail Anchovy",
+        "luck": 1.4,
+        "yield": 1.4
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Olvia",
+    "distance": {
+      "Olvia": 2637,
+      "Velia": 3999,
+      "Epheria": 2705
+    }
+  },
+  {
+    "name": "Taramura Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8560,
+        "name": "Dried Flatfish",
+        "luck": 6.9,
+        "yield": 6.9
+      },
+      {
+        "id": 8566,
+        "name": "Dried Whiting",
+        "luck": 6.9,
+        "yield": 6.9
+      },
+      {
+        "id": 8603,
+        "name": "Dried Blue Tang",
+        "luck": 3.2,
+        "yield": 3.2
+      }
+    ],
+    "region": "Mediah",
+    "lodging": "Iliya",
+    "distance": {
+      "Velia": 5021,
+      "Tarif": 4792,
+      "Altinova": 4537,
+      "Iliya": 1692
+    }
+  },
+  {
+    "name": "Taramura Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8564,
+        "name": "Dried Round Herring",
+        "luck": 6.4,
+        "yield": 6.4
+      },
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 5.6,
+        "yield": 5.6
+      },
+      {
+        "id": 8566,
+        "name": "Dried Whiting",
+        "luck": 5.6,
+        "yield": 5.6
+      },
+      {
+        "id": 8510,
+        "name": "Dried Rockfish",
+        "luck": 2.4,
+        "yield": 2.4
+      }
+    ],
+    "region": "Mediah",
+    "lodging": "Iliya",
+    "distance": {
+      "Velia": 4952,
+      "Tarif": 5060,
+      "Altinova": 4805,
+      "Iliya": 1922
+    }
+  },
+  {
+    "name": "Teyamal Island",
+    "subname": "Fish Drying Yard 1",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8509,
+        "name": "Dried Saurel",
+        "luck": 7,
+        "yield": 7
+      },
+      {
+        "id": 8578,
+        "name": "Dried Pintado",
+        "luck": 3.2,
+        "yield": 3.2
+      },
+      {
+        "id": 8556,
+        "name": "Dried Cero",
+        "luck": 1.8,
+        "yield": 1.8
+      },
+      {
+        "id": 8512,
+        "name": "Dried Octopus",
+        "luck": 1.6,
+        "yield": 1.6
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Epheria",
+    "distance": {
+      "Calpheon": 4188,
+      "Epheria": 2356
+    }
+  },
+  {
+    "name": "Teyamal Island",
+    "subname": "Fish Drying Yard 2",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 5.8,
+        "yield": 5.8
+      },
+      {
+        "id": 8579,
+        "name": "Dried Gurnard",
+        "luck": 5.8,
+        "yield": 5.8
+      },
+      {
+        "id": 8509,
+        "name": "Dried Saurel",
+        "luck": 5.8,
+        "yield": 5.8
+      },
+      {
+        "id": 8529,
+        "name": "Dried Flying Fish",
+        "luck": 2.6,
+        "yield": 2.6
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Epheria",
+    "distance": {
+      "Calpheon": 4005,
+      "Epheria": 2172
+    }
+  },
+  {
+    "name": "Weita Island",
+    "subname": "Fish Drying Yard",
+    "cp": 1,
+    "cpAdd": 1,
+    "workload": 1200,
+    "material": [
+      {
+        "id": 8574,
+        "name": "Dried Surfperch",
+        "luck": 7.6,
+        "yield": 7.6
+      },
+      {
+        "id": 8573,
+        "name": "Dried Bluefish",
+        "luck": 3.8,
+        "yield": 3.8
+      },
+      {
+        "id": 8577,
+        "name": "Dried Maomao",
+        "luck": 2.4,
+        "yield": 2.4
+      },
+      {
+        "id": 8571,
+        "name": "Dried Nibbler",
+        "luck": 0.16,
+        "yield": 0.16
+      }
+    ],
+    "region": "Calpheon",
+    "lodging": "Iliya",
+    "distance": {
+      "Olvia": 3340,
+      "Velia": 3291,
+      "Iliya": 1620
+    }
   }
 ]

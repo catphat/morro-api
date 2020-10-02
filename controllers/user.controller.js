@@ -10,6 +10,7 @@ async function getInfo(req, res) {
     let user = await User.findOne({
       where: { sub: userId },
     });
+    const lastActive = user ? user.updatedAt : new Date();
     if (!user) {
       user = await User.create({
         sub: req.user.sub,
@@ -21,7 +22,7 @@ async function getInfo(req, res) {
         updatedAt: new Date(),
       });
     }
-    res.status(200).json({ username: `Hello User ${user.username}` });
+    res.status(200).json({ activeAt: lastActive });
   } else {
     return res.sendStatus(401);
   }

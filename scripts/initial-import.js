@@ -43,7 +43,8 @@ async function createNode(node, index) {
       workload: node.workload,
       workspeed: 0,
       movespeed: 0,
-      distance: node.distance,
+      distances: JSON.stringify(node.distance),
+      lodging: node.lodging,
       region: node.region,
     });
     for (const material of node.material) {

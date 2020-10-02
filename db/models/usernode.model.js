@@ -21,5 +21,8 @@ module.exports = (sequelize) => {
     workspeed: {
       type: DataTypes.FLOAT,
     },
+    lodging: {
+      type: DataTypes.STRING,
+    },
   });
 };
