@@ -45,6 +45,9 @@ module.exports = (sequelize) => {
       region: {
         type: DataTypes.STRING,
       },
+      group: {
+        type: DataTypes.TEXT,
+      },
     },
     {
       timestamps: false,

@@ -39,12 +39,20 @@ async function getNodesForUser(req, res) {
     for (const index of nodes.keys()) {
       const usernode = await UserNode.findOne({
         where: { UserSub: userId, nodeId: nodes[index].id },
-        attributes: ["contribution", "movespeed", "workspeed"],
+        attributes: [
+          "contribution",
+          "movespeed",
+          "workspeed",
+          "lodging",
+          "group",
+        ],
       });
       if (usernode) {
         nodes[index].cpAdd = usernode.contribution;
         nodes[index].movespeed = usernode.movespeed;
         nodes[index].workspeed = usernode.workspeed;
+        nodes[index].lodging = usernode.lodging;
+        nodes[index].group = usernode.group;
       }
     }
     if (!nodes) {
@@ -65,7 +73,7 @@ async function saveUserNodes(req, res) {
     });
     if (!userNode) {
       await UserNode.create({
-        contribution: value.cp,
+        contribution: value.cpAdd,
         movespeed: value.movespeed,
         workspeed: value.workspeed,
         nodeId: key,
@@ -73,7 +81,7 @@ async function saveUserNodes(req, res) {
       });
     } else {
       await userNode.update({
-        contribution: value.cp,
+        contribution: value.cpAdd,
         movespeed: value.movespeed,
         workspeed: value.workspeed,
       });

@@ -24,5 +24,8 @@ module.exports = (sequelize) => {
     lodging: {
       type: DataTypes.STRING,
     },
+    group: {
+      type: DataTypes.TEXT,
+    },
   });
 };
