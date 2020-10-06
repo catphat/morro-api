@@ -51,8 +51,10 @@ async function getNodesForUser(req, res) {
         nodes[index].cpAdd = usernode.contribution;
         nodes[index].movespeed = usernode.movespeed;
         nodes[index].workspeed = usernode.workspeed;
-        nodes[index].lodging = usernode.lodging;
-        nodes[index].group = usernode.group;
+
+        //Check optional values, to prevent overriding
+        if (usernode.lodging) nodes[index].lodging = usernode.lodging;
+        if (usernode.group) nodes[index].group = usernode.group;
       }
     }
     if (!nodes) {
@@ -76,6 +78,8 @@ async function saveUserNodes(req, res) {
         contribution: value.cpAdd,
         movespeed: value.movespeed,
         workspeed: value.workspeed,
+        lodging: value.lodging,
+        group: value.group,
         nodeId: key,
         UserSub: userId,
       });
@@ -84,6 +88,8 @@ async function saveUserNodes(req, res) {
         contribution: value.cpAdd,
         movespeed: value.movespeed,
         workspeed: value.workspeed,
+        lodging: value.lodging,
+        group: value.group,
       });
     }
   }

@@ -107,10 +107,13 @@ async function getDonations(req, res) {
         delete a.email;
       } else {
         delete c.email;
-        a.push(c);
+        if (c.username !== "Anonymoz") {
+          a.push(c);
+        }
       }
       return a;
     }, []);
+
     res.status(200).json(combinedTips);
   } catch (e) {
     console.log(e);
