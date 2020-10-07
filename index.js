@@ -5,7 +5,6 @@ const favicon = require("serve-favicon");
 const cors = require("cors");
 
 const config = require("./config");
-//const logger = require("./log");
 
 const isProduction = config.ENV === "production";
 

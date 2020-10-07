@@ -3,7 +3,6 @@ const { Node, Material } = sequelize.models;
 
 async function getAll(req, res) {
   //Enable for cache testing
-  //console.log("GET NODES FROM API");
   const nodes = await Node.findAll({
     include: { model: Material, through: { attributes: ["yield", "luck"] } },
   });

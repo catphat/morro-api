@@ -1,6 +1,7 @@
 const { ApiClient } = require("twitch");
 const { RefreshableAuthProvider, StaticAuthProvider } = require("twitch-auth");
 const sequelize = require("../db");
+const logger = require("../log");
 const { Token } = sequelize.models;
 const axios = require("axios");
 
@@ -34,7 +35,7 @@ var apiClient;
           ? null
           : new Date(parseInt(token.expiryTimestamp)),
       onRefresh: async ({ accessToken, refreshToken, expiryDate }) => {
-        console.log("Refresh");
+        logger.log("info", "Refreshed twitch token at %s", new Date());
         token.accessToken = accessToken;
         token.refreshToken = refreshToken;
         token.expiryTimestamp =
@@ -53,7 +54,7 @@ async function isLive(req, res) {
       null;
     res.status(200).json({ live: live });
   } catch (e) {
-    console.log(e);
+    logger.log("error", error);
     res.status(404).end();
   }
 }
@@ -61,14 +62,13 @@ async function isLive(req, res) {
 async function getBits(req, res) {
   try {
     //Enable for cache testing
-    //console.log("GET BITS FROM API");
     const leaderboard = await apiClient.helix.bits.getLeaderboard({
       period: "all",
       count: 50,
     });
     res.status(200).json(leaderboard.entries);
   } catch (e) {
-    console.log(e);
+    logger.log("error", error);
     res.status(404).send();
   }
 }
@@ -76,13 +76,12 @@ async function getBits(req, res) {
 async function getSubs(req, res) {
   try {
     //Enable for cache testing
-    //console.log("GET BITS FROM API");
     const subs = await apiClient.helix.subscriptions.getSubscriptions(
       TWITCH_USER_ID
     );
     res.status(200).json(subs);
   } catch (e) {
-    console.log(e);
+    logger.log("error", error);
     res.status(404).send();
   }
 }
@@ -90,7 +89,6 @@ async function getSubs(req, res) {
 async function getDonations(req, res) {
   try {
     //Enable for cache testing
-    //console.log("GET BITS FROM API");
     const tips = await axios
       .get(SE_BASEURL + "tips/" + SE_CHANNEL_ID + "/top", {
         headers: {
@@ -116,7 +114,7 @@ async function getDonations(req, res) {
 
     res.status(200).json(combinedTips);
   } catch (e) {
-    console.log(e);
+    logger.log("error", error);
     res.status(404).send();
   }
 }

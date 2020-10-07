@@ -2,6 +2,7 @@
 
 require("dotenv").config();
 const sequelize = require("../db");
+const logger = require("../log");
 const { Material } = sequelize.models;
 const { Item } = require("bdo-scraper");
 const MARKET = require("../custom_modules/marketplace");
@@ -21,13 +22,20 @@ async function updateMaterials() {
     await createOrUpdateMaterial(id);
   }
   const used = process.memoryUsage().heapUsed / 1024 / 1024;
-  console.log(
-    `The script uses approximately ${Math.round(used * 100) / 100} MB`
+  logger.log(
+    "info",
+    `${new Date()} - The script uses approximately ${
+      Math.round(used * 100) / 100
+    } MB`
   );
   await sequelize.close();
   var t1 = new Date().getTime();
-  console.log(
-    `Refresh item data done! It took ${(t1 - t0) / 1000 / 60} minutes`
+  logger.log(
+    "info",
+    `${new Date()} - Refresh item data done! It took ${
+      (t1 - t0) / 1000 / 60
+    } minutes at $`,
+    new Date()
   );
 }
 
@@ -71,7 +79,7 @@ async function createOrUpdateMaterial(id) {
       });
     }
   } catch (error) {
-    console.log(error);
+    logger.log("error", error);
   }
 }
 
@@ -80,7 +88,7 @@ async function fetchMarketInfo(id, region) {
     const marketPrice = await market.fetchItemStats(id, region).then((x) => x);
     return marketPrice;
   } catch (error) {
-    console.log(error);
+    logger.log("error", error);
   }
 }
 
@@ -94,8 +102,7 @@ async function getItemFromCodex(id) {
     };
     return codex;
   } catch (error) {
-    console.log(id);
-    console.log(error);
+    logger.log("error", error);
   }
 }
 
