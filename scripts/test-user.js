@@ -50,6 +50,4 @@ async function main() {
 }
 
 //This script should be used local, then copy database
-if (process.env.NODE_ENV != "production") {
-  main();
-}
+main();
