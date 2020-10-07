@@ -2,6 +2,7 @@
 
 require("dotenv").config();
 const sequelize = require("../db");
+const config = require("../config");
 const logger = require("../log");
 const { Material } = sequelize.models;
 const { Item } = require("bdo-scraper");
