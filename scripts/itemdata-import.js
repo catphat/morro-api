@@ -76,6 +76,7 @@ async function createOrUpdateMaterial(id) {
         floodedEU: market ? market.flooded : null,
         maxedNA: marketNA ? marketNA.maxed : null,
         maxedEU: market ? market.maxed : null,
+        updatedAt: new Date(),
       });
     }
   } catch (error) {
@@ -106,5 +107,5 @@ async function getItemFromCodex(id) {
   }
 }
 
-updateMaterials();
-//setInterval(updateMaterials, 1000 * 60 * config.CACHE_LIFETIME_MIN);
+//updateMaterials();
+setInterval(updateMaterials, 1000 * 60 * config.CACHE_LIFETIME_MIN);
