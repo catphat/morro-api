@@ -110,13 +110,20 @@ class Market {
     //Baseprice us used to achieve a more consistent result. This will prevent market fluctuation to be cached for 1 hour
     //If more than 10 000 items are sold at min price, consider flooded
     return this.fetchData(endpoint, formData, region).then((x) => ({
-      pricePerOne: x.basePrice,
-      count: x.marketConditionList.reduce((a, mat) => a + mat.sellCount, 0),
-      flooded: x.marketConditionList[0].sellCount > 10000 ? true : false,
-      maxed:
-        x.marketConditionList[x.marketConditionList.length - 1].buyCount > 0
+      pricePerOne: x.basePrice ? x.basePrice : null,
+      count: x.marketConditionList
+        ? x.marketConditionList.reduce((a, mat) => a + mat.sellCount, 0)
+        : null,
+      flooded: x.marketConditionList
+        ? x.marketConditionList[0].sellCount > 10000
           ? true
-          : false,
+          : false
+        : null,
+      maxed: x.marketConditionList
+        ? x.marketConditionList[x.marketConditionList.length - 1].buyCount > 0
+          ? true
+          : false
+        : null,
     }));
   }
 }

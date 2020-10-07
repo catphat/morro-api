@@ -16,7 +16,7 @@ const whitelist = require("./data/itemFetchWhitelist.json");
 
 async function updateMaterials() {
   var t0 = new Date().getTime();
-  await Material.sync({ force: true });
+  //await Material.sync({ force: true });
   for (const id of whitelist) {
     await createOrUpdateMaterial(id);
   }
@@ -48,7 +48,7 @@ async function createOrUpdateMaterial(id) {
         countNA: marketNA ? marketNA.count : null,
         countEU: market ? market.count : null,
         floodedNA: marketNA ? marketNA.flooded : null,
-        floodedNA: market ? market.flooded : null,
+        floodedEU: market ? market.flooded : null,
         maxedNA: marketNA ? marketNA.maxed : null,
         maxedEU: market ? market.maxed : null,
         codexBuyPrice: codex.prices.buy
@@ -65,7 +65,7 @@ async function createOrUpdateMaterial(id) {
         countNA: marketNA ? marketNA.count : null,
         countEU: market ? market.count : null,
         floodedNA: marketNA ? marketNA.flooded : null,
-        floodedNA: market ? market.flooded : null,
+        floodedEU: market ? market.flooded : null,
         maxedNA: marketNA ? marketNA.maxed : null,
         maxedEU: market ? market.maxed : null,
       });
@@ -77,9 +77,7 @@ async function createOrUpdateMaterial(id) {
 
 async function fetchMarketInfo(id, region) {
   try {
-    const marketPrice = await market
-      .fetchItemById(id, region)
-      .then((x) => x[0]);
+    const marketPrice = await market.fetchItemStats(id, region).then((x) => x);
     return marketPrice;
   } catch (error) {
     console.log(error);

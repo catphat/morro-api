@@ -67,29 +67,29 @@ async function getNodesForUser(req, res) {
 }
 
 async function saveUserNodes(req, res) {
-  const nodes = new Map(JSON.parse(req.body.nodes));
+  const nodes = req.body.nodes;
   const userId = req.user.sub;
-  for (const [key, value] of nodes.entries()) {
+  for (const node of nodes) {
     const userNode = await UserNode.findOne({
-      where: { nodeId: key, UserSub: userId },
+      where: { nodeId: node.id, UserSub: userId },
     });
     if (!userNode) {
       await UserNode.create({
-        contribution: value.cpAdd,
-        movespeed: value.movespeed,
-        workspeed: value.workspeed,
-        lodging: value.lodging,
-        group: value.group,
-        nodeId: key,
+        contribution: node.cpAdd,
+        movespeed: node.movespeed,
+        workspeed: node.workspeed,
+        lodging: node.lodging,
+        group: node.group,
+        nodeId: node.id,
         UserSub: userId,
       });
     } else {
       await userNode.update({
-        contribution: value.cpAdd,
-        movespeed: value.movespeed,
-        workspeed: value.workspeed,
-        lodging: value.lodging,
-        group: value.group,
+        contribution: node.cpAdd,
+        movespeed: node.movespeed,
+        workspeed: node.workspeed,
+        lodging: node.lodging,
+        group: node.group,
       });
     }
   }

@@ -1,7 +1,7 @@
 const flatCache = require("flat-cache");
 const path = require("path");
 const cache = flatCache.load(path.join(`${__dirname}/../cache/dbCache`));
-const duration = 900000; //Keep cache alive for 15min, this allows twice check for new materials
+const duration = 1000 * 60 * 5; //Keep cache alive for 15min, this allows twice check for new materials
 
 const getKey = (key) => {
   var now = new Date().getTime();

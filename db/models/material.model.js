@@ -34,7 +34,7 @@ module.exports = (sequelize) => {
     floodedNA: {
       type: DataTypes.BOOLEAN,
     },
-    floodedNA: {
+    floodedEU: {
       type: DataTypes.BOOLEAN,
     },
     maxedNA: {
