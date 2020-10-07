@@ -25,17 +25,23 @@ module.exports = (sequelize) => {
     priceEU: {
       type: DataTypes.INTEGER,
     },
-    totalTradeCountNA: {
-      type: DataTypes.BIGINT,
-    },
-    totalTradeCountEU: {
-      type: DataTypes.BIGINT,
-    },
     countNA: {
       type: DataTypes.INTEGER,
     },
     countEU: {
       type: DataTypes.INTEGER,
+    },
+    floodedNA: {
+      type: DataTypes.BOOLEAN,
+    },
+    floodedNA: {
+      type: DataTypes.BOOLEAN,
+    },
+    maxedNA: {
+      type: DataTypes.BOOLEAN,
+    },
+    maxedEU: {
+      type: DataTypes.BOOLEAN,
     },
     codexBuyPrice: {
       type: DataTypes.INTEGER,

@@ -85,6 +85,40 @@ class Market {
 
     return this.fetchData(endpoint, formData, region).then((x) => x.detailList);
   }
+  /**
+   * Fetch the item by the ID, can be found by searching
+   * the item on BDOCodex, and copying the last digits in the URL.
+   * @param {Number|String} id - The BDOCodex ID of the item.
+   * @param {String} region - The market region to get data from
+   */
+  fetchItemStats(id, region) {
+    const endpoint = "/GetItemSellBuyInfo";
+
+    var formData = qs.stringify({
+      __RequestVerificationToken: region == "NA" ? tokenNA : tokenEU,
+      chooseKey: 0,
+      count: 0,
+      countText: 0,
+      grade: 0,
+      isUp: true,
+      keyType: 0,
+      mainKey: id,
+      subKey: 0,
+      sumCountText: 0,
+    });
+
+    //Baseprice us used to achieve a more consistent result. This will prevent market fluctuation to be cached for 1 hour
+    //If more than 10 000 items are sold at min price, consider flooded
+    return this.fetchData(endpoint, formData, region).then((x) => ({
+      pricePerOne: x.basePrice,
+      count: x.marketConditionList.reduce((a, mat) => a + mat.sellCount, 0),
+      flooded: x.marketConditionList[0].sellCount > 10000 ? true : false,
+      maxed:
+        x.marketConditionList[x.marketConditionList.length - 1].buyCount > 0
+          ? true
+          : false,
+    }));
+  }
 }
 
 module.exports = { Market };
