@@ -7,7 +7,6 @@ tp.push(
 tp.push(
   new transports.File({
     filename: "./storage/api-info.log",
-    options: { flags: "w" },
   })
 );
 
