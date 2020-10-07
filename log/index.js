@@ -2,11 +2,11 @@ const { createLogger, format, transports } = require("winston");
 
 var tp = [];
 tp.push(
-  new transports.File({ filename: "./log/api-error.log", level: "error" })
+  new transports.File({ filename: "./storage/api-error.log", level: "error" })
 );
 tp.push(
   new transports.File({
-    filename: "./log/api-info.log",
+    filename: "./storage/api-info.log",
     options: { flags: "w" },
   })
 );

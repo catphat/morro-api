@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const favicon = require("serve-favicon");
 const cors = require("cors");
-
+const logger = require("../log");
 const config = require("./config");
 
 const isProduction = config.ENV === "production";
@@ -77,4 +77,5 @@ app.use(function (err, req, res, next) {
 //---------------------------------------------
 
 // Start APP
+logger.log("info", `${new Date()} - Running, Listening on ${config.PORT}`);
 app.listen(config.PORT, () => console.log(`Listening on ${config.PORT}`));
