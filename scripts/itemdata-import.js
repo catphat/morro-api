@@ -29,7 +29,6 @@ async function updateMaterials() {
       Math.round(used * 100) / 100
     } MB`
   );
-  await sequelize.close();
   var t1 = new Date().getTime();
   logger.log(
     "info",
