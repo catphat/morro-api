@@ -19,5 +19,9 @@ module.exports = (sequelize) => {
       allowNull: true,
       type: DataTypes.STRING,
     },
+    disabledMaterials: {
+      allowNull: true,
+      type: DataTypes.STRING,
+    },
   });
 };

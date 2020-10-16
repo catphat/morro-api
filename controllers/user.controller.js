@@ -67,33 +67,72 @@ async function getNodesForUser(req, res) {
 }
 
 async function saveUserNodes(req, res) {
-  const nodes = req.body.nodes;
-  const userId = req.user.sub;
-  for (const node of nodes) {
-    const userNode = await UserNode.findOne({
-      where: { nodeId: node.id, UserSub: userId },
+  if (req.user) {
+    const nodes = req.body.nodes;
+    const userId = req.user.sub;
+    for (const node of nodes) {
+      const userNode = await UserNode.findOne({
+        where: { nodeId: node.id, UserSub: userId },
+      });
+      if (!userNode) {
+        await UserNode.create({
+          contribution: node.cpAdd,
+          movespeed: node.movespeed,
+          workspeed: node.workspeed,
+          lodging: node.lodging,
+          group: node.group,
+          nodeId: node.id,
+          UserSub: userId,
+        });
+      } else {
+        await userNode.update({
+          contribution: node.cpAdd,
+          movespeed: node.movespeed,
+          workspeed: node.workspeed,
+          lodging: node.lodging,
+          group: node.group,
+        });
+      }
+    }
+  } else {
+    return res.sendStatus(401);
+  }
+  res.status(201).send("done");
+}
+
+async function getMaterialPreferences(req, res) {
+  if (req.user) {
+    const userId = req.user.sub;
+    if (!userId) {
+      return res.sendStatus(401);
+    }
+    let materials = await User.findOne({
+      where: { sub: userId },
+      attributes: ["disabledMaterials"],
     });
-    if (!userNode) {
-      await UserNode.create({
-        contribution: node.cpAdd,
-        movespeed: node.movespeed,
-        workspeed: node.workspeed,
-        lodging: node.lodging,
-        group: node.group,
-        nodeId: node.id,
-        UserSub: userId,
+    res.status(200).json(materials);
+  } else {
+    return res.sendStatus(401);
+  }
+}
+
+async function saveMaterialPreferences(req, res) {
+  if (req.user) {
+    const disabledMaterials = req.body.materials;
+    const userId = req.user.sub;
+    let user = await User.findOne({
+      where: { sub: userId },
+    });
+    if (user) {
+      user.update({
+        disabledMaterials: disabledMaterials,
       });
     } else {
-      await userNode.update({
-        contribution: node.cpAdd,
-        movespeed: node.movespeed,
-        workspeed: node.workspeed,
-        lodging: node.lodging,
-        group: node.group,
-      });
+      return res.sendStatus(401);
     }
+  } else {
+    return res.sendStatus(401);
   }
-
   res.status(201).send("done");
 }
 
@@ -101,4 +140,6 @@ module.exports = {
   getInfo,
   getNodesForUser,
   saveUserNodes,
+  getMaterialPreferences,
+  saveMaterialPreferences,
 };

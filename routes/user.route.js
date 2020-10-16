@@ -9,4 +9,16 @@ router.get("/userNodes", jwtCheck, userController.getNodesForUser);
 
 router.post("/userNodes", jwtCheck, userController.saveUserNodes);
 
+router.get(
+  "/materialPreferences",
+  jwtCheck,
+  userController.getMaterialPreferences
+);
+
+router.post(
+  "/materialPreferences",
+  jwtCheck,
+  userController.saveMaterialPreferences
+);
+
 module.exports = router;
