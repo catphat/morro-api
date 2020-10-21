@@ -5,7 +5,7 @@ const sequelize = require("../db");
 const config = require("../config");
 const logger = require("../log");
 const { Material } = sequelize.models;
-const { Item } = require("../custom_modules/calpheonjs");
+const { Item } = require("../custom_modules/calpheonjs/dist");
 const MARKET = require("../custom_modules/marketplace");
 const market = new MARKET.Market();
 //Items to get scrape and market data for

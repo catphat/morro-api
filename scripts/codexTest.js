@@ -2,7 +2,7 @@
 
 require("dotenv").config();
 const config = require("../config");
-const { Scrape, Item } = require("../custom_modules/calpheonjs/dist");
+const { Item } = require("../custom_modules/calpheonjs/dist");
 const MARKET = require("../custom_modules/marketplace");
 const market = new MARKET.Market();
 const testID = 7303;
