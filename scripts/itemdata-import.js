@@ -5,7 +5,7 @@ const sequelize = require("../db");
 const config = require("../config");
 const logger = require("../log");
 const { Material } = sequelize.models;
-const { Item } = require("bdo-scraper");
+const { Item } = require("../custom_modules/calpheonjs");
 const MARKET = require("../custom_modules/marketplace");
 const market = new MARKET.Market();
 //Items to get scrape and market data for
@@ -59,12 +59,8 @@ async function createOrUpdateMaterial(id) {
         floodedEU: market ? market.flooded : null,
         maxedNA: marketNA ? marketNA.maxed : null,
         maxedEU: market ? market.maxed : null,
-        codexBuyPrice: codex.prices.buy
-          ? parseInt(codex.prices.buy.replace(/,/g, ""))
-          : 0,
-        codexSellPrice: codex.prices.sell
-          ? parseInt(codex.prices.sell.replace(/,/g, ""))
-          : 0,
+        codexBuyPrice: codex.prices.buy,
+        codexSellPrice: codex.prices.sell,
       });
     } else {
       await material.update({
@@ -97,9 +93,9 @@ async function getItemFromCodex(id) {
   try {
     const codexItem = await Item(id);
     const codex = {
-      name: codexItem.name,
-      icon: codexItem.icon,
-      prices: codexItem.prices,
+      name: codexItem.data.name,
+      icon: codexItem.data.icon,
+      prices: codexItem.data.prices,
     };
     return codex;
   } catch (error) {
@@ -107,5 +103,5 @@ async function getItemFromCodex(id) {
   }
 }
 
-//updateMaterials();
-setInterval(updateMaterials, 1000 * 60 * config.CACHE_LIFETIME_MIN);
+updateMaterials();
+//setInterval(updateMaterials, 1000 * 60 * config.CACHE_LIFETIME_MIN);
