@@ -108,7 +108,7 @@ async function getMaterialPreferences(req, res) {
     }
     let materials = await User.findOne({
       where: { sub: userId },
-      attributes: ["disabledMaterials"],
+      attributes: ["disabledMaterials", "overrideMaterials"],
     });
     res.status(200).json(materials);
   } else {
@@ -118,7 +118,8 @@ async function getMaterialPreferences(req, res) {
 
 async function saveMaterialPreferences(req, res) {
   if (req.user) {
-    const disabledMaterials = req.body.materials;
+    const disabledMaterials = req.body.materials.disabled;
+    const overrideMaterials = req.body.materials.override;
     const userId = req.user.sub;
     let user = await User.findOne({
       where: { sub: userId },
@@ -126,6 +127,7 @@ async function saveMaterialPreferences(req, res) {
     if (user) {
       user.update({
         disabledMaterials: disabledMaterials,
+        overrideMaterials: overrideMaterials,
       });
     } else {
       return res.sendStatus(401);
