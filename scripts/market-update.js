@@ -5,7 +5,6 @@ const sequelize = require("../db");
 const config = require("../config");
 const logger = require("../log");
 const { Material } = sequelize.models;
-const { Item } = require("../custom_modules/calpheonjs/dist");
 const MARKET = require("../custom_modules/marketplace");
 const market = new MARKET.Market();
 //Items to get scrape and market data for
@@ -40,23 +39,7 @@ async function createOrUpdateMaterial(id) {
     const market = await fetchMarketInfo(id, "EU");
     const marketNA = await fetchMarketInfo(id, "NA");
     if (!material) {
-      //Set full material data
-      const codex = await getItemFromCodex(id);
-      await Material.create({
-        id: id,
-        name: codex.name,
-        icon: codex.icon,
-        priceNA: marketNA ? marketNA.pricePerOne : null,
-        priceEU: market ? market.pricePerOne : null,
-        countNA: marketNA ? marketNA.count : null,
-        countEU: market ? market.count : null,
-        floodedNA: marketNA ? marketNA.flooded : null,
-        floodedEU: market ? market.flooded : null,
-        maxedNA: marketNA ? marketNA.maxed : null,
-        maxedEU: market ? market.maxed : null,
-        codexBuyPrice: codex.prices.buy,
-        codexSellPrice: codex.prices.sell,
-      });
+      logger.log("error", `Material not found: ${id}`);
     } else {
       await material.update({
         priceNA: marketNA ? marketNA.pricePerOne : null,
@@ -84,18 +67,5 @@ async function fetchMarketInfo(id, region) {
   }
 }
 
-async function getItemFromCodex(id) {
-  try {
-    const codexItem = await Item(id);
-    const codex = {
-      name: codexItem.data.name,
-      icon: codexItem.data.icon,
-      prices: codexItem.data.prices,
-    };
-    return codex;
-  } catch (error) {
-    logger.log("error", error);
-  }
-}
-
-updateMaterials();
+//updateMaterials();
+setInterval(updateMaterials, 1000 * 60 * config.CACHE_LIFETIME_MIN);
