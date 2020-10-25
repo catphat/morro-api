@@ -12,13 +12,10 @@ const {
   RecipeProduct,
 } = sequelize.models;
 const nodeList = require("./data/nodeList.json");
+const nodeGroups = require("./data/defaultGroups.json");
 const groupList = require("./data/itemGroups.json");
 const recipeList = require("./data/recipesList.json");
-
-//TODO: Turn into cron job for 30min, only update marketPrices
-//This script is fetching item data from both codex and marketplace.
-//After this the materials table will be set
-//Run this script before importing other game data, to set associations!
+const groupMap = new Map(nodeGroups);
 
 async function setNodes() {
   //Use this script only in dev!
@@ -46,6 +43,8 @@ async function createNode(node, index) {
       distances: JSON.stringify(node.distance),
       lodging: node.lodging,
       region: node.region,
+      group:
+        groupMap.has(index) && groupMap.get(index) ? groupMap.get(index) : null,
     });
     for (const material of node.material) {
       try {
