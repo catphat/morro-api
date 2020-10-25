@@ -44,7 +44,14 @@ async function createNode(node, index) {
       lodging: node.lodging,
       region: node.region,
       group:
-        groupMap.has(index) && groupMap.get(index) ? groupMap.get(index) : null,
+        groupMap.has(index) && groupMap.get(index)
+          ? groupMap
+              .get(index)
+              .replace(
+                /(\s*?{\s*?|\s*?,\s*?)(['"])?([a-zA-Z0-9]+)(['"])?:/g,
+                '$1"$3":'
+              )
+          : null,
     });
     for (const material of node.material) {
       try {
