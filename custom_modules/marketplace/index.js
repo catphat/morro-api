@@ -115,7 +115,8 @@ class Market {
         ? x.marketConditionList.reduce((a, mat) => a + mat.sellCount, 0)
         : null,
       flooded: x.marketConditionList
-        ? x.marketConditionList[0].sellCount > 10000
+        ? x.marketConditionList[0].sellCount > 50000 &&
+          x.marketConditionList[0].pricePerOne === x.basePrice
           ? true
           : false
         : null,
