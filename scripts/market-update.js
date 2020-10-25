@@ -73,5 +73,5 @@ async function fetchMarketInfo(id, region) {
   }
 }
 
-updateMaterials();
-//setInterval(updateMaterials, 1000 * 60 * config.CACHE_LIFETIME_MIN);
+//updateMaterials();
+setInterval(updateMaterials, 1000 * 60 * config.CACHE_LIFETIME_MIN);
