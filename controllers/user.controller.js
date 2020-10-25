@@ -89,10 +89,7 @@ async function saveUserNodes(req, res) {
             movespeed: node.movespeed,
             workspeed: node.workspeed,
             lodging: node.lodging,
-            group:
-              node.group !== "null" && node.group !== "NULL" && node.group
-                ? node.group
-                : null,
+            group: node.group,
             nodeId: node.id,
             UserSub: userId,
           });
@@ -102,10 +99,7 @@ async function saveUserNodes(req, res) {
             movespeed: node.movespeed,
             workspeed: node.workspeed,
             lodging: node.lodging,
-            group:
-              node.group !== "null" && node.group !== "NULL" && node.group
-                ? node.group
-                : null,
+            group: node.group,
           });
         }
       }
