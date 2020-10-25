@@ -13,6 +13,7 @@ const modelDefiners = [
   require("./models/node.model"),
   require("./models/recipe.model"),
   require("./models/material.model"),
+  require("./models/materiallog.model"),
   require("./models/group.model"),
   require("./models/user.model"),
   require("./models/usernode.model"),

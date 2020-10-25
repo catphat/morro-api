@@ -4,7 +4,7 @@ require("dotenv").config();
 const sequelize = require("../db");
 const config = require("../config");
 const logger = require("../log");
-const { Material } = sequelize.models;
+const { Material, MaterialLog } = sequelize.models;
 const MARKET = require("../custom_modules/marketplace");
 const market = new MARKET.Market();
 //Items to get scrape and market data for
@@ -13,6 +13,7 @@ const whitelist = require("./data/itemFetchWhitelist.json");
 async function updateMaterials() {
   var t0 = new Date().getTime();
   //await Material.sync({ force: true });
+  await MaterialLog.sync();
   for (const id of whitelist) {
     await createOrUpdateMaterial(id);
   }
@@ -41,6 +42,11 @@ async function createOrUpdateMaterial(id) {
     if (!material) {
       logger.log("error", `Material not found: ${id}`);
     } else {
+      await MaterialLog.create({
+        countEntryNA: marketNA ? marketNA.count : null,
+        countEntryEU: market ? market.count : null,
+        MaterialId: id,
+      });
       await material.update({
         priceNA: marketNA ? marketNA.pricePerOne : null,
         priceEU: market ? market.pricePerOne : null,
@@ -67,5 +73,5 @@ async function fetchMarketInfo(id, region) {
   }
 }
 
-//updateMaterials();
-setInterval(updateMaterials, 1000 * 60 * config.CACHE_LIFETIME_MIN);
+updateMaterials();
+//setInterval(updateMaterials, 1000 * 60 * config.CACHE_LIFETIME_MIN);
