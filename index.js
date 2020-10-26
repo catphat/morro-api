@@ -5,6 +5,7 @@ const favicon = require("serve-favicon");
 const cors = require("cors");
 const logger = require("./log");
 const config = require("./config");
+const { handleError } = require("./util/error");
 
 const isProduction = config.ENV === "production";
 
@@ -49,15 +50,7 @@ app.use(require("./routes"));
 if (!isProduction) {
   app.use(function (err, req, res, next) {
     console.log(err.stack);
-
-    res.status(err.status || 500);
-
-    res.json({
-      errors: {
-        message: err.message,
-        error: err,
-      },
-    });
+    handleError(err, res);
   });
 }
 
@@ -66,13 +59,7 @@ if (!isProduction) {
 // no stacktraces leaked to user
 //---------------------------------------------
 app.use(function (err, req, res, next) {
-  res.status(err.status || 500);
-  res.json({
-    errors: {
-      message: err.message,
-      error: {},
-    },
-  });
+  handleError(err, res);
 });
 //---------------------------------------------
 

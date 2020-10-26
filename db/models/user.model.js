@@ -19,6 +19,18 @@ module.exports = (sequelize) => {
       allowNull: true,
       type: DataTypes.STRING,
     },
+    region: {
+      allowNull: false,
+      type: DataTypes.STRING(10),
+    },
+    showFishing: {
+      allowNull: false,
+      type: DataTypes.BOOLEAN,
+    },
+    activeHours: {
+      allowNull: false,
+      type: DataTypes.INTEGER,
+    },
     disabledMaterials: {
       allowNull: true,
       type: DataTypes.STRING,

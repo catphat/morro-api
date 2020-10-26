@@ -3,10 +3,6 @@
 require("dotenv").config();
 const sequelize = require("../db");
 const { User, UserNode } = sequelize.models;
-//TODO: Turn into cron job for 30min, only update marketPrices
-//This script is fetching item data from both codex and marketplace.
-//After this the materials table will be set
-//Run this script before importing other game data, to set associations!
 
 async function createUser() {
   try {
@@ -42,8 +38,9 @@ async function createUserNode() {
 
 async function main() {
   var t0 = new Date().getTime();
-  await createUser();
-  await createUserNode();
+  await User.sync({ force: true });
+  //await createUser();
+  //await createUserNode();
   await sequelize.close();
   var t1 = new Date().getTime();
   console.log(`Testusers done! It took ${(t1 - t0) / 1000} seconds`);
