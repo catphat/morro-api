@@ -23,6 +23,7 @@ async function getInfo(req, res) {
         region: settings.region,
         showFishing: settings.showFishing,
         activeHours: settings.activeHours,
+        disabledMaterials: "[752023]",
       });
     } else {
       settings.lastActive = user.updatedAt;
