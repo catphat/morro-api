@@ -78,6 +78,7 @@ async function getNodesForUser(req, res) {
           "contribution",
           "movespeed",
           "workspeed",
+          "luck",
           "lodging",
           "group",
         ],
@@ -86,6 +87,7 @@ async function getNodesForUser(req, res) {
         nodes[index].cpAdd = usernode.contribution;
         nodes[index].movespeed = usernode.movespeed;
         nodes[index].workspeed = usernode.workspeed;
+        nodes[index].luck = usernode.luck;
 
         //Check optional values, to prevent overriding
         if (usernode.lodging) nodes[index].lodging = usernode.lodging;
@@ -115,6 +117,7 @@ async function saveUserNodes(req, res) {
           contribution: node.cpAdd,
           movespeed: node.movespeed,
           workspeed: node.workspeed,
+          luck: node.luck,
           lodging: node.lodging,
           group: node.group,
           nodeId: node.id,
@@ -125,6 +128,7 @@ async function saveUserNodes(req, res) {
           contribution: node.cpAdd,
           movespeed: node.movespeed,
           workspeed: node.workspeed,
+          luck: node.luck,
           lodging: node.lodging,
           group: node.group,
         });

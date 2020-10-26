@@ -40,6 +40,7 @@ async function createNode(node, index) {
       workload: node.workload,
       workspeed: 0,
       movespeed: 0,
+      luck: 0,
       distances: JSON.stringify(node.distance),
       lodging: node.lodging,
       region: node.region,

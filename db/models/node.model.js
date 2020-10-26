@@ -36,6 +36,9 @@ module.exports = (sequelize) => {
       movespeed: {
         type: DataTypes.FLOAT,
       },
+      luck: {
+        type: DataTypes.FLOAT,
+      },
       distances: {
         type: DataTypes.TEXT,
       },

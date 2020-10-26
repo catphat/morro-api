@@ -39,6 +39,7 @@ async function createUserNode() {
 async function main() {
   var t0 = new Date().getTime();
   await User.sync({ force: true });
+  await UserNode.sync({ force: true });
   //await createUser();
   //await createUserNode();
   await sequelize.close();
