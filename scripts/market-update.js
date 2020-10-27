@@ -37,28 +37,56 @@ async function updateMaterials() {
 async function createOrUpdateMaterial(id) {
   try {
     const material = await Material.findOne({ where: { id: id } });
-    const market = await fetchMarketInfo(id, "EU");
-    const marketNA = await fetchMarketInfo(id, "NA");
     if (!material) {
       logger.log("error", `Material not found: ${id}`);
-    } else {
-      await MaterialLog.create({
-        countEntryNA: marketNA ? marketNA.count : null,
-        countEntryEU: market ? market.count : null,
-        MaterialId: id,
-      });
-      await material.update({
-        priceNA: marketNA ? marketNA.pricePerOne : null,
-        priceEU: market ? market.pricePerOne : null,
-        countNA: marketNA ? marketNA.count : null,
-        countEU: market ? market.count : null,
-        floodedNA: marketNA ? marketNA.flooded : null,
-        floodedEU: market ? market.flooded : null,
-        maxedNA: marketNA ? marketNA.maxed : null,
-        maxedEU: market ? market.maxed : null,
-        updatedAt: new Date(),
-      });
+      return;
     }
+    let market;
+    let marketNA;
+    if (id !== 752023) {
+      market = await fetchMarketInfo(id, "EU");
+      marketNA = await fetchMarketInfo(id, "NA");
+    } else {
+      //Special case for mass of pure magic
+      let remnantsRiftMat = await await Material.findOne({
+        where: { id: 43786 },
+      });
+      let blackSpiritClaws = await await Material.findOne({
+        where: { id: 16008 },
+      });
+      const priceEU =
+        (remnantsRiftMat.priceEU + 3 * blackSpiritClaws.priceEU) / 5;
+      const priceNA =
+        (remnantsRiftMat.priceNA + 3 * blackSpiritClaws.priceNA) / 5;
+      market = {
+        count: null,
+        pricePerOne: priceEU,
+        flooded: false,
+        maxed: false,
+      };
+      marketNA = {
+        count: null,
+        pricePerOne: priceNA,
+        flooded: false,
+        maxed: false,
+      };
+    }
+    await MaterialLog.create({
+      countEntryNA: marketNA ? marketNA.count : null,
+      countEntryEU: market ? market.count : null,
+      MaterialId: id,
+    });
+    await material.update({
+      priceNA: marketNA ? marketNA.pricePerOne : null,
+      priceEU: market ? market.pricePerOne : null,
+      countNA: marketNA ? marketNA.count : null,
+      countEU: market ? market.count : null,
+      floodedNA: marketNA ? marketNA.flooded : null,
+      floodedEU: market ? market.flooded : null,
+      maxedNA: marketNA ? marketNA.maxed : null,
+      maxedEU: market ? market.maxed : null,
+      updatedAt: new Date(),
+    });
   } catch (error) {
     logger.log("error", error);
   }
