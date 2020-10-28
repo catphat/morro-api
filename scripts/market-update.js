@@ -52,7 +52,7 @@ async function createOrUpdateMaterial(id) {
         where: { id: 43786 },
       });
       let blackSpiritClaws = await await Material.findOne({
-        where: { id: 16008 },
+        where: { id: 40258 },
       });
       const priceEU =
         (remnantsRiftMat.priceEU + 3 * blackSpiritClaws.priceEU) / 5;
