@@ -121,7 +121,8 @@ class Market {
           : false
         : null,
       maxed: x.marketConditionList
-        ? x.marketConditionList[x.marketConditionList.length - 1].buyCount > 0
+        ? x.marketConditionList[x.marketConditionList.length - 1].buyCount >
+          5000
           ? true
           : false
         : null,
