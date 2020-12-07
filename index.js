@@ -20,6 +20,7 @@ var allowedOrigins = [
   "http://localhost:3000",
   "https://sirfilior-dev.com",
   "https://morrolan.tv",
+  "https://www.morrolan.tv",
 ];
 app.use(
   cors({
