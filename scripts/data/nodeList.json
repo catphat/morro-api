@@ -6961,6 +6961,12 @@
         "id": 5961,
         "luck": 0,
         "yield": 1
+      },
+      {
+        "id": 752023,
+        "name": "Mass of Pure Magic",
+        "luck": 0,
+        "yield": 0.03
       }
     ],
     "region": "Odyllita",

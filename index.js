@@ -16,7 +16,11 @@ app.use(express.static("public"));
 //---------------------------------------------
 //Start CORS Setup
 //---------------------------------------------
-var allowedOrigins = ["http://localhost:3000", "https://sirfilior-dev.com"];
+var allowedOrigins = [
+  "http://localhost:3000",
+  "https://sirfilior-dev.com",
+  "https://morrolan.tv",
+];
 app.use(
   cors({
     origin: function (origin, callback) {
