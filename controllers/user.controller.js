@@ -135,7 +135,8 @@ async function saveUserNodes(req, res) {
         });
       }
     }
-  } catch {
+  } catch (e) {
+    console.log(e);
     throw new ErrorHandler(500, "Error saving user nodes");
   }
 
