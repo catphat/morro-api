@@ -54,10 +54,12 @@ async function createOrUpdateMaterial(id) {
       let blackSpiritClaws = await await Material.findOne({
         where: { id: 40258 },
       });
-      const priceEU =
-        (remnantsRiftMat.priceEU + 3 * blackSpiritClaws.priceEU) / 5;
-      const priceNA =
-        (remnantsRiftMat.priceNA + 3 * blackSpiritClaws.priceNA) / 5;
+      const priceEU = remnantsRiftMat.priceEU
+        ? (remnantsRiftMat.priceEU + 3 * blackSpiritClaws.priceEU) / 5
+        : 0;
+      const priceNA = remnantsRiftMat.priceNA
+        ? (remnantsRiftMat.priceNA + 3 * blackSpiritClaws.priceNA) / 5
+        : 0;
       market = {
         count: null,
         pricePerOne: priceEU,
