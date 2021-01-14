@@ -82,6 +82,7 @@ async function getNodesForUser(req, res) {
           "luck",
           "lodging",
           "group",
+          "taken",
         ],
       });
       if (usernode) {
@@ -93,13 +94,15 @@ async function getNodesForUser(req, res) {
         //Check optional values, to prevent overriding
         if (usernode.lodging) nodes[index].lodging = usernode.lodging;
         if (usernode.group) nodes[index].group = usernode.group;
+        if (usernode.taken) nodes[index].taken = usernode.taken;
       }
     }
     if (!nodes) {
       throw new ErrorHandler(404, "Could not fetch user nodes");
     }
     res.status(200).json(nodes);
-  } catch {
+  } catch (e) {
+    console.log(e);
     throw new ErrorHandler(500, "Error loading user nodes");
   }
 }
@@ -121,6 +124,7 @@ async function saveUserNodes(req, res) {
           luck: node.luck,
           lodging: node.lodging,
           group: node.group,
+          taken: node.taken,
           nodeId: node.id,
           UserSub: userId,
         });
@@ -132,6 +136,7 @@ async function saveUserNodes(req, res) {
           luck: node.luck,
           lodging: node.lodging,
           group: node.group,
+          taken: node.taken,
         });
       }
     }

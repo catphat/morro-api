@@ -51,6 +51,9 @@ module.exports = (sequelize) => {
       group: {
         type: DataTypes.TEXT,
       },
+      taken: {
+        type: DataTypes.BOOLEAN,
+      },
     },
     {
       timestamps: false,
