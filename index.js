@@ -21,6 +21,7 @@ var allowedOrigins = [
   "https://sirfilior-dev.com",
   "https://morrolan.tv",
   "https://www.morrolan.tv",
+  "https://dev.ishqbb.com"
 ];
 app.use(
   cors({
