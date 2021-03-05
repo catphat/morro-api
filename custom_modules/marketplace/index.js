@@ -1,13 +1,13 @@
 const axios = require("axios");
 const qs = require("qs");
 
-const baseUrlEU = "https://marketweb-eu.blackdesertonline.com/Home";
-const baseUrlNA = "https://marketweb-na.blackdesertonline.com/Home";
+const baseUrlEU = "127.0.0.1";
+const baseUrlNA = "https://na-trade.naeu.playblackdesert.com";
 
 const tokenEU =
   "wf0wqhOwpK4ZlGVBQS7ZAVa9oHBiru4Uq1jf4utTePHRaXMb-Cn0HhVHT8FOCR-JpQ-tuE4aLBtvFSeHs6N1Wlj9J8Xy3o3VpiLFTidlKdw1";
 const tokenNA =
-  "PZ_v0iKRMKfWONdgKsvb90d5aOoXWA6ePvQnTUroylgn4cjN1S9eKAO-IrjcxOMTmhrEeHn3fQ4Ga37hrL6SvsMrvuNTD4-i8IN-dDxbYxU1";
+  "gNnwS3y5kU0XSrxwepRHEBS1cEriCJgDopcE1BGYwalZBCTqunYxakihzoG5dEMQ5GymUcM1zO0hdns5Hw9BdZOLBcq86xRxsflbDiXMhkY1";
 
 const CONFIG_EU = {
   headers: {
@@ -29,7 +29,7 @@ const CONFIG_NA = {
     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
     DNT: "1",
     Cookie:
-      "__RequestVerificationToken=tx_pjeJL_9XXqyenPm1JoodjXHRZJpwiaaXYams_Ic8vnjis5sMcaEiuximGcFYuqRFsJ30GykpCNhysa6Tik3ZG8Lv380kTVCEnSEhQSuE1",
+      "__RequestVerificationToken=gNnwS3y5kU0XSrxwepRHEBS1cEriCJgDopcE1BGYwalZBCTqunYxakihzoG5dEMQ5GymUcM1zO0hdns5Hw9BdZOLBcq86xRxsflbDiXMhkY1",
   },
 };
 
