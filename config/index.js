@@ -1,5 +1,5 @@
 const config = {
-  DB_URL: process.env.DATABASE_URL,
+  DB_URL: process.env.DATABASE_URL, /* 'postgres://user:pass@example.com:5432/dbname' */
   PORT: process.env.PORT,
   ENV: process.env.NODE_ENV || "development",
   CACHE_LIFETIME_MIN: 60,
