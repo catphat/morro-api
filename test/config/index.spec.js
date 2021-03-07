@@ -4,7 +4,7 @@ const expect = require('chai').expect;
 const config = require("../../src/config");
 const {describe, it} = require("mocha");
 
-// this test case is intentionally excessive and not an indicator expected test coverage. (ishq)
+// this test case is intentionally excessive and not an indicator of expected test coverage. (ishq)
 describe('default env', function() {
    it('should have correct default values', () => {
       expect(config.MARKET_BASE_URL_EU).to.equal('NOT IMPLEMENTED');
@@ -13,7 +13,6 @@ describe('default env', function() {
       expect(config.MARKET_TOKEN_NA).to.be.undefined;
       expect(config.DB_URL).to.be.undefined;
       expect(config.PORT).to.be.undefined;
-      expect(config.ENV).to.equal('development');
       expect(config.ENV).to.equal('development');
       expect(config.CACHE_LIFETIME_MIN).to.equal(60);
       expect(config.MARKETPLACE_REQUEST_DELAY_MS).to.equal(50);
