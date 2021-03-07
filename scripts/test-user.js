@@ -1,7 +1,7 @@
 "use strict";
 
 require("dotenv").config();
-const sequelize = require("../db");
+const sequelize = require("../src/db");
 const { User, UserNode } = sequelize.models;
 
 async function createUser() {

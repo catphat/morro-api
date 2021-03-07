@@ -104,8 +104,8 @@ dist
 .tern-port
 
 # custom modules ingore
-!custom_modules/calpheonjs/dist
-custom_modules/calpheonjs/node_modules
-custom_modules/calpheonjs/tests/data
-custom_modules/calpheonjs/yarn-error.log
-custom_modules/calpheonjs/report.**.**.**.json
+!src/custom_modules/calpheonjs/dist
+src/custom_modules/calpheonjs/node_modules
+src/custom_modules/calpheonjs/tests/data
+src/custom_modules/calpheonjs/yarn-error.log
+src/custom_modules/calpheonjs/report.**.**.**.json

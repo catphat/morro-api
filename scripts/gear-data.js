@@ -1,6 +1,6 @@
 "use strict";
 
-const sequelize = require("../db");
+const sequelize = require("../src/db");
 const { Gear } = sequelize.models;
 
 async function createGear() {

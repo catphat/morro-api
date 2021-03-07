@@ -1,12 +1,12 @@
 "use strict";
 
 require("dotenv").config();
-const sequelize = require("../db");
-const config = require("../config");
-const logger = require("../log");
+const sequelize = require("../src/db");
+const config = require("../src/config");
+const logger = require("../src/log");
 const { Material } = sequelize.models;
-const { Item } = require("../custom_modules/calpheonjs/dist");
-const MARKET = require("../custom_modules/marketplace");
+const { Item } = require("../src/custom_modules/calpheonjs/dist");
+const MARKET = require("../src/custom_modules/marketplace");
 const market = new MARKET.Market();
 //Items to get scrape and market data for
 const whitelist = require("./data/massofmagic.json");

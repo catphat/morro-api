@@ -1,9 +1,9 @@
 "use strict";
 
 require("dotenv").config();
-const config = require("../config");
-const { Item } = require("../custom_modules/calpheonjs/dist");
-const MARKET = require("../custom_modules/marketplace");
+const config = require("../src/config");
+const { Item } = require("../src/custom_modules/calpheonjs/dist");
+const MARKET = require("../src/custom_modules/marketplace");
 const market = new MARKET.Market();
 const testID = 7303;
 

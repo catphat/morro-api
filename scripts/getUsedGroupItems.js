@@ -2,7 +2,7 @@
 
 require("dotenv").config();
 const { Op } = require("sequelize");
-const sequelize = require("../db");
+const sequelize = require("../src/db");
 const { RecipeIngredient } = sequelize.models;
 const groupList = require("./data/itemGroups.json");
 

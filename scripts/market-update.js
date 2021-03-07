@@ -1,11 +1,11 @@
 "use strict";
 
 require("dotenv").config();
-const sequelize = require("../db");
-const config = require("../config");
-const logger = require("../log");
+const sequelize = require("../src/db");
+const config = require("../src/config");
+const logger = require("../src/log");
 const { Material, MaterialLog } = sequelize.models;
-const MARKET = require("../custom_modules/marketplace");
+const MARKET = require("../src/custom_modules/marketplace");
 const market = new MARKET.Market();
 //Items to get scrape and market data for
 const whitelist = require("./data/itemFetchWhitelist.json");
