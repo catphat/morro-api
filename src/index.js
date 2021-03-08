@@ -1,60 +1,59 @@
-require("dotenv").config();
-const express = require("express");
-const bodyParser = require("body-parser");
-const favicon = require("serve-favicon");
-const cors = require("cors");
-const logger = require("./log");
-const config = require("./config");
-const { handleError } = require("./util/error");
+require('dotenv').config();
+const express = require('express');
+const bodyParser = require('body-parser');
+const favicon = require('serve-favicon');
+const cors = require('cors');
+const logger = require('./log');
+const config = require('./config');
+const { handleError } = require('./util/error');
 
-const isProduction = config.ENV === "production";
+const isProduction = config.ENV === 'production';
 
 const app = express();
-app.use(favicon(__dirname + "/public/images/favicon.ico"));
-app.use(express.static("public"));
+app.use(favicon(`${__dirname}/public/images/favicon.ico`));
+app.use(express.static('public'));
 
 //---------------------------------------------
-//Start CORS Setup
+// Start CORS Setup
 //---------------------------------------------
-var allowedOrigins = [
-  "http://localhost:3000",
-  "https://sirfilior-dev.com",
-  "https://morrolan.tv",
-  "https://www.morrolan.tv",
-  "https://dev.ishqbb.com"
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://sirfilior-dev.com',
+  'https://morrolan.tv',
+  'https://www.morrolan.tv',
+  'https://dev.ishqbb.com',
 ];
 app.use(
   cors({
-    origin: function (origin, callback) {
+    origin(origin, callback) {
       // allow requests with no origin
       // (like mobile apps or curl requests)
       if (!origin) return callback(null, true);
       if (allowedOrigins.indexOf(origin) === -1) {
-        var msg =
-          "The CORS policy for this site does not " +
-          "allow access from the specified Origin.";
+        const msg = 'The CORS policy for this site does not '
+          + 'allow access from the specified Origin.';
         return callback(new Error(msg), false);
       }
       return callback(null, true);
     },
-  })
+  }),
 );
-//End CORS Setup
+// End CORS Setup
 //---------------------------------------------
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //---------------------------------------------
-//Setup all routes
+// Setup all routes
 //---------------------------------------------
-app.use(require("./routes"));
+app.use(require('./routes'));
 //---------------------------------------------
 
 // development error handler
 // will print stacktrace
 if (!isProduction) {
-  app.use(function (err, req, res, next) {
+  app.use((err, req, res, next) => {
     console.log(err.stack);
     handleError(err, res);
   });
@@ -64,11 +63,11 @@ if (!isProduction) {
 // production error handler
 // no stacktraces leaked to user
 //---------------------------------------------
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   handleError(err, res);
 });
 //---------------------------------------------
 
 // Start APP
-logger.log("info", `${new Date()} - Running, Listening on ${config.PORT}`);
+logger.log('info', `${new Date()} - Running, Listening on ${config.PORT}`);
 app.listen(config.PORT, () => console.log(`Listening on ${config.PORT}`));
