@@ -2,7 +2,7 @@
 
 const path = require('path');
 const configPath = path.resolve('src/config');
-const dotEnvPath = path.resolve('test/config/test.env');
+const dotEnvPath = path.resolve('test/test.env');
 
 require('dotenv').config({path: dotEnvPath})
 const expect = require('chai').expect;
