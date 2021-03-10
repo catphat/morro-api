@@ -1,13 +1,11 @@
 const path = require('path');
 
-const configPath = path.resolve('src/config');
 const dotEnvPath = path.resolve('test/test.env');
-
 require('dotenv').config({ path: dotEnvPath });
-const { expect } = require('chai');
 
-const config = require(configPath);
+const { expect } = require('chai');
 const { describe, it } = require('mocha');
+const config = require('../../src/config');
 
 // this test case is intentionally excessive and not an indicator of expected test coverage. (ishq)
 describe('config', () => {
