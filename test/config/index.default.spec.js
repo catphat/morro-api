@@ -7,8 +7,10 @@ describe('default env', () => {
   it('should have correct default values', () => {
     expect(config.MARKET_BASE_URL_EU).to.equal('https://eu-trade.naeu.playblackdesert.com');
     expect(config.MARKET_BASE_URL_NA).to.equal('https://na-trade.naeu.playblackdesert.com');
-    expect(config.MARKET_TOKEN_EU).to.be.undefined;
-    expect(config.MARKET_TOKEN_NA).to.be.undefined;
+    expect(config.MARKET_REQ_VERIFICATION_BODY_TOKEN_EU).to.be.undefined;
+    expect(config.MARKET_REQ_VERIFICATION_BODY_TOKEN_NA).to.be.undefined;
+    expect(config.MARKET_REQ_VERIFICATION_COOKIE_TOKEN_EU).to.be.undefined;
+    expect(config.MARKET_REQ_VERIFICATION_COOKIE_TOKEN_NA).to.be.undefined;
     expect(config.DB_URL).to.be.undefined;
     expect(config.PORT).to.be.undefined;
     expect(config.ENV).to.equal('development');

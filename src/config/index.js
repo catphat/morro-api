@@ -1,8 +1,10 @@
 const config = {
   MARKET_BASE_URL_EU: process.env.MARKET_BASE_URL_EU || 'https://eu-trade.naeu.playblackdesert.com',
   MARKET_BASE_URL_NA: process.env.MARKET_BASE_URL_NA || 'https://na-trade.naeu.playblackdesert.com',
-  MARKET_TOKEN_EU: process.env.MARKET_TOKEN_EU,
-  MARKET_TOKEN_NA: process.env.MARKET_TOKEN_NA,
+  MARKET_REQ_VERIFICATION_COOKIE_TOKEN_EU: process.env.MARKET_REQ_VERIFICATION_COOKIE_TOKEN_EU,
+  MARKET_REQ_VERIFICATION_COOKIE_TOKEN_NA: process.env.MARKET_REQ_VERIFICATION_COOKIE_TOKEN_NA,
+  MARKET_REQ_VERIFICATION_BODY_TOKEN_EU: process.env.MARKET_REQ_VERIFICATION_BODY_TOKEN_EU,
+  MARKET_REQ_VERIFICATION_BODY_TOKEN_NA: process.env.MARKET_REQ_VERIFICATION_BODY_TOKEN_NA,
   DB_URL: process.env.DB_URL, /* 'postgres://user:pass@example.com:5432/dbname' */
   PORT: process.env.PORT,
   ENV: process.env.NODE_ENV || 'development',
