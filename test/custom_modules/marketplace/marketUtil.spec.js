@@ -131,11 +131,4 @@ describe('market utility', () => {
     expect(optWithNullBody.body).to.equal(null);
   });
 
-  it('getRequestWorldMarketSearchList returns valid request parameters', () => {
-    const req = MarketUtil.getRequestWorldMarketSearchList('NA', 'tungrad');
-    expect(req.url).to.equal('http://127.0.0.1:8000/Home/GetWorldMarketSearchList');
-    expect(req.opt.method).to.equal('POST');
-    expect(req.opt.headers.cookie).to.equal('lang=en-US;__RequestVerificationToken=NACOOKIETOKEN123');
-    expect(req.opt.body).to.equal('__RequestVerificationToken=NABODYTOKEN123&searchText=tungrad');
-  });
 });

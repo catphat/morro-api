@@ -169,17 +169,7 @@ class MarketUtil {
       };
     }
 
-    /**
-     * @param {"NA"|"EU"} region
-     * @param {string} searchText
-     */
-    static getRequestWorldMarketSearchList(region, searchText) {
-      const endpoint = this.ENDPOINTS.MARKET_SEARCH;
-      return {
-        url: this.getUrlByEndpointPath(region, endpoint.path).href,
-        opt: this.getRequestOptions(region, endpoint.method, { searchText }),
-      };
-    }
+
 }
 
 module.exports = MarketUtil;

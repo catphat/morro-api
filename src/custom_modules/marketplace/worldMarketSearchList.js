@@ -31,3 +31,37 @@
 //     "method": "POST",
 //     "mode": "cors"
 // });
+const axios = require('axios');
+const marketUtil = require('./marketUtil');
+
+class WorldMarketSearchList {
+  constructor(region) {
+    marketUtil.throwIfInvalidRegion(region);
+    this.region = region;
+  }
+
+  /**
+     * @param {string} searchText
+     */
+  getRequestParameters(searchText) {
+    const endpoint = marketUtil.ENDPOINTS.MARKET_SEARCH;
+    return {
+      url: marketUtil.getUrlByEndpointPath(this.region, endpoint.path),
+      opt: marketUtil.getRequestOptions(this.region, endpoint.method, { searchText }),
+    };
+  }
+
+  /**
+   * @param {string} searchText
+   */
+  async getBySearchTextAsync(searchText) {
+    const params = this.getRequestParameters(searchText);
+    try {
+      return axios.post(params.url.href, params.opt.body, { headers: params.opt.headers });
+    } catch (error) {
+      return Promise.reject(new Error(error));
+    }
+  }
+}
+
+module.exports = WorldMarketSearchList;
