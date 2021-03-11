@@ -1,0 +1,34 @@
+{
+  "list": [
+    {
+      "mainKey": 11629,
+      "sumCount": 104,
+      "totalSumCount": 88000000,
+      "name": "Tungrad Necklace",
+      "grade": 3
+    },
+    {
+      "mainKey": 11828,
+      "sumCount": 67,
+      "totalSumCount": 56500000,
+      "name": "Tungrad Earring",
+      "grade": 3
+    },
+    {
+      "mainKey": 12061,
+      "sumCount": 190,
+      "totalSumCount": 119000000,
+      "name": "Tungrad Ring",
+      "grade": 3
+    },
+    {
+      "mainKey": 12237,
+      "sumCount": 116,
+      "totalSumCount": 78500000,
+      "name": "Tungrad Belt",
+      "grade": 3
+    }
+  ],
+  "resultCode": 0,
+  "resultMsg": ""
+}
