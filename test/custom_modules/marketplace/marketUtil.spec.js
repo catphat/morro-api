@@ -36,7 +36,7 @@ describe('market utility', () => {
     expect(() => MarketUtil.throwIfInvalidEndpointValue('BLA')).to.throw();
     expect(() => MarketUtil.throwIfInvalidEndpointValue(null)).to.throw();
     expect(() => MarketUtil.throwIfInvalidEndpointValue('MARKET_SEARCH')).to.throw();
-    expect(() => MarketUtil.throwIfInvalidEndpointValue(MarketUtil.ENDPOINTS.MARKET_SEARCH))
+    expect(() => MarketUtil.throwIfInvalidEndpointValue(MarketUtil.ENDPOINTS.MARKET_SEARCH.path))
       .to.not.throw();
   });
 
@@ -91,18 +91,32 @@ describe('market utility', () => {
   });
 
   it('getUrl returns valid URL', () => {
-    expect(MarketUtil.getUrl('NA', 'MARKET_SEARCH').href)
+    expect(MarketUtil.getUrlByEndpoint('NA', 'MARKET_SEARCH').href)
       .to.equal('http://127.0.0.1:8000/GetWorldMarketSearchList');
 
-    expect(MarketUtil.getUrl('EU', 'MARKET_SUBLIST').href)
+    expect(MarketUtil.getUrlByEndpoint('EU', 'MARKET_SUBLIST').href)
       .to.equal('http://127.0.0.1:9000/GetWorldMarketSubList');
   });
 
-  it('getUrl throws on invalid input', () => {
-    expect(() => MarketUtil.getUrl('EU', null)).to.throw();
-    expect(() => MarketUtil.getUrl(null, 'MARKET_SEARCH')).to.throw();
-    expect(() => MarketUtil.getUrl('NA', 'ABCBLAMARKET_SEARCH')).to.throw();
-    expect(() => MarketUtil.getUrl('ABC', 'MARKET_SEARCH')).to.throw();
+  it('getUrlByEndpoint throws on invalid input', () => {
+    expect(() => MarketUtil.getUrlByEndpoint('EU', null)).to.throw();
+    expect(() => MarketUtil.getUrlByEndpoint(null, 'MARKET_SEARCH')).to.throw();
+    expect(() => MarketUtil.getUrlByEndpoint('NA', 'ABCBLAMARKET_SEARCH')).to.throw();
+    expect(() => MarketUtil.getUrlByEndpoint('ABC', 'MARKET_SEARCH')).to.throw();
+
+    expect(() => MarketUtil.getUrlByEndpoint('NA', 'MARKET_SEARCH')).to.not.throw();
+    expect(() => MarketUtil.getUrlByEndpoint('NA', MarketUtil.ENDPOINTS.MARKET_SEARCH.path)).to.throw();
+  });
+
+  it('getUrlByEndpointPath throws on invalid input', () => {
+    expect(() => MarketUtil.getUrlByEndpointPath('EU', null)).to.throw();
+    expect(() => MarketUtil.getUrlByEndpointPath(null, 'MARKET_SEARCH')).to.throw();
+    expect(() => MarketUtil.getUrlByEndpointPath('NA', 'ABCBLAMARKET_SEARCH')).to.throw();
+    expect(() => MarketUtil.getUrlByEndpointPath('ABC', 'MARKET_SEARCH')).to.throw();
+
+    expect(() => MarketUtil.getUrlByEndpointPath('NA', 'MARKET_SEARCH')).to.throw();
+    expect(() => MarketUtil.getUrlByEndpointPath('NA', MarketUtil.ENDPOINTS.MARKET_SEARCH.path)).to.not.throw();
+
   });
 
   it('getRequestOptions returns valid option parameters', () => {
@@ -115,5 +129,13 @@ describe('market utility', () => {
     expect(optWithNullBody.method).to.equal('POST');
     expect(optWithNullBody.headers.cookie).to.equal('lang=en-US;__RequestVerificationToken=NACOOKIETOKEN123');
     expect(optWithNullBody.body).to.equal(null);
+  });
+
+  it('getRequestWorldMarketSearchList returns valid request parameters', () => {
+    const req = MarketUtil.getRequestWorldMarketSearchList('NA', 'tungrad');
+    expect(req.url).to.equal('http://127.0.0.1:8000/Home/GetWorldMarketSearchList');
+    expect(req.opt.method).to.equal('POST');
+    expect(req.opt.headers.cookie).to.equal('lang=en-US;__RequestVerificationToken=NACOOKIETOKEN123');
+    expect(req.opt.body).to.equal('__RequestVerificationToken=NABODYTOKEN123&searchText=tungrad');
   });
 });

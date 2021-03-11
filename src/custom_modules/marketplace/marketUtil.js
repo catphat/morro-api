@@ -13,9 +13,9 @@ class MarketUtil {
     }
 
     static ENDPOINTS = {
-      MARKET_SEARCH: { path: 'GetWorldMarketSearchList', method: 'POST' },
-      MARKET_SUBLIST: { path: 'GetWorldMarketSubList', method: 'POST' },
-      MARKET_SELLBUYINFO: { path: 'GetItemSellBuyInfo', method: 'POST' },
+      MARKET_SEARCH: { path: 'Home/GetWorldMarketSearchList', method: 'POST' },
+      MARKET_SUBLIST: { path: 'Home/GetWorldMarketSubList', method: 'POST' },
+      MARKET_SELLBUYINFO: { path: 'Home/GetItemSellBuyInfo', method: 'POST' },
     };
 
     static ERRORS = {
@@ -35,7 +35,7 @@ class MarketUtil {
     }
 
     /**
-     * @param {string} endpoint
+     * @param {MarketUtil.ENDPOINTS|{path: string, method: string}} endpoint
      */
     static throwIfInvalidEndpointKey(endpoint) {
       if (endpoint == null || (this.ENDPOINTS)[endpoint] === undefined) {
@@ -44,14 +44,14 @@ class MarketUtil {
     }
 
     /**
-     * @param {ENDPOINTS|{path: string, method: string}} endpoint
+     * @param {ENDPOINTS.path} endpoint
      */
     static throwIfInvalidEndpointValue(endpoint) {
       if (endpoint == null) {
         throw this.ERRORS.endpointValue;
       }
       const isValid = Object.keys(this.ENDPOINTS)
-        .some((k) => this.ENDPOINTS[k].path === endpoint.path);
+        .some((k) => this.ENDPOINTS[k].path === endpoint);
       if (!isValid) {
         throw this.ERRORS.endpointValue;
       }
@@ -134,14 +134,25 @@ class MarketUtil {
 
     /**
      * @param {"NA"|"EU"} region
-     * @param {string} endpoint
+     * @param {ENDPOINTS | {path: string, method: string}} endpoint
      */
-    static getUrl(region, endpoint) {
+    static getUrlByEndpoint(region, endpoint) {
       this.throwIfInvalidRegion(region);
       this.throwIfInvalidEndpointKey(endpoint);
       const baseUrl = this.getBaseURL(region);
       const relativeUrl = this.ENDPOINTS[endpoint].path;
       return new URL(relativeUrl, baseUrl);
+    }
+
+    /**
+     * @param {"NA"|"EU"} region
+     * @param {ENDPOINTS.path} endpointPath
+     */
+    static getUrlByEndpointPath(region, endpointPath) {
+      this.throwIfInvalidRegion(region);
+      this.throwIfInvalidEndpointValue(endpointPath);
+      const baseUrl = this.getBaseURL(region);
+      return new URL(endpointPath, baseUrl);
     }
 
     /**
@@ -155,6 +166,18 @@ class MarketUtil {
         method,
         headers: this.getHeader(region),
         body: (formData != null ? this.getBody(region, formData).body : null),
+      };
+    }
+
+    /**
+     * @param {"NA"|"EU"} region
+     * @param {string} searchText
+     */
+    static getRequestWorldMarketSearchList(region, searchText) {
+      const endpoint = this.ENDPOINTS.MARKET_SEARCH;
+      return {
+        url: this.getUrlByEndpointPath(region, endpoint.path).href,
+        opt: this.getRequestOptions(region, endpoint.method, { searchText }),
       };
     }
 }
