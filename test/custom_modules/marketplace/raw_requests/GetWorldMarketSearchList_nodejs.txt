@@ -1,0 +1,19 @@
+fetch("https://na-trade.naeu.playblackdesert.com/Home/GetWorldMarketSearchList", {
+  "headers": {
+    "accept": "*/*",
+    "accept-language": "en-US,en;q=0.9",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "sec-ch-ua": "\"Google Chrome\";v=\"89\", \"Chromium\";v=\"89\", \";Not A Brand\";v=\"99\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "x-requested-with": "XMLHttpRequest",
+    "cookie": "lang=en-US; _gcl_au=1.1.179990586.1615407451; _rdt_uuid=1615407451003.f044811b-5eab-43f5-b009-0fea6742fcf9; _gid=GA1.2.947035438.1615407451; _fbp=fb.1.1615407451274.151221838; blackdesert_ad_tracker=6ITXnHdnzJJBA8buchm1XZnjHHn9ZvPjn7v0vJr51N0=; naeu.Session=sojbx2pei43hnvrcm0x3uvsj; bodyCountryCode=US; rating=ESRB; _gat_UA-91465274-10=1; _ga_7WRV3PC0Y0=GS1.1.1615414297.2.1.1615414393.0; _ga=GA1.2.1133361930.1615407451; _gat=1; TradeAuth_Session=rct4ab0knsi0s0njhg4wn3gd; __RequestVerificationToken=J7epk-FQ_qF4pK3bPk9l_htaL4ad0f_6a6f5IEIlRz-xiNmPX_ECDVZu2weEB3TxlmFNexpMZy2_jneaHRk7ezHq97A_O7glNmqNT7U1Z_U1"
+  },
+  "referrer": "https://na-trade.naeu.playblackdesert.com/Home/list/hot",
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  "body": "__RequestVerificationToken=bknNvQBS6_JsTkBRqQFt3fIB4dF9tU-UW1Rt8l879e_stPOTld4UEWR1B_CPl1VhnZ4CO4XxEIvP5lUVl2m7yReAF46oiAQlfC1H1YQgEzY1&searchText=tungrad",
+  "method": "POST",
+  "mode": "cors"
+});
