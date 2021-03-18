@@ -23,13 +23,13 @@
 //   "mode": "cors"
 // });
 
-const axios = require('axios');
 const marketUtil = require('./marketUtil');
 
 class GetWorldMarketSubList {
   constructor(region) {
     marketUtil.throwIfInvalidRegion(region);
     this.region = region;
+    this.client = marketUtil.getClient(region);
   }
 
   /**
@@ -53,7 +53,7 @@ class GetWorldMarketSubList {
   async byMainKey(mainKey) {
     const params = this.getRequestParameters(mainKey);
     try {
-      return axios.post(params.url.href, params.opt.body, { headers: params.opt.headers });
+      return this.client.post(params.url.href, params.opt.body, { headers: params.opt.headers });
     } catch (error) {
       return Promise.reject(new Error(error));
     }

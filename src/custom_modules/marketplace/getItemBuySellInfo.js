@@ -24,14 +24,14 @@
 //   "method": "POST",
 //   "mode": "cors"
 // });
-
-const axios = require('axios');
+require('dotenv').config();
 const marketUtil = require('./marketUtil');
 
 class GetItemBuySellInfo {
   constructor(region) {
     marketUtil.throwIfInvalidRegion(region);
     this.region = region;
+    this.client = marketUtil.getClient(region);
   }
 
   /**
@@ -79,7 +79,7 @@ class GetItemBuySellInfo {
   async byMainKey(mainKey) {
     const params = this.getRequestParameters(mainKey);
     try {
-      return axios.post(params.url.href, params.opt.body, { headers: params.opt.headers });
+      return this.client.post(params.url.href, params.opt.body, { headers: params.opt.headers });
     } catch (error) {
       return Promise.reject(new Error(error));
     }

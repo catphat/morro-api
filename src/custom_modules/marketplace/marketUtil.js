@@ -1,5 +1,8 @@
 require('dotenv').config();
 const qs = require('qs');
+const SocksProxyAgent = require('socks-proxy-agent');
+const axios = require('axios');
+
 const config = require('../../config');
 
 class MarketUtil {
@@ -23,6 +26,23 @@ class MarketUtil {
       endpointKey: new Error(`endpoint key must be one of the following :${Object.keys(this.ENDPOINTS).join(', ')}`),
       endpointValue: new Error('endpoint value must be one of the following:'
       + `${Object.values(this.ENDPOINTS).map((val) => val.path).join(', ')}`),
+    }
+
+    /**
+     * @param {'NA'|'EU'} region
+     */
+    static getClient(region) {
+      this.throwIfInvalidRegion(region);
+      let baseUrl = config.MARKET_BASE_URL_NA;
+      let host = config.MARKET_SOCKS_PROXY_URL_NA;
+      let port = config.MARKET_SOCKS_PROXY_PORT_NA;
+      if (region === 'EU') {
+        baseUrl = config.MARKET_BASE_URL_EU;
+        host = config.MARKET_SOCKS_PROXY_URL_EU;
+        port = config.MARKET_SOCKS_PROXY_PORT_EU;
+      }
+      const httpsAgent = new SocksProxyAgent(`socks5://${host}:${port}`);
+      return axios.create({ baseUrl, httpsAgent });
     }
 
     /**
@@ -168,8 +188,6 @@ class MarketUtil {
         body: (formData != null ? this.getBody(region, formData).body : null),
       };
     }
-
-
 }
 
 module.exports = MarketUtil;

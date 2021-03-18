@@ -31,13 +31,13 @@
 //     "method": "POST",
 //     "mode": "cors"
 // });
-const axios = require('axios');
 const marketUtil = require('./marketUtil');
 
 class GetWorldMarketSearchList {
   constructor(region) {
     marketUtil.throwIfInvalidRegion(region);
     this.region = region;
+    this.client = marketUtil.getClient(region);
   }
 
   /**
@@ -57,7 +57,7 @@ class GetWorldMarketSearchList {
   async bySearchTextAsync(searchText) {
     const params = this.getRequestParameters(searchText);
     try {
-      return axios.post(params.url.href, params.opt.body, { headers: params.opt.headers });
+      return this.client.post(params.url.href, params.opt.body, { headers: params.opt.headers });
     } catch (error) {
       return Promise.reject(new Error(error));
     }
