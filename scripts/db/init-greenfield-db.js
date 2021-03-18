@@ -4,6 +4,7 @@ const sequelize = require('../../src/db');
 const {
   Node,
   NodeMaterial,
+  Gear,
   Group,
   Recipe,
   Material,
@@ -17,18 +18,6 @@ const groupList = require('./data/itemGroups.json');
 const recipeList = require('./data/recipesList.json');
 
 const groupMap = new Map(nodeGroups);
-
-async function setNodes() {
-  // Use this script only in dev!
-  await Node.sync({ force: true });
-  await NodeMaterial.sync({ force: true });
-  await Promise.all(
-    nodeList.map(async (node, index) => {
-      // Index + 1, database cant have 0 as PK
-      await createNode(node, index + 1);
-    }),
-  );
-}
 
 async function createNode(node, index) {
   try {
@@ -55,22 +44,52 @@ async function createNode(node, index) {
             )
           : null,
     });
-    for (const material of node.material) {
+    node.material.map(async (n) => {
       try {
         await NodeMaterial.create({
           NodeId: index,
-          MaterialId: material.id,
-          yield: material.yield,
-          luck: material.luck,
+          MaterialId: n.id,
+          yield: n.yield,
+          luck: n.luck,
         });
       } catch (e) {
         console.log(e);
         console.log(node);
-        console.log(`Missing material ${material.id}`);
+        console.log(`Missing material ${n.id}`);
       }
-    }
+    });
   } catch (error) {
     console.log(node);
+    console.log(error);
+  }
+}
+
+async function setNodes() {
+  // Use this script only in dev!
+  await Node.sync({ force: true });
+  await NodeMaterial.sync({ force: true });
+  await Promise.all(
+    nodeList.map(async (node, index) => {
+      // Index + 1, database cant have 0 as PK
+      await createNode(node, index + 1);
+    }),
+  );
+}
+
+async function createGroup(group) {
+  try {
+    await Group.create({
+      id: group.id,
+      name: group.name,
+    });
+    group.items.map(async (i) => {
+      const material = await Material.findOne({ where: { id: i.id } });
+      if (material) {
+        material.GroupId = group.id;
+        await material.save();
+      }
+    });
+  } catch (error) {
     console.log(error);
   }
 }
@@ -85,19 +104,29 @@ async function setGroups() {
   );
 }
 
-async function createGroup(group) {
+async function createRecipe(recipe) {
   try {
-    await Group.create({
-      id: parseInt(group.id),
-      name: group.name,
+    await Recipe.create({
+      id: recipe.id,
+      name: recipe.name,
+      image: recipe.image,
+      level: recipe.level,
+      exp: recipe.exp,
     });
-    for (const i of group.items) {
-      const material = await Material.findOne({ where: { id: i.id } });
-      if (material) {
-        material.GroupId = parseInt(group.id);
-        await material.save();
-      }
-    }
+    recipe.materials.map(async (material) => {
+      await RecipeIngredient.create({
+        RecipeId: recipe.id,
+        MaterialId: material.group ? null : material.id,
+        GroupId: material.group ? material.id : null,
+        quantity: material.quantity,
+      });
+    });
+    recipe.products.map(async (product) => {
+      await RecipeProduct.create({
+        RecipeId: recipe.id,
+        MaterialId: product.id,
+      });
+    });
   } catch (error) {
     console.log(error);
   }
@@ -116,29 +145,26 @@ async function setRecipes() {
   );
 }
 
-async function createRecipe(recipe) {
+async function createGear() {
   try {
-    await Recipe.create({
-      id: parseInt(recipe.id),
-      name: recipe.name,
-      image: recipe.image,
-      level: recipe.level,
-      exp: recipe.exp,
-    });
-    for (const material of recipe.materials) {
-      await RecipeIngredient.create({
-        RecipeId: parseInt(recipe.id),
-        MaterialId: material.group ? null : parseInt(material.id),
-        GroupId: material.group ? parseInt(material.id) : null,
-        quantity: material.quantity,
-      });
-    }
-    for (const product of recipe.products) {
-      await RecipeProduct.create({
-        RecipeId: parseInt(recipe.id),
-        MaterialId: parseInt(product.id),
-      });
-    }
+    await Gear.sync({ force: true });
+    await Gear.bulkCreate([
+      { name: 'Weapon', stacks: '192', attempts: '23' },
+      { name: 'Offhand', stacks: '210', attempts: '15' },
+      { name: 'Awaken', stacks: '192', attempts: '23' },
+      { name: 'Helmet', stacks: '210', attempts: '15' },
+      { name: 'Armor', stacks: '192', attempts: '23' },
+      { name: 'Gloves', stacks: '210', attempts: '15' },
+      { name: 'Boots', stacks: '192', attempts: '23' },
+      { name: 'Pen Weapon Attempts', value: '1/23' },
+      { name: 'Pen Armor Attempts', value: '4/46' },
+      { name: 'TET Accessory Attempts', value: '1/23' },
+      { name: 'Combat Gear Value', value: '150 Billion' },
+      { name: 'Lifeskill Gear Value', value: '30 Billion' },
+      { name: 'Storage Value', value: '15 Billion' },
+      { name: 'Horse Value', value: '12 Billion' },
+      { name: 'Net Worth', value: '207 Billion' },
+    ]);
   } catch (error) {
     console.log(error);
   }
@@ -146,6 +172,7 @@ async function createRecipe(recipe) {
 
 async function main() {
   const t0 = new Date().getTime();
+  await createGear();
   await setNodes();
   await setGroups();
   await setRecipes();
