@@ -7,11 +7,11 @@ const { expect } = require('chai');
 const { describe, it } = require('mocha');
 const fs = require('fs');
 const nock = require('nock');
-const WorldMarketSearchList = require('../../../src/custom_modules/marketplace/worldMarketSearchList');
+const GetWorldMarketSearchList = require('../../../src/custom_modules/marketplace/worldMarketSearchList');
 
 describe('worldMarketSearchList method', () => {
   it('bySearchText returns valid request parameters', () => {
-    const worldMarketSearchList = new WorldMarketSearchList('NA');
+    const worldMarketSearchList = new GetWorldMarketSearchList('NA');
     const req = worldMarketSearchList.getRequestParameters('tungrad');
     expect(req.url.href).to.equal('http://127.0.0.1:8000/Home/GetWorldMarketSearchList');
     expect(req.opt.method).to.equal('POST');
@@ -20,7 +20,7 @@ describe('worldMarketSearchList method', () => {
   });
 
   describe('WorldMarketSearchList', () => {
-    const worldMarketSearchList = new WorldMarketSearchList('NA');
+    const worldMarketSearchList = new GetWorldMarketSearchList('NA');
     const reqRawResponsePath = path.resolve('test/custom_modules/marketplace/raw_requests/GetWorldMarketSearchList_response.json');
     const responseJSON = fs.readFileSync(reqRawResponsePath);
     const reqParams = worldMarketSearchList.getRequestParameters('tungrad');
@@ -40,7 +40,7 @@ describe('worldMarketSearchList method', () => {
             { 'Content-Type': 'application/json; charset=utf-8' }];
         });
 
-      const resp = await worldMarketSearchList.getBySearchTextAsync('tungrad');
+      const resp = await worldMarketSearchList.bySearchTextAsync('tungrad');
       expect(resp.status).to.equal(200);
       expect(resp.data.list.length).to.equal(4);
       expect(resp.data.list[0].mainKey).to.equal(11629);

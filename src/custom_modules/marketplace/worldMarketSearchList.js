@@ -34,7 +34,7 @@
 const axios = require('axios');
 const marketUtil = require('./marketUtil');
 
-class WorldMarketSearchList {
+class GetWorldMarketSearchList {
   constructor(region) {
     marketUtil.throwIfInvalidRegion(region);
     this.region = region;
@@ -54,7 +54,7 @@ class WorldMarketSearchList {
   /**
    * @param {string} searchText
    */
-  async getBySearchTextAsync(searchText) {
+  async bySearchTextAsync(searchText) {
     const params = this.getRequestParameters(searchText);
     try {
       return axios.post(params.url.href, params.opt.body, { headers: params.opt.headers });
@@ -64,4 +64,4 @@ class WorldMarketSearchList {
   }
 }
 
-module.exports = WorldMarketSearchList;
+module.exports = GetWorldMarketSearchList;
