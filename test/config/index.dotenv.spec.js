@@ -16,8 +16,7 @@ describe('config', () => {
     expect(config.MARKET_REQ_VERIFICATION_COOKIE_TOKEN_NA).to.equal('NACOOKIETOKEN123');
     expect(config.MARKET_REQ_VERIFICATION_BODY_TOKEN_EU).to.equal('EUBODYTOKEN123');
     expect(config.MARKET_REQ_VERIFICATION_BODY_TOKEN_NA).to.equal('NABODYTOKEN123');
-    expect(config.DB_URL).to.equal('postgres://user:pass@example.com:5432/dbname');
-    expect(config.PORT).to.equal('7000');
+    expect(config.DB_URL).to.equal('postgres://postgres:abc123@127.0.0.1:5432/mpai-db');
     expect(config.ENV).to.equal('TEST-DEV');
     expect(config.GEAR_EMAIL).to.equal('efzUFE83suBCR5Z@FcqM9nGPLYb.com');
     expect(config.SE_TOKEN).to.equal('fD3JT8CGdNA');
