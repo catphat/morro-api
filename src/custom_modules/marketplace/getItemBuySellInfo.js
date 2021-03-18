@@ -58,6 +58,21 @@ class GetItemBuySellInfo {
     };
   }
 
+  parseResponse = (resp) => ({
+    pricePerOne: resp.basePrice ? resp.basePrice : null,
+    count: resp.marketConditionList
+      ? resp.marketConditionList.reduce((a, mat) => a + mat.sellCount, 0)
+      : null,
+    flooded: resp.marketConditionList
+      ? resp.marketConditionList[0].sellCount > 50000
+        && resp.marketConditionList[0].pricePerOne === resp.basePrice
+      : null,
+    maxed: resp.marketConditionList
+      ? resp.marketConditionList[resp.marketConditionList.length - 1].buyCount
+        > 5000
+      : null,
+  });
+
   /**
    * @param {int} mainKey
    */
