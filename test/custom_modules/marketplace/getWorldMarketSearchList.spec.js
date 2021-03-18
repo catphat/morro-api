@@ -7,7 +7,7 @@ const { expect } = require('chai');
 const { describe, it } = require('mocha');
 const fs = require('fs');
 const nock = require('nock');
-const GetWorldMarketSearchList = require('../../../src/custom_modules/marketplace/worldMarketSearchList');
+const { GetWorldMarketSearchList } = require('../../../src/custom_modules/marketplace/index');
 
 describe('worldMarketSearchList method', () => {
   it('bySearchText returns valid request parameters', () => {
