@@ -14,6 +14,7 @@
     "axios": "^0.20.0",
     "bdo-scraper": "^2.2.4",
     "body-parser": "^1.19.0",
+    "calpheonjs": "^1.0.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "errorhandler": "^1.5.1",
@@ -28,6 +29,7 @@
     "qs": "^6.9.4",
     "sequelize": "^6.3.5",
     "serve-favicon": "^2.5.0",
+    "socks-proxy-agent": "^5.0.0",
     "twitch": "^4.2.4",
     "winston": "^3.3.3"
   },
