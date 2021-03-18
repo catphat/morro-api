@@ -49,12 +49,5 @@ describe('worldMarketSearchList method', () => {
       expect(resp.data.list[0].sumCount).to.equal(104);
       expect(resp.data.list[0].grade).to.equal(3);
     });
-    it('getBySearchTextAsync can handle error response', async () => {
-      nock(`http://${reqParams.url.host}`)
-        .post(reqParams.url.pathname)
-        .replyWithError('error test message');
-
-//      await expect(worldMarketSearchList.getBySearchTextAsync('tungrad')).to.have.val
-    });
   });
 });
