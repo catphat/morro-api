@@ -31,23 +31,22 @@
 //     "method": "POST",
 //     "mode": "cors"
 // });
-const marketUtil = require('./marketUtil');
+const MarketUtil = require('./marketUtil');
 
 class GetWorldMarketSearchList {
   constructor(region) {
-    marketUtil.throwIfInvalidRegion(region);
-    this.region = region;
-    this.client = marketUtil.getClient(region);
+    this.mu = new MarketUtil(region);
+    this.client = this.mu.getClient(region);
   }
 
   /**
      * @param {string} searchText
      */
   getRequestParameters(searchText) {
-    const endpoint = marketUtil.ENDPOINTS.MARKET_SEARCH;
+    const endpoint = this.mu.ENDPOINTS.MARKET_SEARCH;
     return {
-      url: marketUtil.getUrlByEndpointPath(this.region, endpoint.path),
-      opt: marketUtil.getRequestOptions(this.region, endpoint.method, { searchText }),
+      url: this.mu.getUrlByEndpointPath(endpoint.path),
+      opt: this.mu.getRequestOptions(endpoint.method, { searchText }),
     };
   }
 

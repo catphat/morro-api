@@ -46,7 +46,7 @@ describe('itemBuySellInfo method', () => {
       expect(resp.data.marketConditionList.length).to.equal(27);
       expect(resp.data.basePrice).to.equal(87500000);
 
-      const parsedResp = itemBuySellInfo.parseResponse(resp.data);
+      const parsedResp = GetItemBuySellInfo.parseResponse(resp.data);
       expect(parsedResp.pricePerOne).to.equal(87500000);
       expect(parsedResp.flooded).to.be.false;
       expect(parsedResp.maxed).to.be.false;
@@ -54,7 +54,7 @@ describe('itemBuySellInfo method', () => {
       resp.data.marketConditionList[0].sellCount = 50001;
       resp.data.marketConditionList[0].pricePerOne = 87500000;
       resp.data.marketConditionList[resp.data.marketConditionList.length - 1].buyCount = 5001;
-      const parsedResp1 = itemBuySellInfo.parseResponse(resp.data);
+      const parsedResp1 = GetItemBuySellInfo.parseResponse(resp.data);
       expect(parsedResp1.flooded).to.be.true;
       expect(parsedResp1.maxed).to.be.true;
     });

@@ -23,27 +23,26 @@
 //   "mode": "cors"
 // });
 
-const marketUtil = require('./marketUtil');
+const MarketUtil = require('./marketUtil');
 
 class GetWorldMarketSubList {
   constructor(region) {
-    marketUtil.throwIfInvalidRegion(region);
-    this.region = region;
-    this.client = marketUtil.getClient(region);
+    this.mu = new MarketUtil(region);
+    this.client = this.mu.getClient(region);
   }
 
   /**
    * @param {int} mainKey
    */
   getRequestParameters(mainKey) {
-    const endpoint = marketUtil.ENDPOINTS.MARKET_SUBLIST;
+    const endpoint = this.mu.ENDPOINTS.MARKET_SUBLIST;
     const body = {
       mainKey,
       usingClient: 0, // todo: check if fixing typo causes issues with endpoint
     };
     return {
-      url: marketUtil.getUrlByEndpointPath(this.region, endpoint.path),
-      opt: marketUtil.getRequestOptions(this.region, endpoint.method, body),
+      url: this.mu.getUrlByEndpointPath(endpoint.path),
+      opt: this.mu.getRequestOptions(endpoint.method, body),
     };
   }
 

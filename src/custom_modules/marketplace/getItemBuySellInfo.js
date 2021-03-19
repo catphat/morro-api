@@ -25,20 +25,19 @@
 //   "mode": "cors"
 // });
 require('dotenv').config();
-const marketUtil = require('./marketUtil');
+const MarketUtil = require('./marketUtil');
 
 class GetItemBuySellInfo {
   constructor(region) {
-    marketUtil.throwIfInvalidRegion(region);
-    this.region = region;
-    this.client = marketUtil.getClient(region);
+    this.mu = new MarketUtil(region);
+    this.client = this.mu.getClient(region);
   }
 
   /**
    * @param {int} mainKey
    */
   getRequestParameters(mainKey) {
-    const endpoint = marketUtil.ENDPOINTS.MARKET_SELLBUYINFO;
+    const endpoint = this.mu.ENDPOINTS.MARKET_SELLBUYINFO;
     const body = {
       pricePerOne: 0,
       totalTradeCount: 0,
@@ -53,25 +52,27 @@ class GetItemBuySellInfo {
       chooseKey: 0,
     };
     return {
-      url: marketUtil.getUrlByEndpointPath(this.region, endpoint.path),
-      opt: marketUtil.getRequestOptions(this.region, endpoint.method, body),
+      url: this.mu.getUrlByEndpointPath(endpoint.path),
+      opt: this.mu.getRequestOptions(endpoint.method, body),
     };
   }
 
-  parseResponse = (resp) => ({
-    pricePerOne: resp.basePrice ? resp.basePrice : null,
-    count: resp.marketConditionList
-      ? resp.marketConditionList.reduce((a, mat) => a + mat.sellCount, 0)
-      : null,
-    flooded: resp.marketConditionList
-      ? resp.marketConditionList[0].sellCount > 50000
+  static parseResponse(resp) {
+    return {
+      pricePerOne: resp.basePrice ? resp.basePrice : null,
+      count: resp.marketConditionList
+        ? resp.marketConditionList.reduce((a, mat) => a + mat.sellCount, 0)
+        : null,
+      flooded: resp.marketConditionList
+        ? resp.marketConditionList[0].sellCount > 50000
         && resp.marketConditionList[0].pricePerOne === resp.basePrice
-      : null,
-    maxed: resp.marketConditionList
-      ? resp.marketConditionList[resp.marketConditionList.length - 1].buyCount
+        : null,
+      maxed: resp.marketConditionList
+        ? resp.marketConditionList[resp.marketConditionList.length - 1].buyCount
         > 5000
-      : null,
-  });
+        : null,
+    };
+  }
 
   /**
    * @param {int} mainKey

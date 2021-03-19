@@ -9,54 +9,54 @@ const MarketUtil = require('../../../src/custom_modules/marketplace/marketUtil')
 
 describe('market utility', () => {
   it('ERRORS.endpointKey prints out ENDPOINTs keys', () => {
-    expect(MarketUtil.ERRORS.endpointKey.message.split(':')[1])
+    expect(new MarketUtil('NA').ERRORS.endpointKey.message.split(':')[1])
       .to.equal('MARKET_SEARCH, MARKET_SUBLIST, MARKET_SELLBUYINFO');
   });
 
   it('ERRORS.endpointValue prints out ENDPOINTS value', () => {
-    expect(MarketUtil.ERRORS.endpointValue.message.split(':')[1])
-      .to.equal('GetWorldMarketSearchList, GetWorldMarketSubList, GetItemSellBuyInfo');
+    expect(new MarketUtil('NA').ERRORS.endpointValue.message.split(':')[1])
+      .to.equal('Home/GetWorldMarketSearchList, Home/GetWorldMarketSubList, Home/GetItemSellBuyInfo');
   });
 
   it('throwIfInvalidRegion throws on invalid parameter', () => {
-    expect(() => MarketUtil.throwIfInvalidRegion('BLA')).to.throw();
-    expect(() => MarketUtil.throwIfInvalidRegion(null)).to.throw();
-    expect(() => MarketUtil.throwIfInvalidRegion('')).to.throw();
-    expect(() => MarketUtil.throwIfInvalidRegion('NA')).to.not.throw();
-    expect(() => MarketUtil.throwIfInvalidRegion('EU')).to.not.throw();
+    expect(() => new MarketUtil('NA').throwIfInvalidRegion('BLA')).to.throw();
+    expect(() => new MarketUtil('NA').throwIfInvalidRegion(null)).to.throw();
+    expect(() => new MarketUtil('NA').throwIfInvalidRegion('')).to.throw();
+    expect(() => new MarketUtil('NA').throwIfInvalidRegion('NA')).to.not.throw();
+    expect(() => new MarketUtil('NA').throwIfInvalidRegion('EU')).to.not.throw();
   });
 
   it('throwIfInvalidEndpointKey throws on invalid parameter', () => {
-    expect(() => MarketUtil.throwIfInvalidEndpointKey('BLA')).to.throw();
-    expect(() => MarketUtil.throwIfInvalidEndpointKey(null)).to.throw();
-    expect(() => MarketUtil.throwIfInvalidEndpointKey('MARKET_SEARCH')).to.not.throw();
+    expect(() => new MarketUtil('NA').throwIfInvalidEndpointKey('BLA')).to.throw();
+    expect(() => new MarketUtil('NA').throwIfInvalidEndpointKey(null)).to.throw();
+    expect(() => new MarketUtil('NA').throwIfInvalidEndpointKey('MARKET_SEARCH')).to.not.throw();
   });
 
   it('throwIfInvalidEndpointValue throws on invalid parameter', () => {
-    expect(() => MarketUtil.throwIfInvalidEndpointValue('BLA')).to.throw();
-    expect(() => MarketUtil.throwIfInvalidEndpointValue(null)).to.throw();
-    expect(() => MarketUtil.throwIfInvalidEndpointValue('MARKET_SEARCH')).to.throw();
-    expect(() => MarketUtil.throwIfInvalidEndpointValue(MarketUtil.ENDPOINTS.MARKET_SEARCH.path))
+    expect(() => new MarketUtil('NA').throwIfInvalidEndpointValue('BLA')).to.throw();
+    expect(() => new MarketUtil('NA').throwIfInvalidEndpointValue(null)).to.throw();
+    expect(() => new MarketUtil('NA').throwIfInvalidEndpointValue('MARKET_SEARCH')).to.throw();
+    expect(() => new MarketUtil('NA').throwIfInvalidEndpointValue(new MarketUtil('NA').ENDPOINTS.MARKET_SEARCH.path))
       .to.not.throw();
   });
 
   it('getCookieRequestVerificationToken should have correct token', () => {
-    expect(MarketUtil.getCookieRequestVerificationToken('NA')).to.equal('NACOOKIETOKEN123');
-    expect(MarketUtil.getCookieRequestVerificationToken('EU')).to.equal('EUCOOKIETOKEN123');
+    expect(new MarketUtil('NA').getCookieRequestVerificationToken()).to.equal('NACOOKIETOKEN123');
+    expect(new MarketUtil('EU').getCookieRequestVerificationToken()).to.equal('EUCOOKIETOKEN123');
   });
 
   it('getCookie should have correct values', () => {
-    expect(MarketUtil.getCookie('NA').cookie.lang).to.equal('en-US');
+    expect(new MarketUtil('NA').getCookie().cookie.lang).to.equal('en-US');
     // eslint-disable-next-line no-underscore-dangle
-    expect(MarketUtil.getCookie('NA').cookie.__RequestVerificationToken).to.equal('NACOOKIETOKEN123');
+    expect(new MarketUtil('NA').getCookie().cookie.__RequestVerificationToken).to.equal('NACOOKIETOKEN123');
 
-    expect(MarketUtil.getCookie('EU').cookie.lang).to.equal('en-US');
+    expect(new MarketUtil('EU').getCookie().cookie.lang).to.equal('en-US');
     // eslint-disable-next-line no-underscore-dangle
-    expect(MarketUtil.getCookie('EU').cookie.__RequestVerificationToken).to.equal('EUCOOKIETOKEN123');
+    expect(new MarketUtil('EU').getCookie().cookie.__RequestVerificationToken).to.equal('EUCOOKIETOKEN123');
   });
 
   it('getHeader should have correct values', () => {
-    const header = MarketUtil.getHeader('NA');
+    const header = new MarketUtil('NA').getHeader();
     expect(header.accept).to.equal('*/*');
     expect(header['User-Agent'])
       .to.equal('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36');
@@ -65,70 +65,68 @@ describe('market utility', () => {
 
   it('getBodyRequestVerificationToken should have correct token', () => {
     // eslint-disable-next-line no-underscore-dangle
-    expect(MarketUtil.getBodyRequestVerificationToken('NA').__RequestVerificationToken).to.equal('NABODYTOKEN123');
+    expect(new MarketUtil('NA').getBodyRequestVerificationToken().__RequestVerificationToken).to.equal('NABODYTOKEN123');
     // eslint-disable-next-line no-underscore-dangle
-    expect(MarketUtil.getBodyRequestVerificationToken('EU').__RequestVerificationToken).to.equal('EUBODYTOKEN123');
+    expect(new MarketUtil('EU').getBodyRequestVerificationToken().__RequestVerificationToken).to.equal('EUBODYTOKEN123');
   });
 
   it('getHeader should throw on invalid region parameter', () => {
-    expect(() => MarketUtil.getHeader(null)).to.throw();
-    expect(() => MarketUtil.getHeader('blabla')).to.throw();
+    expect(() => new MarketUtil(null).getHeader()).to.throw();
+    expect(() => new MarketUtil('blabla').getHeader()).to.throw();
   });
 
   it('getBody should return valid parameters', () => {
-    expect(MarketUtil.getBody('NA').body).to.equal('__RequestVerificationToken=NABODYTOKEN123');
-    expect(MarketUtil.getBody('NA', { searchText: 'tungrad' }).body).to.equal('__RequestVerificationToken=NABODYTOKEN123&searchText=tungrad');
+    expect(new MarketUtil('NA').getBody().body).to.equal('__RequestVerificationToken=NABODYTOKEN123');
+    expect(new MarketUtil('NA').getBody({ searchText: 'tungrad' }).body).to.equal('__RequestVerificationToken=NABODYTOKEN123&searchText=tungrad');
   });
 
   it('getBaseURL should have correct regional baseURL', () => {
-    expect(MarketUtil.getBaseURL('NA')).to.equal('http://127.0.0.1:8000');
-    expect(MarketUtil.getBaseURL('EU')).to.equal('http://127.0.0.1:9000');
+    expect(new MarketUtil('NA').getBaseURL()).to.equal('http://127.0.0.1:8000');
+    expect(new MarketUtil('EU').getBaseURL()).to.equal('http://127.0.0.1:9000');
   });
 
   it('getBaseURL should throw on invalid region parameter', () => {
-    expect(() => MarketUtil.getBaseURL(null)).to.throw();
-    expect(() => MarketUtil.getBaseURL('blabla')).to.throw();
+    expect(() => new MarketUtil(null).getBaseURL()).to.throw();
+    expect(() => new MarketUtil('blabla').getBaseURL()).to.throw();
   });
 
   it('getUrl returns valid URL', () => {
-    expect(MarketUtil.getUrlByEndpoint('NA', 'MARKET_SEARCH').href)
-      .to.equal('http://127.0.0.1:8000/GetWorldMarketSearchList');
+    expect(new MarketUtil('NA').getUrlByEndpoint('MARKET_SEARCH').href)
+      .to.equal('http://127.0.0.1:8000/Home/GetWorldMarketSearchList');
 
-    expect(MarketUtil.getUrlByEndpoint('EU', 'MARKET_SUBLIST').href)
-      .to.equal('http://127.0.0.1:9000/GetWorldMarketSubList');
+    expect(new MarketUtil('EU').getUrlByEndpoint('MARKET_SUBLIST').href)
+      .to.equal('http://127.0.0.1:9000/Home/GetWorldMarketSubList');
   });
 
   it('getUrlByEndpoint throws on invalid input', () => {
-    expect(() => MarketUtil.getUrlByEndpoint('EU', null)).to.throw();
-    expect(() => MarketUtil.getUrlByEndpoint(null, 'MARKET_SEARCH')).to.throw();
-    expect(() => MarketUtil.getUrlByEndpoint('NA', 'ABCBLAMARKET_SEARCH')).to.throw();
-    expect(() => MarketUtil.getUrlByEndpoint('ABC', 'MARKET_SEARCH')).to.throw();
+    expect(() => new MarketUtil('EU').getUrlByEndpoint(null)).to.throw();
+    expect(() => new MarketUtil(null).getUrlByEndpoint('MARKET_SEARCH')).to.throw();
+    expect(() => new MarketUtil('NA').getUrlByEndpoint('ABCBLAMARKET_SEARCH')).to.throw();
+    expect(() => new MarketUtil('ABC').getUrlByEndpoint('MARKET_SEARCH')).to.throw();
 
-    expect(() => MarketUtil.getUrlByEndpoint('NA', 'MARKET_SEARCH')).to.not.throw();
-    expect(() => MarketUtil.getUrlByEndpoint('NA', MarketUtil.ENDPOINTS.MARKET_SEARCH.path)).to.throw();
+    expect(() => new MarketUtil('NA').getUrlByEndpoint('MARKET_SEARCH')).to.not.throw();
+    expect(() => new MarketUtil('NA').getUrlByEndpoint(new MarketUtil('NA').ENDPOINTS.MARKET_SEARCH.path)).to.throw();
   });
 
   it('getUrlByEndpointPath throws on invalid input', () => {
-    expect(() => MarketUtil.getUrlByEndpointPath('EU', null)).to.throw();
-    expect(() => MarketUtil.getUrlByEndpointPath(null, 'MARKET_SEARCH')).to.throw();
-    expect(() => MarketUtil.getUrlByEndpointPath('NA', 'ABCBLAMARKET_SEARCH')).to.throw();
-    expect(() => MarketUtil.getUrlByEndpointPath('ABC', 'MARKET_SEARCH')).to.throw();
+    expect(() => new MarketUtil('EU').getUrlByEndpointPath(null)).to.throw();
+    expect(() => new MarketUtil(null).getUrlByEndpointPath('MARKET_SEARCH')).to.throw();
+    expect(() => new MarketUtil('NA').getUrlByEndpointPath('ABCBLAMARKET_SEARCH')).to.throw();
+    expect(() => new MarketUtil('ABC').getUrlByEndpointPath('MARKET_SEARCH')).to.throw();
 
-    expect(() => MarketUtil.getUrlByEndpointPath('NA', 'MARKET_SEARCH')).to.throw();
-    expect(() => MarketUtil.getUrlByEndpointPath('NA', MarketUtil.ENDPOINTS.MARKET_SEARCH.path)).to.not.throw();
-
+    expect(() => new MarketUtil('NA').getUrlByEndpointPath('MARKET_SEARCH')).to.throw();
+    expect(() => new MarketUtil('NA').getUrlByEndpointPath(new MarketUtil('NA').ENDPOINTS.MARKET_SEARCH.path)).to.not.throw();
   });
 
   it('getRequestOptions returns valid option parameters', () => {
-    const optWithBody = MarketUtil.getRequestOptions('NA', 'POST', { searchText: 'tungrad' });
+    const optWithBody = new MarketUtil('NA').getRequestOptions('POST', { searchText: 'tungrad' });
     expect(optWithBody.method).to.equal('POST');
     expect(optWithBody.headers.cookie).to.equal('lang=en-US;__RequestVerificationToken=NACOOKIETOKEN123');
     expect(optWithBody.body).to.equal('__RequestVerificationToken=NABODYTOKEN123&searchText=tungrad');
 
-    const optWithNullBody = MarketUtil.getRequestOptions('NA', 'POST');
+    const optWithNullBody = new MarketUtil('NA').getRequestOptions('POST');
     expect(optWithNullBody.method).to.equal('POST');
     expect(optWithNullBody.headers.cookie).to.equal('lang=en-US;__RequestVerificationToken=NACOOKIETOKEN123');
     expect(optWithNullBody.body).to.equal(null);
   });
-
 });
