@@ -1,14 +1,12 @@
 const config = {
   MARKET_BASE_URL_EU: process.env.MARKET_BASE_URL_EU || 'https://eu-trade.naeu.playblackdesert.com',
   MARKET_BASE_URL_NA: process.env.MARKET_BASE_URL_NA || 'https://na-trade.naeu.playblackdesert.com',
-  MARKET_REQ_VERIFICATION_COOKIE_TOKEN_EU: process.env.MARKET_REQ_VERIFICATION_COOKIE_TOKEN_EU,
-  MARKET_REQ_VERIFICATION_COOKIE_TOKEN_NA: process.env.MARKET_REQ_VERIFICATION_COOKIE_TOKEN_NA,
-  MARKET_REQ_VERIFICATION_BODY_TOKEN_EU: process.env.MARKET_REQ_VERIFICATION_BODY_TOKEN_EU,
-  MARKET_REQ_VERIFICATION_BODY_TOKEN_NA: process.env.MARKET_REQ_VERIFICATION_BODY_TOKEN_NA,
   MARKET_SOCKS_PROXY_URL_NA: process.env.MARKET_SOCKS_PROXY_URL_NA || '127.0.0.1',
   MARKET_SOCKS_PROXY_PORT_NA: process.env.MARKET_SOCKS_PROXY_PORT_NA || '7770',
   MARKET_SOCKS_PROXY_URL_EU: process.env.MARKET_SOCKS_PROXY_URL_EU || '127.0.0.1',
   MARKET_SOCKS_PROXY_PORT_EU: process.env.MARKET_SOCKS_PROXY_PORT_EU || '7771',
+  USE_SOCKS_PROXY_NA: process.env.USE_SOCKS_PROXY_NA || true,
+  USE_SOCKS_PROXY_EU: process.env.USE_SOCKS_PROXY_EU || true,
   DB_URL: process.env.DB_URL, /* 'postgres://user:pass@example.com:5432/dbname' */
   PORT: process.env.PORT,
   ENV: process.env.NODE_ENV || 'development',
