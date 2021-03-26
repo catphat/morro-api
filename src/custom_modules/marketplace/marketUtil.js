@@ -1,5 +1,4 @@
 require('dotenv').config();
-const qs = require('qs');
 const SocksProxyAgent = require('socks-proxy-agent');
 const axios = require('axios');
 
@@ -23,9 +22,21 @@ class MarketUtil {
             + `Data: ${data}`,
       ),
       region: new Error('region must be NA or EU'),
+      parameterIsRequired: (paramName, paramVal, paramType) => new Error(`Parameter "${paramName}" cannot be of value ${paramVal} and must be of type: ${paramType}`),
     };
 
     this.region = region;
+  }
+
+  /**
+   * @param {string} paramName
+   * @param {string} paramType
+   * @param {any} paramValue
+   */
+  throwIfParamUndefinedOrInvalidType(paramName, paramValue, paramType) {
+    if (paramValue === undefined || (typeof paramValue).toString() !== paramType) {
+      throw this.ERRORS.parameterIsRequired(paramName, paramValue, paramType);
+    }
   }
 
   /**
@@ -66,29 +77,6 @@ class MarketUtil {
   throwIfInvalidRegion(region) {
     if ((region == null) || (region !== 'NA' && region !== 'EU')) {
       throw this.ERRORS.region;
-    }
-  }
-
-  /**
-     * @param {MarketUtil.ENDPOINTS|{path: string, method: string}} endpoint
-     */
-  throwIfInvalidEndpointKey(endpoint) {
-    if (endpoint == null || (this.ENDPOINTS)[endpoint] === undefined) {
-      throw this.ERRORS.endpointKey;
-    }
-  }
-
-  /**
-     * @param {ENDPOINTS.path} endpoint
-     */
-  throwIfInvalidEndpointValue(endpoint) {
-    if (endpoint == null) {
-      throw this.ERRORS.endpointValue;
-    }
-    const isValid = Object.keys(this.ENDPOINTS)
-      .some((k) => this.ENDPOINTS[k].path === endpoint);
-    if (!isValid) {
-      throw this.ERRORS.endpointValue;
     }
   }
 

@@ -60,4 +60,12 @@ describe('market utility', () => {
     expect(() => new MarketUtil('NA').throwIfInvalidHTTPStatusCodeError(444, { 'error-prop': 'error-data' })).to.throw();
     expect(() => new MarketUtil('NA').throwIfInvalidHTTPStatusCodeError(200, { 'error-prop': 'error-data' })).to.not.throw();
   });
+
+  it('throwIfParamUndefinedOrInvalid throws on invalid input', () => {
+    const numType = (typeof 1).toString();
+    expect(() => new MarketUtil('NA').throwIfParamUndefinedOrInvalidType('testType', undefined, numType)).to.throw();
+    expect(() => new MarketUtil('NA').throwIfParamUndefinedOrInvalidType('testType', 1, numType)).to.not.throw();
+    expect(() => new MarketUtil('NA').throwIfParamUndefinedOrInvalidType('testType', 1, 'string')).to.throw();
+    expect(() => new MarketUtil('NA').throwIfParamUndefinedOrInvalidType('testType', 'string', 'string')).to.not.throw();
+  });
 });
