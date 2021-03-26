@@ -48,13 +48,6 @@ describe('market utility', () => {
     expect(header.cookie).to.equal('lang=en-US;__RequestVerificationToken=NACOOKIETOKEN123');
   });
 
-  it('getBodyRequestVerificationToken should have correct token', () => {
-    // eslint-disable-next-line no-underscore-dangle
-    expect(new MarketUtil('NA').getBodyRequestVerificationToken().__RequestVerificationToken).to.equal('NABODYTOKEN123');
-    // eslint-disable-next-line no-underscore-dangle
-    expect(new MarketUtil('EU').getBodyRequestVerificationToken().__RequestVerificationToken).to.equal('EUBODYTOKEN123');
-  });
-
   it('getHeader should throw on invalid region parameter', () => {
     expect(() => new MarketUtil(null).getHeader()).to.throw();
     expect(() => new MarketUtil('blabla').getHeader()).to.throw();
