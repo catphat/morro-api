@@ -1,14 +1,27 @@
 #!/usr/bin/env bash
 
+# Request
+# Price history from last 90 days
+# keyType - REQUIRED
+# mainKey - REQUIRED
+# subKey  - REQUIRED
+
+MAIN_KEY=$1
+
+if [[ -z "$MAIN_KEY" ]]; then
+  echo "item id (mainKey) must be provided."
+  exit 1
+fi
+
 curl --socks5 "127.0.0.1:7770" "https://na-trade.naeu.playblackdesert.com/Trademarket/GetBiddingInfoList" \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: BlackDesert' \
   -X POST \
-  -d '{
-  "keyType": 0,
-  "mainKey": 5952,
-  "subKey": 0
-}'
+  -d "{
+  'keyType': 0,
+  'mainKey':$MAIN_KEY,
+  'subKey': 0
+}"
 
 # Trace of Despair
 # Response (flooded)
