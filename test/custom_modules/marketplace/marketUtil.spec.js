@@ -40,21 +40,6 @@ describe('market utility', () => {
       .to.not.throw();
   });
 
-  it('getCookieRequestVerificationToken should have correct token', () => {
-    expect(new MarketUtil('NA').getCookieRequestVerificationToken()).to.equal('NACOOKIETOKEN123');
-    expect(new MarketUtil('EU').getCookieRequestVerificationToken()).to.equal('EUCOOKIETOKEN123');
-  });
-
-  it('getCookie should have correct values', () => {
-    expect(new MarketUtil('NA').getCookie().cookie.lang).to.equal('en-US');
-    // eslint-disable-next-line no-underscore-dangle
-    expect(new MarketUtil('NA').getCookie().cookie.__RequestVerificationToken).to.equal('NACOOKIETOKEN123');
-
-    expect(new MarketUtil('EU').getCookie().cookie.lang).to.equal('en-US');
-    // eslint-disable-next-line no-underscore-dangle
-    expect(new MarketUtil('EU').getCookie().cookie.__RequestVerificationToken).to.equal('EUCOOKIETOKEN123');
-  });
-
   it('getHeader should have correct values', () => {
     const header = new MarketUtil('NA').getHeader();
     expect(header.accept).to.equal('*/*');
