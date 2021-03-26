@@ -1,6 +1,5 @@
 const MarketUtil = require('./marketUtil');
-const GetWorldMarketSearchList = require('./getWorldMarketSearchList');
-const GetItemBuySellInfo = require('./getItemBuySellInfo');
-const GetWorldMarketSubList = require('./getWorldMarketSubList');
+const GetMarketPriceInfo = require('./getMarketPriceInfo');
+const GetBiddingInfoList = require('./getBiddingInfoList');
 
-module.exports = { MarketUtil, GetWorldMarketSearchList, GetItemBuySellInfo, GetWorldMarketSubList };
+module.exports = { MarketUtil, GetMarketPriceInfo, GetBiddingInfoList };
