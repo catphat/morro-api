@@ -11,15 +11,14 @@ class GetMarketPriceInfo {
    * @param {int} mainKey
    */
   getRequestParameters(mainKey) {
-    const endpoint = this.mu.ENDPOINTS.MARKET_MARKETPRICEINFO;
     const body = {
       keyType: 0,
       mainKey,
       subKey: 0,
     };
     return {
-      url: this.mu.getUrlByEndpointPath(endpoint.path),
-      opt: this.mu.getRequestOptions(endpoint.method, body),
+      url: this.mu.getUrlByByRelativeUrl('Trademarket/GetMarketPriceInfo'),
+      opt: this.mu.getRequestOptions('POST', body),
     };
   }
 
@@ -73,13 +72,8 @@ class GetMarketPriceInfo {
       const resp = await this.client.post(
         params.url.href, params.opt.body, { headers: params.opt.headers },
       );
+      this.mu.throwIfInvalidHTTPStatusCodeError(resp.status, resp.data);
 
-      if (resp.status !== 200) {
-        throw new Error(
-          `Invalid Response HTTP Status Code: ${resp.status} \n`
-           + `Data: ${resp.data}`,
-        );
-      }
       return resp.data;
     } catch (error) {
       return Promise.reject(new Error(error));

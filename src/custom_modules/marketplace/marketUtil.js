@@ -17,21 +17,12 @@ class MarketUtil {
       baseUrlNA: config.MARKET_BASE_URL_NA,
     };
 
-    this.ENDPOINTS = {
-      MARKET_SEARCH: { path: 'Trademarket/GetWorldMarketSearchList', method: 'POST' },
-      MARKET_SUBLIST: { path: 'Trademarket/GetWorldMarketSubList', method: 'POST' },
-      MARKET_MARKETPRICEINFO: { path: 'Trademarket/GetMarketPriceInfo', method: 'POST' },
-    };
-
     this.ERRORS = {
       HTTPStatusCode: (statusCode, data) => new Error(
         `Invalid Response HTTP Status Code: ${statusCode} \n`
             + `Data: ${data}`,
       ),
       region: new Error('region must be NA or EU'),
-      endpointKey: new Error(`endpoint key must be one of the following :${Object.keys(this.ENDPOINTS).join(', ')}`),
-      endpointValue: new Error('endpoint value must be one of the following:'
-          + `${Object.values(this.ENDPOINTS).map((val) => val.path).join(', ')}`),
     };
 
     this.region = region;
@@ -110,25 +101,6 @@ class MarketUtil {
 
   getBaseURL() {
     return (this.region === 'NA' ? this.CONFIG.baseUrlNA : this.CONFIG.baseUrlEU);
-  }
-
-  /**
-   * @param {ENDPOINTS | {path: string, method: string}} endpoint
-   */
-  getUrlByEndpoint(endpoint) {
-    this.throwIfInvalidEndpointKey(endpoint);
-    const baseUrl = this.getBaseURL(this.region);
-    const relativeUrl = this.ENDPOINTS[endpoint].path;
-    return new URL(relativeUrl, baseUrl);
-  }
-
-  /**
-   * @param {ENDPOINTS.path} endpointPath
-   */
-  getUrlByEndpointPath(endpointPath) {
-    this.throwIfInvalidEndpointValue(endpointPath);
-    const baseUrl = this.getBaseURL(this.region);
-    return new URL(endpointPath, baseUrl);
   }
 
   /**
