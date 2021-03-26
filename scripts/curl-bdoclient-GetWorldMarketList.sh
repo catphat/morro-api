@@ -4,16 +4,27 @@
 # keyType       - REQUIRED
 # mainCategory  - REQUIRED
 # subCategory   - OPTIONAL
+
+MAIN_CATEGORY_KEY=$1
+SUB_CATEGORY_KEY=$2
+KEY_TYPE=$3
+
+if [[ -z "$MAIN_CATEGORY_KEY" || -z "$SUB_CATEGORY_KEY" || -z "$KEY_TYPE" ]]; then
+  echo "usage: $0 <main-category-key> <sub-category-key> <key-type>"
+  exit 1
+fi
+
+
 curl "https://na-trade.naeu.playblackdesert.com/Trademarket/GetWorldMarketList" \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: BlackDesert' \
   --socks5 "127.0.0.1:7770" \
   -X POST \
-  -d '{
-  "keyType": 0,
-  "mainCategory": 1,
-  "subCategory": 1
-}'
+  -d "{
+  'keyType': $KEY_TYPE,
+  'mainCategory': $MAIN_CATEGORY_KEY,
+  'subCategory': $SUB_CATEGORY_KEY
+}"
 
 # Response
 #   0 - ItemID
