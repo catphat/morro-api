@@ -33,6 +33,20 @@ class MarketUtil {
     this.region = region;
   }
 
+  /**
+   *
+   * @param {number} statusCode
+   * @param {object} data
+   */
+  static throwIfInvalidHTTPStatusCodeError(statusCode, data) {
+    if (statusCode !== 200) {
+      throw new Error(
+        `Invalid Response HTTP Status Code: ${statusCode} \n`
+          + `Data: ${data}`,
+      );
+    }
+  }
+
   getClient() {
     let baseURL = config.MARKET_BASE_URL_NA;
     let host = config.MARKET_SOCKS_PROXY_URL_NA;
