@@ -21,7 +21,7 @@ describe('getWorldMarketSublist method', () => {
 
   describe('WorldMarketSubList', () => {
     const marketSubList = new GetWorldMarketSubList('NA');
-    const reqRawResponsePath = path.resolve('test/custom_modules/marketplace/raw_requests/GetItemSellBuyInfo_response.json');
+    const reqRawResponsePath = path.resolve('test/custom_modules/marketplace/web_client_raw_req_resp/GetItemSellBuyInfo_response.json');
     const responseJSON = fs.readFileSync(reqRawResponsePath);
     const reqParams = marketSubList.getRequestParameters(11629);
 

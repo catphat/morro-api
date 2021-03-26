@@ -21,7 +21,7 @@ describe('worldMarketSearchList method', () => {
 
   describe('WorldMarketSearchList', () => {
     const worldMarketSearchList = new GetWorldMarketSearchList('NA');
-    const reqRawResponsePath = path.resolve('test/custom_modules/marketplace/raw_requests/GetWorldMarketSearchList_response.json');
+    const reqRawResponsePath = path.resolve('test/custom_modules/marketplace/web_client_raw_req_resp/GetWorldMarketSearchList_response.json');
     const responseJSON = fs.readFileSync(reqRawResponsePath);
     const reqParams = worldMarketSearchList.getRequestParameters('tungrad');
 
