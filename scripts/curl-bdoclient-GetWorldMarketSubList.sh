@@ -3,16 +3,25 @@
 # Request
 # keyType - REQUIRED
 # mainKey - REQUIRED
+
+MAIN_KEY=$1
+KEY_TYPE=$2
+
+if [[ -z "$MAIN_KEY" || -z "$KEY_TYPE" ]]; then
+  echo "usage: $0 <main-key> <key-type>"
+  exit 1
+fi
+
+
 curl "https://na-trade.naeu.playblackdesert.com/Trademarket/GetWorldMarketSubList" \
   -H 'Content-Type: application/json' \
   -H 'User-Agent: BlackDesert' \
-  -X POST \
   --socks5 "127.0.0.1:7770" \
-  -d '{
-  "keyType": 0,
-  "mainKey": 5952
-}'
-
+  -X POST \
+  -d "{
+  'keyType': $KEY_TYPE,
+  'mainKey': $MAIN_KEY
+}"
 
 # Response
 #   0 - Item ID
