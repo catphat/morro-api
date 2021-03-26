@@ -13,18 +13,14 @@ class MarketUtil {
   constructor(region) {
     this.throwIfInvalidRegion(region);
     this.CONFIG = {
-      cookieReqTokenEU: config.MARKET_REQ_VERIFICATION_COOKIE_TOKEN_EU,
-      cookieReqTokenNA: config.MARKET_REQ_VERIFICATION_COOKIE_TOKEN_NA,
-      bodyReqTokenEU: config.MARKET_REQ_VERIFICATION_BODY_TOKEN_EU,
-      bodyReqTokenNA: config.MARKET_REQ_VERIFICATION_BODY_TOKEN_NA,
       baseUrlEU: config.MARKET_BASE_URL_EU,
       baseUrlNA: config.MARKET_BASE_URL_NA,
     };
 
     this.ENDPOINTS = {
-      MARKET_SEARCH: { path: 'Home/GetWorldMarketSearchList', method: 'POST' },
-      MARKET_SUBLIST: { path: 'Home/GetWorldMarketSubList', method: 'POST' },
-      MARKET_SELLBUYINFO: { path: 'Home/GetItemSellBuyInfo', method: 'POST' },
+      MARKET_SEARCH: { path: 'Trademarket/GetWorldMarketSearchList', method: 'POST' },
+      MARKET_SUBLIST: { path: 'Trademarket/GetWorldMarketSubList', method: 'POST' },
+      MARKET_MARKETPRICEINFO: { path: 'Trademarket/GetMarketPriceInfo', method: 'POST' },
     };
 
     this.ERRORS = {
@@ -90,53 +86,11 @@ class MarketUtil {
     }
   }
 
-  getCookieRequestVerificationToken() {
-    return (this.region === 'NA' ? this.CONFIG.cookieReqTokenNA : this.CONFIG.cookieReqTokenEU);
-  }
-
-  getCookie() {
-    return {
-      cookie: {
-        lang: 'en-US',
-        __RequestVerificationToken: `${this.getCookieRequestVerificationToken(this.region)}`
-        ,
-      },
-    };
-  }
-
   getHeader() {
     return {
-      accept: '*/*',
-      'accept-language': 'en-US,en;q=0.9',
-      'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-      'sec-ch-ua': '"Google Chrome";v="89", "Chromium";v="89", ";Not A Brand";v="99"',
-      'sec-ch-ua-mobile': '?0',
-      'sec-fetch-dest': 'empty',
-      'sec-fetch-mode': 'cors',
-      'sec-fetch-site': 'same-origin',
-      'x-requested-with': 'XMLHttpRequest',
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36',
-      cookie: qs.stringify(this.getCookie(this.region).cookie, { delimiter: ';' }),
+      'content-type': 'application/json',
+      'User-Agent': 'BlackDesert',
     };
-  }
-
-  getBodyRequestVerificationToken() {
-    return { __RequestVerificationToken: `${(this.region === 'NA' ? this.CONFIG.bodyReqTokenNA : this.CONFIG.bodyReqTokenEU)}` };
-  }
-
-  /**
-   * @param { any } formData
-   */
-  getBody(formData = null) {
-    const body = {
-      body: this.getBodyRequestVerificationToken(this.region),
-    };
-
-    if (formData != null) {
-      body.body = { ...body.body, ...formData };
-    }
-    body.body = qs.stringify(body.body);
-    return body;
   }
 
   getBaseURL() {
@@ -163,6 +117,14 @@ class MarketUtil {
   }
 
   /**
+   * @param {string} relUrl - ex: Trademarket/GetBiddingInfoList
+   */
+  getUrlByByRelativeUrl(relUrl) {
+    const baseUrl = this.getBaseURL(this.region);
+    return new URL(relUrl, baseUrl);
+  }
+
+  /**
    * @param {"POST"|"GET"} method
    * @param {any} formData
    */
@@ -170,7 +132,7 @@ class MarketUtil {
     return {
       method,
       headers: this.getHeader(this.region),
-      body: (formData != null ? this.getBody(formData).body : null),
+      body: (formData != null ? JSON.stringify(formData) : null),
     };
   }
 }
