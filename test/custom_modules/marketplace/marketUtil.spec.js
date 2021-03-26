@@ -129,4 +129,9 @@ describe('market utility', () => {
     expect(optWithNullBody.headers.cookie).to.equal('lang=en-US;__RequestVerificationToken=NACOOKIETOKEN123');
     expect(optWithNullBody.body).to.equal(null);
   });
+
+  it('throwIfInvalidHTTPStatusCodeError throws on invalid status code', () => {
+    expect(() => new MarketUtil('NA').throwIfInvalidHTTPStatusCodeError(444, { 'error-prop': 'error-data' })).to.throw();
+    expect(() => new MarketUtil('NA').throwIfInvalidHTTPStatusCodeError(200, { 'error-prop': 'error-data' })).to.not.throw();
+  });
 });
