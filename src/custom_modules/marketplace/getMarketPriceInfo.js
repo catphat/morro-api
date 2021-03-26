@@ -28,7 +28,7 @@ class GetMarketPriceInfo {
    *  @property {!boolean} isValid - received a valid resultCode (0)
    *  @property {string | undefined} errorMsg - remote API provided error message if exists.
    *  @property {!number} resultCode - remote API provided resultCode
-   *  @property {number | undefined} currentBasePrice - latest base price (median price not latest recent price)
+   *  @property {number | undefined} currentBasePrice - latest base price (average price of recent transactions)
    *  @property {Array<int>|undefined} priceHistoryAsc - 90 day price history in ascending order.
    *                                                     Last array item being most recent.
    */
