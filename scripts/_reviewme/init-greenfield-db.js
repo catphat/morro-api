@@ -8,6 +8,9 @@ const {
   Group,
   Recipe,
   Material,
+  MaterialLog,
+  User,
+  UserNode,
   RecipeIngredient,
   RecipeProduct,
 } = sequelize.models;
@@ -44,20 +47,20 @@ async function createNode(node, index) {
             )
           : null,
     });
-    node.material.map(async (n) => {
-      try {
-        await NodeMaterial.create({
-          NodeId: index,
-          MaterialId: n.id,
-          yield: n.yield,
-          luck: n.luck,
-        });
-      } catch (e) {
-        console.log(e);
-        console.log(node);
-        console.log(`Missing material ${n.id}`);
-      }
-    });
+  //  node.material.map(async (n) => {
+  //    try {
+  //      await NodeMaterial.create({
+  //        NodeId: index,
+  //        MaterialId: n.id,
+  //        yield: n.yield,
+  //        luck: n.luck,
+  //      });
+  //    } catch (e) {
+  //      console.log(e);
+  //      console.log(node);
+  //      console.log(`Missing material ${n.id}`);
+  //    }
+  //  });
   } catch (error) {
     console.log(node);
     console.log(error);
@@ -66,8 +69,7 @@ async function createNode(node, index) {
 
 async function setNodes() {
   // Use this script only in dev!
-  await Node.sync({ force: true });
-  await NodeMaterial.sync({ force: true });
+
   await Promise.all(
     nodeList.map(async (node, index) => {
       // Index + 1, database cant have 0 as PK
@@ -145,9 +147,10 @@ async function setRecipes() {
   );
 }
 
+// todo: this is unacceptable
+// todo: probably should be removed
 async function createGear() {
   try {
-    await Gear.sync({ force: true });
     await Gear.bulkCreate([
       { name: 'Weapon', stacks: '192', attempts: '23' },
       { name: 'Offhand', stacks: '210', attempts: '15' },
@@ -172,10 +175,25 @@ async function createGear() {
 
 async function main() {
   const t0 = new Date().getTime();
-  await createGear();
-  await setNodes();
-  await setGroups();
-  await setRecipes();
+
+  // initialize tables structure
+  await Group.sync({ force: true });
+  await Material.sync({ force: true });
+  await Node.sync({ force: true });
+  await NodeMaterial.sync({ force: true });
+  await Gear.sync({ force: true });
+  await Recipe.sync({ force: true });
+  await MaterialLog.sync({ force: true });
+  await User.sync({ force: true });
+  await UserNode.sync({ force: true });
+  await RecipeIngredient.sync({ force: true });
+  await RecipeProduct.sync({ force: true });
+
+  //await createGear();
+
+  //await setGroups();
+  //await setNodes();
+  //  await setRecipes();
   await sequelize.close();
   const t1 = new Date().getTime();
   console.log(`Initial import done! It took ${(t1 - t0) / 1000} seconds`);
