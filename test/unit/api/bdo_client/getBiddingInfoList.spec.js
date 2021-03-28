@@ -1,18 +1,8 @@
-const path = require('path');
+const {
+  getRawResponse, describe, expect, it, nock,
+} = require('../../../helpers/bdo_client');
 
-const dotEnvPath = path.resolve('test/test.env');
-require('dotenv').config({ path: dotEnvPath });
-
-const chai = require('chai');
-const chaiAsPromised = require('chai-as-promised');
-
-chai.use(chaiAsPromised);
-
-const { expect } = chai;
-const { describe, it } = require('mocha');
-const fs = require('fs');
-const nock = require('nock');
-const { GetBiddingInfoList } = require('../../../src/custom_modules/marketplace/index');
+const { GetBiddingInfoList } = require('../../../../src/api/bdo_client/index');
 
 describe('BiddingInfoList method', () => {
   it('has valid parameters', () => {
@@ -25,10 +15,8 @@ describe('BiddingInfoList method', () => {
 
   describe('BiddingInfoList', () => {
     const marketPriceInfo = new GetBiddingInfoList('NA');
-    const reqRawResponsePath = path.resolve('test/custom_modules/marketplace/bdo_client_raw_responses/biddinginfolist-11629.json');
-    const invalidResponsePath = path.resolve('test/custom_modules/marketplace/bdo_client_raw_responses/invalid-response.txt');
-    const invalidResponseTXT = fs.readFileSync(invalidResponsePath);
-    const responseJSON = fs.readFileSync(reqRawResponsePath);
+    const responseJSON = getRawResponse('biddinginfolist-11629.json');
+    const invalidResponseTXT = getRawResponse('invalid-response.txt');
     const reqParams = marketPriceInfo.getRequestParameters(11607);
 
     it('byMainKey has valid handling of req/resp', async () => {

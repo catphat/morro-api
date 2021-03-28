@@ -1,11 +1,8 @@
-const path = require('path');
+const {
+  describe, expect, it,
+} = require('../../../helpers/bdo_client');
 
-const dotEnvPath = path.resolve('test/test.env');
-require('dotenv').config({ path: dotEnvPath });
-
-const { expect } = require('chai');
-const { describe, it } = require('mocha');
-const MarketUtil = require('../../../src/custom_modules/marketplace/marketUtil');
+const MarketUtil = require('../../../../src/api/bdo_client/marketUtil');
 
 describe('market utility', () => {
   it('throwIfInvalidRegion throws on invalid parameter', () => {

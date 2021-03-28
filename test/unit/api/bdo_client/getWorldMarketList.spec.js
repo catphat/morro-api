@@ -1,25 +1,13 @@
-const path = require('path');
+const {
+  getRawResponse, describe, expect, it, nock,
+} = require('../../../helpers/bdo_client');
 
-const dotEnvPath = path.resolve('test/test.env');
-require('dotenv').config({ path: dotEnvPath });
-
-const chai = require('chai');
-const chaiAsPromised = require('chai-as-promised');
-
-chai.use(chaiAsPromised);
-
-const { expect } = chai;
-const { describe, it } = require('mocha');
-const fs = require('fs');
-const nock = require('nock');
-const { GetWorldMarketList } = require('../../../src/custom_modules/marketplace/index');
+const { GetWorldMarketList } = require('../../../../src/api/bdo_client/index');
 
 describe('GetWorldMarketList method', () => {
   const worldMarketList = new GetWorldMarketList('NA');
-  const reqRawResponsePath = path.resolve('test/custom_modules/marketplace/bdo_client_raw_responses/worldmarketlist-1_1_0.json');
-  const invalidResponsePath = path.resolve('test/custom_modules/marketplace/bdo_client_raw_responses/invalid-response.txt');
-  const invalidResponseTXT = fs.readFileSync(invalidResponsePath);
-  const responseJSON = fs.readFileSync(reqRawResponsePath);
+  const responseJSON = getRawResponse('worldmarketlist-1_1_0.json');
+  const invalidResponseTXT = getRawResponse('invalid-response.txt');
   const reqParams = worldMarketList.getRequestParameters(1, 1, 0);
 
   it('has valid request parameters', () => {
