@@ -1,16 +1,14 @@
 module.exports = {
+  plugins: ['promise', 'mocha'],
   env: {
-    browser: true,
-    commonjs: true,
-    es2021: true,
-    mocha: true,
+    es6: true,
+    node: true,
   },
   extends: [
     'airbnb-base',
   ],
   parserOptions: {
+    sourceType: 'module',
     ecmaVersion: 12,
-  },
-  rules: {
   },
 };
