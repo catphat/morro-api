@@ -1,18 +1,16 @@
 const ValidationError = require('../errors/ValidationError');
-const isArrayOf = require('./isArrayOf')();
 const isPositiveNumber = require('./isPositiveNumber')();
 const isRequired = require('./isRequired');
 const isString = require('./isString')();
 
 const VALIDATIONS = {
-  isArrayOf,
   isPositiveNumber,
   isRequired,
   isString,
 };
 
 const validateFields = (payload, rules) => {
-  const errors = Object.keys(payload).reduce((acc, elem) => {
+  const errors = Object.keys(rules).reduce((acc, elem) => {
     const validations = rules[elem] || [];
     validations.forEach((rule) => {
       const validator = typeof rule === 'string' ? VALIDATIONS[rule] : rule;
