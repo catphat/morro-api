@@ -5,7 +5,7 @@ chai.use(require('sinon-chai'));
 const { expect } = chai;
 const { match, stub, spy } = require('sinon');
 const proxyquire = require('proxyquire');
-const ValidationError = require('../../../src/errors/ValidationError');
+const TransportError = require('../../../src/errors/TransportError');
 
 describe('utils/transport', () => {
   const transformResponse = stub();
@@ -27,21 +27,13 @@ describe('utils/transport', () => {
     './transformResponse': transformResponse,
   });
 
-  const baseUrl = 'https://fake.test.url.123abc.000';
-  const baseUrl2 = 'https://fake.test.url.123abc.001';
-
-  const defaults = {
+  const transportOptions = {
+    baseUrl: 'https://fake.test.url.123abc.000',
     timeout: 2500,
-  };
-
-  const defaultHeaders = {
-    'Content-Type': 'application/json',
-    'User-Agent': 'Test User Agent',
-  };
-
-  const options = {
-    ...defaults,
-    headers: defaultHeaders,
+    headers: {
+      'Content-Type': 'application/json',
+      'User-Agent': 'Test User Agent',
+    },
   };
 
   const resetHistory = () => {
@@ -60,11 +52,11 @@ describe('utils/transport', () => {
     };
 
     context('handles socks proxy initialization', () => {
-      const conf = { ...options, headers: { ...defaultHeaders } };
+
       context('without socksConf', () => {
+        const conf = { ...transportOptions };
         before(() => {
-          const testTransport = getTransport(baseUrl);
-          testTransport(conf);
+          getTransport(conf);
         });
 
         after(reset);
@@ -74,12 +66,13 @@ describe('utils/transport', () => {
         });
 
       });
+
       context('with socksConf', () => {
         const socksConf = { host: '127.0.0.1', port: 9999 };
+        const conf = { ...transportOptions, socksConf };
 
         before(() => {
-          const testTransport = getTransport(baseUrl, socksConf);
-          testTransport(conf);
+          getTransport(conf);
         });
 
         after(reset);
@@ -93,13 +86,13 @@ describe('utils/transport', () => {
 
       context('with invalid socksConf', () => {
         const socksConf = { host: '127.0.0.1' };
+        const conf = { ...transportOptions, socksConf };
         let error;
 
         before(() => {
 
           try {
-            const testTransport = getTransport(baseUrl, socksConf);
-            testTransport(conf);
+            getTransport(conf);
           } catch (err) {
             error = err;
           }
@@ -107,14 +100,12 @@ describe('utils/transport', () => {
 
         after(reset);
 
-        it('threw a ValidationError', () => {
-          expect(error).to.be.instanceof(ValidationError);
+        it('threw a TransportError', () => {
+          expect(error).to.be.instanceof(TransportError);
         });
 
         it('put the expected errors in the error', () => {
-          expect(error.errors).to.deep.equal({
-            port: [[undefined, 'Field is required']],
-          });
+          expect(error.errors.errors).to.deep.equal({ port: [[undefined, 'Field is required']] });
         });
 
       });
@@ -124,19 +115,22 @@ describe('utils/transport', () => {
 
       context('with options', () => {
         const headers = { Authorization: 'Bearer 12345' };
+        const conf = {
+          ...transportOptions,
+          headers: {
+            ...transportOptions.headers,
+            ...headers,
+          },
+        };
         before(() => {
-          const testTransport = getTransport(baseUrl);
-          testTransport({ ...options, headers: { ...defaultHeaders, ...headers } });
+          getTransport(conf);
         });
 
         after(reset);
 
         it('called axios.create with extra header', () => {
           expect(axios.create).to.have.been.calledOnceWith(
-            match({
-              ...defaults,
-              headers: { ...defaultHeaders, ...headers },
-            }),
+            match(conf),
           );
         });
 
@@ -154,12 +148,10 @@ describe('utils/transport', () => {
 
       context('not called twice', () => {
         before(() => {
-          const testTransport = getTransport(baseUrl);
-          const testTransport2 = getTransport(baseUrl);
-          testTransport(options);
-          testTransport(options);
-          testTransport2(options);
-          testTransport2(options);
+
+          const conf = { ...transportOptions };
+          getTransport(conf);
+          getTransport(conf);
         });
 
         after(reset);
@@ -171,15 +163,14 @@ describe('utils/transport', () => {
 
       context('called twice', () => {
         before(() => {
-          const testTransport = getTransport(baseUrl);
-          const testTransport2 = getTransport(baseUrl2);
-          testTransport(options);
-          testTransport2(options);
+          const conf = { ...transportOptions };
+          getTransport(conf);
+          getTransport({ ...conf, baseUrl: 'https://123.testbase.url2' });
         });
 
         after(reset);
 
-        it('only called axios.create once', () => {
+        it('called axios.create twice', () => {
           expect(axios.create).to.have.been.calledTwice;
         });
       });
@@ -193,8 +184,8 @@ describe('utils/transport', () => {
 
     before(async () => {
       axios.get.resolves(expected);
-      const testTransport = getTransport(baseUrl);
-      const { get } = testTransport(options);
+      const conf = { ...transportOptions };
+      const { get } = getTransport(conf);
       result = await get(path);
     });
 
@@ -215,8 +206,8 @@ describe('utils/transport', () => {
 
     before(async () => {
       axios.post.resolves(expected);
-      const testTransport = getTransport(baseUrl);
-      const { post } = testTransport(options);
+      const conf = { ...transportOptions };
+      const { post } = getTransport(conf);
       result = await post(path, data);
     });
 
