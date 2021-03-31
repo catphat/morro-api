@@ -43,6 +43,12 @@ const makeTransport = (options) => {
 };
 
 /**
+ * @typedef RequiredHeaders
+ * @property {string} 'User-Agent'
+ * @property {string} 'Content-Agent'
+ */
+
+/**
  * @typedef socksConf
  * @property {!string} host
  * @property {!number|string} port
@@ -50,12 +56,12 @@ const makeTransport = (options) => {
 
 /**
  * @typedef transportOptions
- * @property {!string} baseUrl - the baseUrl used for the transport instance.
+ * @property {any} baseUrl - the baseUrl used for the transport instance.
  *                              Will create one transport per unique baseUrl.
- * @property {!Object} headers - the headers used for the transport
- * @property {?socksConf} socksConf - if provided transport will initialize with socks proxy.
- * @property {?number} timeout
- * @property {?number} retries
+ * @property  {RequiredHeaders} headers - the headers used for the transport
+ * @property {socksConf|undefined} socksConf - if provided transport will initialize with socks proxy.
+ * @property {number|undefined} timeout
+ * @property {number|undefined} retries
  */
 
 /**
