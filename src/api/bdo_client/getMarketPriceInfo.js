@@ -1,84 +1,76 @@
-require('dotenv').config();
-const MarketUtil = require('./marketUtil');
+const { getRegionalBdoTransport } = require('./regionalBdoTransport');
+const { validateFields } = require('../../validation');
 
-class GetMarketPriceInfo {
-  constructor(region) {
-    this.mu = new MarketUtil(region);
-    this.client = this.mu.getClient(region);
-  }
+/**
+ *  @typedef {Object} ParsedMarketInfoResponse
+ *  @property {!boolean} isValid - received a valid resultCode (0)
+ *  @property {string | undefined} errorMsg - remote API provided error message if exists.
+ *  @property {!number} resultCode - remote API provided resultCode
+ *  @property {number | undefined} currentBasePrice - latest base price (average price of recent transactions)
+ *  @property {Array<int>|undefined} priceHistoryAsc - 90 day price history in ascending order.
+ *                                                     Last array item being most recent.
+ */
 
-  /**
-   * @param {int} mainKey
-   */
-  getRequestParameters(mainKey) {
-    const body = {
-      keyType: 0,
-      mainKey,
-      subKey: 0,
-    };
+/**
+ *  @param {RawMarketInfoResponseData} resp
+ *  @return {ParsedMarketInfoResponse}
+ */
+
+/**
+ *  @typedef {Object} RawMarketInfoResponseData
+ *  @property {number} resultCode - 0 indicates success
+ *  @property {string} resultMsg - 90 days of price information in ascending order.
+ *                                 Delimited by a '-' last value being the most recent price.
+ */
+
+const parseResponse = (resp) => {
+  if (resp.resultCode !== 0) {
     return {
-      url: this.mu.getUrlByByRelativeUrl('Trademarket/GetMarketPriceInfo'),
-      opt: this.mu.getRequestOptions('POST', body),
-    };
-  }
-
-  /**
-   *  @typedef {Object} ParsedMarketInfoResponse
-   *  @property {!boolean} isValid - received a valid resultCode (0)
-   *  @property {string | undefined} errorMsg - remote API provided error message if exists.
-   *  @property {!number} resultCode - remote API provided resultCode
-   *  @property {number | undefined} currentBasePrice - latest base price (average price of recent transactions)
-   *  @property {Array<int>|undefined} priceHistoryAsc - 90 day price history in ascending order.
-   *                                                     Last array item being most recent.
-   */
-
-  /**
-   *  @param {RawMarketInfoResponseData} resp
-   *  @return {ParsedMarketInfoResponse}
-   */
-  static handleResponse(resp) {
-    if (resp.resultCode !== 0) {
-      return {
-        isValid: false,
-        resultCode: resp.resultCode,
-        errorMsg: resp.resultMsg,
-      };
-    }
-    const priceHistoryStr = resp.resultMsg.split('-');
-    const priceHistory = priceHistoryStr.map((x) => parseInt(x, 10));
-    return {
-      isValid: true,
+      isValid: false,
       resultCode: resp.resultCode,
-      currentBasePrice: priceHistory[priceHistory.length - 1],
-      priceHistoryAsc: priceHistory,
+      errorMsg: resp.resultMsg,
     };
   }
+  const priceHistoryStr = resp.resultMsg.split('-');
+  const priceHistory = priceHistoryStr.map((x) => parseInt(x, 10));
+  return {
+    isValid: true,
+    resultCode: resp.resultCode,
+    currentBasePrice: priceHistory[priceHistory.length - 1],
+    priceHistoryAsc: priceHistory,
+  };
+};
 
-  /**
-   *  @typedef {Object} RawMarketInfoResponseData
-   *  @property {number} resultCode - 0 indicates success
-   *  @property {string} resultMsg - 90 days of price information in ascending order.
-   *                                 Delimited by a '-' last value being the most recent price.
-   */
+const validation = {
+  mainKey: ['isRequired', 'isPositiveNumber'],
+  subKey: ['isPositiveNumber'],
+  keyType: ['isPositiveNumber'],
+};
 
-  /**
-   * Get the price history of an item for the last 90 days.
-   * @param {int} mainKey
-   * @return {Promise<RawMarketInfoResponseData>}
-   */
-  async byMainKey(mainKey) {
-    const params = this.getRequestParameters(mainKey);
-    try {
-      const resp = await this.client.post(
-        params.url.href, params.opt.body, { headers: params.opt.headers },
-      );
-      this.mu.throwIfInvalidHTTPStatusCodeError(resp.status, resp.data);
+const getMarketPriceInfo = (region) => async ({
+  mainKey,
+  keyType,
+  subKey,
+}) => {
+  const payload = {
+    mainKey,
+    keyType,
+    subKey,
+  };
 
-      return resp.data;
-    } catch (error) {
-      return Promise.reject(new Error(error));
-    }
+  if (payload.keyType === undefined) {
+    payload.keyType = 0;
   }
-}
 
-module.exports = GetMarketPriceInfo;
+  if (payload.subKey === undefined) {
+    payload.subKey = 0;
+  }
+
+  validateFields(payload, validation);
+  const path = 'GetMarketPriceInfo';
+  const { post } = getRegionalBdoTransport(region);
+  const resp = await post(path, payload);
+  return parseResponse(resp);
+};
+
+module.exports = { getMarketPriceInfo };
