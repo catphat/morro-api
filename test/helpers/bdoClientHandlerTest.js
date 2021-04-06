@@ -6,6 +6,7 @@ const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 const sinonChai = require('sinon-chai');
 const uc = require('./upperCase');
+const { validateFields: realValidateFields } = require('../../src/validation/index');
 
 chai.use(sinonChai);
 const { expect } = chai;
@@ -52,7 +53,6 @@ const doTest = ({
     const post = stub().resolves(expectedRawResponseJSON);
     const transport = { getRegionalBdoTransport: stub().returns({ post }) };
     const validateFields = stub();
-    const payload = params;
 
     const proxies = {
       './regionalBdoTransport': transport,
@@ -77,7 +77,6 @@ const doTest = ({
       context('with supplied params', () => {
         before(async () => {
           result = await method(region)(params);
-          // const data = fs.writeFileSync(`${responseDir}/11607-response.json`, JSON.stringify(result));
         });
 
         after(resetHistory);
@@ -96,11 +95,17 @@ const doTest = ({
         }
 
         it('called post with the correct params', () => {
+          const payload = validateFields.args[0][0];
           expect(post).to.have.been.calledOnceWith(apiPath, payload);
         });
 
         it('returned the expected result', () => {
           expect(result).to.deep.equal(expectedParsedResponseJSON);
+        });
+
+        it('passes with supplied validation and params', () => {
+          const payload = validateFields.args[0][0];
+          expect(() => realValidateFields(payload, validation)).to.not.throw();
         });
       });
     }
@@ -123,6 +128,7 @@ const doTest = ({
         }
 
         it('called post with the correct params', () => {
+          const payload = validateFields.args[0][0];
           expect(post).to.have.been.calledOnceWith(path, payload);
         });
 
