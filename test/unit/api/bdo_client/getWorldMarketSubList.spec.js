@@ -1,5 +1,4 @@
 const doTest = require('../../../helpers/bdoClientHandlerTest');
-const isPositiveNumber = require('../../../../src/validation/isPositiveNumber');
 
 describe('bdo_client/getWorldMarketSubList', () => {
   const config = {
