@@ -1,10 +1,12 @@
 const ValidationError = require('../errors/ValidationError');
 const isPositiveNumber = require('./isPositiveNumber')();
+const isNonNegativeNumber = require('./isNonNegativeNumber')();
 const isRequired = require('./isRequired');
 const isString = require('./isString')();
 
 const VALIDATIONS = {
   isPositiveNumber,
+  isNonNegativeNumber,
   isRequired,
   isString,
 };
