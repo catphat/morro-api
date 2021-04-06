@@ -66,8 +66,8 @@ const parseResponse = (resp) => {
 
 const validation = {
   mainCategory: ['isRequired', 'isPositiveNumber'],
-  subCategory: ['isRequired', 'isPositiveNumber'],
-  keyType: ['isPositiveNumber'],
+  subCategory: ['isRequired', 'isNonNegativeNumber'],
+  keyType: ['isNonNegativeNumber'],
 };
 
 const getWorldMarketList = (region) => async ({
