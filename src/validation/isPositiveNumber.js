@@ -1,6 +1,6 @@
 /**
  * @param {number} max - max positive number allowed
- * @return {function(*=): (null|string|string)} Returns null if value is a positive number.
+ * @return - Returns null if value is a positive number (value > 0)
  *          And does not exceed max value if max is provided, otherwise returns error.
  *          Ignores value if it's empty, use isRequired to enforce requirement.
  */
