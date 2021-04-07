@@ -16,9 +16,9 @@ const throwIfInvalidRegion = (region) => {
 
 const getBdoTransportOptions = (region) => {
   throwIfInvalidRegion(region);
-  const baseUrl = (region === 'NA' ? config.BDO_CLIENT_BASE_URL_NA : config.BDO_CLIENT_BASE_URL_EU);
+  const baseURL = (region === 'NA' ? config.BDO_CLIENT_BASE_URL_NA : config.BDO_CLIENT_BASE_URL_EU);
   const options = {
-    baseUrl,
+    baseURL,
     ...transportOptions,
     headers: defaultHeaders,
     retries: config.BDO_CLIENT_REQUEST_RETRIES,
