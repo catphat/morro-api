@@ -10,20 +10,22 @@ let transports = [];
 
 const makeTransport = (options) => {
   const {
-    baseUrl,
+    baseURL,
     headers,
     socksConf,
+    timeout,
+    retries,
   } = options;
 
   const config = {
-    baseUrl,
+    baseURL,
     headers,
-    socksConf,
-    ...options,
+    timeout,
+    retries,
   };
 
   try {
-    validateFields(config, { baseUrl: ['isRequired'] });
+    validateFields(config, { baseURL: ['isRequired'] });
     validateFields(headers, { 'Content-Type': ['isRequired'], 'User-Agent': ['isRequired'] });
     if (socksConf !== undefined && Object.keys(socksConf).length > 0) {
       validateFields(socksConf, {
@@ -32,14 +34,14 @@ const makeTransport = (options) => {
       });
       config.httpsAgent = new SocksProxyAgent(`socks5://${socksConf.host}:${socksConf.port}`);
     }
+
+    transports[baseURL] = axios.create(config);
+
+    transports[baseURL].interceptors
+      .response.use(transformResponse, makeTransformError(transports[baseURL]));
   } catch (error) {
     throw new TransportError(error);
   }
-
-  transports[baseUrl] = axios.create(config);
-
-  transports[baseUrl].interceptors
-    .response.use(transformResponse, makeTransformError(transports[baseUrl]));
 };
 
 /**
@@ -54,26 +56,11 @@ const makeTransport = (options) => {
  * @property {!number|string} port
  */
 
-/**
- * @typedef transportOptions
- * @property {any} baseUrl - the baseUrl used for the transport instance.
- *                              Will create one transport per unique baseUrl.
- * @property  {RequiredHeaders} headers - the headers used for the transport
- * @property {socksConf|undefined} socksConf - if provided transport will initialize with socks proxy.
- * @property {number|undefined} timeout
- * @property {number|undefined} retries
- */
-
-/**
- *
- * @param {transportOptions} transportOptions
- * @return {{post: (function(*=, *=): *), get: (function(*=): *)}}
- */
 const getTransport = (transportOptions) => {
-  const { baseUrl } = transportOptions;
-  if (!transports[baseUrl]) makeTransport(transportOptions);
-  const get = async (path) => transports[baseUrl].get(path);
-  const post = async (path, data) => transports[baseUrl].post(path, data);
+  const { baseURL } = transportOptions;
+  if (!transports[baseURL]) makeTransport(transportOptions);
+  const get = async (path) => transports[baseURL].get(path);
+  const post = async (path, data, opt) => transports[baseURL].post(path, data, opt);
 
   return { get, post };
 };

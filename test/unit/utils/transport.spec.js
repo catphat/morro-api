@@ -28,7 +28,7 @@ describe('utils/transport', () => {
   });
 
   const transportOptions = {
-    baseUrl: 'https://fake.test.url.123abc.000',
+    baseURL: 'https://fake.test.url.123abc.000',
     timeout: 2500,
     headers: {
       'Content-Type': 'application/json',
@@ -165,7 +165,7 @@ describe('utils/transport', () => {
         before(() => {
           const conf = { ...transportOptions };
           getTransport(conf);
-          getTransport({ ...conf, baseUrl: 'https://123.testbase.url2' });
+          getTransport({ ...conf, baseURL: 'https://123.testbase.url2' });
         });
 
         after(reset);
