@@ -1,6 +1,6 @@
 const config = {
-  BDO_CLIENT_BASE_URL_NA: process.env.BDO_CLIENT_BASEURL_NA || 'https://na-trade.naeu.playblackdesert.com/Trademarket',
-  BDO_CLIENT_BASE_URL_EU: process.env.BDO_CLIENT_BASEURL_EU || 'https://eu-trade.naeu.playblackdesert.com/Trademarket',
+  BDO_CLIENT_BASE_URL_NA: process.env.BDO_CLIENT_BASE_URL_NA || 'https://na-trade.naeu.playblackdesert.com/Trademarket',
+  BDO_CLIENT_BASE_URL_EU: process.env.BDO_CLIENT_BASE_URL_EU || 'https://eu-trade.naeu.playblackdesert.com/Trademarket',
   BDO_CLIENT_PROXY_URL: process.env.BDO_CLIENT_PROXY_URL || '127.0.0.1',
   BDO_CLIENT_PROXY_PORT: process.env.BDO_CLIENT_PROXY_PORT || '7770',
   BDO_CLIENT_USE_PROXY: process.env.BDO_CLIENT_USE_PROXY || true,
