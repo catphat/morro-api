@@ -31,6 +31,11 @@ const transformError = (transport) => (error) => {
   const details = error.config ? {
     method: error.config.method,
     url: error.config.url,
+    reason: error.reason,
+    message: error.message,
+    headers: error.config.headers,
+    stack: error.stack,
+
   } : {};
   if (error.code) details.code = error.code;
 
