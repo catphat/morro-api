@@ -1,3 +1,5 @@
+const https = require('https');
+const http = require('http');
 const { getTransport, closeAll } = require('../../utils/transport');
 const { transportOptions, defaultHeaders } = require('./defaults');
 
@@ -17,12 +19,35 @@ const throwIfInvalidRegion = (region) => {
 const getBdoTransportOptions = (region) => {
   throwIfInvalidRegion(region);
   const baseURL = (region === 'NA' ? config.BDO_CLIENT_BASE_URL_NA : config.BDO_CLIENT_BASE_URL_EU);
+
+  const url = new URL(baseURL);
+  let wrapper;
+  if (url.protocol === 'https:') {
+    const wrappedHttps = {
+      ...https,
+      request: (options, callback) => https.request({
+        ...options,
+        insecureHTTPParser: true,
+      }, callback),
+    };
+    wrapper = wrappedHttps;
+  } else if (url.protocol === 'http:') {
+    const wrappedHttp = {
+      ...http,
+      request: (options, callback) => http.request({
+        ...options,
+        insecureHTTPParser: true,
+      }, callback),
+    };
+    wrapper = wrappedHttp;
+  }
+
   const options = {
     baseURL,
     ...transportOptions,
     headers: defaultHeaders,
     retries: config.BDO_CLIENT_REQUEST_RETRIES,
-
+    transport: wrapper,
   };
 
   if (config.BDO_CLIENT_USE_PROXY) {

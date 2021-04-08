@@ -15,6 +15,7 @@ const makeTransport = (options) => {
     socksConf,
     timeout,
     retries,
+    transport,
   } = options;
 
   const config = {
@@ -23,6 +24,10 @@ const makeTransport = (options) => {
     timeout,
     retries,
   };
+
+  if (transport !== undefined) {
+    config.transport = transport;
+  }
 
   try {
     validateFields(config, { baseURL: ['isRequired'] });
@@ -35,7 +40,7 @@ const makeTransport = (options) => {
       config.httpsAgent = new SocksProxyAgent(`socks5://${socksConf.host}:${socksConf.port}`);
     }
 
-    transports[baseURL] = axios.create(config);
+    transports[baseURL] = axios.create({...config});
 
     transports[baseURL].interceptors
       .response.use(transformResponse, makeTransformError(transports[baseURL]));

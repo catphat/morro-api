@@ -1,26 +1,27 @@
+const { networkInterfaces } = require('os');
+const fs = require('fs');
 const chai = require('chai');
 const { describe, it } = require('mocha');
-
-const axios = require('axios');
-
-const net = require('net');
-
 const chaiAsPromised = require('chai-as-promised');
-const fs = require('fs');
-const { networkInterfaces } = require('os');
+const sinonChai = require('sinon-chai');
 
-const fetch = require('node-fetch');
+const proxyquire = require('proxyquire');
+const axios = require('axios');
+const net = require('net');
 const http = require('http');
 
 chai.use(chaiAsPromised);
 const { expect } = chai;
 
-const { getWorldMarketList } = require('../../../../src/api/bdo_client/getWorldMarketList');
-
 describe('HPE_INVALID_HEADER_TOKEN error', () => {
+  let server;
+  let config;
   let SERVER_HOST;
   const SERVER_PORT = 9991;
-  let server;
+
+  let getRegionalBdoTransport;
+  let getWorldMarketList;
+
   before(() => {
     const invalidRawPacketFile = fs.readFileSync('test/regression/api/bdo_client/issue12.invalidRawPacket.json', 'utf8');
     const rawPacketData = JSON.parse(invalidRawPacketFile);
@@ -34,12 +35,32 @@ describe('HPE_INVALID_HEADER_TOKEN error', () => {
 
     const incompleteData = '{"resultCode":0,"resultMsg":"10003-0-57488-16900|10005-7-608508-32800|10006-0-113996-292000|10007-0-315594-89500|10009-37-103499-5050000|10010-10-40305-184000000|10012-6-582460-75000|10013-3-700529-63000|10014-44-1085548-156000|10056-6-731908-34';
     const remainingContentLength = 5303 - Buffer.byteLength(incompleteData);
-    const bufFiller = Buffer.alloc(remainingContentLength).fill('a');
+
+    // if content-length exceeds actual content-length
+    //  then clients will hang awaiting remaining content.
+    const bufFiller = Buffer.alloc(remainingContentLength);
+    bufFiller.fill(' ');
+    bufFiller.write('"}', 'utf-8');
     const bufFillerStr = bufFiller.toString();
     server = net.createServer((socket) => {
       socket.write(invalidPacketStr);
       socket.write(bufFillerStr);
     });
+
+    config = {
+      BDO_CLIENT_BASE_URL_NA: `http://${SERVER_HOST}:${SERVER_PORT}`,
+      BDO_CLIENT_BASE_URL_EU: `http://${SERVER_HOST}:${SERVER_PORT}`,
+      BDO_CLIENT_USE_PROXY: true,
+    };
+
+    const { getRegionalBdoTransport: bdoTransport } = proxyquire('../../../../src/api/bdo_client/regionalBdoTransport', {
+      '../../config': config,
+    });
+    getRegionalBdoTransport = bdoTransport;
+    const { getWorldMarketList: worldMarketList } = proxyquire('../../../../src/api/bdo_client/getWorldMarketList', {
+      './regionalBdoTransport': { getRegionalBdoTransport },
+    });
+    getWorldMarketList = worldMarketList;
 
     server.listen(SERVER_PORT, SERVER_HOST);
   });
@@ -52,7 +73,7 @@ describe('HPE_INVALID_HEADER_TOKEN error', () => {
     const client = axios.create({
       baseURL: `http://${SERVER_HOST}:${SERVER_PORT}`,
     });
-    const config = {
+    const clientConfig = {
       method: 'post',
       url: 'GetWorldMarketList',
       data: '{"mainCategory":1,"subCategory":1,"keyType":0}',
@@ -67,7 +88,7 @@ describe('HPE_INVALID_HEADER_TOKEN error', () => {
       maxBodyLength: -1,
     };
 
-    const response = client(config);
+    const response = client(clientConfig);
     let errorMsg;
     try {
 
@@ -92,7 +113,7 @@ describe('HPE_INVALID_HEADER_TOKEN error', () => {
       transport: wrappedHttp,
     });
 
-    const config = {
+    const clientConfig = {
       method: 'post',
       url: 'Trademarket/GetWorldMarketList',
       data: "{'mainCategory':1,'subCategory':1,'keyType':0}",
@@ -109,7 +130,7 @@ describe('HPE_INVALID_HEADER_TOKEN error', () => {
     let response;
     try {
 
-      response = await client(config);
+      response = await client(clientConfig);
 
     } catch (e) {
       errorMsg = e.message;
@@ -117,7 +138,22 @@ describe('HPE_INVALID_HEADER_TOKEN error', () => {
 
     expect(errorMsg).to.not.equal('Parse Error: Invalid header value char');
     expect(errorMsg).to.be.undefined;
-    expect(Buffer.byteLength(response.data)).to.equal(5303);
+    expect(response.data.resultCode).to.equal(0);
+    expect(response.data.resultMsg).to.equal('10003-0-57488-16900|10005-7-608508-32800|10006-0-113996-292000|10007-0-315594-89500|10009-37-103499-5050000|10010-10-40305-184000000|10012-6-582460-75000|10013-3-700529-63000|10014-44-1085548-156000|10056-6-731908-34');
 
+  });
+
+  it('is not thrown when using the api/bdo_client/getWorldMarketList', async () => {
+    const result = await getWorldMarketList('NA')({
+      mainCategory: 1,
+      subCategory: 1,
+      keyType: 0,
+    });
+    expect(result.isValid).to.be.true;
+    expect(result.itemList.length).to.equal(10);
+    expect(result.itemList[0].basePrice).to.equal(16900);
+    expect(result.itemList[0].itemId).to.equal(10003);
+    expect(result.itemList[0].itemStock).to.equal(0);
+    expect(result.itemList[0].totalTrades).to.equal(57488);
   });
 });
