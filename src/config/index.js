@@ -6,8 +6,6 @@ const config = {
   BDO_CLIENT_USE_PROXY: process.env.BDO_CLIENT_USE_PROXY || true,
   BDO_CLIENT_REQUEST_DELAY: 250,
   BDO_CLIENT_REQUEST_RETRIES: 3,
-  DB_URL: process.env.DB_URL, /* 'postgres://user:pass@example.com:5432/dbname' */
-  PORT: process.env.PORT,
   ENV: process.env.NODE_ENV || 'development',
   CACHE_LIFETIME_MIN: 60,
   GEAR_EMAIL: process.env.GEAR_EMAIL,
