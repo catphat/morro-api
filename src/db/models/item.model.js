@@ -18,13 +18,10 @@ const model = (sequelize, DataTypes) => {
           notEmpty: true,
         },
       },
-      icon: {
-        type: DataTypes.STRING,
-      },
     },
   );
-  Item.associate = ({ SubCategory }) => {
-    Item.belongsTo(SubCategory);
+  Item.associate = ({ MainCategory }) => {
+    Item.belongsTo(MainCategory);
   };
   return Item;
 };
