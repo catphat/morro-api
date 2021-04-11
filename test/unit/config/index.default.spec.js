@@ -4,7 +4,12 @@ const config = require('../../../src/config');
 
 describe('default env', () => {
   it('should have correct default values', () => {
-
+    expect(config.db.development.database).to.equal('mapi_db_dev');
+    expect(config.db.test.database).to.equal('mapi_db_test');
+    expect(config.db.production.database).to.equal('mapi_db_prod');
+    expect(config.db.development.username).to.be.undefined;
+    expect(config.db.test.username).to.be.undefined;
+    expect(config.db.production.username).to.be.undefined;
     expect(config.BDO_CLIENT_BASE_URL_NA).to.equal('https://na-trade.naeu.playblackdesert.com/Trademarket');
     expect(config.BDO_CLIENT_BASE_URL_EU).to.equal('https://eu-trade.naeu.playblackdesert.com/Trademarket');
     expect(config.BDO_CLIENT_PROXY_URL).to.equal('127.0.0.1');

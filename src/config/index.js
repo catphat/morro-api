@@ -1,4 +1,7 @@
+const { dbConfig: db } = require('./db');
+
 const config = {
+  db,
   BDO_CLIENT_BASE_URL_NA: process.env.BDO_CLIENT_BASE_URL_NA || 'https://na-trade.naeu.playblackdesert.com/Trademarket',
   BDO_CLIENT_BASE_URL_EU: process.env.BDO_CLIENT_BASE_URL_EU || 'https://eu-trade.naeu.playblackdesert.com/Trademarket',
   BDO_CLIENT_PROXY_URL: process.env.BDO_CLIENT_PROXY_URL || '127.0.0.1',
@@ -6,10 +9,6 @@ const config = {
   BDO_CLIENT_USE_PROXY: process.env.BDO_CLIENT_USE_PROXY || true,
   BDO_CLIENT_REQUEST_DELAY: 250,
   BDO_CLIENT_REQUEST_RETRIES: 3,
-  DB_USERNAME: process.env.DB_USERNAME,
-  DB_PASSWORD: process.env.DB_PASSWORD,
-  DB_HOST: process.env.DB_HOST,
-  DB_PORT: process.env.DB_PORT,
   ENV: process.env.NODE_ENV || 'development',
   CACHE_LIFETIME_MIN: 60,
   GEAR_EMAIL: process.env.GEAR_EMAIL,
