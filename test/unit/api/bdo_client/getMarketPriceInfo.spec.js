@@ -8,8 +8,8 @@ describe('bdo_client/getWorldMarketList', () => {
     params: { mainKey: 11607, keyType: 0, subKey: 0 },
     validation: {
       mainKey: ['isRequired', 'isPositiveNumber'],
-      subKey: ['isPositiveNumber'],
-      keyType: ['isPositiveNumber'],
+      subKey: ['isNonNegativeNumber'],
+      keyType: ['isNonNegativeNumber'],
     },
   };
 
