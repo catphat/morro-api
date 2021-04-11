@@ -79,7 +79,7 @@ const parseResponse = (resp) => {
 
 const validation = {
   mainKey: ['isRequired', 'isPositiveNumber'],
-  keyType: ['isRequired', 'isPositiveNumber'],
+  keyType: ['isRequired', 'isNonNegativeNumber'],
 };
 
 const getWorldMarketSubList = (region) => async ({
