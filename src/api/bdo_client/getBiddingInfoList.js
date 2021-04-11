@@ -61,8 +61,8 @@ const parseResponse = (resp) => {
 
 const validation = {
   mainKey: ['isRequired', 'isPositiveNumber'],
-  subKey: ['isPositiveNumber'],
-  keyType: ['isPositiveNumber'],
+  subKey: ['isNonNegativeNumber'],
+  keyType: ['isNonNegativeNumber'],
 };
 
 const getBiddingInfoList = (region) => async ({

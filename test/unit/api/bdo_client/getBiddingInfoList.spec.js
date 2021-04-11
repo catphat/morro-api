@@ -8,8 +8,8 @@ describe('bdo_client/getBiddingInfoList', () => {
     params: { mainKey: 11629, subKey: 0, keyType: 0 },
     validation: {
       mainKey: ['isRequired', 'isPositiveNumber'],
-      subKey: ['isPositiveNumber'],
-      keyType: ['isPositiveNumber'],
+      subKey: ['isNonNegativeNumber'],
+      keyType: ['isNonNegativeNumber'],
     },
   };
 
