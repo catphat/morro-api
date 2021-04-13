@@ -48,9 +48,13 @@ describe('HPE_INVALID_HEADER_TOKEN error', () => {
     });
 
     config = {
-      BDO_CLIENT_BASE_URL_NA: `http://${SERVER_HOST}:${SERVER_PORT}`,
-      BDO_CLIENT_BASE_URL_EU: `http://${SERVER_HOST}:${SERVER_PORT}`,
-      BDO_CLIENT_USE_PROXY: true,
+      bdoClient: {
+        BASE_URL_NA: `http://${SERVER_HOST}:${SERVER_PORT}`,
+        BASE_URL_EU: `http://${SERVER_HOST}:${SERVER_PORT}`,
+        USE_PROXY: true,
+        PROXY_URL: '127.0.0.1',
+        PROXY_PORT: '7770',
+      },
     };
 
     const { getRegionalBdoTransport: bdoTransport } = proxyquire('../../../../src/api/bdo_client/regionalBdoTransport', {
