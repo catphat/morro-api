@@ -5,6 +5,7 @@ chai.use(require('sinon-chai'));
 const { expect } = chai;
 const { stub, spy } = require('sinon');
 const proxyquire = require('proxyquire');
+const config = require('../../../../src/config');
 
 describe('api/bdo_client/regionalBdoTransport', () => {
   const transformResponse = stub();
@@ -45,8 +46,12 @@ describe('api/bdo_client/regionalBdoTransport', () => {
   };
 
   context('getBdoTransportOptions', () => {
+    let validBaseURL = 'https://na-trade.naeu.playblackdesert.com/Trademarket';
+    if (config.ENV === 'test') {
+      validBaseURL = 'https://127.0.0.1:9990';
+    }
     const validOptions = {
-      baseUrl: 'https://na-trade.naeu.playblackdesert.com/Trademarket',
+      baseURL: validBaseURL,
       socksConf: {
         host: '127.0.0.1',
         port: 7770,

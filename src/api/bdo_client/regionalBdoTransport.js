@@ -18,7 +18,7 @@ const throwIfInvalidRegion = (region) => {
 
 const getBdoTransportOptions = (region) => {
   throwIfInvalidRegion(region);
-  const baseURL = (region === 'NA' ? config.BDO_CLIENT_BASE_URL_NA : config.BDO_CLIENT_BASE_URL_EU);
+  const baseURL = (region === 'NA' ? config.bdoClient.BASE_URL_NA : config.bdoClient.BASE_URL_EU);
 
   const url = new URL(baseURL);
   let wrapper;
@@ -46,14 +46,14 @@ const getBdoTransportOptions = (region) => {
     baseURL,
     ...transportOptions,
     headers: defaultHeaders,
-    retries: config.BDO_CLIENT_REQUEST_RETRIES,
+    retries: config.bdoClient.REQUEST_RETRIES,
     transport: wrapper,
   };
 
-  if (config.BDO_CLIENT_USE_PROXY) {
+  if (config.bdoClient.USE_PROXY) {
     options.socksConf = {
-      host: config.BDO_CLIENT_PROXY_URL,
-      port: config.BDO_CLIENT_PROXY_PORT,
+      host: config.bdoClient.PROXY_URL,
+      port: config.bdoClient.PROXY_PORT,
     };
   }
 
