@@ -1,6 +1,6 @@
 const { expect } = require('chai');
 
-const TransportError = require('../../../src/errors/ValidationError');
+const TransportError = require('../../../src/errors/TransportError');
 
 describe('errors/TransportError', () => {
   const errors = { orderGuid: [undefined, 'isRequired'] };
