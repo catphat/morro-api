@@ -4,7 +4,10 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:all": "NODE_ENV=test mocha ./test --recursive",
+    "test:unit": "NODE_ENV=test mocha ./test/unit --recursive",
+    "test:unit:config": "NODE_ENV=test mocha --recursive ./test/unit/config ",
+    "test:regression": "NODE_ENV=test mocha --recursive ./test/regression "
   },
   "files": [
     "src"
