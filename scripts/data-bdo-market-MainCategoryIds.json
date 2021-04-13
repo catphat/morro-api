@@ -1,0 +1,70 @@
+[
+  {
+    "id": "1",
+    "name": "Main Weapon"
+  },
+  {
+    "id": "5",
+    "name": "Sub-Weapon"
+  },
+  {
+    "id": "10",
+    "name": "Awakening"
+  },
+  {
+    "id": "15",
+    "name": "Armor"
+  },
+  {
+    "id": "20",
+    "name": "Accessories"
+  },
+  {
+    "id": "25",
+    "name": "Material"
+  },
+  {
+    "id": "30",
+    "name": "Enhancement"
+  },
+  {
+    "id": "35",
+    "name": "Consumables"
+  },
+  {
+    "id": "40",
+    "name": "Life Tools"
+  },
+  {
+    "id": "45",
+    "name": "Alchemy Stone"
+  },
+  {
+    "id": "50",
+    "name": "Magic Crystal"
+  },
+  {
+    "id": "55",
+    "name": "Pearl Item"
+  },
+  {
+    "id": "60",
+    "name": "Dye"
+  },
+  {
+    "id": "65",
+    "name": "Mount"
+  },
+  {
+    "id": "70",
+    "name": "Ship"
+  },
+  {
+    "id": "75",
+    "name": "Wagon"
+  },
+  {
+    "id": "80",
+    "name": "Furniture"
+  }
+]
