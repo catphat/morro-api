@@ -13,11 +13,7 @@ jobs:
       - checkout
       - node/install:
           install-yarn: true
-
-      - restore_cache:
-          name: Restore Yarn Package Cache
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
+          pkg-manager: yarn
 
       - run:
           name: Install Dependencies
@@ -30,12 +26,6 @@ jobs:
       - run:
           name: Install dependencies
           command: yarn install
-
-      - save_cache:
-          name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
 
       - run:
           name: "Setup custom environment variables"
