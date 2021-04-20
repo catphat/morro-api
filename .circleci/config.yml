@@ -2,13 +2,59 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@4.1
+  node: circleci/node@x.y
+
+jobs:
+  test:
+    docker:
+      - image: cimg/node
+
+    steps:
+      - checkout
+      - node/install:
+          install-yarn: true
+
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Install Dependencies
+          command: yarn install --immutable
+
+      - run:
+          name: Install global packages
+          command: sudo yarn install -g codecov
+
+      - run:
+          name: Install dependencies
+          command: yarn install
+
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - run:
+          name: "Setup custom environment variables"
+          command: echo 'NODE_ENV="test"' >> $BASH_ENV
+
+      - run:
+          name: Unit Tests with Code Coverage
+          command: yarn test:unit:cov
+
+      - run:
+          name: Send reports to codecov.io
+          command: codecov
+
 
 workflows:
   main:
     jobs:
       - node/test:
-          version: '15.1'
+          version: 'base:stable'
           # This is the node version to use for the `cimg/node` tag
           # Relevant tags can be found on the CircleCI Developer Hub
           # https://circleci.com/developer/images/image/cimg/node
