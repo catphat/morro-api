@@ -8,13 +8,9 @@ executors:
     environment:
       NODE_ENV: test
 
-jobs:
-  build:
-    executor: node-test
-
+commands:
+  yarn_install_and_cache:
     steps:
-      - checkout
-
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
@@ -38,17 +34,21 @@ jobs:
           paths:
             - ~/.cache/yarn
 
+jobs:
+  build:
+    executor: node-test
+    steps:
+      - checkout
+      - yarn_install_and_cache
+
+
   code-cov:
     executor: node-test
-
     steps:
-      - restore_cache:
-          name: Restore Yarn Package Cache
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
+      - yarn_install_and_cache
       - run:
           name: Unit Tests with Code Coverage
-          command: npm run test:unit:cov
+          command: yarn test:unit:cov
 
       - run:
           name: Send reports to codecov.io
@@ -58,4 +58,5 @@ workflows:
   main:
     jobs:
       - build
-      - code-cov
+      - code-cov:
+          requires: [build]
