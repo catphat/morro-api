@@ -1,19 +1,19 @@
 # This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
 version: 2.1
 
-orbs:
-  node: circleci/node@4.2.1
+executors:
+  node-test:
+    docker:
+      - image: circleci/node:14.16.1
+    environment:
+      NODE_ENV: test
 
 jobs:
-  test:
-    docker:
-      - image: cimg/node
+  build:
+    executor: node-test
 
     steps:
       - checkout
-      - node/install:
-          install-yarn: true
-          pkg-manager: yarn
 
       - restore_cache:
           name: Restore Yarn Package Cache
@@ -26,7 +26,7 @@ jobs:
 
       - run:
           name: Install global packages
-          command: sudo yarn install -g codecov
+          command: sudo yarn global add codecov
 
       - run:
           name: Install dependencies
@@ -38,24 +38,24 @@ jobs:
           paths:
             - ~/.cache/yarn
 
-      - run:
-          name: "Setup custom environment variables"
-          command: echo 'NODE_ENV="test"' >> $BASH_ENV
+  code-cov:
+    executor: node-test
 
+    steps:
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Unit Tests with Code Coverage
-          command: yarn test:unit:cov
+          command: npm run test:unit:cov
 
       - run:
           name: Send reports to codecov.io
           command: codecov
 
-
 workflows:
   main:
     jobs:
-      - node/test:
-          version: '14.16.1'
-          # This is the node version to use for the `cimg/node` tag
-          # Relevant tags can be found on the CircleCI Developer Hub
-          # https://circleci.com/developer/images/image/cimg/node
+      - build
+      - code-cov
