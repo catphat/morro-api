@@ -11,6 +11,7 @@ executors:
 commands:
   yarn_install_and_cache:
     steps:
+      - checkout
       - restore_cache:
           name: Restore Yarn Package Cache
           keys:
@@ -38,7 +39,6 @@ jobs:
   build:
     executor: node-test
     steps:
-      - checkout
       - yarn_install_and_cache
 
 
