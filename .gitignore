@@ -110,3 +110,6 @@ src/custom_modules/calpheonjs/node_modules
 src/custom_modules/calpheonjs/tests/data
 src/custom_modules/calpheonjs/yarn-error.log
 src/custom_modules/calpheonjs/report.**.**.**.json
+
+# Windows misc.
+.DS_Store
