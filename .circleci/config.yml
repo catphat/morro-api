@@ -58,19 +58,11 @@ jobs:
     steps:
       - yarn_install_and_cache
       - run:
-          name: Unit Tests with Code Coverage
+          name: Unit Tests
           command: yarn test:unit
 
 
 workflows:
-  build:
-    jobs:
-      - build
-  test_unit:
-    jobs:
-      - build
-      - unit-tests:
-          requires: [build]
   test_code_cov:
     jobs:
       - build
