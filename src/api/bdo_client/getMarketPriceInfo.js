@@ -1,4 +1,4 @@
-const { getRegionalBdoTransport } = require('./regionalBdoTransport');
+const { getRegionalBdoTransport, parseErrorResponseOrDefault } = require('./regionalBdoTransport');
 const { validateFields } = require('../../validation');
 
 /**
@@ -24,12 +24,9 @@ const { validateFields } = require('../../validation');
  */
 
 const parseResponse = (resp) => {
-  if (resp.resultCode !== 0) {
-    return {
-      isValid: false,
-      resultCode: resp.resultCode,
-      errorMsg: resp.resultMsg,
-    };
+  const errorResp = parseErrorResponseOrDefault(resp);
+  if (errorResp) {
+    return errorResp;
   }
   const priceHistoryStr = resp.resultMsg.split('-');
   const priceHistory = priceHistoryStr.map((x) => parseInt(x, 10));

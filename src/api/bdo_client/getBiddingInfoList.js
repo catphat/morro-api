@@ -1,4 +1,4 @@
-const { getRegionalBdoTransport } = require('./regionalBdoTransport');
+const { getRegionalBdoTransport, parseErrorResponseOrDefault } = require('./regionalBdoTransport');
 const { validateFields } = require('../../validation');
 
 /**
@@ -28,12 +28,9 @@ const { validateFields } = require('../../validation');
  * @param {RawBiddingInfoListData} resp
  */
 const parseResponse = (resp) => {
-  if (resp.resultCode !== 0) {
-    return {
-      isValid: false,
-      resultCode: resp.resultCode,
-      errorMsg: resp.resultMsg,
-    };
+  const errorResp = parseErrorResponseOrDefault(resp);
+  if (errorResp) {
+    return errorResp;
   }
   const biddingList = resp.resultMsg.split('|').reduce((result, x) => {
     const entry = x.split('-');

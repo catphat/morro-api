@@ -11,22 +11,6 @@ const { validateFields: realValidateFields } = require('../../src/validation/ind
 chai.use(sinonChai);
 const { expect } = chai;
 
-const skipEmptyTest = (params, validation, useDefaults) => {
-  if (params) {
-    if (
-      validation
-      && Object.keys(params).find(
-        (param) => validation[param] && validation[param].includes('isRequired'),
-      ) !== null
-    ) return [true];
-
-    if (!validation) {
-      return useDefaults ? [false, {}] : [true];
-    }
-  }
-  return useDefaults ? [false, {}] : [false];
-};
-
 const validationMatcher = (validation) => match(
   Object.keys(validation).reduce((acc, elem) => {
     acc[elem] = validation[elem].map((val) => (typeof val === 'function' ? match.func : val));
@@ -35,109 +19,142 @@ const validationMatcher = (validation) => match(
 );
 
 const doTest = ({
-  handler, params, validation, responseFile, expectedFile,
+  handler, params, paramsRequired, paramsExpected, validation, responseFile, expectedFile,
 }) => {
-  const [skipEmpty, useAsEmpty] = skipEmptyTest(params, validation);
 
   describe(`api/bdo_client/${handler}`, () => {
     const responseDir = 'test/unit/api/bdo_client/bdo_client_raw_responses';
-    const rawResponseFile = path.resolve(`${responseDir}/${responseFile}`);
-    const expectedResponseFile = path.resolve(`${responseDir}/${expectedFile}`);
 
-    const expectedRawResponse = fs.readFileSync(rawResponseFile).toString();
-    const expectedParsedResponse = fs.readFileSync(expectedResponseFile).toString();
+    context('with expected responses', () => {
+      const rawResponseFile = path.resolve(`${responseDir}/${responseFile}`);
+      const expectedResponseFile = path.resolve(`${responseDir}/${expectedFile}`);
 
-    const expectedRawResponseJSON = JSON.parse(expectedRawResponse);
-    const expectedParsedResponseJSON = JSON.parse(expectedParsedResponse);
+      const expectedRawResponse = fs.readFileSync(rawResponseFile).toString();
+      const expectedParsedResponse = fs.readFileSync(expectedResponseFile).toString();
 
-    const post = stub().resolves(expectedRawResponseJSON);
-    const transport = { getRegionalBdoTransport: stub().returns({ post }) };
-    const validateFields = stub();
+      const expectedRawResponseJSON = JSON.parse(expectedRawResponse);
+      const expectedParsedResponseJSON = JSON.parse(expectedParsedResponse);
 
-    const proxies = {
-      './regionalBdoTransport': transport,
-    };
-    if (validation) proxies['../../validation'] = { validateFields };
+      const post = stub().resolves(expectedRawResponseJSON);
+      const transport = { getRegionalBdoTransport: stub().returns({ post }) };
+      const validateFields = stub();
 
-    const handlerMethods = proxyquire(`../../src/api/bdo_client/${handler}`, proxies);
-    const method = handlerMethods[`${handler}`];
+      const proxies = {
+        './regionalBdoTransport': transport,
+      };
+      if (validation) proxies['../../validation'] = { validateFields };
 
-    const resetHistory = () => {
-      transport.getRegionalBdoTransport.resetHistory();
-      validateFields.resetHistory();
-      post.resetHistory();
-    };
+      const handlerMethods = proxyquire(`../../src/api/bdo_client/${handler}`, proxies);
+      const method = handlerMethods[`${handler}`];
 
-    const region = 'NA';
-    const apiPath = `${uc(handler)}`;
+      const resetHistory = () => {
+        transport.getRegionalBdoTransport.resetHistory();
+        validateFields.resetHistory();
+        post.resetHistory();
+      };
 
-    let result;
+      const region = 'NA';
+      const apiPath = `${uc(handler)}`;
 
-    if (params) {
-      context('with supplied params', () => {
+      let result;
+
+      if (params) {
+        context('with supplied params', () => {
+          before(async () => {
+            result = await method(region)(params);
+          });
+
+          after(resetHistory);
+
+          it('called getTransport', () => {
+            expect(transport.getRegionalBdoTransport).to.have.been.calledOnce;
+          });
+
+          if (validation) {
+            it('called validateFields with the complete set of params and the validation rules', () => {
+              expect(validateFields).to.have.been.calledOnceWith(
+                match(params),
+                validationMatcher(validation),
+              );
+            });
+          }
+
+          it('called post with the correct params', () => {
+            const payload = validateFields.args[0][0];
+            expect(post).to.have.been.calledOnceWith(apiPath, payload);
+          });
+
+          it('returned the expected result', () => {
+            expect(result).to.deep.equal(expectedParsedResponseJSON);
+          });
+
+          it('passes with supplied validation and params', () => {
+            const payload = validateFields.args[0][0];
+            expect(() => realValidateFields(payload, validation)).to.not.throw();
+          });
+        });
+      }
+
+      context('with only required params', () => {
         before(async () => {
-          result = await method(region)(params);
+          result = await method(region)(paramsRequired);
         });
 
         after(resetHistory);
 
-        it('called getTransport', () => {
-          expect(transport.getRegionalBdoTransport).to.have.been.calledOnce;
-        });
-
-        if (validation) {
-          it('called validateFields with the complete set of params and the validation rules', () => {
-            expect(validateFields).to.have.been.calledOnceWith(
-              match(params),
-              validationMatcher(validation),
-            );
-          });
-        }
-
         it('called post with the correct params', () => {
           const payload = validateFields.args[0][0];
-          expect(post).to.have.been.calledOnceWith(apiPath, payload);
-        });
-
-        it('returned the expected result', () => {
-          expect(result).to.deep.equal(expectedParsedResponseJSON);
-        });
-
-        it('passes with supplied validation and params', () => {
-          const payload = validateFields.args[0][0];
-          expect(() => realValidateFields(payload, validation)).to.not.throw();
-        });
-      });
-    }
-
-    if (!skipEmpty) {
-      context('without supplied params', () => {
-        before(async () => {
-          result = await method(region)(useAsEmpty);
-        });
-
-        after(resetHistory);
-
-        if (validation) {
-          it('called validateFields with the complete set of params and the validation rules', () => {
-            expect(validateFields).to.have.been.calledOnceWith(
-              match(region),
-              validationMatcher(validation),
-            );
-          });
-        }
-
-        it('called post with the correct params', () => {
-          const payload = validateFields.args[0][0];
-          expect(post).to.have.been.calledOnceWith(path, payload);
+          expect(paramsExpected).to.deep.equal(payload);
         });
 
         it('returned the expected result', () => {
           expect(result).to.deep.equal(expectedParsedResponseJSON);
         });
       });
-    }
+
+    });
+
+    context('with unexpected responses', () => {
+      context('handles invalid-response.txt', () => {
+        const invalidResponseFile = path.resolve(`${responseDir}/invalid-response.txt`);
+        const invalidResponse = fs.readFileSync(invalidResponseFile).toString();
+
+        const expectedHandledInvalidResponseFile = path.resolve(`${responseDir}/expected-handled-invalid_response_txt.json`);
+        const expectedHandledInvalidResponseFileString = fs.readFileSync(expectedHandledInvalidResponseFile).toString();
+        const expectedHandledInvalidResponse = JSON.parse(expectedHandledInvalidResponseFileString);
+
+        const post = stub().resolves(invalidResponse);
+        const transport = { getRegionalBdoTransport: stub().returns({ post }) };
+        const validateFields = stub();
+
+        const proxies = {
+          './regionalBdoTransport': transport,
+        };
+        if (validation) proxies['../../validation'] = { validateFields };
+
+        const handlerMethods = proxyquire(`../../src/api/bdo_client/${handler}`, proxies);
+        const method = handlerMethods[`${handler}`];
+
+        const resetHistory = () => {
+          transport.getRegionalBdoTransport.resetHistory();
+          validateFields.resetHistory();
+          post.resetHistory();
+        };
+
+        const region = 'NA';
+
+        after(resetHistory);
+
+        it('returned the expected result', async () => {
+          const result = await method(region)(params);
+          expect(result).to.deep.equal(expectedHandledInvalidResponse);
+        });
+
+      });
+
+    });
   });
+
 };
 
 module.exports = doTest;

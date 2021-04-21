@@ -60,9 +60,32 @@ const getBdoTransportOptions = (region) => {
   return options;
 };
 
+const parseErrorResponseOrDefault = (resp) => {
+  if (resp.resultCode !== 0) {
+    const errorResp = {
+      isValid: false,
+    };
+
+    if (resp.resultMsg !== undefined) {
+      errorResp.errorMsg = resp.resultMsg;
+    } else {
+      errorResp.errorMsg = `${resp}`;
+    }
+
+    if (resp.resultCode !== undefined) {
+      errorResp.resultCode = resp.resultCode;
+    }
+
+    return errorResp;
+  }
+  return null;
+};
+
 const getRegionalBdoTransport = (region) => {
   const options = getBdoTransportOptions(region);
   return getTransport(options);
 };
 
-module.exports = { getRegionalBdoTransport, getBdoTransportOptions, closeAll };
+module.exports = {
+  getRegionalBdoTransport, getBdoTransportOptions, closeAll, parseErrorResponseOrDefault,
+};

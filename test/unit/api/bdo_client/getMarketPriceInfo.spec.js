@@ -6,6 +6,8 @@ describe('bdo_client/getWorldMarketList', () => {
     expectedFile: 'marketpriceinfo-expected-parse-11607.json',
     handler: 'getMarketPriceInfo',
     params: { mainKey: 11607, keyType: 0, subKey: 0 },
+    paramsRequired: { mainKey: 11607 },
+    paramsExpected: { mainKey: 11607, keyType: 0, subKey: 0 },
     validation: {
       mainKey: ['isRequired', 'isPositiveNumber'],
       subKey: ['isNonNegativeNumber'],
