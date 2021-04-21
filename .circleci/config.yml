@@ -41,7 +41,6 @@ jobs:
     steps:
       - yarn_install_and_cache
 
-
   code-cov:
     executor: node-test
     steps:
@@ -54,8 +53,25 @@ jobs:
           name: Send reports to codecov.io
           command: codecov
 
+  unit-tests:
+    executor: node-test
+    steps:
+      - yarn_install_and_cache
+      - run:
+          name: Unit Tests with Code Coverage
+          command: yarn test:unit
+
+
 workflows:
-  main:
+  build:
+    jobs:
+      - build
+  test_unit:
+    jobs:
+      - build
+      - unit-tests:
+          requires: [build]
+  test_code_cov:
     jobs:
       - build
       - code-cov:
