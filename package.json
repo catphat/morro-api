@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "morro-api",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -14,7 +14,7 @@
   "files": [
     "src"
   ],
-  "author": "",
+  "author": "github.com/catphat",
   "license": "ISC",
   "dependencies": {
     "@types/node": "^14.14.37",
