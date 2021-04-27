@@ -46,8 +46,8 @@ jobs:
     steps:
       - yarn_install_and_cache
       - run:
-          name: Unit Tests with Code Coverage
-          command: yarn test:unit:cov
+          name: All Tests with Code Coverage
+          command: yarn test:cov
 
       - run:
           name: Send reports to codecov.io
