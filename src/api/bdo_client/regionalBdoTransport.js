@@ -22,23 +22,23 @@ const getBdoTransportOptions = (region) => {
   const url = new URL(baseURL);
   let wrapper;
   if (url.protocol === 'https:') {
-    const wrappedHttps = {
+    wrapper = {
       ...https,
       request: (options, callback) => https.request({
         ...options,
         insecureHTTPParser: true,
       }, callback),
     };
-    wrapper = wrappedHttps;
-  } else if (url.protocol === 'http:') {
-    const wrappedHttp = {
+  }
+  /* istanbul ignore next */
+  else if (url.protocol === 'http:') {
+    wrapper = {
       ...http,
       request: (options, callback) => http.request({
         ...options,
         insecureHTTPParser: true,
       }, callback),
     };
-    wrapper = wrappedHttp;
   }
 
   const options = {
