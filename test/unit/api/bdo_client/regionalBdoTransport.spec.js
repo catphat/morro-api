@@ -5,7 +5,7 @@ chai.use(require('sinon-chai'));
 const { expect } = chai;
 const { stub, spy } = require('sinon');
 const proxyquire = require('proxyquire');
-const config = require('../../../../src/config');
+const { bdoClientConfig } = require('../../../../src/config/bdoClient');
 
 describe('api/bdo_client/regionalBdoTransport', () => {
   const transformResponse = stub();
@@ -27,10 +27,6 @@ describe('api/bdo_client/regionalBdoTransport', () => {
     './transformResponse': transformResponse,
   });
 
-  const { getRegionalBdoTransport, getBdoTransportOptions, closeAll } = proxyquire('../../../../src/api/bdo_client/regionalBdoTransport', {
-    '../../utils/transport': { getTransport },
-  });
-
   const resetHistory = () => {
     axios.resetHistory();
     axios.create.resetHistory();
@@ -40,16 +36,24 @@ describe('api/bdo_client/regionalBdoTransport', () => {
     makeTransformError.resetHistory();
   };
 
-  const reset = () => {
-    closeAll();
-    resetHistory();
-  };
-
   context('getBdoTransportOptions', () => {
-    let validBaseURL = 'https://na-trade.naeu.playblackdesert.com/Trademarket';
-    if (config.ENV === 'test') {
-      validBaseURL = 'https://127.0.0.1:9990';
-    }
+
+    const config = {
+      bdoClient: { ...bdoClientConfig.test },
+      ENV: 'test',
+    };
+
+    const { getRegionalBdoTransport, getBdoTransportOptions, closeAll } = proxyquire('../../../../src/api/bdo_client/regionalBdoTransport', {
+      '../../utils/transport': { getTransport },
+      '../../config': config,
+    });
+
+    const reset = () => {
+      closeAll();
+      resetHistory();
+    };
+
+    const validBaseURL = 'https://127.0.0.1:9990';
     const validOptions = {
       baseURL: validBaseURL,
       socksConf: {
@@ -109,4 +113,87 @@ describe('api/bdo_client/regionalBdoTransport', () => {
 
   });
 
+  context('gets valid transport wrapper by protocol', () => {
+    const requestReturnOpt = (options, callback) => options.insecureHTTPParser;
+
+    const http = {
+      request: requestReturnOpt,
+    };
+    const https = {
+      request: requestReturnOpt,
+    };
+
+    context('when the baseURL contains HTTP', () => {
+
+      const config = {
+        bdoClient: { ...bdoClientConfig.test },
+        ENV: 'test',
+      };
+
+      const validBaseURL = 'http://127.0.0.1';
+      config.bdoClient.BASE_URL_NA = validBaseURL;
+
+      const { getRegionalBdoTransport, closeAll } = proxyquire('../../../../src/api/bdo_client/regionalBdoTransport', {
+        '../../utils/transport': { getTransport },
+        '../../config': config,
+        http,
+        https,
+      });
+
+      const reset = () => {
+        closeAll();
+        resetHistory();
+      };
+
+      before(() => {
+        getRegionalBdoTransport('NA');
+      });
+
+      after(reset);
+
+      it('initializes the httpAgent', () => {
+        const args = axios.create.getCall(0).args[0];
+        expect(args.baseURL).to.equal(validBaseURL);
+        expect(args.transport.request()).to.equal(true);
+        expect(args.transport.globalAgent.protocol).to.equal('http:');
+
+      });
+    });
+
+    context('when the baseURL contains HTTPS', () => {
+
+      const config = {
+        bdoClient: { ...bdoClientConfig.test },
+        ENV: 'test',
+      };
+
+      const validBaseURL = 'https://127.0.0.1';
+      config.bdoClient.BASE_URL_NA = validBaseURL;
+
+      const { getRegionalBdoTransport, closeAll } = proxyquire('../../../../src/api/bdo_client/regionalBdoTransport', {
+        '../../utils/transport': { getTransport },
+        '../../config': config,
+        http,
+        https,
+      });
+
+      const reset = () => {
+        closeAll();
+        resetHistory();
+      };
+
+      before(() => {
+        const { get, post } = getRegionalBdoTransport('NA');
+      });
+
+      after(reset);
+
+      it('initializes the httspAgent', () => {
+        const args = axios.create.getCall(0).args[0];
+        expect(args.baseURL).to.equal(validBaseURL);
+        expect(args.transport.globalAgent.protocol).to.equal('https:');
+        expect(args.transport.request()).to.equal(true);
+      });
+    });
+  });
 });
