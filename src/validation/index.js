@@ -13,7 +13,7 @@ const VALIDATIONS = {
 
 const validateFields = (payload, rules) => {
   const errors = Object.keys(rules).reduce((acc, elem) => {
-    const validations = rules[elem] || [];
+    const validations = rules[elem];
     validations.forEach((rule) => {
       const validator = typeof rule === 'string' ? VALIDATIONS[rule] : rule;
       const value = payload[elem];

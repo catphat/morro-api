@@ -73,5 +73,18 @@ describe('validation', () => {
       }).not.to.throw());
     });
 
+    context('given a non-matching validation ruleset', () => {
+      const validations = { orderGuid: [isString(10)] };
+      const payload = { comment: 'abc123' };
+
+      it('does not throw an error', () => expect(() => {
+        validateFields(payload, validations);
+      }).not.to.throw());
+
+      it('returns an empty object', () => {
+        expect(validateFields(payload, validations)).to.be.undefined;
+      });
+    });
+
   });
 });
