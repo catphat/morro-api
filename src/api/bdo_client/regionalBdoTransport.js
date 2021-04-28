@@ -3,7 +3,6 @@ const http = require('http');
 const { getTransport, closeAll } = require('../../utils/transport');
 const { transportOptions, defaultHeaders } = require('./defaults');
 
-require('dotenv').config();
 const config = require('../../config');
 const TransportError = require('../../errors/TransportError');
 
