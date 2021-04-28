@@ -62,6 +62,8 @@ describe('config', () => {
       expect(config.bdoClient.PROXY_URL).to.equal('127.0.0.1');
       expect(config.bdoClient.PROXY_PORT).to.equal('7770');
       expect(config.bdoClient.USE_PROXY).to.equal(true);
+
+      expect(config.db.CONNECTION_STRING).equal('postgresql://testdbuser01:abc123@127.0.0.1:5432/mapi_db_test');
     });
 
     it('development', () => {
@@ -74,6 +76,8 @@ describe('config', () => {
       expect(config.bdoClient.PROXY_URL).to.equal('127.0.0.1');
       expect(config.bdoClient.PROXY_PORT).to.equal('9990');
       expect(config.bdoClient.USE_PROXY).to.equal(true);
+
+      expect(config.db.CONNECTION_STRING).equal('postgresql://devdbuser01:undefined@127.0.0.1:5432/mapi_db_dev');
     });
 
     it('production', () => {
@@ -87,6 +91,8 @@ describe('config', () => {
       expect(config.bdoClient.PROXY_URL).to.equal('127.0.0.1');
       expect(config.bdoClient.PROXY_PORT).to.equal('1110');
       expect(config.bdoClient.USE_PROXY).to.equal(true);
+
+      expect(config.db.CONNECTION_STRING).equal('postgresql://undefined:undefined@undefined:undefined/undefined');
     });
 
     it('default', () => {
@@ -99,6 +105,9 @@ describe('config', () => {
       expect(config.bdoClient.PROXY_URL).to.equal('127.0.0.1');
       expect(config.bdoClient.PROXY_PORT).to.equal('9990');
       expect(config.bdoClient.USE_PROXY).to.equal(true);
+
+
+      expect(config.db.CONNECTION_STRING).equal('postgresql://devdbuser01:undefined@127.0.0.1:5432/mapi_db_dev');
     });
 
   });
