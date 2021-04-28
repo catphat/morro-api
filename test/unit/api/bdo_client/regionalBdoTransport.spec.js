@@ -5,6 +5,8 @@ chai.use(require('sinon-chai'));
 const { expect } = chai;
 const { stub, spy } = require('sinon');
 const proxyquire = require('proxyquire');
+const path = require('path');
+const fs = require('fs');
 const { bdoClientConfig } = require('../../../../src/config/bdoClient');
 
 describe('api/bdo_client/regionalBdoTransport', () => {
@@ -43,7 +45,9 @@ describe('api/bdo_client/regionalBdoTransport', () => {
       ENV: 'test',
     };
 
-    const { getRegionalBdoTransport, getBdoTransportOptions, closeAll } = proxyquire('../../../../src/api/bdo_client/regionalBdoTransport', {
+    const {
+      getRegionalBdoTransport, getBdoTransportOptions, closeAll,
+    } = proxyquire('../../../../src/api/bdo_client/regionalBdoTransport', {
       '../../utils/transport': { getTransport },
       '../../config': config,
     });
@@ -194,6 +198,34 @@ describe('api/bdo_client/regionalBdoTransport', () => {
         expect(args.transport.globalAgent.protocol).to.equal('https:');
         expect(args.transport.request()).to.equal(true);
       });
+    });
+  });
+
+  context('function parseErrorResponseOrDefault', () => {
+
+    const { parseErrorResponseOrDefault } = require('../../../../src/api/bdo_client/regionalBdoTransport');
+
+    it('handles an undefined response resultMsg correctly', () => {
+      const invalidResponseFile = path.resolve('test/unit/api/bdo_client/bdo_client_raw_responses/invalid-response.txt');
+      const invalidResponseFileContents = fs.readFileSync(invalidResponseFile).toString();
+
+      expect(parseErrorResponseOrDefault(invalidResponseFileContents).errorMsg).to.equal(invalidResponseFileContents);
+    });
+
+    it('handles an defined response resultMsg correctly', () => {
+      const resp = {
+        resultMsg: 'success',
+      };
+
+      expect(parseErrorResponseOrDefault(resp).errorMsg).to.equal(resp.resultMsg);
+    });
+
+    it('handles an defined response resultCode correctly', () => {
+      const resp = {
+        resultCode: 777,
+      };
+
+      expect(parseErrorResponseOrDefault(resp).resultCode).to.equal(resp.resultCode);
     });
   });
 });
