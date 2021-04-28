@@ -234,6 +234,26 @@ describe('api/bdo_client/regionalBdoTransport', () => {
         expect(args.transport.request()).to.equal(true);
       });
     });
+
+    context('when the baseURL contains an unexpected protocol', () => {
+
+      const config = {
+        bdoClient: { ...bdoClientConfig.test },
+        ENV: 'test',
+      };
+
+      const baseURL = '127.0.0.1';
+      config.bdoClient.BASE_URL_NA = baseURL;
+
+      const { getBdoTransportOptions } = proxyquire('../../../../src/api/bdo_client/regionalBdoTransport', {
+        '../../config': config,
+      });
+
+      it('throws an error', () => {
+        expect(() => getBdoTransportOptions('NA')).to.throw();
+      });
+
+    });
   });
 
   context('function parseErrorResponseOrDefault', () => {
