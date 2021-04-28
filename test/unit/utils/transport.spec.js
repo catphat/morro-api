@@ -21,7 +21,7 @@ describe('utils/transport', () => {
   };
   axios.create = stub().returns(axios);
 
-  const { getTransport, closeAll } = proxyquire('../../../src/utils/transport', {
+  const { getTransport, closeAll, close } = proxyquire('../../../src/utils/transport', {
     axios,
     './makeTransformError': makeTransformError,
     './transformResponse': transformResponse,
@@ -45,11 +45,12 @@ describe('utils/transport', () => {
     makeTransformError.resetHistory();
   };
 
-  describe('#getTransport', () => {
-    const reset = () => {
-      closeAll();
-      resetHistory();
-    };
+  const reset = () => {
+    closeAll();
+    resetHistory();
+  };
+
+  context('#getTransport', () => {
 
     context('handles socks proxy initialization', () => {
 
@@ -59,7 +60,7 @@ describe('utils/transport', () => {
           getTransport(conf);
         });
 
-        after(reset);
+        afterEach(() => reset());
 
         it('did not configure the httpsAgent', () => {
           expect(axios.create.getCall(0).args[0].httpsAgent).to.be.undefined;
@@ -75,7 +76,7 @@ describe('utils/transport', () => {
           getTransport(conf);
         });
 
-        after(reset);
+        after(() => reset());
 
         it('did initialize and configure the httpsAgent', () => {
           expect(axios.create.getCall(0).args[0].httpsAgent.proxy.host).to.equal(socksConf.host);
@@ -98,7 +99,7 @@ describe('utils/transport', () => {
           }
         });
 
-        after(reset);
+        after(() => reset());
 
         it('threw a TransportError', () => {
           expect(error).to.be.instanceof(TransportError);
@@ -126,7 +127,7 @@ describe('utils/transport', () => {
           getTransport(conf);
         });
 
-        after(reset);
+        after(() => reset());
 
         it('called axios.create with extra header', () => {
           expect(axios.create).to.have.been.calledOnceWith(
@@ -154,7 +155,7 @@ describe('utils/transport', () => {
           getTransport(conf);
         });
 
-        after(reset);
+        after(() => reset());
 
         it('only called axios.create once', () => {
           expect(axios.create).to.have.been.calledOnce;
@@ -167,8 +168,6 @@ describe('utils/transport', () => {
           getTransport(conf);
           getTransport({ ...conf, baseURL: 'https://123.testbase.url2' });
         });
-
-        after(reset);
 
         it('called axios.create twice', () => {
           expect(axios.create).to.have.been.calledTwice;
@@ -189,6 +188,8 @@ describe('utils/transport', () => {
       result = await get(path);
     });
 
+    after(() => reset());
+
     it('called axios.get with the path', () => {
       expect(axios.get).to.have.been.calledOnceWith(path);
     });
@@ -196,9 +197,10 @@ describe('utils/transport', () => {
     it('returned the expected result', () => {
       expect(result).to.equal(expected);
     });
+
   });
 
-  describe('#post', () => {
+  context('#post', () => {
     const path = 'test';
     const data = 'some data';
     const expected = 'expected';
@@ -211,6 +213,7 @@ describe('utils/transport', () => {
       result = await post(path, data);
     });
 
+    after(() => reset());
     it('called axios.post with the path and data', () => {
       expect(axios.post).to.have.been.calledOnceWith(path, data);
     });
@@ -218,5 +221,32 @@ describe('utils/transport', () => {
     it('returned the expected result', () => {
       expect(result).to.equal(expected);
     });
+  });
+
+  context('#close', () => {
+    const baseURL1 = 'https://123.testbase.url';
+    const baseURL2 = 'https://456.testbase.url';
+    const conf = { ...transportOptions };
+
+    after(() => reset());
+
+    it('instantiates a transport with baseURL1 and baseURL2 twice', () => {
+      const transport1 = getTransport({ ...conf, baseURL: baseURL1 });
+      const transport2 = getTransport({ ...conf, baseURL: baseURL2 });
+      const transport3 = getTransport({ ...conf, baseURL: baseURL1 });
+      expect(axios.create).to.have.been.calledTwice;
+
+    });
+
+    it('instantiates a transport with baseURL1 and baseURL2 thrice', () => {
+      const transport1 = getTransport({ ...conf, baseURL: baseURL1 });
+      const transport2 = getTransport({ ...conf, baseURL: baseURL2 });
+
+      close(baseURL1);
+      const transport3 = getTransport({ ...conf, baseURL: baseURL1 });
+      expect(axios.create).to.have.been.calledThrice;
+
+    });
+
   });
 });
