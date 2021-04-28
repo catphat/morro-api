@@ -117,6 +117,41 @@ describe('api/bdo_client/regionalBdoTransport', () => {
 
   });
 
+  context('getBdoTransportOptions proxy', () => {
+
+    it('config sets socksConf when USE_PROXY is set', () => {
+      const config = {
+        bdoClient: { ...bdoClientConfig.test },
+        ENV: 'test',
+      };
+      config.bdoClient.USE_PROXY = true;
+
+      const { getBdoTransportOptions } = proxyquire('../../../../src/api/bdo_client/regionalBdoTransport', {
+        '../../utils/transport': { getTransport },
+        '../../config': config,
+      });
+      const opts = getBdoTransportOptions('NA');
+      expect(opts.socksConf).to.not.be.undefined;
+
+    });
+
+    it('config does not set socksConf when USE_PROXY is set to false', () => {
+      const config = {
+        bdoClient: { ...bdoClientConfig.test },
+        ENV: 'test',
+      };
+      config.bdoClient.USE_PROXY = false;
+
+      const { getBdoTransportOptions } = proxyquire('../../../../src/api/bdo_client/regionalBdoTransport', {
+        '../../utils/transport': { getTransport },
+        '../../config': config,
+      });
+      const opts = getBdoTransportOptions('NA');
+      expect(opts.socksConf).to.be.undefined;
+
+    });
+  });
+
   context('gets valid transport wrapper by protocol', () => {
     const requestReturnOpt = (options, callback) => options.insecureHTTPParser;
 
@@ -228,4 +263,5 @@ describe('api/bdo_client/regionalBdoTransport', () => {
       expect(parseErrorResponseOrDefault(resp).resultCode).to.equal(resp.resultCode);
     });
   });
+
 });
