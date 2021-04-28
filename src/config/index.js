@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const { bdoClientConfig: bdoClient } = require('./bdoClient');
 
 const ENV = process.env.NODE_ENV || 'development';

@@ -1,12 +1,10 @@
 const { expect } = require('chai');
 const { describe, it } = require('mocha');
 
-const env = { ...process.env };
 describe('config', () => {
 
   context('should have correct dotenv values when NODE_ENV is ', () => {
     afterEach(() => {
-      process.env = env;
       purgeCache('../../../src/config');
     });
 
@@ -44,6 +42,18 @@ describe('config', () => {
       expect(config.bdoClient.BASE_URL_EU).to.equal('https://eu-trade.naeu.playblackdesert.com/Trademarket');
       expect(config.bdoClient.PROXY_URL).to.equal('127.0.0.1');
       expect(config.bdoClient.PROXY_PORT).to.equal('1110');
+      expect(config.bdoClient.USE_PROXY).to.equal(true);
+    });
+
+    it('default', () => {
+      delete process.env.NODE_ENV;
+
+      const config = require('../../../src/config');
+      expect(config.ENV).to.equal('development');
+      expect(config.bdoClient.BASE_URL_NA).to.equal('https://na-trade.naeu.playblackdesert.com/Trademarket');
+      expect(config.bdoClient.BASE_URL_EU).to.equal('https://eu-trade.naeu.playblackdesert.com/Trademarket');
+      expect(config.bdoClient.PROXY_URL).to.equal('127.0.0.1');
+      expect(config.bdoClient.PROXY_PORT).to.equal('9990');
       expect(config.bdoClient.USE_PROXY).to.equal(true);
     });
 
