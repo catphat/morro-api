@@ -1,0 +1,217 @@
+{
+  "url": "https://bdocodex.com/us/item/11609/",
+  "type": "equipment",
+  "data": {
+    "id": 11609,
+    "icon": "/items/new_icon/06_pc_equipitem/00_common/15_necklace/00011609.png",
+    "name": "Necklace of Good Deeds",
+    "name_alt": "선행의 목걸이",
+    "type": "item",
+    "category": "Equipment",
+    "description": "A necklace received for an act of kindness.\nIt can be enhanced with the same item, but if enhancement fails, both will be lost.",
+    "prices": {
+      "buy": 1250000,
+      "sell": 240000,
+      "repair": 12500
+    },
+    "grade": 2,
+    "weight": 0.25,
+    "stats": {
+      "damage": 6,
+      "defense": 0,
+      "accuracy": 16,
+      "evasion": 0,
+      "dmg_reduction": 0
+    },
+    "enhancement_stats": [
+      {
+        "stats": {
+          "damage": 6,
+          "defense": 0,
+          "accuracy": 16,
+          "evasion": 0,
+          "dmg_reduction": 0
+        },
+        "success_rate": 25,
+        "durability": 100,
+        "cron_values": {
+          "next_lvl": 11,
+          "total": 11
+        },
+        "effects": {
+          "enhancement": [],
+          "item": []
+        },
+        "required_enhancement_item": {
+          "type": "item",
+          "id": "11609",
+          "icon": "/new_icon/06_pc_equipitem/00_common/15_necklace/00011609.png",
+          "name": "Necklace of Good Deeds",
+          "shortUrl": "/us/item/11609/",
+          "amount": 1,
+          "durability_loss_on_failure": 10
+        },
+        "perfect_enhancement": {
+          "amount": 0,
+          "durability_loss_on_failure": 0
+        }
+      },
+      {
+        "stats": {
+          "damage": 8,
+          "defense": 0,
+          "accuracy": 20,
+          "evasion": 0,
+          "dmg_reduction": 0
+        },
+        "success_rate": 10,
+        "durability": 100,
+        "cron_values": {
+          "next_lvl": 33,
+          "total": 44
+        },
+        "effects": {
+          "enhancement": [],
+          "item": []
+        },
+        "required_enhancement_item": {
+          "type": "item",
+          "id": "11609",
+          "icon": "/new_icon/06_pc_equipitem/00_common/15_necklace/00011609.png",
+          "name": "Necklace of Good Deeds",
+          "shortUrl": "/us/item/11609/",
+          "amount": 1,
+          "durability_loss_on_failure": 10
+        },
+        "perfect_enhancement": {
+          "amount": 0,
+          "durability_loss_on_failure": 0
+        }
+      },
+      {
+        "stats": {
+          "damage": 10,
+          "defense": 0,
+          "accuracy": 24,
+          "evasion": 0,
+          "dmg_reduction": 0
+        },
+        "success_rate": 7.5,
+        "durability": 100,
+        "cron_values": {
+          "next_lvl": 123,
+          "total": 167
+        },
+        "effects": {
+          "enhancement": [],
+          "item": []
+        },
+        "required_enhancement_item": {
+          "type": "item",
+          "id": "11609",
+          "icon": "/new_icon/06_pc_equipitem/00_common/15_necklace/00011609.png",
+          "name": "Necklace of Good Deeds",
+          "shortUrl": "/us/item/11609/",
+          "amount": 1,
+          "durability_loss_on_failure": 10
+        },
+        "perfect_enhancement": {
+          "amount": 0,
+          "durability_loss_on_failure": 0
+        }
+      },
+      {
+        "stats": {
+          "damage": 12,
+          "defense": 0,
+          "accuracy": 28,
+          "evasion": 0,
+          "dmg_reduction": 0
+        },
+        "success_rate": 2.5,
+        "durability": 100,
+        "cron_values": {
+          "next_lvl": 393,
+          "total": 560
+        },
+        "effects": {
+          "enhancement": [],
+          "item": []
+        },
+        "required_enhancement_item": {
+          "type": "item",
+          "id": "11609",
+          "icon": "/new_icon/06_pc_equipitem/00_common/15_necklace/00011609.png",
+          "name": "Necklace of Good Deeds",
+          "shortUrl": "/us/item/11609/",
+          "amount": 1,
+          "durability_loss_on_failure": 10
+        },
+        "perfect_enhancement": {
+          "amount": 0,
+          "durability_loss_on_failure": 0
+        }
+      },
+      {
+        "stats": {
+          "damage": 14,
+          "defense": 0,
+          "accuracy": 32,
+          "evasion": 0,
+          "dmg_reduction": 0
+        },
+        "success_rate": 0.5,
+        "durability": 100,
+        "cron_values": {
+          "next_lvl": 899,
+          "total": 1459
+        },
+        "effects": {
+          "enhancement": [],
+          "item": []
+        },
+        "required_enhancement_item": {
+          "type": "item",
+          "id": "11609",
+          "icon": "/new_icon/06_pc_equipitem/00_common/15_necklace/00011609.png",
+          "name": "Necklace of Good Deeds",
+          "shortUrl": "/us/item/11609/",
+          "amount": 1,
+          "durability_loss_on_failure": 10
+        },
+        "perfect_enhancement": {
+          "amount": 0,
+          "durability_loss_on_failure": 0
+        }
+      },
+      {
+        "stats": {
+          "damage": 16,
+          "defense": 0,
+          "accuracy": 36,
+          "evasion": 0,
+          "dmg_reduction": 0
+        },
+        "success_rate": 0,
+        "durability": 100,
+        "cron_values": {
+          "next_lvl": 0,
+          "total": 1459
+        },
+        "effects": {
+          "enhancement": [],
+          "item": []
+        }
+      }
+    ],
+    "caphras_stats": {
+      "18": [],
+      "19": [],
+      "20": []
+    },
+    "item_effects": [],
+    "set_effects": {},
+    "exclusive_to": [],
+    "fairy_exp": 0
+  }
+}

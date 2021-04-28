@@ -1,9 +1,13 @@
 const { Item } = require('ishqbb-calpheonjs');
+const { validateFields } = require('../../validation');
 
-const getItemInfo = async (id) => {
-  const item = await Item(id);
+const validation = {
+  itemId: ['isRequired', 'isPositiveNumber'],
+};
 
-  return item;
+const getItemInfo = async (itemId) => {
+  validateFields({ itemId }, validation);
+  return Item(itemId);
 };
 
 module.exports = { getItemInfo };
