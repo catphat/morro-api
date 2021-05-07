@@ -68,7 +68,7 @@ describe('api/bdo_client/regionalBdoTransport', () => {
         'Content-Type': 'application/json',
         'User-Agent': 'BlackDesert',
       },
-      timeout: 2500,
+      timeout: 10000,
       retries: 3,
     };
 
@@ -281,6 +281,17 @@ describe('api/bdo_client/regionalBdoTransport', () => {
       };
 
       expect(parseErrorResponseOrDefault(resp).resultCode).to.equal(resp.resultCode);
+    });
+
+    it('handles 0/0 resultCode/resultMsg correctly', () => {
+      const resp = {
+        resultCode: 0,
+        resultMsg: '0',
+      };
+
+      const errorResp = parseErrorResponseOrDefault(resp);
+      expect(errorResp.isValid).to.equal(false);
+
     });
   });
 

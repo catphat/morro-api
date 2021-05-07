@@ -60,11 +60,17 @@ const getBdoTransportOptions = (region) => {
 };
 
 const parseErrorResponseOrDefault = (resp) => {
-  if (resp.resultCode !== 0) {
-    const errorResp = {
-      isValid: false,
-    };
+  let isValid = true;
+  if (resp.resultCode === 0 && resp.resultMsg === '0') {
+    isValid = false;
+  } else if (resp.resultCode === undefined || resp.resultMsg === undefined) {
+    isValid = false;
+  }
 
+  if (!isValid) {
+    const errorResp = {
+      isValid,
+    };
     if (resp.resultMsg !== undefined) {
       errorResp.errorMsg = resp.resultMsg;
     } else {
@@ -77,6 +83,7 @@ const parseErrorResponseOrDefault = (resp) => {
 
     return errorResp;
   }
+
   return null;
 };
 
