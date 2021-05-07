@@ -1,5 +1,5 @@
 const transportOptions = {
-  timeout: 2500,
+  timeout: 10000,
 };
 
 const defaultHeaders = {
