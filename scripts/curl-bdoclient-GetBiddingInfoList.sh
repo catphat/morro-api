@@ -7,9 +7,10 @@
 # subKey  - REQUIRED
 
 MAIN_KEY=$1
+SUB_KEY=$2
 
-if [[ -z "$MAIN_KEY" ]]; then
-  echo "item id (mainKey) must be provided."
+if [[ -z "$MAIN_KEY" || -z "$SUB_KEY" ]]; then
+  echo "usage: $0 <main-key> <sub-key>"
   exit 1
 fi
 
@@ -20,7 +21,7 @@ curl --socks5 "127.0.0.1:7770" "https://na-trade.naeu.playblackdesert.com/Tradem
   -d "{
   'keyType': 0,
   'mainKey':$MAIN_KEY,
-  'subKey': 0
+  'subKey': $SUB_KEY
 }"
 
 # Trace of Despair
