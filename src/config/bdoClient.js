@@ -12,7 +12,7 @@ const bdoClientConfig = {
     BASE_URL_NA: process.env.DEV_BDO_CLIENT_BASE_URL_NA || 'https://na-trade.naeu.playblackdesert.com/Trademarket',
     BASE_URL_EU: process.env.DEV_BDO_CLIENT_BASE_URL_EU || 'https://eu-trade.naeu.playblackdesert.com/Trademarket',
     PROXY_URL: process.env.DEV_BDO_CLIENT_PROXY_URL || '127.0.0.1',
-    PROXY_PORT: process.env.DEV_BDO_CLIENT_PROXY_PORT || '9990',
+    PROXY_PORT: process.env.DEV_BDO_CLIENT_PROXY_PORT || '7770',
     USE_PROXY: process.env.DEV_BDO_CLIENT_USE_PROXY || true,
     REQUEST_DELAY: 250,
     REQUEST_RETRIES: 3,
