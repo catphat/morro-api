@@ -5,18 +5,24 @@ const { getWorldMarketList } = require('../src/api/bdo_client/getWorldMarketList
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-const dumpOutfileFile = 'data-bdo-market-ItemIdsAndMainCategoryIds.json';
-const mainCategoryIdsPath = path.resolve('data-bdo-market-MainCategoryIds.json');
+const getWorldMarketListNA = getWorldMarketList('NA');
+const getWorldMarketListEU = getWorldMarketList('EU');
+const mainCategoryIdsPath = path.resolve('./dump/market-MainCategoryIdsAndNames.json');
 const mainCategoryIdsFile = fs.readFileSync(mainCategoryIdsPath);
 const mainCategoryIds = JSON.parse(mainCategoryIdsFile.toString());
 
-const getByMainCategory = async (mainCategory, subCategory) => {
+const getByMainCategory = async (region, mainCategory, subCategory) => {
   const payload = {
     mainCategory,
     subCategory,
     keyType: 0,
   };
-  const result = await getWorldMarketList('NA')(payload);
+  let result;
+  if (region === 'NA') {
+    result = await getWorldMarketListNA(payload);
+  } else if (region === 'EU') {
+    result = await getWorldMarketListEU(payload);
+  }
   if (result.resultMsg !== undefined && result.resultMsg === '0') {
     return 0;
   }
@@ -27,13 +33,13 @@ const getByMainCategory = async (mainCategory, subCategory) => {
   return result;
 };
 
-const listAll = async () => {
+const listAll = async (region) => {
   const uniqueIdsAndCategory = [];
 
   for (const x of mainCategoryIds) {
     await delay(200);
     const mainCategoryId = Number.parseInt(x.id, 10);
-    const result = await getByMainCategory(mainCategoryId, 0);
+    const result = await getByMainCategory(region, mainCategoryId, 0);
     result.itemList.forEach((item) => {
       console.log(`${mainCategoryId}-${item.itemId}`);
       uniqueIdsAndCategory.push({
@@ -42,8 +48,8 @@ const listAll = async () => {
       });
     });
   }
-
+  const dumpOutfileFile = `data-bdo-market-${region}-ItemIdsAndMainCategoryIds.json`;
   fs.writeFileSync(dumpOutfileFile, JSON.stringify(uniqueIdsAndCategory));
 };
 
-listAll().then(() => console.log('finished'));
+listAll('NA').then(() => console.log('finished'));
