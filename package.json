@@ -40,7 +40,7 @@
     "serve-favicon": "^2.5.0",
     "slonik": "^23.6.4",
     "socks-proxy-agent": "^5.0.0",
-    "twitch": "^4.2.4",
+    "twitch": "^4.5.5",
     "winston": "^3.3.3"
   },
   "devDependencies": {
