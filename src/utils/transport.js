@@ -1,6 +1,7 @@
 const axios = require('axios');
 const SocksProxyAgent = require('socks-proxy-agent');
 
+const rateLimit = require('axios-rate-limit');
 const transformResponse = require('./transformResponse');
 const makeTransformError = require('./makeTransformError');
 const TransportError = require('../errors/TransportError');
@@ -40,7 +41,7 @@ const makeTransport = (options) => {
       config.httpsAgent = new SocksProxyAgent(`socks5://${socksConf.host}:${socksConf.port}`);
     }
 
-    transports[baseURL] = axios.create({...config});
+    transports[baseURL] = rateLimit(axios.create({ ...config }), { maxRequests: 3, perMilliseconds: 200 });
 
     transports[baseURL].interceptors
       .response.use(transformResponse, makeTransformError(transports[baseURL]));
