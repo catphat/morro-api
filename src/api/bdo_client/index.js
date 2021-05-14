@@ -1,8 +1,8 @@
-const GetMarketPriceInfo = require('./getMarketPriceInfo');
-const GetBiddingInfoList = require('./getBiddingInfoList');
-const GetWorldMarketList = require('./getWorldMarketList');
-const GetWorldMarketSubList = require('./getWorldMarketSubList');
+const { getMarketPriceInfo } = require('./getMarketPriceInfo');
+const { getBiddingInfoList } = require('./getBiddingInfoList');
+const { getWorldMarketList } = require('./getWorldMarketList');
+const { getWorldMarketSubList } = require('./getWorldMarketSubList');
 
 module.exports = {
-  GetMarketPriceInfo, GetBiddingInfoList, GetWorldMarketList, GetWorldMarketSubList,
+  getMarketPriceInfo, getBiddingInfoList, getWorldMarketList, getWorldMarketSubList,
 };
