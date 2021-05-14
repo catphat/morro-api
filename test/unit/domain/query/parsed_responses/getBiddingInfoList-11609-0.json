@@ -1,0 +1,51 @@
+{
+  "isValid": true,
+  "resultCode": 0,
+  "biddingList": [
+    {
+      "price": 7650000,
+      "sellOrders": 2,
+      "buyOrders": 0
+    },
+    {
+      "price": 7600000,
+      "sellOrders": 1,
+      "buyOrders": 0
+    },
+    {
+      "price": 7750000,
+      "sellOrders": 1,
+      "buyOrders": 0
+    },
+    {
+      "price": 7200000,
+      "sellOrders": 1,
+      "buyOrders": 0
+    },
+    {
+      "price": 7800000,
+      "sellOrders": 1,
+      "buyOrders": 0
+    },
+    {
+      "price": 7700000,
+      "sellOrders": 1,
+      "buyOrders": 0
+    },
+    {
+      "price": 7250000,
+      "sellOrders": 2,
+      "buyOrders": 0
+    },
+    {
+      "price": 7300000,
+      "sellOrders": 0,
+      "buyOrders": 0
+    },
+    {
+      "price": 500000,
+      "sellOrders": 0,
+      "buyOrders": 1
+    }
+  ]
+}

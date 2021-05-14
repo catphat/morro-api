@@ -1,0 +1,16 @@
+{
+  "isValid": true,
+  "resultCode": 0,
+  "biddingList": [
+    {
+      "price": 29100000,
+      "sellOrders": 2,
+      "buyOrders": 0
+    },
+    {
+      "price": 27100000,
+      "sellOrders": 0,
+      "buyOrders": 0
+    }
+  ]
+}
