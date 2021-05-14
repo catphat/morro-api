@@ -18,6 +18,9 @@ describe('utils/transport', () => {
     response: {
       use: spy(),
     },
+    request: {
+      use: spy(),
+    },
   };
   axios.create = stub().returns(axios);
 
@@ -140,10 +143,10 @@ describe('utils/transport', () => {
         });
 
         it('called axios.interceptors.response.use', () => {
-          expect(axios.interceptors.response.use).to.have.been.calledOnceWith(
+          expect(axios.interceptors.response.use.getCall(1).calledWith(
             transformResponse,
             transformError,
-          );
+          )).to.be.true;
         });
       });
 

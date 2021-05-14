@@ -20,6 +20,9 @@ describe('api/bdo_client/regionalBdoTransport', () => {
     response: {
       use: spy(),
     },
+    request: {
+      use: spy(),
+    },
   };
   axios.create = stub().returns(axios);
 
