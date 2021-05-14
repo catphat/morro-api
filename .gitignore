@@ -113,3 +113,6 @@ src/custom_modules/calpheonjs/report.**.**.**.json
 
 # Windows misc.
 .DS_Store
+
+# Jetbrains Idea
+.idea
