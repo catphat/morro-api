@@ -7,7 +7,7 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const getWorldMarketListNA = getWorldMarketList('NA');
 const getWorldMarketListEU = getWorldMarketList('EU');
-const mainCategoryIdsPath = path.resolve('./dump/market-MainCategoryIdsAndNames.json');
+const mainCategoryIdsPath = path.resolve('./dump/db_bdo_main_category_names.json');
 const mainCategoryIdsFile = fs.readFileSync(mainCategoryIdsPath);
 const mainCategoryIds = JSON.parse(mainCategoryIdsFile.toString());
 
