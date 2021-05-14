@@ -5,7 +5,7 @@ const bdoClientConfig = {
     PROXY_URL: process.env.TEST_BDO_CLIENT_PROXY_URL || '127.0.0.1',
     PROXY_PORT: process.env.TEST_BDO_CLIENT_PROXY_PORT || '7770',
     USE_PROXY: process.env.TEST_BDO_CLIENT_USE_PROXY || true,
-    REQUEST_DELAY: 250,
+    REQUEST_DELAY: 150,
     REQUEST_RETRIES: 3,
   },
   development: {
@@ -14,7 +14,7 @@ const bdoClientConfig = {
     PROXY_URL: process.env.DEV_BDO_CLIENT_PROXY_URL || '127.0.0.1',
     PROXY_PORT: process.env.DEV_BDO_CLIENT_PROXY_PORT || '7770',
     USE_PROXY: process.env.DEV_BDO_CLIENT_USE_PROXY || true,
-    REQUEST_DELAY: 250,
+    REQUEST_DELAY: 150,
     REQUEST_RETRIES: 3,
   },
   production: {
@@ -23,7 +23,7 @@ const bdoClientConfig = {
     PROXY_URL: process.env.BDO_CLIENT_PROXY_URL || '127.0.0.1',
     PROXY_PORT: process.env.BDO_CLIENT_PROXY_PORT || '1110',
     USE_PROXY: process.env.BDO_CLIENT_USE_PROXY || true,
-    REQUEST_DELAY: 250,
+    REQUEST_DELAY: 150,
     REQUEST_RETRIES: 3,
   },
 };
