@@ -20,19 +20,21 @@ docker-compose up -d
 sleep 5
 
 PGPASSWORD="$DB_PASSWORD" psql -U "$DB_USERNAME" -h $DB_HOST -d "mapi_db_dev" -a -f '../src/db/sql/v01_deploy_bdo.sql'
+PGPASSWORD="$DB_PASSWORD" psql -U "$DB_USERNAME" -h $DB_HOST -d "mapi_db_dev" -a -f '../src/db/sql/v01_seed_bdo.sql'
 PGPASSWORD="$DB_PASSWORD" psql -U "$DB_USERNAME" -h $DB_HOST -d "mapi_db_dev" -c "\copy bdo.item(id, name) FROM 'seed/bdo_item_table.csv' CSV;"
+PGPASSWORD="$DB_PASSWORD" psql -U "$DB_USERNAME" -h $DB_HOST -d "mapi_db_dev" -c "\copy bdo.region(id, region_code) FROM 'seed/bdo_region_table.csv' CSV;"
 PGPASSWORD="$DB_PASSWORD" psql -U "$DB_USERNAME" -h $DB_HOST -d "mapi_db_dev" -c "\copy bdo.market_category(id, name) FROM 'seed/bdo_market_category_table.csv' CSV;"
 
-IMPFILES=("../../MAPI_DEV_DB_DATA/v1/subListData8/*.csv")
-for i in ${IMPFILES[@]}
-    do
-
+IMPFILES=("../../MAPI_DEV_DB_DATA/v1c/*.csv")
+for i in ${IMPFILES[@]};
+do
       CSV=$(realpath "$i")
-      if [[ "$i" == *"market_items_table"* ]];then
-          PGPASSWORD="$DB_PASSWORD" psql -U "$DB_USERNAME" -h "$DB_HOST" -d "mapi_db_dev" -c "\copy bdo.market_items_ts(observed_time, item_id, region_id, enhancement_range_min, base_price, current_stock, total_trades, last_sale_time, last_sale_price)  FROM '$CSV' DELIMITER '|' CSV;"
+      echo "${CSV}"
+      if [[ "$i" == *"-items.csv" ]];then
+          PGPASSWORD="$DB_PASSWORD" psql -U "$DB_USERNAME" -h "$DB_HOST" -d "mapi_db_dev" -c "\copy csv_items_tmp FROM '$CSV' DELIMITER '|' CSV HEADER NULL 'NULL';"
       fi
-      if [[ "$i" == *"market_orders_table"* ]];then
-          PGPASSWORD="$DB_PASSWORD" psql -U "$DB_USERNAME" -h "$DB_HOST" -d "mapi_db_dev" -c "\copy bdo.market_orders_ts(observed_time, item_id, region_id, enhancement_range_min, is_bid, price, size)  FROM '$CSV' DELIMITER '|' CSV;"
+ if [[ "$i" == *"-orders.csv" ]];then
+          PGPASSWORD="$DB_PASSWORD" psql -U "$DB_USERNAME" -h "$DB_HOST" -d "mapi_db_dev" -c "\copy csv_orders_tmp FROM '$CSV' DELIMITER '|' CSV HEADER NULL 'NULL';"
       fi
-    done
+done
 
