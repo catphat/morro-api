@@ -27,39 +27,38 @@ FROM tmp_csv_items;
 
 SELECT poll_timestamp, region_fk, category_id, item_id, enhancement_level_min,
        (bids -> 0 ->> 'price')  as bid_price_1,
-       (bids -> 0 ->> 'amount') as bid_amount_1,
+       (bids -> 0 ->> 'size') as bid_size_1,
 
        (bids -> 1 ->> 'price')  as bid_price_2,
-       (bids -> 1 ->> 'amount') as bid_amount_2,
+       (bids -> 1 ->> 'size') as bid_size_2,
 
        (bids -> 2 ->> 'price')  as bid_price_3,
-       (bids -> 2 ->> 'amount') as bid_amount_3,
+       (bids -> 2 ->> 'size') as bid_size_3,
 
        (bids -> 3 ->> 'price')  as bid_price_4,
-       (bids -> 3 ->> 'amount') as bid_amount_4,
+       (bids -> 3 ->> 'size') as bid_size_4,
 
        (bids -> 4 ->> 'price')  as bid_price_5,
-       (bids -> 4 ->> 'amount') as bid_amount_5,
+       (bids -> 4 ->> 'size') as bid_size_5,
 
 
 
        (asks -> 0 ->> 'price')  as ask_price_1,
-       (asks -> 0 ->> 'amount') as ask_amount_1,
+       (asks -> 0 ->> 'size') as ask_size_1,
 
        (asks -> 1 ->> 'price')  as ask_price_2,
-       (asks -> 1 ->> 'amount') as ask_amount_2,
+       (asks -> 1 ->> 'size') as ask_size_2,
 
        (asks -> 2 ->> 'price')  as ask_price_3,
-       (asks -> 2 ->> 'amount') as ask_amount_3,
+       (asks -> 2 ->> 'size') as ask_size_3,
 
        (asks -> 3 ->> 'price')  as ask_price_4,
-       (asks -> 3 ->> 'amount') as ask_amount_4,
+       (asks -> 3 ->> 'size') as ask_size_4,
 
        (asks -> 4 ->> 'price')  as ask_price_5,
-       (asks -> 4 ->> 'amount') as ask_amount_5,
+       (asks -> 4 ->> 'size') as ask_size_5,
 
-       (asks -> 5 ->> 'price')  as ask_price_6,
-       (asks -> 5 ->> 'amount') as ask_amount_6
+
 
 
 FROM (
@@ -69,10 +68,10 @@ FROM (
                 item_id,
                 enhancement_level_min,
 
-                (SELECT json_agg(json_build_object('price', price, 'amount', amount, 'order_type', order_type)
+                (SELECT json_agg(json_build_object('price', price, 'size', amount, 'order_type', order_type)
                         ORDER BY price DESC) FILTER (WHERE order_type = 'b'))              as bids,
 
-                (SELECT json_agg(json_build_object('price', price, 'amount', amount, 'order_type', order_type)
+                (SELECT json_agg(json_build_object('price', price, 'size', amount, 'order_type', order_type)
                         ORDER BY price) FILTER (WHERE order_type = 'a'))                   as asks
          FROM tmp_csv_orders
          GROUP BY poll_timestamp, region_fk, category_id, item_id, enhancement_level_min
