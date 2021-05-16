@@ -1,6 +1,6 @@
 BEGIN;
 
-CREATE EXTENSION IF NOT EXISTS timescaledb;
+CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 
 CREATE SCHEMA bdo;
 
@@ -28,7 +28,7 @@ CREATE TABLE bdo.market_item_summary_ts
     poll_timestamp     TIMESTAMP WITH TIME ZONE                     NOT NULL,
     region_fk          SMALLINT REFERENCES bdo.region (id)          NOT NULL,
     market_category_fk SMALLINT REFERENCES bdo.market_category (id) NOT NULL,
-    item_fk            SMALLINT REFERENCES bdo.item (id)            NOT NULL,
+    item_fk            INTEGER REFERENCES bdo.item (id)            NOT NULL,
     enhancement_level  SMALLINT                                     NOT NULL,
     PRIMARY KEY (poll_timestamp, region_fk, market_category_fk, item_fk, enhancement_level),
 
@@ -39,12 +39,13 @@ CREATE TABLE bdo.market_item_summary_ts
     last_sale_price    BIGINT                                       NULL
 );
 
+ALTER TABLE bdo.market_item_summary_ts SET (timescaledb.compress, timescaledb.compress_segmentby = 'region_fk, market_category_fk, item_fk, enhancement_level');
 CREATE TABLE bdo.order_book_snapshot_ts
 (
     poll_timestamp       TIMESTAMP WITH TIME ZONE                     NOT NULL,
     region_fk            SMALLINT REFERENCES bdo.region (id)          NOT NULL,
     market_category_fk   SMALLINT REFERENCES bdo.market_category (id) NOT NULL,
-    item_fk              SMALLINT REFERENCES bdo.item (id)            NOT NULL,
+    item_fk              INTEGER REFERENCES bdo.item (id)            NOT NULL,
     enhancement_level    SMALLINT                                     NOT NULL,
     PRIMARY KEY (poll_timestamp, region_fk, market_category_fk, item_fk, enhancement_level),
 
@@ -53,44 +54,28 @@ CREATE TABLE bdo.order_book_snapshot_ts
     bid_price_3          INTEGER                                      NULL,
     bid_price_4          INTEGER                                      NULL,
     bid_price_5          INTEGER                                      NULL,
-    bid_price_6          INTEGER                                      NULL,
-    bid_price_7          INTEGER                                      NULL,
-    bid_price_8          INTEGER                                      NULL,
-    bid_price_9          INTEGER                                      NULL,
-    bid_price_10         INTEGER                                      NULL,
+
 
     bid_size_1           INTEGER                                      NULL,
     bid_size_2           INTEGER                                      NULL,
     bid_size_3           INTEGER                                      NULL,
     bid_size_4           INTEGER                                      NULL,
     bid_size_5           INTEGER                                      NULL,
-    bid_size_6           INTEGER                                      NULL,
-    bid_size_7           INTEGER                                      NULL,
-    bid_size_8           INTEGER                                      NULL,
-    bid_size_9           INTEGER                                      NULL,
-    bid_size_10          INTEGER                                      NULL,
+
 
     ask_price_1          INTEGER                                      NULL,
     ask_price_2          INTEGER                                      NULL,
     ask_price_3          INTEGER                                      NULL,
     ask_price_4          INTEGER                                      NULL,
     ask_price_5          INTEGER                                      NULL,
-    ask_price_6          INTEGER                                      NULL,
-    ask_price_7          INTEGER                                      NULL,
-    ask_price_8          INTEGER                                      NULL,
-    ask_price_9          INTEGER                                      NULL,
-    ask_price_10         INTEGER                                      NULL,
+
 
     ask_size_1           INTEGER                                      NULL,
     ask_size_2           INTEGER                                      NULL,
     ask_size_3           INTEGER                                      NULL,
     ask_size_4           INTEGER                                      NULL,
     ask_size_5           INTEGER                                      NULL,
-    ask_size_6           INTEGER                                      NULL,
-    ask_size_7           INTEGER                                      NULL,
-    ask_size_8           INTEGER                                      NULL,
-    ask_size_9           INTEGER                                      NULL,
-    ask_size_10          INTEGER                                      NULL,
+
 
     spread               INTEGER                                      NULL,
     mid_price            INTEGER                                      NULL,
