@@ -241,11 +241,12 @@ const convertV1bJSONFile2CSV = (file) => {
 
 const getErrorFileLogRow = (file, error) => `${file}|${error}\n`;
 
-const convertV1aOrV1bType = (dir, version, convertFunc, fileExtType) => {
+const convertV1abType = (dir, version, convertFunc, fileExtType) => {
   const outputCSVDir = `${dir}/../`;
   const outputOrdersCSVFile = `${outputCSVDir}/${version}-${path.basename(dir)}-orders.csv`;
   const outputItemsCSVFile = `${outputCSVDir}/${version}-${path.basename(dir)}-items.csv`;
   const outputErrorLog = `${outputCSVDir}/${version}-${path.basename(dir)}-errors.csv`;
+  const outputLastCompleted = `${outputCSVDir}/${version}-${path.basename(dir)}-completed.csv`;
 
   const errors = [];
 
@@ -279,6 +280,7 @@ const convertV1aOrV1bType = (dir, version, convertFunc, fileExtType) => {
 
     completedFileCount += 1;
 
+    fs.writeFileSync(outputLastCompleted, `${completedFileCount}`)
     console.clear();
     console.log(`Current File ${x}`);
     console.log(`Remaining: ${fileCount - completedFileCount} | Progress ${((completedFileCount / fileCount)).toLocaleString(undefined, { style: 'percent', minimumFractionDigits: 2 })}`);
@@ -412,14 +414,13 @@ const convertV1cTypeAsync = async (dir) => {
   }
 };
 
-// convertAllOfType('../../MAPI_DEV_DB_DATA/v1b/subListData2', 'v1b', convertV1bJSONFile2CSV, '.json');
-// convertAllOfType('../../MAPI_DEV_DB_DATA/v1b/subListData3a', 'v1b', convertV1bJSONFile2CSV, '.json');
-// convertAllOfType('../../MAPI_DEV_DB_DATA/v1b/subListData3b', 'v1b', convertV1bJSONFile2CSV, '.json');
-// convertAllOfType('../../MAPI_DEV_DB_DATA/v1b/subListData4', 'v1b', convertV1bJSONFile2CSV, '.json');
-// convertAllOfType('../../MAPI_DEV_DB_DATA/v1b/subListData5', 'v1b', convertV1bJSONFile2CSV, '.json');
-// convertAllOfType('../../MAPI_DEV_DB_DATA/v1b/subListData6', 'v1b', convertV1bJSONFile2CSV, '.json');
-// convertAllOfType('../../MAPI_DEV_DB_DATA/v1b/subListData7', 'v1b', convertV1bJSONFile2CSV, '.json');
+//convertV1abType('../../MAPI_DEV_DB_DATA/v1b/subListData2', 'v1b', convertV1bJSONFile2CSV, '.json');
+//convertV1abType('../../MAPI_DEV_DB_DATA/v1b/subListData3a', 'v1b', convertV1bJSONFile2CSV, '.json');
+//convertV1abType('../../MAPI_DEV_DB_DATA/v1b/subListData3b', 'v1b', convertV1bJSONFile2CSV, '.json');
+//convertV1abType('../../MAPI_DEV_DB_DATA/v1b/subListData4', 'v1b', convertV1bJSONFile2CSV, '.json');
+//convertV1abType('../../MAPI_DEV_DB_DATA/v1b/subListData5', 'v1b', convertV1bJSONFile2CSV, '.json');
+//convertV1abType('../../MAPI_DEV_DB_DATA/v1b/subListData6', 'v1b', convertV1bJSONFile2CSV, '.json');
+convertV1abType('../../MAPI_DEV_DB_DATA/v1b/subListData7', 'v1b', convertV1bJSONFile2CSV, '.json');
 
-// convertAllOfType('../../MAPI_DEV_DB_DATA/v1c/subListData7', 'v1c', convertV1cCSVFile2CSVAsync, '.csv');
-//convertV1cTypeAsync('../../MAPI_DEV_DB_DATA/v1c/subListData7');
- convertV1cTypeAsync('../../MAPI_DEV_DB_DATA/v1c/subListData8');
+// convertV1cTypeAsync('../../MAPI_DEV_DB_DATA/v1c/subListData7');
+//  convertV1cTypeAsync('../../MAPI_DEV_DB_DATA/v1c/subListData8');
