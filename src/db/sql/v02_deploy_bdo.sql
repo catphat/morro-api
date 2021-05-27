@@ -2,40 +2,39 @@ BEGIN;
 
 CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;
 
-CREATE SCHEMA bdo;
+CREATE SCHEMA bdov2;
 
-CREATE TABLE bdo.item
+CREATE TABLE bdov2.item
 (
     id   INTEGER PRIMARY KEY,
     name TEXT NOT NULL
 );
 
-CREATE TABLE bdo.market_category
+CREATE TABLE bdov2.market_category
 (
     id   SMALLINT PRIMARY KEY,
     name TEXT NOT NULL UNIQUE
 );
 
-CREATE TABLE bdo.region
+CREATE TABLE bdov2.region
 (
     id          SMALLINT PRIMARY KEY,
     region_code TEXT NOT NULL UNIQUE
 );
 
-CREATE TABLE bdo.regional_market_item (
+CREATE TABLE bdov2.regional_market_item (
     id SERIAL PRIMARY KEY,
-    region_id SMALLINT references bdo.region(id),
-    category SMALLINT references bdo.market_category(id),
-    item_id INTEGER references bdo.item(id),
+    region_id SMALLINT references bdov2.region(id),
+    category_id SMALLINT references bdov2.market_category(id),
+    item_id INTEGER references bdov2.item(id),
     enhancement_level SMALLINT NOT NULL,
-    unique (region_id, category, item_id, enhancement_level)
+    unique (region_id, category_id, item_id, enhancement_level)
 );
 
-/* https://www.kaiko.com/pages/cryptocurrency-data-types#orderbooks */
-CREATE TABLE bdo.market_item_summary_ts
+CREATE TABLE bdov2.market_item_summary_ts
 (
     time     TIMESTAMP WITH TIME ZONE                     NOT NULL,
-    market_item_id INTEGER references bdo.regional_market_item(id),
+    market_item_id INTEGER references bdov2.regional_market_item(id),
 
     PRIMARY KEY (time, market_item_id),
 
@@ -47,10 +46,10 @@ CREATE TABLE bdo.market_item_summary_ts
 );
 
 
-CREATE TABLE bdo.order_book_snapshot_ts
+CREATE TABLE bdov2.order_book_snapshot_ts
 (
     time          TIMESTAMP WITH TIME ZONE                     NOT NULL,
-    market_item_id INTEGER references bdo.regional_market_item(id),
+    market_item_id INTEGER references bdov2.regional_market_item(id),
 
     PRIMARY KEY (time, market_item_id),
 
@@ -104,11 +103,11 @@ CREATE TABLE bdo.order_book_snapshot_ts
     total_ask_quote_size_10 BIGINT                                       NOT NULL
 );
 
-SELECT create_hypertable('bdo.market_item_summary_ts', 'time');
-SELECT create_hypertable('bdo.order_book_snapshot_ts', 'time');
+SELECT create_hypertable('bdov2.market_item_summary_ts', 'time');
+SELECT create_hypertable('bdov2.order_book_snapshot_ts', 'time');
 
-ALTER TABLE bdo.market_item_summary_ts
-    SET (timescaledb.compress,
-         timescaledb.compress_segmentby = 'market_item_id');
+--ALTER TABLE bdov2.market_item_summary_ts
+--    SET (timescaledb.compress,
+--         timescaledb.compress_segmentby = 'market_item_id');
 
 COMMIT;
