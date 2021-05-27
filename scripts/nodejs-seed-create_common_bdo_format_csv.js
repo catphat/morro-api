@@ -391,16 +391,15 @@ const convertV1cCSVFile2CSVAsync = async (file, outputItemsCsvFile, outputOrders
   });
 });
 
-const convertV1cTypeAsync = async (dir) => {
-  const outputCSVDir = `${dir}/../`;
+const convertV1cTypeAsync = async (dir, outDir) => {
 
   const files = fs.readdirSync(dir).filter((file) => file.includes('.csv'));
   const fileCount = files.length;
 
   const version = 'v1c';
-  const outputOrdersCSVFile = `${outputCSVDir}/${version}-${path.basename(dir)}-orders.csv`;
-  const outputItemsCSVFile = `${outputCSVDir}/${version}-${path.basename(dir)}-items.csv`;
-  const outputErrorLog = `${outputCSVDir}/${version}-${path.basename(dir)}-errors.csv`;
+  const outputOrdersCSVFile = `${outDir}/${version}-${path.basename(dir)}-orders.csv`;
+  const outputItemsCSVFile = `${outDir}/${version}-${path.basename(dir)}-items.csv`;
+  const outputErrorLog = `${outDir}/${version}-${path.basename(dir)}-errors.csv`;
 
   fs.writeFileSync(outputOrdersCSVFile, ordersCSVHeader);
   fs.writeFileSync(outputItemsCSVFile, itemsCSVHeader);
@@ -420,7 +419,8 @@ const convertV1cTypeAsync = async (dir) => {
 //convertV1abType('../../MAPI_DEV_DB_DATA/v1b/subListData4', 'v1b', convertV1bJSONFile2CSV, '.json');
 //convertV1abType('../../MAPI_DEV_DB_DATA/v1b/subListData5', 'v1b', convertV1bJSONFile2CSV, '.json');
 //convertV1abType('../../MAPI_DEV_DB_DATA/v1b/subListData6', 'v1b', convertV1bJSONFile2CSV, '.json');
-convertV1abType('../../MAPI_DEV_DB_DATA/v1b/subListData7', 'v1b', convertV1bJSONFile2CSV, '.json');
+//convertV1abType('../../MAPI_DEV_DB_DATA/v1b/subListData7', 'v1b', convertV1bJSONFile2CSV, '.json');
 
 // convertV1cTypeAsync('../../MAPI_DEV_DB_DATA/v1c/subListData7');
-//  convertV1cTypeAsync('../../MAPI_DEV_DB_DATA/v1c/subListData8');
+
+convertV1cTypeAsync('E:\\DEV\\NODE\\MAPI_DEV_DB_DATA\\v1\\subListData9', 'E:\\DEV\\NODE\\MAPI_DEV_DB_DATA\\v1\\subListData9\\subListData9-common');
