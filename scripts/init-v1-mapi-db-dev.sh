@@ -10,7 +10,7 @@ PGPASSWORD="$DB_PASSWORD" psql -U "$DB_USERNAME" -h $DB_HOST -d "mapi_db_dev" -c
 PGPASSWORD="$DB_PASSWORD" psql -U "$DB_USERNAME" -h $DB_HOST -d "mapi_db_dev" -c "\copy bdo.market_category(id, name) FROM 'seed/bdo_market_category_table.csv' CSV;"
 
 IMPFILES=("$DB_SEED_DIR/*.csv")
-for i in "${IMPFILES[@]}";
+for i in ${IMPFILES[@]};
 do
       CSV=$(realpath "$i")
       echo "${CSV}"
