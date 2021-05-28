@@ -1,23 +1,23 @@
--- Deploy morro-api:bdov2_item_data to pg
+-- Deploy morro-api:bdo_item_data to pg
 
 BEGIN;
-INSERT INTO bdov2.item(id, name)
+INSERT INTO bdo.item(id, name)
 SELECT i.item_id, '__MISSING NAME__'
 FROM (SELECT item_id
       FROM tmp_csv_items
-      WHERE NOT EXISTS(SELECT bdov2.item.id FROM bdov2.item WHERE tmp_csv_items.item_id = bdov2.item.id)
+      WHERE NOT EXISTS(SELECT bdo.item.id FROM bdo.item WHERE tmp_csv_items.item_id = bdo.item.id)
       GROUP BY item_id) i;
 
-INSERT INTO bdov2.regional_market_item (region_id, category_id, item_id, enhancement_level)
-SELECT (SELECT id from bdov2.region WHERE region_code = tmp_i.region_code) as region_id,
+INSERT INTO bdo.regional_market_item (region_id, category_id, item_id, enhancement_level)
+SELECT (SELECT id from bdo.region WHERE region_code = tmp_i.region_code) as region_id,
        category_id,
        item_id,
        enhancement_level_min                                             as enhancement_level
 FROM tmp_csv_items as tmp_i
 GROUP BY region_id, category_id, item_id, enhancement_level;
 
-INSERT INTO bdov2.regional_market_item (region_id, category_id, item_id, enhancement_level)
-SELECT (SELECT id from bdov2.region WHERE region_code = tmp_i.region_code) as region_id,
+INSERT INTO bdo.regional_market_item (region_id, category_id, item_id, enhancement_level)
+SELECT (SELECT id from bdo.region WHERE region_code = tmp_i.region_code) as region_id,
        category_id,
        item_id,
        enhancement_level_min                                             as enhancement_level
@@ -25,12 +25,12 @@ FROM tmp_csv_orders as tmp_i
 GROUP BY region_id, category_id, item_id, enhancement_level
 ON conflict (region_id, category_id, item_id,enhancement_level) do nothing;
 
-INSERT INTO bdov2.market_item_summary_ts (time, market_item_id, base_price, current_stock, total_trades,
+INSERT INTO bdo.market_item_summary_ts (time, market_item_id, base_price, current_stock, total_trades,
                                            last_sale_time, last_sale_price)
 
 SELECT poll_timestamp                                                                       as time,
        (SELECT id
-        from bdov2.regional_market_item
+        from bdo.regional_market_item
         WHERE r.id = regional_market_item.region_id
           AND tmp_i.item_id = regional_market_item.item_id
           AND tmp_i.category_id = regional_market_item.category_id
@@ -42,12 +42,12 @@ SELECT poll_timestamp                                                           
        last_sale_price
 
 FROM tmp_csv_items as tmp_i
-INNER JOIN bdov2.region as r ON r.region_code = tmp_i.region_code;
+INNER JOIN bdo.region as r ON r.region_code = tmp_i.region_code;
 
 
 
 
-INSERT INTO bdov2.order_book_snapshot_ts (time, market_item_id,
+INSERT INTO bdo.order_book_snapshot_ts (time, market_item_id,
                                         bid_price_1, bid_price_2, bid_price_3, bid_price_4, bid_price_5, bid_price_6,
                                         bid_price_7, bid_price_8, bid_price_9, bid_price_10, bid_size_1, bid_size_2,
                                         bid_size_3, bid_size_4, bid_size_5, bid_size_6, bid_size_7, bid_size_8,
@@ -58,7 +58,7 @@ INSERT INTO bdov2.order_book_snapshot_ts (time, market_item_id,
                                         total_bid_quote_size_10, total_ask_quote_size_10)
 SELECT poll_timestamp                                                                       as time,
        (SELECT id
-        from bdov2.regional_market_item
+        from bdo.regional_market_item
         WHERE region_fk = regional_market_item.region_id
           AND item_fk = regional_market_item.item_id
           AND category_fk = regional_market_item.category_id
@@ -138,7 +138,7 @@ SELECT poll_timestamp                                                           
 
 FROM (
          SELECT poll_timestamp,
-                (SELECT id from bdov2.region WHERE region_code = tmp_csv_orders.region_code) as region_fk,
+                (SELECT id from bdo.region WHERE region_code = tmp_csv_orders.region_code) as region_fk,
                 category_id                                                                as category_fk,
                 item_id                                                                    as item_fk,
                 enhancement_level_min,
