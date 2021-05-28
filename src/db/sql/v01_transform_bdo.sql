@@ -12,16 +12,17 @@ FROM (SELECT item_id
 INSERT INTO bdo.market_item_summary_ts (poll_timestamp, region_fk, market_category_fk, item_fk, enhancement_level,
                                         base_price, current_stock, total_trades, last_sale_time, last_sale_price)
 SELECT poll_timestamp,
-       (SELECT id from bdo.region WHERE region_code = tmp_csv_items.region_code),
+       (SELECT id from bdo.region WHERE region_code = tmp_csv_items.region_code) as region_fk,
        category_id,
        item_id,
-       enhancement_level_min,
+       enhancement_level_min as enhancement_level,
        base_price,
        current_stock,
        total_trades,
        last_sale_timestamp,
        last_sale_price
-FROM tmp_csv_items;
+FROM tmp_csv_items
+ON conflict (poll_timestamp, region_fk, market_category_fk, item_fk, enhancement_level) do nothing;
 
 
 
