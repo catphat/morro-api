@@ -5086,7 +5086,7 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-pg-connection-string@^2.4.0, pg-connection-string@^2.5.0:
+pg-connection-string@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-2.5.0.tgz#538cadd0f7e603fc09a12590f3b8a452c2c0cf34"
   integrity sha512-r5o/V/ORTA6TmUnyWZR9nCj1klXCO2CEKNRlVuJptZe85QuhFayC7WeMic7ndayT5IRIR0S0xFxFi2ousartlQ==
@@ -5110,7 +5110,7 @@ pg-copy-streams@^5.1.1:
   dependencies:
     obuf "^1.1.2"
 
-pg-cursor@^2.5.2:
+pg-cursor@^2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/pg-cursor/-/pg-cursor-2.6.0.tgz#a85df1bd1389c75ffa443ee94073da0a1be360ba"
   integrity sha512-BFLg40CTgBJ+LX9EwqjztUYaKxpxLffMmDTmlQNMCustX/JxMTYimxRkdhZvPYZGp++/2LjuqkKtO5DVVq0FNg==
@@ -5141,7 +5141,7 @@ pg-types@^2.1.0:
     postgres-date "~1.0.4"
     postgres-interval "^1.1.0"
 
-pg@^8.5.1, pg@^8.6.0:
+pg@^8.6.0:
   version "8.6.0"
   resolved "https://registry.yarnpkg.com/pg/-/pg-8.6.0.tgz#e222296b0b079b280cce106ea991703335487db2"
   integrity sha512-qNS9u61lqljTDFvmk/N66EeGq3n6Ujzj0FFyNMGQr6XuEv4tgNTXvJQTfJdcvGit5p5/DWPu+wj920hAJFI+QQ==
@@ -5671,7 +5671,7 @@ roarr@^2.15.3:
     semver-compare "^1.0.0"
     sprintf-js "^1.1.2"
 
-roarr@^4.2.0:
+roarr@^4.2.5:
   version "4.2.5"
   resolved "https://registry.yarnpkg.com/roarr/-/roarr-4.2.5.tgz#b4e5ddba4ef40ce66fbef0dc57cf9c584687a7cb"
   integrity sha512-ZSs1hr2gyWickWDr2Yw0qcuef+EJKwZtNxUj7poxvIDxVq+ZvQreVNdPVLHonWpavBeZaOcAGVFV5xM/HqRR8g==
@@ -5784,7 +5784,7 @@ serialize-error@^7.0.1:
   dependencies:
     type-fest "^0.13.1"
 
-serialize-error@^8.0.1:
+serialize-error@^8.1.0:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/serialize-error/-/serialize-error-8.1.0.tgz#3a069970c712f78634942ddd50fbbc0eaebe2f67"
   integrity sha512-3NnuWfM6vBYoy5gZFvHiYsVbafvI9vZv/+jlIigFn4oP4zjNPK3LhcY0xSCgeb1a5L8jO71Mit9LlNoi2UfDDQ==
@@ -5910,10 +5910,10 @@ slice-ansi@^4.0.0:
     astral-regex "^2.0.0"
     is-fullwidth-code-point "^3.0.0"
 
-slonik@^23.6.4:
-  version "23.6.4"
-  resolved "https://registry.yarnpkg.com/slonik/-/slonik-23.6.4.tgz#07c3d0f57119a3606fe657c383f87ac9b42eb2b7"
-  integrity sha512-liuPtlkVRcFplt7IrrrTsKkzmfnU3xm4BJz7ZfLQSzNDy2TsBDjlrH/t+hmVpxm4K4Sx82GKyYNtoEE3hGrw/w==
+slonik@^23.7.0:
+  version "23.8.0"
+  resolved "https://registry.yarnpkg.com/slonik/-/slonik-23.8.0.tgz#ded21895b8425f5306715f80d0a5ea8deb76c90f"
+  integrity sha512-zMvWiaTA2EsaRyYmHS2kXYzfy4enRwI9kHxQ8hAY2bMjMdtzNLXojniHiqEjyWmGqRRmmg5ytgyihio6pEjWFw==
   dependencies:
     concat-stream "^2.0.0"
     delay "^5.0.0"
@@ -5922,16 +5922,16 @@ slonik@^23.6.4:
     hyperid "^2.1.0"
     is-plain-object "^5.0.0"
     iso8601-duration "^1.3.0"
-    pg "^8.5.1"
-    pg-connection-string "^2.4.0"
+    pg "^8.6.0"
+    pg-connection-string "^2.5.0"
     pg-copy-streams "^5.1.1"
     pg-copy-streams-binary "^2.0.1"
-    pg-cursor "^2.5.2"
+    pg-cursor "^2.6.0"
     postgres-array "^3.0.1"
     postgres-interval "^3.0.0"
     promise-deferred "^2.0.3"
-    roarr "^4.2.0"
-    serialize-error "^8.0.1"
+    roarr "^4.2.5"
+    serialize-error "^8.1.0"
     through2 "^4.0.2"
 
 smart-buffer@^4.1.0:
