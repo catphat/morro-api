@@ -41,7 +41,7 @@
     "qs": "^6.9.4",
     "serve-favicon": "^2.5.0",
     "slonik": "^23.7.0",
-    "socks-proxy-agent": "^5.0.0",
+    "socks-proxy-agent": "^5.0.1",
     "twitch": "^4.5.5",
     "winston": "^3.3.3"
   },
