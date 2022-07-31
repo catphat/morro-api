@@ -1,5 +1,5 @@
-# morro-api
-todo
+# BDO Market API
+NodeJS app that uses unathenticated BDO API to download market data. 
 
 ## Status
 
