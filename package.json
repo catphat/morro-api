@@ -42,7 +42,7 @@
     "serve-favicon": "^2.5.0",
     "slonik": "^23.7.0",
     "socks-proxy-agent": "^5.0.1",
-    "twitch": "^4.5.5",
+    "twitch": "^4.6.7",
     "winston": "^3.3.3"
   },
   "devDependencies": {
